@@ -1,0 +1,173 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.6030"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{C717F2FC-C150-4F53-ADE3-E26D944E0385}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "LibFacturacion"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "LibFacturacion"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "true"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.dll"
+                />
+                <Reference
+                    Name = "System.Design"
+                    AssemblyName = "System.Design"
+                    HintPath = "..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Design.dll"
+                />
+                <Reference
+                    Name = "C1.Data"
+                    AssemblyName = "C1.Data"
+                    HintPath = "..\..\Archivos de programa\ComponentOne Studio.NET\bin\C1.Data.dll"
+                />
+                <Reference
+                    Name = "LibFacturacion.DataObjects"
+                    AssemblyName = "LibFacturacion.DataObjects"
+                    HintPath = "obj\LibFacturacion.DataObjects.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                    HintPath = "..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "DevExpress.XtraEditors.v6.3"
+                    AssemblyName = "DevExpress.XtraEditors.v6.3"
+                    HintPath = "..\..\Archivos de programa\Developer Express .NET v6.3\Sources\DevExpress.DLL\DevExpress.XtraEditors.v6.3.dll"
+                    AssemblyFolderKey = "hklm\developer express .net v6.3"
+                />
+                <Reference
+                    Name = "DevExpress.Utils.v6.3"
+                    AssemblyName = "DevExpress.Utils.v6.3"
+                    HintPath = "..\..\Archivos de programa\Developer Express .NET v6.3\Sources\DevExpress.DLL\DevExpress.Utils.v6.3.dll"
+                    AssemblyFolderKey = "hklm\developer express .net v6.3"
+                />
+                <Reference
+                    Name = "DevExpress.Data.v6.3"
+                    AssemblyName = "DevExpress.Data.v6.3"
+                    HintPath = "..\..\Archivos de programa\Developer Express .NET v6.3\Sources\DevExpress.DLL\DevExpress.Data.v6.3.dll"
+                    AssemblyFolderKey = "hklm\developer express .net v6.3"
+                />
+                <Reference
+                    Name = "DevExpress.XtraGrid.v6.3"
+                    AssemblyName = "DevExpress.XtraGrid.v6.3"
+                    HintPath = "..\..\Archivos de programa\Developer Express .NET v6.3\Sources\DevExpress.DLL\DevExpress.XtraGrid.v6.3.dll"
+                    AssemblyFolderKey = "hklm\developer express .net v6.3"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataClass.cs"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataClass.resx"
+                    DependentUpon = "DataClass.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "licenses.licx"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "RemoteService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "XtraForm2.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "XtraForm2.resx"
+                    DependentUpon = "XtraForm2.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

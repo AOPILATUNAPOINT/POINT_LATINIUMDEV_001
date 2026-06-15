@@ -1,0 +1,121 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latinium", "Latinium.csproj", "{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibFacturacion", "..\LibFacturacion\LibFacturacion.csproj", "{C717F2FC-C150-4F53-ADE3-E26D944E0385}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibContabilidad", "..\LibContabilidad\LibContabilidad.csproj", "{18BB5734-96DD-4345-942C-9F47901C0B44}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibPersonal", "..\LibPersonal\LibPersonal.csproj", "{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		CD_ROM = CD_ROM
+		Custom = Custom
+		Debug = Debug
+		DVD-10 = DVD-10
+		DVD-18 = DVD-18
+		DVD-5 = DVD-5
+		DVD-9 = DVD-9
+		Release = Release
+		SingleImage = SingleImage
+		WebDeployment = WebDeployment
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.CD_ROM.ActiveCfg = Release|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.CD_ROM.Build.0 = Release|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.Custom.ActiveCfg = Release|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.Custom.Build.0 = Release|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.Debug.ActiveCfg = Debug|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.Debug.Build.0 = Debug|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.DVD-10.ActiveCfg = Debug|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.DVD-10.Build.0 = Debug|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.DVD-18.ActiveCfg = Debug|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.DVD-18.Build.0 = Debug|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.DVD-5.ActiveCfg = Debug|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.DVD-5.Build.0 = Debug|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.DVD-9.ActiveCfg = Debug|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.DVD-9.Build.0 = Debug|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.Release.ActiveCfg = Release|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.Release.Build.0 = Release|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.SingleImage.ActiveCfg = Release|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.SingleImage.Build.0 = Release|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.WebDeployment.ActiveCfg = Release|.NET
+		{5F98AA6D-D55E-464E-9DCF-05F3DA6876ED}.WebDeployment.Build.0 = Release|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.CD_ROM.ActiveCfg = Release|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.CD_ROM.Build.0 = Release|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.Custom.ActiveCfg = Release|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.Custom.Build.0 = Release|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.Debug.ActiveCfg = Debug|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.Debug.Build.0 = Debug|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.DVD-10.ActiveCfg = Debug|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.DVD-10.Build.0 = Debug|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.DVD-18.ActiveCfg = Debug|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.DVD-18.Build.0 = Debug|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.DVD-5.ActiveCfg = Debug|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.DVD-5.Build.0 = Debug|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.DVD-9.ActiveCfg = Debug|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.DVD-9.Build.0 = Debug|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.Release.ActiveCfg = Release|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.Release.Build.0 = Release|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.SingleImage.ActiveCfg = Release|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.SingleImage.Build.0 = Release|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.WebDeployment.ActiveCfg = Release|.NET
+		{C717F2FC-C150-4F53-ADE3-E26D944E0385}.WebDeployment.Build.0 = Release|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.CD_ROM.ActiveCfg = Release|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.CD_ROM.Build.0 = Release|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.Custom.ActiveCfg = Release|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.Custom.Build.0 = Release|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.Debug.ActiveCfg = Debug|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.Debug.Build.0 = Debug|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.DVD-10.ActiveCfg = Debug|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.DVD-10.Build.0 = Debug|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.DVD-18.ActiveCfg = Debug|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.DVD-18.Build.0 = Debug|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.DVD-5.ActiveCfg = Debug|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.DVD-5.Build.0 = Debug|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.DVD-9.ActiveCfg = Debug|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.DVD-9.Build.0 = Debug|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.Release.ActiveCfg = Release|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.Release.Build.0 = Release|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.SingleImage.ActiveCfg = Release|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.SingleImage.Build.0 = Release|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.WebDeployment.ActiveCfg = Release|.NET
+		{18BB5734-96DD-4345-942C-9F47901C0B44}.WebDeployment.Build.0 = Release|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.CD_ROM.ActiveCfg = Release|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.CD_ROM.Build.0 = Release|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.Custom.ActiveCfg = Release|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.Custom.Build.0 = Release|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.Debug.ActiveCfg = Debug|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.Debug.Build.0 = Debug|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.DVD-10.ActiveCfg = Debug|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.DVD-10.Build.0 = Debug|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.DVD-18.ActiveCfg = Debug|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.DVD-18.Build.0 = Debug|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.DVD-5.ActiveCfg = Debug|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.DVD-5.Build.0 = Debug|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.DVD-9.ActiveCfg = Debug|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.DVD-9.Build.0 = Debug|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.Release.ActiveCfg = Release|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.Release.Build.0 = Release|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.SingleImage.ActiveCfg = Release|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.SingleImage.Build.0 = Release|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.WebDeployment.ActiveCfg = Release|.NET
+		{D7DE6C97-2C3B-4599-9440-DECAB500A4D6}.WebDeployment.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

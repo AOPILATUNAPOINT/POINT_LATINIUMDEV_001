@@ -1,0 +1,68 @@
+# Compilados y binarios
+*.dll
+*.exe
+*.pdb
+*.7z
+*.zip
+*.mdb
+
+# Carpetas de build
+bin/
+obj/
+Debug/
+Release/
+
+# Reportes Crystal Reports (binarios pesados)
+Reportes/
+
+# Logs
+LogLatinium/
+
+# Imágenes y recursos gráficos
+*.png
+*.jpg
+*.jpeg
+*.ico
+*.JPG
+*.bmp
+
+# Archivos de configuración con datos sensibles (credenciales/servidor)
+Servidor.config
+ConfiguracionBase.txt
+device.id
+*.config
+
+# Scripts de instalación/bat
+*.bat
+
+# Archivos comprimidos de backup
+Latinium.7z
+LibContabilidad.7z
+
+# Archivos de datos/XML generados
+ATP052017.xml
+ATP0520171.xml
+ATP0520172.xml
+ATP0520173.xml
+ATP0520174.xml
+ATS.xml
+
+# Otras carpetas no fuente
+Tester/
+OrcCmp/
+af/
+Personal/
+Preciadores/
+BarraDatoSQL/
+ControlAcceso/
+ActualizaLatinium/
+Bases/
+Iconos/
+
+# Archivos temporales
+*.lnk
+*.user
+Salida.txt
+
+# Copias de proyectos
+Latinium/"Copia de *"

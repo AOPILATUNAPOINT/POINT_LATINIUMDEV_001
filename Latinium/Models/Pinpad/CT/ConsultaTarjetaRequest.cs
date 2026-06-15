@@ -1,0 +1,47 @@
+using System;
+
+namespace Latinium.Models.Pinpad
+{
+	/// <summary>
+	/// Descripción breve de ConsultaTarjetaRequest.
+	/// </summary>
+	public class ConsultaTarjetaRequest
+	{
+
+		private string tipoMensaje;
+		private decimal montoTotal;
+		private string numeroCaja;
+		private string numeroComercio;
+		private int idCompra;
+
+		public string TipoMensaje
+		{
+			get { return tipoMensaje; }
+			set { tipoMensaje = value; }
+		}
+
+		public decimal MontoTotal
+		{
+			get { return montoTotal; }
+			set { montoTotal = value; }
+		}
+
+		public string NumeroCaja
+		{
+			get { return numeroCaja; }
+			set { numeroCaja = value; }
+		}
+
+		public string NumeroComercio
+		{
+			get { return numeroComercio; }
+			set { numeroComercio = value; }
+		}
+
+		public int IdCompra
+		{
+			get { return idCompra; }
+			set { idCompra = value; }
+		}
+	}
+}

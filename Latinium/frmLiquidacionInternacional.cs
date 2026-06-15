@@ -1,0 +1,971 @@
+using System;
+using System.Drawing;
+using System.Collections;
+using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.OleDb;
+using System.IO;
+
+
+namespace Latinium
+{
+	/// <summary>
+	/// Descripción breve de frmLiquidacionInternacional.
+	/// </summary>
+	public class frmLiquidacionInternacional : System.Windows.Forms.Form
+	{
+		private System.Windows.Forms.Button btnVer;
+		private System.Windows.Forms.Button btnImprimir;
+		private System.Windows.Forms.Button btnVerAsiento;
+		private System.Windows.Forms.Button btnExportar;
+		private System.Windows.Forms.Label lblEstado;
+		private System.Windows.Forms.Label lblContador;
+		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtidAsiento;
+		private System.Windows.Forms.Label label3;
+		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtLote;
+		private Infragistics.Win.UltraWinDataSource.UltraDataSource ultraDataSource1;
+		private System.Windows.Forms.OpenFileDialog openFileDialog1;
+		private C1.Data.C1DataSet cdsSeteoF;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.Button btnContabilizar;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Label label2;
+		private Infragistics.Win.UltraWinSchedule.UltraCalendarCombo txtFecha;
+		private Infragistics.Win.UltraWinGrid.UltraGrid uGridLotes;
+		private System.Windows.Forms.Button button1;
+		/// <summary>
+		/// Variable del diseñador requerida.
+		/// </summary>
+		private System.ComponentModel.Container components = null;
+		public bool bCarga = false;
+
+		public frmLiquidacionInternacional()
+		{
+			//
+			// Necesario para admitir el Diseñador de Windows Forms
+			//
+			InitializeComponent();
+
+			//
+			// TODO: agregar código de constructor después de llamar a InitializeComponent
+			//
+		}
+
+		/// <summary>
+		/// Limpiar los recursos que se estén utilizando.
+		/// </summary>
+		protected override void Dispose( bool disposing )
+		{
+			if( disposing )
+			{
+				if(components != null)
+				{
+					components.Dispose();
+				}
+			}
+			base.Dispose( disposing );
+		}
+
+		private Acceso miAcceso;
+		private void UnloadMe()
+		{
+			this.Close();
+		}
+		public bool ActualizaNumeroOperacion(string stArchivo) 
+		{ 			 
+			if(File.Exists(stArchivo))
+			{
+				OleDbConnection oConn = new OleDbConnection(); 
+				OleDbCommand oCmd = new OleDbCommand(); 
+				OleDbDataAdapter oDa = new OleDbDataAdapter(); 
+				DataSet oDs = new DataSet();
+				oConn.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + stArchivo + "; Extended Properties= Excel 8.0;"; 
+				oConn.Open(); 
+				oCmd.CommandText = "SELECT * FROM [Lote$]"; 
+				oCmd.Connection = oConn; 
+				oDa.SelectCommand = oCmd; 
+				oDa.Fill(oDs, "Lote");
+ 
+				foreach (DataRow row in oDs.Tables[0].Rows)
+				{					
+					string sNumeroDeOperacion = "";
+					string sCedula = "";
+					decimal dCapital = 0.00m;
+					decimal dDescuento= 0.00m;
+					decimal dSolca= 0.00m;
+					
+					if (row["Identificacion"] != System.DBNull.Value) sCedula = row["Identificacion"].ToString();
+					if (row["Operacion"] != System.DBNull.Value) sNumeroDeOperacion = row["Operacion"].ToString();
+					if (row["Monto Saldo"] != System.DBNull.Value) dCapital = decimal.Parse(row["Monto Saldo"].ToString());
+					if (row["Descuento"] != System.DBNull.Value) dDescuento = decimal.Parse(row["Descuento"].ToString());
+					if (row["Solca"] != System.DBNull.Value) dSolca = decimal.Parse(row["Solca"].ToString());
+
+					foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.uGridLotes.Rows.All)
+					{
+						if (sCedula.Trim().Length == 9) sCedula = "0" + sCedula.Trim();
+						
+						if (sCedula.Trim() == dr.Cells["Ruc"].Value.ToString().Trim())
+						{
+							dCapital=dCapital-dDescuento-dSolca;
+
+							if (dCapital == Convert.ToDecimal(dr.Cells["CapitalVendido"].Value))
+							{
+								dr.Cells["Operacion_GAF"].Value = sNumeroDeOperacion.Trim();
+								dr.Cells["Comision"].Value = dDescuento;
+
+								break;
+							}
+						}
+					}
+				}
+
+				return true; 
+			}
+			else
+			{
+				return false; 
+			}
+		}
+		#region Código generado por el Diseñador de Windows Forms
+		/// <summary>
+		/// Método necesario para admitir el Diseñador. No se puede modificar
+		/// el contenido del método con el editor de código.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(frmLiquidacionInternacional));
+			Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+			Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn1 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idCompra");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn2 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idAsientoLoteSolidario");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn3 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Num_Operacion");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn4 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Operacion_GAF");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn5 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Fecha");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn6 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Ruc");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn7 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Nombre");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn8 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Monto");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn9 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Plazo");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn10 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("FechaVenta");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn11 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Cuotas_Locales");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn12 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Cuotas_Vendidas");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn13 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("CapitalVendido");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn14 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Comision");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn15 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Contribucion_Solca");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn16 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Valor");
+			Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton1 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
+			Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idCompra");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idAsientoLoteSolidario");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Num_Operacion");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Operacion_GAF");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Fecha");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Ruc");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Monto");
+			Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn9 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Plazo");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn10 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("FechaVenta");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn11 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Cuotas_Locales");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Cuotas_Vendidas");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("CapitalVendido");
+			Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Comision");
+			Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn15 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Contribucion_Solca");
+			Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn16 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Valor");
+			Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinGrid.SummarySettings summarySettings1 = new Infragistics.Win.UltraWinGrid.SummarySettings("", Infragistics.Win.UltraWinGrid.SummaryType.Sum, null, "Valor", 15, true, "Band 0", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "Valor", 15, true);
+			Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinGrid.SummarySettings summarySettings2 = new Infragistics.Win.UltraWinGrid.SummarySettings("", Infragistics.Win.UltraWinGrid.SummaryType.Sum, null, "Contribucion_Solca", 14, true, "Band 0", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "Contribucion_Solca", 14, true);
+			Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinGrid.SummarySettings summarySettings3 = new Infragistics.Win.UltraWinGrid.SummarySettings("", Infragistics.Win.UltraWinGrid.SummaryType.Sum, null, "Comision", 13, true, "Band 0", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "Comision", 13, true);
+			Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinGrid.SummarySettings summarySettings4 = new Infragistics.Win.UltraWinGrid.SummarySettings("", Infragistics.Win.UltraWinGrid.SummaryType.Sum, null, "CapitalVendido", 12, true, "Band 0", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "CapitalVendido", 12, true);
+			Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
+			Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
+			Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
+			Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+			Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
+			Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
+			Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
+			Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
+			Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
+			this.btnVer = new System.Windows.Forms.Button();
+			this.btnImprimir = new System.Windows.Forms.Button();
+			this.btnVerAsiento = new System.Windows.Forms.Button();
+			this.btnExportar = new System.Windows.Forms.Button();
+			this.lblEstado = new System.Windows.Forms.Label();
+			this.lblContador = new System.Windows.Forms.Label();
+			this.txtidAsiento = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
+			this.label3 = new System.Windows.Forms.Label();
+			this.txtLote = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
+			this.ultraDataSource1 = new Infragistics.Win.UltraWinDataSource.UltraDataSource();
+			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.cdsSeteoF = new C1.Data.C1DataSet();
+			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.btnContabilizar = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.txtFecha = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
+			this.uGridLotes = new Infragistics.Win.UltraWinGrid.UltraGrid();
+			this.button1 = new System.Windows.Forms.Button();
+			((System.ComponentModel.ISupportInitialize)(this.txtidAsiento)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtLote)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.cdsSeteoF)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtFecha)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.uGridLotes)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// btnVer
+			// 
+			this.btnVer.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(230)), ((System.Byte)(230)), ((System.Byte)(230)));
+			this.btnVer.CausesValidation = false;
+			this.btnVer.Font = new System.Drawing.Font("Tahoma", 8.25F);
+			this.btnVer.ForeColor = System.Drawing.Color.FromArgb(((System.Byte)(50)), ((System.Byte)(50)), ((System.Byte)(50)));
+			this.btnVer.Image = ((System.Drawing.Image)(resources.GetObject("btnVer.Image")));
+			this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnVer.Location = new System.Drawing.Point(464, 7);
+			this.btnVer.Name = "btnVer";
+			this.btnVer.Size = new System.Drawing.Size(72, 23);
+			this.btnVer.TabIndex = 790;
+			this.btnVer.Text = "Ver";
+			this.btnVer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+			// 
+			// btnImprimir
+			// 
+			this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnImprimir.CausesValidation = false;
+			this.btnImprimir.Enabled = false;
+			this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+			this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnImprimir.Location = new System.Drawing.Point(756, 7);
+			this.btnImprimir.Name = "btnImprimir";
+			this.btnImprimir.Size = new System.Drawing.Size(88, 23);
+			this.btnImprimir.TabIndex = 789;
+			this.btnImprimir.Text = "&Imprimir";
+			this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+			// 
+			// btnVerAsiento
+			// 
+			this.btnVerAsiento.CausesValidation = false;
+			this.btnVerAsiento.Enabled = false;
+			this.btnVerAsiento.Image = ((System.Drawing.Image)(resources.GetObject("btnVerAsiento.Image")));
+			this.btnVerAsiento.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnVerAsiento.Location = new System.Drawing.Point(852, 7);
+			this.btnVerAsiento.Name = "btnVerAsiento";
+			this.btnVerAsiento.Size = new System.Drawing.Size(88, 23);
+			this.btnVerAsiento.TabIndex = 787;
+			this.btnVerAsiento.Text = "Ver Asiento";
+			this.btnVerAsiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnVerAsiento.Click += new System.EventHandler(this.btnVerAsiento_Click);
+			// 
+			// btnExportar
+			// 
+			this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnExportar.CausesValidation = false;
+			this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
+			this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnExportar.Location = new System.Drawing.Point(948, 7);
+			this.btnExportar.Name = "btnExportar";
+			this.btnExportar.Size = new System.Drawing.Size(88, 23);
+			this.btnExportar.TabIndex = 786;
+			this.btnExportar.Text = "Exportar";
+			this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+			// 
+			// lblEstado
+			// 
+			this.lblEstado.AutoSize = true;
+			this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.lblEstado.ForeColor = System.Drawing.Color.Firebrick;
+			this.lblEstado.Location = new System.Drawing.Point(24, 64);
+			this.lblEstado.Name = "lblEstado";
+			this.lblEstado.Size = new System.Drawing.Size(0, 20);
+			this.lblEstado.TabIndex = 785;
+			// 
+			// lblContador
+			// 
+			this.lblContador.AutoSize = true;
+			this.lblContador.BackColor = System.Drawing.Color.Transparent;
+			this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.lblContador.ForeColor = System.Drawing.Color.Firebrick;
+			this.lblContador.Location = new System.Drawing.Point(504, 64);
+			this.lblContador.Name = "lblContador";
+			this.lblContador.Size = new System.Drawing.Size(0, 20);
+			this.lblContador.TabIndex = 784;
+			this.lblContador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// txtidAsiento
+			// 
+			this.txtidAsiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			appearance1.ForeColorDisabled = System.Drawing.Color.Black;
+			this.txtidAsiento.Appearance = appearance1;
+			this.txtidAsiento.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2003ToolbarButton;
+			this.txtidAsiento.Enabled = false;
+			this.txtidAsiento.FormatString = "";
+			this.txtidAsiento.Location = new System.Drawing.Point(620, 7);
+			this.txtidAsiento.Name = "txtidAsiento";
+			this.txtidAsiento.PromptChar = ' ';
+			this.txtidAsiento.Size = new System.Drawing.Size(8, 21);
+			this.txtidAsiento.TabIndex = 783;
+			this.txtidAsiento.Visible = false;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.BackColor = System.Drawing.Color.Transparent;
+			this.label3.Location = new System.Drawing.Point(20, 10);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(73, 16);
+			this.label3.TabIndex = 778;
+			this.label3.Text = "Lote Número:";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// txtLote
+			// 
+			appearance2.ForeColorDisabled = System.Drawing.Color.Black;
+			this.txtLote.Appearance = appearance2;
+			this.txtLote.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2003ToolbarButton;
+			this.txtLote.FormatString = "";
+			this.txtLote.Location = new System.Drawing.Point(116, 8);
+			this.txtLote.MinValue = -1;
+			this.txtLote.Name = "txtLote";
+			this.txtLote.PromptChar = ' ';
+			this.txtLote.Size = new System.Drawing.Size(88, 21);
+			this.txtLote.SpinButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always;
+			this.txtLote.TabIndex = 777;
+			// 
+			// ultraDataSource1
+			// 
+			ultraDataColumn1.DataType = typeof(int);
+			ultraDataColumn2.DataType = typeof(int);
+			ultraDataColumn5.DataType = typeof(System.DateTime);
+			ultraDataColumn5.DefaultValue = new System.DateTime(((long)(0)));
+			ultraDataColumn8.DataType = typeof(System.Decimal);
+			ultraDataColumn8.DefaultValue = new System.Decimal(new int[] {
+																																		 0,
+																																		 0,
+																																		 0,
+																																		 0});
+			ultraDataColumn9.DataType = typeof(int);
+			ultraDataColumn10.DataType = typeof(System.DateTime);
+			ultraDataColumn10.DefaultValue = new System.DateTime(((long)(0)));
+			ultraDataColumn11.DataType = typeof(int);
+			ultraDataColumn11.DefaultValue = 0;
+			ultraDataColumn12.DataType = typeof(int);
+			ultraDataColumn12.DefaultValue = 0;
+			ultraDataColumn13.DataType = typeof(System.Decimal);
+			ultraDataColumn13.DefaultValue = new System.Decimal(new int[] {
+																																			0,
+																																			0,
+																																			0,
+																																			0});
+			ultraDataColumn14.DataType = typeof(System.Decimal);
+			ultraDataColumn14.DefaultValue = new System.Decimal(new int[] {
+																																			0,
+																																			0,
+																																			0,
+																																			0});
+			ultraDataColumn15.DataType = typeof(System.Decimal);
+			ultraDataColumn15.DefaultValue = new System.Decimal(new int[] {
+																																			0,
+																																			0,
+																																			0,
+																																			0});
+			ultraDataColumn16.DataType = typeof(System.Decimal);
+			ultraDataColumn16.DefaultValue = new System.Decimal(new int[] {
+																																			0,
+																																			0,
+																																			0,
+																																			0});
+			this.ultraDataSource1.Band.Columns.AddRange(new object[] {
+																																 ultraDataColumn1,
+																																 ultraDataColumn2,
+																																 ultraDataColumn3,
+																																 ultraDataColumn4,
+																																 ultraDataColumn5,
+																																 ultraDataColumn6,
+																																 ultraDataColumn7,
+																																 ultraDataColumn8,
+																																 ultraDataColumn9,
+																																 ultraDataColumn10,
+																																 ultraDataColumn11,
+																																 ultraDataColumn12,
+																																 ultraDataColumn13,
+																																 ultraDataColumn14,
+																																 ultraDataColumn15,
+																																 ultraDataColumn16});
+			// 
+			// cdsSeteoF
+			// 
+			this.cdsSeteoF.BindingContextCtrl = this;
+			this.cdsSeteoF.DataLibrary = "LibFacturacion";
+			this.cdsSeteoF.DataLibraryUrl = "";
+			this.cdsSeteoF.DataSetDef = "dsSeteoF";
+			this.cdsSeteoF.Locale = new System.Globalization.CultureInfo("es-EC");
+			this.cdsSeteoF.Name = "cdsSeteoF";
+			this.cdsSeteoF.SchemaClassName = "LibFacturacion.DataClass";
+			this.cdsSeteoF.SchemaDef = null;
+			this.cdsSeteoF.BeforeFill += new C1.Data.FillEventHandler(this.cdsSeteoF_BeforeFill);
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Location = new System.Drawing.Point(8, 48);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(1032, 8);
+			this.groupBox2.TabIndex = 797;
+			this.groupBox2.TabStop = false;
+			// 
+			// btnContabilizar
+			// 
+			this.btnContabilizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnContabilizar.CausesValidation = false;
+			this.btnContabilizar.Enabled = false;
+			this.btnContabilizar.Image = ((System.Drawing.Image)(resources.GetObject("btnContabilizar.Image")));
+			this.btnContabilizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnContabilizar.Location = new System.Drawing.Point(944, 64);
+			this.btnContabilizar.Name = "btnContabilizar";
+			this.btnContabilizar.Size = new System.Drawing.Size(88, 23);
+			this.btnContabilizar.TabIndex = 796;
+			this.btnContabilizar.Text = "Contabilizar";
+			this.btnContabilizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnContabilizar.Click += new System.EventHandler(this.btnContabilizar_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.Firebrick;
+			this.label1.Location = new System.Drawing.Point(8, 80);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(0, 20);
+			this.label1.TabIndex = 795;
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+				| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Location = new System.Drawing.Point(8, 88);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(1032, 8);
+			this.groupBox1.TabIndex = 794;
+			this.groupBox1.TabStop = false;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(224, 8);
+			this.label2.Name = "label2";
+			this.label2.TabIndex = 793;
+			this.label2.Text = "Fecha De Compra:";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// txtFecha
+			// 
+			this.txtFecha.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2003ToolbarButton;
+			dateButton1.Caption = "Today";
+			this.txtFecha.DateButtons.Add(dateButton1);
+			this.txtFecha.Enabled = false;
+			this.txtFecha.Format = "dd/MM/yyyy";
+			this.txtFecha.Location = new System.Drawing.Point(336, 8);
+			this.txtFecha.Name = "txtFecha";
+			this.txtFecha.NonAutoSizeHeight = 23;
+			this.txtFecha.Size = new System.Drawing.Size(112, 21);
+			this.txtFecha.SpinButtonsVisible = true;
+			this.txtFecha.TabIndex = 792;
+			this.txtFecha.Value = ((object)(resources.GetObject("txtFecha.Value")));
+			// 
+			// uGridLotes
+			// 
+			this.uGridLotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+				| System.Windows.Forms.AnchorStyles.Left) 
+				| System.Windows.Forms.AnchorStyles.Right)));
+			this.uGridLotes.Cursor = System.Windows.Forms.Cursors.Default;
+			this.uGridLotes.DataSource = this.ultraDataSource1;
+			appearance3.BackColor = System.Drawing.Color.White;
+			this.uGridLotes.DisplayLayout.Appearance = appearance3;
+			this.uGridLotes.DisplayLayout.AutoFitColumns = true;
+			ultraGridColumn1.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn1.Header.VisiblePosition = 0;
+			ultraGridColumn1.Hidden = true;
+			ultraGridColumn1.Width = 77;
+			ultraGridColumn2.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn2.Header.VisiblePosition = 1;
+			ultraGridColumn2.Hidden = true;
+			ultraGridColumn2.Width = 64;
+			ultraGridColumn3.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn3.Header.Caption = "Factura N.";
+			ultraGridColumn3.Header.VisiblePosition = 2;
+			ultraGridColumn3.Width = 127;
+			ultraGridColumn4.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn4.Header.Caption = "Operación";
+			ultraGridColumn4.Header.VisiblePosition = 3;
+			ultraGridColumn4.Width = 78;
+			ultraGridColumn5.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn5.Header.VisiblePosition = 4;
+			ultraGridColumn5.Width = 68;
+			ultraGridColumn6.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn6.Header.Caption = "Cedula";
+			ultraGridColumn6.Header.VisiblePosition = 5;
+			ultraGridColumn6.Width = 69;
+			ultraGridColumn7.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn7.Header.VisiblePosition = 6;
+			ultraGridColumn7.Width = 245;
+			ultraGridColumn8.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			appearance4.TextHAlign = Infragistics.Win.HAlign.Right;
+			ultraGridColumn8.CellAppearance = appearance4;
+			ultraGridColumn8.Format = "#,##0.00";
+			ultraGridColumn8.Header.Caption = "Liquido";
+			ultraGridColumn8.Header.VisiblePosition = 7;
+			ultraGridColumn8.Hidden = true;
+			ultraGridColumn8.Width = 89;
+			ultraGridColumn9.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn9.Header.VisiblePosition = 8;
+			ultraGridColumn9.Hidden = true;
+			ultraGridColumn9.Width = 92;
+			ultraGridColumn10.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn10.Header.Caption = "Venta";
+			ultraGridColumn10.Header.VisiblePosition = 11;
+			ultraGridColumn10.Width = 67;
+			ultraGridColumn11.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn11.Header.VisiblePosition = 9;
+			ultraGridColumn11.Hidden = true;
+			ultraGridColumn11.Width = 74;
+			ultraGridColumn12.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			ultraGridColumn12.Header.Caption = "C Vendidas";
+			ultraGridColumn12.Header.VisiblePosition = 10;
+			ultraGridColumn12.Hidden = true;
+			ultraGridColumn12.Width = 72;
+			ultraGridColumn13.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			appearance5.TextHAlign = Infragistics.Win.HAlign.Right;
+			ultraGridColumn13.CellAppearance = appearance5;
+			ultraGridColumn13.Format = "#,##0.00";
+			ultraGridColumn13.Header.Caption = "Capital";
+			ultraGridColumn13.Header.VisiblePosition = 12;
+			ultraGridColumn13.Width = 85;
+			ultraGridColumn14.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			appearance6.TextHAlign = Infragistics.Win.HAlign.Right;
+			ultraGridColumn14.CellAppearance = appearance6;
+			ultraGridColumn14.Format = "#,##0.00";
+			ultraGridColumn14.Header.VisiblePosition = 13;
+			ultraGridColumn14.Width = 68;
+			ultraGridColumn15.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			appearance7.TextHAlign = Infragistics.Win.HAlign.Right;
+			ultraGridColumn15.CellAppearance = appearance7;
+			ultraGridColumn15.Format = "#,##0.00";
+			ultraGridColumn15.Header.Caption = "Impuesto";
+			ultraGridColumn15.Header.VisiblePosition = 14;
+			ultraGridColumn15.Width = 77;
+			ultraGridColumn16.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
+			appearance8.TextHAlign = Infragistics.Win.HAlign.Right;
+			ultraGridColumn16.CellAppearance = appearance8;
+			ultraGridColumn16.Format = "#,##0.00";
+			ultraGridColumn16.Header.Caption = "Acreditado";
+			ultraGridColumn16.Header.VisiblePosition = 15;
+			ultraGridColumn16.Width = 127;
+			ultraGridBand1.Columns.AddRange(new object[] {
+																										 ultraGridColumn1,
+																										 ultraGridColumn2,
+																										 ultraGridColumn3,
+																										 ultraGridColumn4,
+																										 ultraGridColumn5,
+																										 ultraGridColumn6,
+																										 ultraGridColumn7,
+																										 ultraGridColumn8,
+																										 ultraGridColumn9,
+																										 ultraGridColumn10,
+																										 ultraGridColumn11,
+																										 ultraGridColumn12,
+																										 ultraGridColumn13,
+																										 ultraGridColumn14,
+																										 ultraGridColumn15,
+																										 ultraGridColumn16});
+			appearance9.TextHAlign = Infragistics.Win.HAlign.Right;
+			summarySettings1.Appearance = appearance9;
+			summarySettings1.DisplayFormat = "{0: #,##0.00}";
+			summarySettings1.ShowCalculatingText = Infragistics.Win.DefaultableBoolean.False;
+			appearance10.TextHAlign = Infragistics.Win.HAlign.Right;
+			summarySettings2.Appearance = appearance10;
+			summarySettings2.DisplayFormat = "{0: #,##0.00}";
+			summarySettings2.ShowCalculatingText = Infragistics.Win.DefaultableBoolean.False;
+			appearance11.TextHAlign = Infragistics.Win.HAlign.Right;
+			summarySettings3.Appearance = appearance11;
+			summarySettings3.DisplayFormat = "{0: #,##0.00}";
+			summarySettings3.ShowCalculatingText = Infragistics.Win.DefaultableBoolean.False;
+			appearance12.TextHAlign = Infragistics.Win.HAlign.Right;
+			summarySettings4.Appearance = appearance12;
+			summarySettings4.DisplayFormat = "{0: #,##0.00}";
+			summarySettings4.ShowCalculatingText = Infragistics.Win.DefaultableBoolean.False;
+			ultraGridBand1.Summaries.AddRange(new Infragistics.Win.UltraWinGrid.SummarySettings[] {
+																																															summarySettings1,
+																																															summarySettings2,
+																																															summarySettings3,
+																																															summarySettings4});
+			ultraGridBand1.SummaryFooterCaption = "";
+			this.uGridLotes.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
+			appearance13.ForeColor = System.Drawing.Color.Black;
+			appearance13.ForeColorDisabled = System.Drawing.Color.Black;
+			this.uGridLotes.DisplayLayout.GroupByBox.Appearance = appearance13;
+			appearance14.ForeColor = System.Drawing.Color.Black;
+			appearance14.ForeColorDisabled = System.Drawing.Color.Black;
+			this.uGridLotes.DisplayLayout.GroupByBox.BandLabelAppearance = appearance14;
+			this.uGridLotes.DisplayLayout.GroupByBox.Hidden = true;
+			this.uGridLotes.DisplayLayout.GroupByBox.Prompt = " ";
+			appearance15.BackColor = System.Drawing.SystemColors.Control;
+			appearance15.BackColor2 = System.Drawing.SystemColors.Control;
+			appearance15.BackColorDisabled = System.Drawing.SystemColors.Control;
+			appearance15.BackColorDisabled2 = System.Drawing.SystemColors.Control;
+			appearance15.ForeColor = System.Drawing.Color.Black;
+			appearance15.ForeColorDisabled = System.Drawing.Color.Black;
+			this.uGridLotes.DisplayLayout.GroupByBox.PromptAppearance = appearance15;
+			appearance16.ForeColor = System.Drawing.Color.Black;
+			appearance16.ForeColorDisabled = System.Drawing.Color.Black;
+			this.uGridLotes.DisplayLayout.Override.ActiveRowAppearance = appearance16;
+			appearance17.BackColor = System.Drawing.Color.Transparent;
+			this.uGridLotes.DisplayLayout.Override.CardAreaAppearance = appearance17;
+			this.uGridLotes.DisplayLayout.Override.ColumnAutoSizeMode = Infragistics.Win.UltraWinGrid.ColumnAutoSizeMode.AllRowsInBand;
+			appearance18.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(89)), ((System.Byte)(135)), ((System.Byte)(214)));
+			appearance18.BackColor2 = System.Drawing.Color.FromArgb(((System.Byte)(7)), ((System.Byte)(59)), ((System.Byte)(150)));
+			appearance18.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+			appearance18.FontData.BoldAsString = "True";
+			appearance18.FontData.Name = "Arial";
+			appearance18.FontData.SizeInPoints = 8F;
+			appearance18.ForeColor = System.Drawing.Color.White;
+			appearance18.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
+			this.uGridLotes.DisplayLayout.Override.HeaderAppearance = appearance18;
+			appearance19.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(89)), ((System.Byte)(135)), ((System.Byte)(214)));
+			appearance19.BackColor2 = System.Drawing.Color.FromArgb(((System.Byte)(7)), ((System.Byte)(59)), ((System.Byte)(150)));
+			appearance19.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+			this.uGridLotes.DisplayLayout.Override.RowSelectorAppearance = appearance19;
+			appearance20.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(251)), ((System.Byte)(230)), ((System.Byte)(148)));
+			appearance20.BackColor2 = System.Drawing.Color.FromArgb(((System.Byte)(238)), ((System.Byte)(149)), ((System.Byte)(21)));
+			appearance20.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+			this.uGridLotes.DisplayLayout.Override.SelectedRowAppearance = appearance20;
+			this.uGridLotes.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
+			this.uGridLotes.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.uGridLotes.Location = new System.Drawing.Point(8, 104);
+			this.uGridLotes.Name = "uGridLotes";
+			this.uGridLotes.Size = new System.Drawing.Size(1032, 272);
+			this.uGridLotes.TabIndex = 791;
+			// 
+			// button1
+			// 
+			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button1.CausesValidation = false;
+			this.button1.Enabled = false;
+			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.button1.Location = new System.Drawing.Point(480, 192);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(88, 23);
+			this.button1.TabIndex = 798;
+			this.button1.Text = "Contabilizar";
+			this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// frmLiquidacionInternacional
+			// 
+			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+			this.ClientSize = new System.Drawing.Size(1056, 382);
+			this.Controls.Add(this.groupBox2);
+			this.Controls.Add(this.btnContabilizar);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.txtFecha);
+			this.Controls.Add(this.uGridLotes);
+			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnVer);
+			this.Controls.Add(this.btnImprimir);
+			this.Controls.Add(this.btnVerAsiento);
+			this.Controls.Add(this.btnExportar);
+			this.Controls.Add(this.lblEstado);
+			this.Controls.Add(this.lblContador);
+			this.Controls.Add(this.txtidAsiento);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.txtLote);
+			this.Name = "frmLiquidacionInternacional";
+			this.Text = "Liquidacion";
+			this.Load += new System.EventHandler(this.frmLiquidacionInternacional_Load);
+			((System.ComponentModel.ISupportInitialize)(this.txtidAsiento)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtLote)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.cdsSeteoF)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtFecha)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.uGridLotes)).EndInit();
+			this.ResumeLayout(false);
+
+		}
+		#endregion
+
+		private void cdsSeteoF_BeforeFill(object sender, C1.Data.FillEventArgs e)
+		{
+			Funcion miFuncion = new Funcion();
+			cdsSeteoF.Schema.Connections[0].ConnectionString = miFuncion.AccesoBase(MenuLatinium.stDirFacturacion);	
+		}
+
+		private void frmLiquidacionInternacional_Load(object sender, System.EventArgs e)
+		{
+			miAcceso = new Acceso(cdsSeteoF, "08320903");
+
+			if (!Funcion.Permiso("2140", cdsSeteoF))
+			{		
+				MessageBox.Show("No tiene Acceso LIQUIDACION CARTERA INTERNACIONAL", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				BeginInvoke(new MethodInvoker(UnloadMe));
+				return;
+			}
+			bCarga = true;
+			this.txtLote.Value = Funcion.iEscalarSQL(cdsSeteoF, "Cre_RetornaUltimoLote 19");
+			this.txtLote.MaxValue = (int)this.txtLote.Value;
+			bCarga = false;
+
+			FuncionesProcedimientos.RetornaFechaServidor(this.txtFecha, cdsSeteoF, false);
+		}
+
+		private void btnVer_Click(object sender, System.EventArgs e)
+		{
+			if (this.txtLote.Value == System.DBNull.Value)
+			{
+				MessageBox.Show("Escriba el Numero de Lote a Consultar", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				this.txtLote.Focus();
+				return;
+			}
+
+			this.lblEstado.Text = "";
+			this.lblContador.Text = "";
+
+			this.txtFecha.Enabled = false;
+			this.btnContabilizar.Enabled = false;
+			this.btnImprimir.Enabled = false;
+			this.btnVerAsiento.Enabled = false;
+
+			string sSQL = string.Format("Exec Cre_LiquidacionCarteraInternacional {0},'{1}'", 
+				 (int)this.txtLote.Value, Convert.ToDateTime(this.txtFecha.Value).ToString("yyyyMMdd"));
+			FuncionesProcedimientos.dsGeneral(sSQL, this.uGridLotes);
+
+	
+			this.txtidAsiento.Value =
+				Funcion.iEscalarSQL(cdsSeteoF, string.Format("Declare @idAsiento Int = 0 If Exists(Select ISNULL(idAsiento, 0) From Asiento Where Numero = '{0}' And idOrigenAsiento = 109 And idTipoAsiento = 1 And Borrar = 0) Select @idAsiento = ISNULL(idAsiento, 0) From Asiento Where Numero = '{0}' And idTipoAsiento = 1 And Borrar = 0 Select @idAsiento", this.txtLote.Value.ToString()));
+
+			if ((int)this.txtidAsiento.Value > 0)
+			{				
+				this.lblEstado.Text = "CONTABILIZADO";				
+				this.btnImprimir.Enabled = true;
+				this.btnVerAsiento.Enabled = true;
+			}
+			else 
+			{
+				this.lblEstado.Text = "CONTABILIZACIÓN PENDIENTE";				
+				this.txtFecha.Enabled = true;
+				this.btnContabilizar.Enabled = true;				
+			}		
+
+			this.lblContador.Text = this.uGridLotes.Rows.Count + " REGISTROS ENCONTRADOS";
+		}
+
+		private void btnImprimir_Click(object sender, System.EventArgs e)
+		{
+			if (this.txtLote.Value == System.DBNull.Value)
+			{
+				MessageBox.Show("Escriba el Numero de Lote", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				this.txtLote.Focus();
+				return;
+			}
+
+			if (this.uGridLotes.Rows.Count == 0)
+			{
+				MessageBox.Show(string.Format("No hay Documentos asignados en el Lote {0}", (int)this.txtLote.Value), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);				
+				this.txtLote.Focus();
+				return;
+			}
+
+			if ((int)this.txtidAsiento.Value == 0)
+			{
+				MessageBox.Show(string.Format("No se ha Contabilizado el Lote {0}", (int)this.txtLote.Value), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);				
+				this.txtLote.Focus();
+				return;
+			}
+			
+			#region Impresion
+			string strFiltro = "{Asiento.idAsiento} = " + this.txtidAsiento.Value.ToString();
+				
+			Reporte miRepor = new Reporte("Asientos.rpt", strFiltro);
+			miRepor.MdiParent = this.MdiParent;
+			miRepor.Titulo("Asiento");			
+			miRepor.Show();	
+			#endregion Impresion			
+		}
+
+		private void btnVerAsiento_Click(object sender, System.EventArgs e)
+		{
+			if (this.txtLote.Value == System.DBNull.Value)
+			{
+				MessageBox.Show("Escriba el Numero de Lote", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);		
+				this.txtLote.Focus();
+				return;
+			}
+
+			if (this.uGridLotes.Rows.Count == 0)
+			{
+				MessageBox.Show(string.Format("No hay Documentos asignados en el Lote {0}", (int)this.txtLote.Value), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);	
+				this.txtLote.Focus();
+				return;
+			}
+
+			if ((int)this.txtidAsiento.Value == 0)
+			{
+				MessageBox.Show(string.Format("No se ha Contabilizado el Lote {0}", (int)this.txtLote.Value), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);				
+				this.txtLote.Focus();
+				return;
+			}
+			
+			Cursor = Cursors.WaitCursor;
+			frmAsientos Asiento = new frmAsientos(((int)this.txtidAsiento.Value));
+			Asiento.MdiParent = MdiParent;
+			Asiento.Show();
+			Cursor = Cursors.Default;			
+		}
+
+		private void btnExportar_Click(object sender, System.EventArgs e)
+		{
+			FuncionesProcedimientos.ExportaExcel(this.uGridLotes);
+		}
+
+		private void btnContabilizar_Click(object sender, System.EventArgs e)
+		{			
+			#region Validacion
+			if (this.txtLote.Value == System.DBNull.Value)
+			{
+				MessageBox.Show("Escriba el Numero de Lote", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);			
+				this.txtLote.Focus();
+				return;
+			}
+
+			if (this.uGridLotes.Rows.Count == 0)
+			{
+				MessageBox.Show("No hay Documentos con este Lote", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);				
+				this.txtLote.Focus();
+				return;
+			}
+
+			if (!Validacion.vbFechaEnDocumentos(this.txtFecha, "Ingrese la fecha del documento", true, "Bancos", cdsSeteoF)) return;
+			
+			DateTime dtUltLiq = Funcion.dtEscalarSQL(cdsSeteoF, "Select MAX(ISNULL(FechaVenta, 0)) From Compra Where idTipoFactura = 1 And Borrar = 0 And Estado In (10, 11) And idFormaPago = 9 And idEntidadFinanciera = 19 And CapturaLote = 1");
+
+			if (Convert.ToDateTime(this.txtFecha.Value) < dtUltLiq)
+			{				
+				MessageBox.Show(string.Format("La Fecha de Liquidación no puede ser anterior a '{0}'", dtUltLiq.ToString("yyyy/MM/dd")), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				this.txtFecha.Value = dtUltLiq;
+				this.txtFecha.Focus();			
+				return;
+			}
+			#endregion Validacion
+			
+			try
+			{		
+				if (DialogResult.Yes == MessageBox.Show(string.Format("Esta seguro de Contabilizar el Lote Numero {0}", (int)this.txtLote.Value), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)) 
+				{
+					OpenFileDialog sArchivo = new OpenFileDialog();
+
+					sArchivo.Filter = "Microsoft Excel (*.xls)|*.xls";
+
+					if (sArchivo.ShowDialog() == System.Windows.Forms.DialogResult.OK && sArchivo.FileName.Length > 0)
+					{
+						this.Cursor = Cursors.WaitCursor;
+					
+						#region Variables
+						int iContVigente = 0;
+
+						string	OPERACION_ORIGINADORA	="";
+						string	OPERACIONBI	= "";
+						decimal VALOR_PRESENTE =  0;	
+						decimal INTERES_AL_DIA = 0;
+						decimal VALOR_DEVENGADO = 0;
+						string	CEDULA ="";
+						decimal	MONTO_ORIGINAL	= 0;
+						decimal SOLCA = 0;
+						#endregion Variables
+
+						#region Sube informacion
+						foreach (DataRow row in FuncionesProcedimientos.ImportaDeExcel(sArchivo.FileName, "SELECT * FROM [DATOS$]", "DATOS").Tables[0].Rows)
+						{	
+							OPERACION_ORIGINADORA = "";
+							OPERACIONBI	= "";
+							VALOR_PRESENTE = 0;	
+							INTERES_AL_DIA = 0;
+							CEDULA ="";
+							MONTO_ORIGINAL = 0;
+							VALOR_DEVENGADO = 0;
+							SOLCA =0;
+
+							if (row["OPERACION ORIGINADORA"] != System.DBNull.Value)  OPERACION_ORIGINADORA = row["OPERACION ORIGINADORA"].ToString();
+							if (row["OPERACION"] != System.DBNull.Value) OPERACIONBI = row["OPERACION"].ToString();
+							if (row["VALOR PRESENTE"] != System.DBNull.Value) VALOR_PRESENTE = decimal.Parse( row["VALOR PRESENTE"].ToString()); 
+							if (row["INTERES AL DIA"] != System.DBNull.Value) INTERES_AL_DIA = decimal.Parse( row["INTERES AL DIA"].ToString());
+							if (row["INTERES ENVIADO"] != System.DBNull.Value) VALOR_DEVENGADO = decimal.Parse( row["INTERES ENVIADO"].ToString());
+							if (row["IDENTIFICACION"] != System.DBNull.Value) CEDULA = row["IDENTIFICACION"].ToString();
+							if (row["CAPITAL ORIGINAL"] != System.DBNull.Value) MONTO_ORIGINAL = decimal.Parse( row["CAPITAL ORIGINAL"].ToString());
+							if (row["SOLCA"] != System.DBNull.Value) SOLCA = decimal.Parse( row["SOLCA"].ToString());
+
+							string sSQLAct = string.Format(
+								"Exec ActualizaValoresLiquidacionInternacional '{0}', '{1}', {2}, {3}, '{4}', '{5}', {6}, {7}, {8}, {9}", 
+								OPERACION_ORIGINADORA, OPERACIONBI, VALOR_PRESENTE, INTERES_AL_DIA, CEDULA,
+								Convert.ToDateTime(this.txtFecha.Value).ToString("yyyyMMdd"),
+								(int)this.txtLote.Value, MONTO_ORIGINAL, VALOR_DEVENGADO, SOLCA);					
+							Funcion.EjecutaSQL(cdsSeteoF, sSQLAct, true);
+
+//							string sSQLUpdateEstado = string.Format("Exec ActualizarEstadoBancoInt '{0}',{1}", OPERACION_ORIGINADORA,4);
+//							Funcion.EjecutaSQL(cdsSeteoF, sSQLUpdateEstado, true);
+						
+							iContVigente++;			
+						}
+						#endregion Sube informacion
+
+						string sSQLALC = string.Format("Exec AsientoLiquidacionCarteraBancoInternacional {0}, {1}, '{2}'", 
+							(int)this.txtidAsiento.Value,(int)this.txtLote.Value,Convert.ToDateTime(this.txtFecha.Value).ToString("yyyyMMdd"));						
+						int idAsiento = Funcion.iEscalarSQL(cdsSeteoF, sSQLALC, true);
+
+						string sSQLCLTC = string.Format("Exec Cre_LiquidaTablasCarteraInternacional {0}",(int)this.txtLote.Value);						
+						Funcion.EjecutaSQL(cdsSeteoF, sSQLCLTC, true);
+
+						string sSQLCTA = string.Format("Exec Cre_CopiarTablaDeAmortizacion 19, {0}, {1}",(int)this.txtLote.Value, Convert.ToDateTime(this.txtFecha.Value).ToString("yyyyMMdd"));						
+						Funcion.EjecutaSQL(cdsSeteoF, sSQLCTA, true);
+
+
+						MessageBox.Show(string.Format("Se contabilizaron {0} operaciones correctamente", iContVigente), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		
+						#region Impresion
+						
+						string strFiltro = "{Asiento.idAsiento} = " + idAsiento.ToString();				
+						Reporte miRepor = new Reporte("Asientos.rpt", strFiltro);
+						miRepor.MdiParent = this.MdiParent;
+						miRepor.Titulo("Asiento");			
+						miRepor.Show();	
+						
+						#endregion Impresion
+
+						this.btnVer_Click(sender, e);
+
+						this.Cursor = Cursors.Default;
+					}	
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(string.Format("Commit Exception Type : {0} {1}", ex.GetType(), ex.Message), "Demo", MessageBoxButtons.OK, MessageBoxIcon.Error);					
+				this.Cursor = Cursors.Default;													
+			}
+		}
+		}
+}
