@@ -62,7 +62,23 @@ Iconos/
 # Archivos temporales
 *.lnk
 *.user
+*.suo
+*.tmp
+*.pdf
+*.chm
+*.db
+Thumbs.db
 Salida.txt
+Resultados-Generar.txt
 
-# Copias de proyectos
-Latinium/"Copia de *"
+# Reportes Crystal (.rpt son binarios)
+*.rpt
+
+# Archivos de sistema generados
+root.CIMV2.Win32_DiskPartition.CS
+documento_temporal_*.pdf
+ve-*.tmp
+
+# Copias de seguridad (cualquier archivo o carpeta con "Copia de")
+Copia de */
+**/Copia de *
