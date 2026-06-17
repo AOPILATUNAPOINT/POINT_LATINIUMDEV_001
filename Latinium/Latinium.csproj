@@ -544,6 +544,16 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "frmFideicomisoProceso.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "frmFideicomisoProceso.resx"
+                    DependentUpon = "frmFideicomisoProceso.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "ActualizaRetencion.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
@@ -8712,13 +8722,13 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
-                    RelPath = "frmInformaciónDeEntrega.cs"
+                    RelPath = "frmInformaciï¿½nDeEntrega.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "frmInformaciónDeEntrega.resx"
-                    DependentUpon = "frmInformaciónDeEntrega.cs"
+                    RelPath = "frmInformaciï¿½nDeEntrega.resx"
+                    DependentUpon = "frmInformaciï¿½nDeEntrega.cs"
                     BuildAction = "EmbeddedResource"
                 />
                 <File
@@ -9142,13 +9152,13 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
-                    RelPath = "frmLiquidaciónConsignacion.cs"
+                    RelPath = "frmLiquidaciï¿½nConsignacion.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "frmLiquidaciónConsignacion.resx"
-                    DependentUpon = "frmLiquidaciónConsignacion.cs"
+                    RelPath = "frmLiquidaciï¿½nConsignacion.resx"
+                    DependentUpon = "frmLiquidaciï¿½nConsignacion.cs"
                     BuildAction = "EmbeddedResource"
                 />
                 <File
@@ -9462,13 +9472,13 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
-                    RelPath = "frmMensajeNumeración.cs"
+                    RelPath = "frmMensajeNumeraciï¿½n.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "frmMensajeNumeración.resx"
-                    DependentUpon = "frmMensajeNumeración.cs"
+                    RelPath = "frmMensajeNumeraciï¿½n.resx"
+                    DependentUpon = "frmMensajeNumeraciï¿½n.cs"
                     BuildAction = "EmbeddedResource"
                 />
                 <File
@@ -12582,13 +12592,13 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
-                    RelPath = "frmReporteVendedorPorAño.cs"
+                    RelPath = "frmReporteVendedorPorAï¿½o.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "frmReporteVendedorPorAño.resx"
-                    DependentUpon = "frmReporteVendedorPorAño.cs"
+                    RelPath = "frmReporteVendedorPorAï¿½o.resx"
+                    DependentUpon = "frmReporteVendedorPorAï¿½o.cs"
                     BuildAction = "EmbeddedResource"
                 />
                 <File
@@ -13617,13 +13627,13 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
-                    RelPath = "frmSolicitaTransferenciasPartesDañadasProduccion.cs"
+                    RelPath = "frmSolicitaTransferenciasPartesDaï¿½adasProduccion.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "frmSolicitaTransferenciasPartesDañadasProduccion.resx"
-                    DependentUpon = "frmSolicitaTransferenciasPartesDañadasProduccion.cs"
+                    RelPath = "frmSolicitaTransferenciasPartesDaï¿½adasProduccion.resx"
+                    DependentUpon = "frmSolicitaTransferenciasPartesDaï¿½adasProduccion.cs"
                     BuildAction = "EmbeddedResource"
                 />
                 <File

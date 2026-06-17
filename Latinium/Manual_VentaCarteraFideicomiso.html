@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Manual - Venta de Cartera Fideicomiso</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 13px; background: #f0f2f5; color: #333; }
+
+  .header {
+    background: #003366; color: #fff; padding: 18px 30px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .header h1 { font-size: 20px; }
+  .header span { font-size: 12px; opacity: .7; }
+
+  .container { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+
+  /* FLUJO */
+  .flow {
+    display: flex; align-items: center; gap: 0;
+    background: #fff; border-radius: 8px; padding: 20px 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1); margin-bottom: 24px;
+    flex-wrap: wrap; gap: 8px;
+  }
+  .flow-step {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 6px; flex: 1; min-width: 140px;
+  }
+  .flow-btn {
+    background: #003366; color: #fff; border: none; border-radius: 6px;
+    padding: 10px 16px; font-size: 12px; font-weight: bold;
+    cursor: default; width: 100%; text-align: center; line-height: 1.3;
+  }
+  .flow-btn.config { background: #5c6bc0; }
+  .flow-btn.step1  { background: #1976d2; }
+  .flow-btn.step2  { background: #388e3c; }
+  .flow-btn.step3  { background: #c62828; }
+  .flow-btn small  { font-weight: normal; font-size: 10px; opacity: .85; display: block; }
+  .flow-arrow { font-size: 22px; color: #999; padding: 0 4px; align-self: center; flex: 0; }
+
+  /* CARDS */
+  .card {
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1); margin-bottom: 20px; overflow: hidden;
+  }
+  .card-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 20px; cursor: pointer; user-select: none;
+  }
+  .card-header:hover { filter: brightness(0.96); }
+  .card-body { padding: 0 20px 20px; display: none; }
+  .card-body.open { display: block; }
+
+  .badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    font-size: 15px; font-weight: bold; color: #fff; flex-shrink: 0;
+  }
+  .badge.config { background: #5c6bc0; }
+  .badge.s1 { background: #1976d2; }
+  .badge.s2 { background: #388e3c; }
+  .badge.s3 { background: #c62828; }
+  .badge.faq { background: #f57c00; }
+
+  .card-title { font-size: 15px; font-weight: bold; flex: 1; }
+  .card-toggle { font-size: 18px; color: #999; }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+  th { background: #e8eaf6; text-align: left; padding: 7px 10px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+
+  .note {
+    background: #fff8e1; border-left: 4px solid #f9a825;
+    padding: 10px 14px; border-radius: 0 4px 4px 0; margin: 12px 0;
+    font-size: 12px;
+  }
+  .note.danger { background: #ffebee; border-color: #c62828; }
+  .note.ok     { background: #e8f5e9; border-color: #388e3c; }
+
+  h3 { margin: 16px 0 8px; font-size: 13px; color: #003366; }
+  p  { margin: 8px 0; line-height: 1.6; }
+  ul { margin: 8px 0 8px 20px; line-height: 1.8; }
+
+  .btn-demo {
+    display: inline-block; padding: 5px 14px; border-radius: 4px;
+    font-size: 11px; font-weight: bold; color: #fff; margin: 2px 0;
+  }
+  .btn-green  { background: #388e3c; }
+  .btn-blue   { background: #1976d2; }
+  .btn-red    { background: #c62828; }
+  .btn-dkgreen{ background: #004d00; }
+
+  .motivo-ok  { color: #388e3c; font-weight: bold; }
+  .motivo-err { color: #c62828; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Venta de Cartera Fideicomiso</h1>
+  <span>Manual de Usuario &mdash; frmFideicomisoProceso</span>
+</div>
+
+<div class="container">
+
+  <!-- FLUJO VISUAL -->
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-btn config">CONFIGURACION<small>Seleccionar entidad</small></div>
+    </div>
+    <div class="flow-arrow">&#9658;</div>
+    <div class="flow-step">
+      <div class="flow-btn step1">PASO 1<small>Cargar Excel / CSV</small></div>
+    </div>
+    <div class="flow-arrow">&#9658;</div>
+    <div class="flow-step">
+      <div class="flow-btn step2">PASO 2<small>Preparar y Validar</small></div>
+    </div>
+    <div class="flow-arrow">&#9658;</div>
+    <div class="flow-step">
+      <div class="flow-btn step3">PASO 3<small>Ejecutar Venta</small></div>
+    </div>
+  </div>
+
+  <!-- CONFIGURACION -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)" style="background:#ede7f6;">
+      <span class="badge config">C</span>
+      <span class="card-title">CONFIGURACION INICIAL &mdash; Panel Superior</span>
+      <span class="card-toggle">&#9660;</span>
+    </div>
+    <div class="card-body">
+      <h3>Entidad Destino</h3>
+      <p>Seleccione la entidad financiera a la que se vender&aacute; la cartera. El combo solo muestra entidades de tipo <strong>FIDEICOMISO</strong> que est&eacute;n activas.</p>
+      <p>Al seleccionar una entidad el sistema:</p>
+      <ul>
+        <li>Actualiza el t&iacute;tulo de la ventana con el nombre de la entidad.</li>
+        <li>Calcula autom&aacute;ticamente el <strong>N&uacute;mero de Lote</strong> = <code>MAX(NumeroLote) + 1</code> en Compra para esa entidad.</li>
+      </ul>
+      <h3>Fecha de Corte</h3>
+      <p>Campo de solo lectura. El sistema lo calcula en el Paso 2, tomando la <strong>fecha m&aacute;s antigua</strong> de los registros encontrados en la tabla <code>Compra</code>. No proviene del Excel.</p>
+      <h3><span class="btn-demo btn-dkgreen">Descargar Plantilla Excel</span></h3>
+      <p>Genera un archivo <code>.xls</code> con el formato correcto para que el &aacute;rea operativa prepare los datos.</p>
+    </div>
+  </div>
+
+  <!-- PASO 1 -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)" style="background:#e3f2fd;">
+      <span class="badge s1">1</span>
+      <span class="card-title">PASO 1 &mdash; Cargar Excel / CSV</span>
+      <span class="card-toggle">&#9660;</span>
+    </div>
+    <div class="card-body">
+      <table>
+        <tr><th>Acci&oacute;n</th><th>Descripci&oacute;n</th></tr>
+        <tr><td><span class="btn-demo btn-blue">Buscar...</span></td><td>Abre el explorador para seleccionar el archivo <code>.xls</code> o <code>.csv</code>.</td></tr>
+        <tr><td><span class="btn-demo btn-blue">Cargar Excel</span></td><td>Lee el archivo y carga los registros en la grilla.</td></tr>
+        <tr><td><strong>Buscar:</strong> [campo]</td><td>Filtra la grilla en tiempo real por c&eacute;dula o n&uacute;mero de operaci&oacute;n.</td></tr>
+      </table>
+
+      <h3>Estructura del archivo</h3>
+      <div class="note">Los datos deben comenzar exactamente desde la <strong>fila 8</strong>. Las primeras 7 filas son encabezados de la plantilla.</div>
+      <table>
+        <tr><th>Columna</th><th>Contenido</th><th>Observaci&oacute;n</th></tr>
+        <tr><td><strong>B</strong></td><td>C&eacute;dula</td><td>M&aacute;x. 10 caracteres. Se rellena con ceros a la izquierda.</td></tr>
+        <tr><td><strong>D</strong></td><td>N&uacute;mero de Operaci&oacute;n</td><td>M&aacute;x. 9 caracteres. Se rellena con ceros a la izquierda.</td></tr>
+        <tr><td><strong>E</strong></td><td>Fecha de Operaci&oacute;n</td><td>Se lee pero <strong>no se usa</strong> para filtrar. La fecha real viene de <code>Compra</code>.</td></tr>
+      </table>
+
+      <div class="note ok">Resultado: el contador <strong>Total le&iacute;dos</strong> muestra cu&aacute;ntos registros se cargaron y el bot&oacute;n <strong>Preparar Datos</strong> se habilita.</div>
+    </div>
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)" style="background:#e8f5e9;">
+      <span class="badge s2">2</span>
+      <span class="card-title">PASO 2 &mdash; Preparar y Validar</span>
+      <span class="card-toggle">&#9660;</span>
+    </div>
+    <div class="card-body">
+      <p>Haga clic en <span class="btn-demo btn-green">Preparar Datos</span> para cruzar los registros del Excel contra la tabla <code>Compra</code>.</p>
+
+      <h3>Qu&eacute; hace el sistema</h3>
+      <ol style="margin:8px 0 8px 20px; line-height:2;">
+        <li>Limpia la tabla temporal <code>temporalfideicomiso</code>.</li>
+        <li>Inserta todos los registros del Excel (c&eacute;dula + n&uacute;mero de operaci&oacute;n).</li>
+        <li>Cruza contra <code>Compra</code> filtrando: <code>idTipoFactura=1</code>, <code>Borrar=0</code>, <code>Estado=10</code>, <code>idFormaPago=9</code>.</li>
+        <li>Calcula la <strong>Fecha de Corte</strong> = fecha m&aacute;s antigua de los encontrados.</li>
+      </ol>
+
+      <h3>Pesta&ntilde;a ENCONTRADOS</h3>
+      <p>Registros que s&iacute; cruzaron con <code>Compra</code>. Use el campo <strong>Buscar:</strong> para filtrar por c&eacute;dula, n&uacute;mero de operaci&oacute;n o entidad.</p>
+
+      <h3>Pesta&ntilde;a SIN COINCIDENCIA</h3>
+      <p>Registros que no cruzaron. La columna <strong>Motivo</strong> indica la raz&oacute;n:</p>
+      <table>
+        <tr><th>Motivo</th><th>Causa</th></tr>
+        <tr><td>No existe en Compra</td><td>La combinaci&oacute;n c&eacute;dula+n&uacute;mero no existe.</td></tr>
+        <tr><td>Excluido: Borrar=1</td><td>El registro est&aacute; marcado para borrar.</td></tr>
+        <tr><td>Excluido: TipoFactura=X</td><td>El tipo de factura no es 1.</td></tr>
+        <tr><td>Excluido: Estado=X</td><td>El estado no es 10.</td></tr>
+        <tr><td>Excluido: FormaPago=X</td><td>La forma de pago no es 9.</td></tr>
+      </table>
+
+      <div class="note danger">
+        <strong>&#9888; REGLA CRITICA:</strong> Si existen registros en SIN COINCIDENCIA, el sistema <strong>bloquear&aacute;</strong> el Paso 3.
+        Coordine con el &aacute;rea operativa, corrija el archivo y repita desde el Paso 1.
+      </div>
+    </div>
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)" style="background:#ffebee;">
+      <span class="badge s3">3</span>
+      <span class="card-title">PASO 3 &mdash; Ejecutar Venta de Cartera</span>
+      <span class="card-toggle">&#9660;</span>
+    </div>
+    <div class="card-body">
+      <div class="note">Disponible solo cuando el Paso 2 est&aacute; completo y <strong>SIN COINCIDENCIA = 0</strong>.</div>
+
+      <p>Haga clic en <span class="btn-demo btn-red">Ejecutar Venta</span>. El sistema muestra un di&aacute;logo de confirmaci&oacute;n:</p>
+
+      <div style="background:#f5f5f5; border:1px solid #ddd; border-radius:6px; padding:14px; margin:12px 0; font-size:12px;">
+        <strong>Confirma la ejecuci&oacute;n de la Venta de Cartera?</strong><br><br>
+        &nbsp;&nbsp;Entidad destino : [Nombre de la entidad]<br>
+        &nbsp;&nbsp;Numero de lote &nbsp;: [calculado autom&aacute;ticamente]<br><br>
+        Se actualizar&aacute;n N registro(s) en la tabla Compra.<br><br>
+        <span class="btn-demo btn-blue">&nbsp;S&iacute;&nbsp;</span> &nbsp; <span class="btn-demo" style="background:#757575;">&nbsp;No&nbsp;</span>
+      </div>
+
+      <h3>Qu&eacute; actualiza en <code>Compra</code></h3>
+      <table>
+        <tr><th>Campo</th><th>Valor</th></tr>
+        <tr><td>Bloquear</td><td>1</td></tr>
+        <tr><td>CapturaLote</td><td>1</td></tr>
+        <tr><td>NumeroLote</td><td>N&uacute;mero calculado autom&aacute;ticamente</td></tr>
+        <tr><td>idEntidadFinanciera</td><td>ID de la entidad seleccionada</td></tr>
+        <tr><td>FechaTransitoLote</td><td>Fecha y hora actual</td></tr>
+        <tr><td>FechaVenta</td><td>Fecha y hora actual</td></tr>
+        <tr><td>NumeroDeOperacion</td><td>Ruc + '-' + Numero</td></tr>
+        <tr><td>Confirmado</td><td>1</td></tr>
+      </table>
+
+      <div class="note ok">Resultado: la pesta&ntilde;a <strong>ACTUALIZADOS</strong> muestra todos los registros procesados con el lote y fecha de venta asignados.</div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)" style="background:#fff3e0;">
+      <span class="badge faq">?</span>
+      <span class="card-title">PREGUNTAS FRECUENTES</span>
+      <span class="card-toggle">&#9660;</span>
+    </div>
+    <div class="card-body">
+      <h3>Se puede repetir el proceso con el mismo archivo?</h3>
+      <p>S&iacute;, cada vez que se carga un nuevo Excel se limpia la tabla temporal. Sin embargo, si la venta ya fue ejecutada en el Paso 3, los registros en <code>Compra</code> ya fueron modificados y no deben procesarse nuevamente.</p>
+
+      <h3>Por qu&eacute; no aparece mi entidad en el combo?</h3>
+      <p>El combo solo muestra entidades con <code>Activo = 1</code> y <code>idCre_TipoCarte = 1</code> (FIDEICOMISO). Si no aparece, verifique su configuraci&oacute;n en <code>Cre_EntidadFinanciera</code>.</p>
+
+      <h3>Por qu&eacute; la Fecha de Corte no coincide con la del Excel?</h3>
+      <p>Por dise&ntilde;o, la Fecha de Corte proviene de la fecha m&aacute;s antigua en <code>Compra</code> para los registros encontrados. Esto garantiza una fecha confiable independiente del archivo.</p>
+
+      <h3>El n&uacute;mero de lote calculado es incorrecto</h3>
+      <p>Se calcula como <code>MAX(NumeroLote) + 1</code> en <code>Compra</code> filtrando por <code>idTipoFactura = 1</code> y la entidad seleccionada. Si requiere un lote espec&iacute;fico, consulte con el &aacute;rea t&eacute;cnica.</p>
+
+      <h3>No tengo acceso al m&oacute;dulo</h3>
+      <p>El sistema muestra un mensaje de acceso denegado al abrir la pantalla. Solicite al administrador del sistema que le asigne permiso en <strong>Seguridad</strong> (<code>id_seg = 2230</code>).</p>
+    </div>
+  </div>
+
+  <p style="text-align:center; color:#999; font-size:11px; margin:20px 0;">
+    M&oacute;dulo: Fideicomiso &nbsp;|&nbsp; Seguridad id_seg: 2230 &nbsp;|&nbsp; C&oacute;digo: 08320702
+  </p>
+</div>
+
+<script>
+  function toggle(header) {
+    var body = header.nextElementSibling;
+    var icon = header.querySelector('.card-toggle');
+    if (body.classList.contains('open')) {
+      body.classList.remove('open');
+      icon.innerHTML = '&#9660;';
+    } else {
+      body.classList.add('open');
+      icon.innerHTML = '&#9650;';
+    }
+  }
+  // Abrir el primer card por defecto
+  document.querySelector('.card-header').click();
+</script>
+</body>
+</html>
