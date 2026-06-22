@@ -6,7 +6,7 @@ using System.Data;
 namespace Latinium
 {
 	/// <summary>
-	/// Descripción breve de Acceso.
+	/// Descripciï¿½n breve de Acceso.
 	/// </summary>
 	public class Acceso
 	{
@@ -202,7 +202,7 @@ namespace Latinium
 		private bool bVerMayor100dias = true;
 		private bool bSupervisor = true;
 		private bool bAprobado = true;
-		private bool bFecha3Días = true;
+		private bool bFecha3Dï¿½as = true;
 		private bool bEditPulgadas = true;
 		private bool bEditColor = true;
 		private bool bEditProcesador = true;
@@ -257,6 +257,7 @@ namespace Latinium
 		private bool cargopersonal = true;
 		private bool bAnulaCancelado = true;
 		private bool bAnulFacEnviada = true;
+		private bool bConfiguracion = true;
 		/*965	REFINANCIAR
 966	CONDONAR
 967	COBRAR
@@ -2498,15 +2499,15 @@ namespace Latinium
 			}
 		}
 
-		public bool BFecha3Días
+		public bool BFecha3Dï¿½as
 		{
 			get
 			{
-				return bFecha3Días;
+				return bFecha3Dï¿½as;
 			}
 			set
 			{
-				bFecha3Días = value;
+				bFecha3Dï¿½as = value;
 			}
 		}
 
@@ -3151,13 +3152,25 @@ namespace Latinium
 			{
 				return bAnulFacEnviada;
 			}
-			set 
+			set
 			{
 				bAnulFacEnviada = value;
 			}
 		}
 
-		
+		public bool BConfiguracion
+		{
+			get
+			{
+				return bConfiguracion;
+			}
+			set
+			{
+				bConfiguracion = value;
+			}
+		}
+
+
 		public Acceso (C1.Data.C1DataSet ds, string stCodigo)
 		{
 			string nivel = "n_" + MenuLatinium.iNivel.ToString().Trim();
@@ -3728,7 +3741,7 @@ namespace Latinium
 					bAprobado = bHabilita;
 					break;
 				case 1568:
-					bFecha3Días = bHabilita;
+					bFecha3Dï¿½as = bHabilita;
 					break;
 				case 1569:
 					bEditPulgadas = bHabilita;
@@ -3921,6 +3934,9 @@ namespace Latinium
 					break;
 				case 2194:
 					bAnulFacEnviada = bHabilita;
+					break;
+				case 2195:
+					bConfiguracion = bHabilita;
 					break;
 			}
 		}		

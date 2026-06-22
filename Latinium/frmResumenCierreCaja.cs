@@ -11,7 +11,7 @@ using Infragistics.Win.UltraWinGrid;
 namespace Latinium
 {
 	/// <summary>
-	/// Descripción breve de frmResumenCierreCaja.
+	/// DescripciÃ³n breve de frmResumenCierreCaja.
 	/// </summary>
 	public class frmResumenCierreCaja : System.Windows.Forms.Form
 	{
@@ -89,20 +89,21 @@ namespace Latinium
 		private Infragistics.Win.UltraWinEditors.UltraNumericEditor spnCEfectivo;
 		private Infragistics.Win.UltraWinEditors.UltraNumericEditor spnTCTD;
 		private System.Windows.Forms.Button btnResponsables;
+		private System.Windows.Forms.Button btnConfiguracion;
 		/// <summary>
-		/// Variable del diseñador requerida.
+		/// Variable del diseÃ±ador requerida.
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 
 		public frmResumenCierreCaja()
 		{
 			//
-			// Necesario para admitir el Diseñador de Windows Forms
+			// Necesario para admitir el DiseÃ±ador de Windows Forms
 			//
 			InitializeComponent();
 
 			//
-			// TODO: agregar código de constructor después de llamar a InitializeComponent
+			// TODO: agregar cÃ³digo de constructor despuÃ©s de llamar a InitializeComponent
 			//
 		}
 		int iBodegaR = 0;
@@ -112,21 +113,21 @@ namespace Latinium
 		public frmResumenCierreCaja(int IBodegaR , DateTime DtFechaR, int ITurno )
 		{
 			//
-			// Necesario para admitir el Diseñador de Windows Forms
+			// Necesario para admitir el DiseÃ±ador de Windows Forms
 			//
-			 iBodegaR = IBodegaR;
-			 dtFechaR = DtFechaR;
-			 iTurno = ITurno;
+			iBodegaR = IBodegaR;
+			dtFechaR = DtFechaR;
+			iTurno = ITurno;
 			InitializeComponent();
 
 			//
-			// TODO: agregar código de constructor después de llamar a InitializeComponent
+			// TODO: agregar cÃ³digo de constructor despuÃ©s de llamar a InitializeComponent
 			//
 		}
 
 
 		/// <summary>
-		/// Limpiar los recursos que se estén utilizando.
+		/// Limpiar los recursos que se estÃ©n utilizando.
 		/// </summary>
 		protected override void Dispose( bool disposing )
 		{
@@ -140,10 +141,10 @@ namespace Latinium
 			base.Dispose( disposing );
 		}
 
-		#region Código generado por el Diseñador de Windows Forms
+		#region CÃ³digo generado por el DiseÃ±ador de Windows Forms
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido del método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido del mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		private void InitializeComponent()
 		{
@@ -432,6 +433,7 @@ namespace Latinium
 			this.spnCEfectivo = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.spnTCTD = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.btnResponsables = new System.Windows.Forms.Button();
+			this.btnConfiguracion = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.cmbCajero)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.cmbBodega)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dtFecha)).BeginInit();
@@ -1070,12 +1072,12 @@ namespace Latinium
 			ultraGridColumn46.Header.Caption = "Forma de Pago";
 			ultraGridColumn46.Header.VisiblePosition = 2;
 			ultraGridColumn46.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.DropDownList;
-			ultraGridColumn46.Width = 192;
+			ultraGridColumn46.Width = 191;
 			ultraGridColumn47.Header.Caption = "Cuenta Bancaria";
 			ultraGridColumn47.Header.VisiblePosition = 3;
 			ultraGridColumn47.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.DropDownList;
 			ultraGridColumn47.Width = 250;
-			ultraGridColumn48.Header.Caption = "Número de Deposito";
+			ultraGridColumn48.Header.Caption = "NÃºmero de Deposito";
 			ultraGridColumn48.Header.VisiblePosition = 4;
 			ultraGridColumn48.Width = 195;
 			ultraGridColumn49.Header.Caption = "Fecha";
@@ -1291,7 +1293,7 @@ namespace Latinium
 			this.groupBox1.Size = new System.Drawing.Size(272, 472);
 			this.groupBox1.TabIndex = 735;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Resumén";
+			this.groupBox1.Text = "ResumÃ©n";
 			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
 			// 
 			// txtDeposito
@@ -1955,7 +1957,7 @@ namespace Latinium
 			this.btnActualizar.Name = "btnActualizar";
 			this.btnActualizar.Size = new System.Drawing.Size(136, 24);
 			this.btnActualizar.TabIndex = 748;
-			this.btnActualizar.Text = "Actualizar Numeración";
+			this.btnActualizar.Text = "Actualizar NumeraciÃ³n";
 			this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnActualizar.Visible = false;
 			this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -2042,6 +2044,17 @@ namespace Latinium
 			this.btnResponsables.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnResponsables.Click += new System.EventHandler(this.btnResponsables_Click);
 			// 
+			// btnConfiguracion
+			//
+			this.btnConfiguracion.Visible = false;
+			this.btnConfiguracion.Font = new System.Drawing.Font("Tahoma", 8.25F);
+			this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
+			this.btnConfiguracion.Location = new System.Drawing.Point(816, 40);
+			this.btnConfiguracion.Name = "btnConfiguracion";
+			this.btnConfiguracion.Size = new System.Drawing.Size(40, 24);
+			this.btnConfiguracion.TabIndex = 756;
+			this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
+			// 
 			// frmResumenCierreCaja
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
@@ -2052,6 +2065,7 @@ namespace Latinium
 			this.Controls.Add(this.groupBox6);
 			this.Controls.Add(this.lblEstadoDepositos);
 			this.Controls.Add(this.lblEstado);
+			this.Controls.Add(this.btnConfiguracion);
 			this.Controls.Add(this.btnGuardar);
 			this.Controls.Add(this.btnActualizar);
 			this.Controls.Add(this.uGridDepositos);
@@ -2186,6 +2200,17 @@ namespace Latinium
 
 			this.cmbCuentaCorriente.DataSource = Funcion.dvProcedimiento(cdsSeteoF, "Exec CuantaCorrienteLotte");
 			//this.cmbFormaPago.DataSource = Funcion.dvProcedimiento(cdsSeteoF, "Select idFormaPago, FormaPago From CompraFormaPago Where idFormaPago In (1, 2, 3) Order By idFormaPago");
+
+			try
+			{
+				listFPValidaDuplicados.Clear();
+				System.Data.SqlClient.SqlDataReader drFP = Funcion.rEscalarSQL(cdsSeteoF,
+					"SELECT Valor FROM DetalleFormaPagoConfiguracion WHERE Clave='ValidaDepDuplicadoFP' AND Activo=1", true);
+				while (drFP.Read())
+					listFPValidaDuplicados.Add(drFP.GetInt32(0));
+				drFP.Close();
+			}
+			catch { listFPValidaDuplicados.Clear(); }
 		
 			if (iBodegaR > 0)
 			{
@@ -2371,7 +2396,8 @@ namespace Latinium
 				}
 			}
 			if (this.uGridCaja.Rows.Count > 0) this.btnImprimir.Enabled = true;			
-			if (miAcceso.Responsable)this.btnResponsables.Enabled= true;
+			if (miAcceso.Responsable) this.btnResponsables.Enabled = true;
+			if (miAcceso.BConfiguracion) this.btnConfiguracion.Visible = true;
 			#endregion Controles
 		}
 
@@ -2489,7 +2515,7 @@ namespace Latinium
 			//foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.uGridDepositos.Rows.All)
 			//	this.txtDeposito.Value = Convert.ToDecimal(this.txtDeposito.Value) + Convert.ToDecimal(dr.Cells["Valor"].Value);
 
-		//	this.txtDescuadre.Value = (Convert.ToDecimal(this.txtEfectivo.Value) +Convert.ToDecimal(this.txtVoucher.Value)) - Convert.ToDecimal(this.txtDeposito.Value) + Convert.ToDecimal(this.txtGasto.Value);
+			//	this.txtDescuadre.Value = (Convert.ToDecimal(this.txtEfectivo.Value) +Convert.ToDecimal(this.txtVoucher.Value)) - Convert.ToDecimal(this.txtDeposito.Value) + Convert.ToDecimal(this.txtGasto.Value);
 			#endregion Desplazamiento de grilla			
 		}
 
@@ -2627,19 +2653,35 @@ namespace Latinium
 			{
 				for (int i = 0; i < e.Rows.Length; i++)
 				{
-					if (DialogResult.Yes ==	MessageBox.Show("Desea Eliminar Registro?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 
+					int idDetCaja = 0;
+					if (e.Rows[i].Cells["idDetalleCaja"].Value != System.DBNull.Value && e.Rows[i].Cells["idDetalleCaja"].Value != null)
+						idDetCaja = Convert.ToInt32(e.Rows[i].Cells["idDetalleCaja"].Value);
+
+					if (idDetCaja == 0)
 					{
-						Funcion.EjecutaSQL(cdsSeteoF, string.Format("Delete From AsientoDetalle Where idAsiento = {0} Delete From Asiento Where idAsiento = {0}", (int)e.Rows[i].Cells["idAsiento"].Value));
-						Funcion.EjecutaSQL(cdsSeteoF, string.Format("Delete From DetalleCaja Where idDetalleCaja = {0}", (int)e.Rows[i].Cells["idDetalleCaja"].Value));
+						// Fila nueva aÃºn no guardada en BD â€” eliminar solo de la grilla
+						e.DisplayPromptMsg = false;
+						continue;
+					}
+
+					if (DialogResult.Yes == MessageBox.Show("Desea Eliminar Registro?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+					{
+						int idAsiento = 0;
+						if (e.Rows[i].Cells["idAsiento"].Value != System.DBNull.Value && e.Rows[i].Cells["idAsiento"].Value != null)
+							idAsiento = Convert.ToInt32(e.Rows[i].Cells["idAsiento"].Value);
+
+						if (idAsiento > 0)
+							Funcion.EjecutaSQL(cdsSeteoF, string.Format("Delete From AsientoDetalle Where idAsiento = {0} Delete From Asiento Where idAsiento = {0}", idAsiento));
+
+						Funcion.EjecutaSQL(cdsSeteoF, string.Format("Delete From DetalleCaja Where idDetalleCaja = {0}", idDetCaja));
 						e.DisplayPromptMsg = false;
 					}
 					else e.Cancel = true;
 				}
-					
 			}
 			else
 			{
-				MessageBox.Show("No tiene Acceso a eliminar", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);	
+				MessageBox.Show("No tiene Acceso a eliminar", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 				e.Cancel = true;
 			}
 		}
@@ -2765,7 +2807,7 @@ namespace Latinium
 
 				if ((int)this.optTurno.Value == 0)
 				{
-					MessageBox.Show("Debe seleccionar TURNO 1 o 2 para realizar el Depósito?", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);				
+					MessageBox.Show("Debe seleccionar TURNO 1 o 2 para realizar el DepÃ³sito?", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);				
 					return;
 				}
 
@@ -2817,14 +2859,14 @@ namespace Latinium
 						}						
 						if (dr.Cells["Numero"].Value.ToString().Length == 0)
 						{
-							MessageBox.Show("Escriba el número de depósito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+							MessageBox.Show("Escriba el nÃºmero de depÃ³sito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 							this.uGridDepositos.ActiveRow = dr;
 							this.uGridDepositos.ActiveRow.Selected = true;
 							return;
 						}
 						if (dr.Cells["FechaDeposito"].Value == System.DBNull.Value)
 						{
-							MessageBox.Show("Ingrese la fecha de depósito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+							MessageBox.Show("Ingrese la fecha de depÃ³sito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 							this.uGridDepositos.ActiveRow = dr;
 							this.uGridDepositos.ActiveRow.Selected = true;
 							return;
@@ -2852,13 +2894,16 @@ namespace Latinium
 
 					if (Convert.ToDecimal(dr.Cells["Valor"].Value) == 0.00m)
 					{
-						MessageBox.Show("El valor del depósito no puede ser 0.00", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+						MessageBox.Show("El valor del depÃ³sito no puede ser 0.00", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						this.uGridDepositos.ActiveRow = dr;
 						this.uGridDepositos.ActiveRow.Selected = true;
 						return;											
 					}
 				}
 				if (!ValidaDepositosUnicos()) return;
+
+				if (!ValidaDepositosDuplicadosNuevos()) return;
+
 				#endregion Validacion
 	
 				#region Proyecto
@@ -3137,8 +3182,8 @@ namespace Latinium
 					#endregion Genera Asientos Formas de Pago					
 				}
 
-//				string sSQLDiferencias = string.Format("Exec AsientoDiferenciasDeCaja {0}", idCaja);
-//				Funcion.EjecutaSQL(cdsSeteoF, sSQLDiferencias, true);
+				//				string sSQLDiferencias = string.Format("Exec AsientoDiferenciasDeCaja {0}", idCaja);
+				//				Funcion.EjecutaSQL(cdsSeteoF, sSQLDiferencias, true);
 				#endregion Crea Asiento
 
 				this.uGridDepositos.DataSource = Funcion.dvProcedimiento(cdsSeteoF, string.Format("Exec ConsultaDetalleCaja {0}", idCaja));
@@ -3269,7 +3314,7 @@ namespace Latinium
 
 					if (iContDeunaDeposito == 0)
 					{
-						MessageBox.Show("Existen valores DEUNA en la caja que no han sido registrados en los depósitos.",
+						MessageBox.Show("Existen valores DEUNA en la caja que no han sido registrados en los depÃ³sitos.",
 							"Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						return;
 					}
@@ -3318,7 +3363,7 @@ namespace Latinium
 
 			if(iVal == 0)
 			{
-				if (DialogResult.Yes == MessageBox.Show(" ¿Desea imprimir el Cuadre de Caja?,   Si presiona SI ya no podra volver a Reimprimir", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
+				if (DialogResult.Yes == MessageBox.Show(" Â¿Desea imprimir el Cuadre de Caja?,   Si presiona SI ya no podra volver a Reimprimir", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
 				{
 					#region Impresion
 					ParameterFields paramFields = new ParameterFields ();
@@ -3438,6 +3483,7 @@ namespace Latinium
 			int iEst = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select EstadoCaja From Caja Where idCaja = {0}", idCaja));
 
 			if (!ValidaDepositosUnicos()) return;
+			if (!ValidaDepositosDuplicadosNuevos()) return;
 
 			#region Validaciones
 			if (iEst != iEstadoCaja)
@@ -3503,7 +3549,7 @@ namespace Latinium
 						if (iContDeunaDeposito == 0)
 						{
 							MessageBox.Show(
-								"Existen valores DEUNA en la caja que no han sido registrados en los depósitos.","Point Technology",
+								"Existen valores DEUNA en la caja que no han sido registrados en los depÃ³sitos.","Point Technology",
 								MessageBoxButtons.OK,MessageBoxIcon.Stop	);
 							return;
 						}
@@ -3560,7 +3606,7 @@ namespace Latinium
 			string sMensaje = "Cerrar";
 			if (iEstadoCaja == 2) sMensaje = "Abrir";
 
-			if (DialogResult.Yes ==	MessageBox.Show(string.Format("¿Esta seguro de '{0}' esta caja?", sMensaje), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+			if (DialogResult.Yes ==	MessageBox.Show(string.Format("Â¿Esta seguro de '{0}' esta caja?", sMensaje), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
 			{
 				int iNuevoEstado = 1;
 				if (iEstadoCaja == 1) iNuevoEstado = 2;
@@ -3622,7 +3668,7 @@ namespace Latinium
 
 				if ((int)e.Cell.Row.Cells["idOrigen"].Value == 5)
 				{
-					MessageBox.Show("El documento es de devolución de anticipos no puede modificar", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("El documento es de devoluciÃ³n de anticipos no puede modificar", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
 
@@ -3743,17 +3789,53 @@ namespace Latinium
 		
 		}
 
+		private bool ValidaDepositosDuplicadosNuevos()
+		{
+			if (listFPValidaDuplicados.Count == 0) return true;
+
+			foreach (Infragistics.Win.UltraWinGrid.UltraGridRow drA in this.uGridDepositos.Rows.All)
+			{
+				if (Convert.ToInt32(drA.Cells["idDetalleCaja"].Value) != 0) continue;
+				int fpA = Convert.ToInt32(drA.Cells["idFormaPago"].Value);
+				if (!listFPValidaDuplicados.Contains(fpA)) continue;
+				string nA = drA.Cells["Numero"].Value == System.DBNull.Value ? "" : drA.Cells["Numero"].Value.ToString().Trim();
+				if (nA == "") continue;
+				int ctA = Convert.ToInt32(drA.Cells["idCuenta"].Value);
+
+				foreach (Infragistics.Win.UltraWinGrid.UltraGridRow drB in this.uGridDepositos.Rows.All)
+				{
+					if (drA == drB) continue;
+					if (Convert.ToInt32(drB.Cells["idDetalleCaja"].Value) != 0) continue;
+					int fpB = Convert.ToInt32(drB.Cells["idFormaPago"].Value);
+					if (fpA != fpB) continue;
+					string nB = drB.Cells["Numero"].Value == System.DBNull.Value ? "" : drB.Cells["Numero"].Value.ToString().Trim();
+					if (nB == "") continue;
+					int ctB = Convert.ToInt32(drB.Cells["idCuenta"].Value);
+
+					if (ctA == ctB && nA == nB)
+					{
+						MessageBox.Show(
+							"Numero duplicado para la misma forma de pago y cuenta bancaria: " + nA,
+							"Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+						this.uGridDepositos.ActiveRow = drB;
+						this.uGridDepositos.ActiveRow.Selected = true;
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+
 		private bool ValidaDepositosUnicos()
 		{
+			if (listFPValidaDuplicados.Count == 0) return true;
+
 			for (int i = 0; i < this.uGridDepositos.Rows.Count; i++)
 			{
 				UltraGridRow filaActual = this.uGridDepositos.Rows[i];
 
 				if (filaActual.Cells["idFormaPago"].Value == System.DBNull.Value || filaActual.Cells["idFormaPago"].Value == null) continue;
 				if (filaActual.Cells["idCuenta"].Value == System.DBNull.Value || filaActual.Cells["idCuenta"].Value == null) continue;
-				if (filaActual.Cells["FechaDeposito"].Value == System.DBNull.Value || filaActual.Cells["FechaDeposito"].Value == null) continue;
-				if (filaActual.Cells["Valor"].Value == System.DBNull.Value || filaActual.Cells["Valor"].Value == null) continue;
-
 				string numeroActual = "";
 				if (filaActual.Cells["Numero"].Value != System.DBNull.Value && filaActual.Cells["Numero"].Value != null)
 					numeroActual = filaActual.Cells["Numero"].Value.ToString().Trim();
@@ -3761,9 +3843,8 @@ namespace Latinium
 				if (numeroActual.Length == 0) continue;
 
 				int idFormaPagoActual = Convert.ToInt32(filaActual.Cells["idFormaPago"].Value);
+				if (!listFPValidaDuplicados.Contains(idFormaPagoActual)) continue;
 				int idCuentaActual = Convert.ToInt32(filaActual.Cells["idCuenta"].Value);
-				DateTime fechaActual = Convert.ToDateTime(filaActual.Cells["FechaDeposito"].Value).Date;
-				decimal valorActual = Convert.ToDecimal(filaActual.Cells["Valor"].Value);
 
 				for (int j = i + 1; j < this.uGridDepositos.Rows.Count; j++)
 				{
@@ -3771,8 +3852,6 @@ namespace Latinium
 
 					if (filaComparada.Cells["idFormaPago"].Value == System.DBNull.Value || filaComparada.Cells["idFormaPago"].Value == null) continue;
 					if (filaComparada.Cells["idCuenta"].Value == System.DBNull.Value || filaComparada.Cells["idCuenta"].Value == null) continue;
-					if (filaComparada.Cells["FechaDeposito"].Value == System.DBNull.Value || filaComparada.Cells["FechaDeposito"].Value == null) continue;
-					if (filaComparada.Cells["Valor"].Value == System.DBNull.Value || filaComparada.Cells["Valor"].Value == null) continue;
 
 					string numeroComparado = "";
 					if (filaComparada.Cells["Numero"].Value != System.DBNull.Value && filaComparada.Cells["Numero"].Value != null)
@@ -3782,17 +3861,13 @@ namespace Latinium
 
 					int idFormaPagoComparado = Convert.ToInt32(filaComparada.Cells["idFormaPago"].Value);
 					int idCuentaComparado = Convert.ToInt32(filaComparada.Cells["idCuenta"].Value);
-					DateTime fechaComparada = Convert.ToDateTime(filaComparada.Cells["FechaDeposito"].Value).Date;
-					decimal valorComparado = Convert.ToDecimal(filaComparada.Cells["Valor"].Value);
 
 					if (idFormaPagoActual == idFormaPagoComparado &&
 						idCuentaActual == idCuentaComparado &&
-						numeroActual == numeroComparado &&
-						fechaActual == fechaComparada &&
-						valorActual == valorComparado)
+						numeroActual == numeroComparado)
 					{
 						MessageBox.Show(
-							"Existe un deposito repetido con la misma combinacion de Forma de Pago, Cuenta Bancaria, Numero, Fecha y Valor.",
+							"Existe un deposito repetido con la misma Forma de Pago, Cuenta Bancaria y NÃºmero: " + numeroActual,
 							"Point Technology",
 							MessageBoxButtons.OK,
 							MessageBoxIcon.Stop);
@@ -3809,6 +3884,7 @@ namespace Latinium
 		}
 
 		bool bActualiza = false;
+		System.Collections.ArrayList listFPValidaDuplicados = new System.Collections.ArrayList();
 		private void uGridDepositos_AfterCellUpdate(object sender, Infragistics.Win.UltraWinGrid.CellEventArgs e)
 		{
 			if (bActualiza) return;
@@ -3912,6 +3988,12 @@ namespace Latinium
 					e.Cell.Row.Cells[e.Cell.Column.ToString()].Value = e.Cell.OriginalValue;
 					bActualiza = false;
 				}
+				else if (!ValidaDepositosDuplicadosNuevos())
+				{
+					bActualiza = true;
+					e.Cell.Row.Cells[e.Cell.Column.ToString()].Value = e.Cell.OriginalValue;
+					bActualiza = false;
+				}
 			}
 
 		}
@@ -3940,10 +4022,29 @@ namespace Latinium
 
 		private void btnResponsables_Click(object sender, System.EventArgs e)
 		{
-			DateTime fechaSeleccionada = (DateTime)this.dtFecha.Value; 
+			DateTime fechaSeleccionada = (DateTime)this.dtFecha.Value;
 			using (frmResponsablesFactura FRMRF = new frmResponsablesFactura(idCaja,fechaSeleccionada))
 			{
 				FRMRF.ShowDialog();
+			}
+		}
+
+		private void btnConfiguracion_Click(object sender, System.EventArgs e)
+		{
+			using (frmResumenCierreCajaConfiguracion frm = new frmResumenCierreCajaConfiguracion(cdsSeteoF))
+			{
+				frm.ShowDialog();
+				// Recarga la lista de formas de pago a validar por si cambiaron
+				try
+				{
+					listFPValidaDuplicados.Clear();
+					System.Data.SqlClient.SqlDataReader drFP = Funcion.rEscalarSQL(cdsSeteoF,
+						"SELECT Valor FROM DetalleFormaPagoConfiguracion WHERE Clave='ValidaDepDuplicadoFP' AND Activo=1", true);
+					while (drFP.Read())
+						listFPValidaDuplicados.Add(drFP.GetInt32(0));
+					drFP.Close();
+				}
+				catch { listFPValidaDuplicados.Clear(); }
 			}
 		}
 

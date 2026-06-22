@@ -66,6 +66,9 @@ namespace Latinium
 		private Infragistics.Win.UltraWinDataSource.UltraDataSource ultraDataSource3;
 		public Infragistics.Win.UltraWinEditors.UltraOptionSet optPlan;
 		public Infragistics.Win.UltraWinEditors.UltraOptionSet optTarjeta;
+		private System.Windows.Forms.Label label1;
+		public System.Windows.Forms.GroupBox gbDeUna;
+		public Infragistics.Win.UltraWinEditors.UltraTextEditor txtnumeroTRX;
 		string DesPrenda = "";
 
 		public ChequeTCLot(int iFormaDePago, int idBanco, int idTarjeta, int idCuenta, string sNumero, DateTime dtFecha, string sCuentaCorriente, string sVoucher, string sAutorizacion, string sLote, string sReferencia, int idPlan, int idPlazo)
@@ -153,6 +156,7 @@ namespace Latinium
 			Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
 			Infragistics.Win.ValueListItem valueListItem3 = new Infragistics.Win.ValueListItem();
 			Infragistics.Win.ValueListItem valueListItem4 = new Infragistics.Win.ValueListItem();
+			Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
 			this.lblPlazo = new System.Windows.Forms.Label();
 			this.txtNumVoucher = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
 			this.lblAutorizacion = new System.Windows.Forms.Label();
@@ -188,6 +192,9 @@ namespace Latinium
 			this.optPlan = new Infragistics.Win.UltraWinEditors.UltraOptionSet();
 			this.optTarjeta = new Infragistics.Win.UltraWinEditors.UltraOptionSet();
 			this.gbPrendas = new System.Windows.Forms.GroupBox();
+			this.gbDeUna = new System.Windows.Forms.GroupBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.txtnumeroTRX = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumVoucher)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtAutorizacion)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.cmbTarjeta)).BeginInit();
@@ -209,6 +216,8 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.optPlan)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.optTarjeta)).BeginInit();
 			this.gbPrendas.SuspendLayout();
+			this.gbDeUna.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.txtnumeroTRX)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblPlazo
@@ -249,7 +258,7 @@ namespace Latinium
 			this.lblAutorizacion.Name = "lblAutorizacion";
 			this.lblAutorizacion.Size = new System.Drawing.Size(65, 16);
 			this.lblAutorizacion.TabIndex = 162;
-			this.lblAutorizacion.Text = "Autorización";
+			this.lblAutorizacion.Text = "AutorizaciÃ³n";
 			this.lblAutorizacion.Visible = false;
 			// 
 			// lblVoucher
@@ -258,11 +267,11 @@ namespace Latinium
 			this.lblVoucher.AutoSize = true;
 			this.lblVoucher.BackColor = System.Drawing.Color.Transparent;
 			this.lblVoucher.Enabled = false;
-			this.lblVoucher.Location = new System.Drawing.Point(56, 164);
+			this.lblVoucher.Location = new System.Drawing.Point(56, 169);
 			this.lblVoucher.Name = "lblVoucher";
 			this.lblVoucher.Size = new System.Drawing.Size(78, 16);
 			this.lblVoucher.TabIndex = 160;
-			this.lblVoucher.Text = "N. Transacción";
+			this.lblVoucher.Text = "N. TransacciÃ³n";
 			// 
 			// txtAutorizacion
 			// 
@@ -419,7 +428,7 @@ namespace Latinium
 			this.lblNumero.Name = "lblNumero";
 			this.lblNumero.Size = new System.Drawing.Size(44, 16);
 			this.lblNumero.TabIndex = 154;
-			this.lblNumero.Text = "Número";
+			this.lblNumero.Text = "NÃºmero";
 			this.lblNumero.Visible = false;
 			// 
 			// txtNumero
@@ -436,6 +445,7 @@ namespace Latinium
 			this.txtNumero.TabIndex = 3;
 			this.txtNumero.Visible = false;
 			this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
+			this.txtNumero.Validating += new System.ComponentModel.CancelEventHandler(this.txtNumero_Validating);
 			this.txtNumero.ValueChanged += new System.EventHandler(this.txtNumero_ValueChanged);
 			// 
 			// lblCaducidad
@@ -670,7 +680,7 @@ namespace Latinium
 			this.txtDesPrenda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtDesPrenda.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtDesPrenda.Enabled = false;
-			this.txtDesPrenda.Location = new System.Drawing.Point(8, 29);
+			this.txtDesPrenda.Location = new System.Drawing.Point(8, 34);
 			this.txtDesPrenda.Multiline = true;
 			this.txtDesPrenda.Name = "txtDesPrenda";
 			this.txtDesPrenda.Size = new System.Drawing.Size(328, 168);
@@ -703,9 +713,9 @@ namespace Latinium
 			this.optPlan.ItemAppearance = appearance15;
 			this.optPlan.ItemOrigin = new System.Drawing.Point(10, 0);
 			valueListItem1.DataValue = 1;
-			valueListItem1.DisplayText = "Crédito";
+			valueListItem1.DisplayText = "CrÃ©dito";
 			valueListItem2.DataValue = 4;
-			valueListItem2.DisplayText = "Débito";
+			valueListItem2.DisplayText = "DÃ©bito";
 			this.optPlan.Items.Add(valueListItem1);
 			this.optPlan.Items.Add(valueListItem2);
 			this.optPlan.ItemSpacingVertical = 10;
@@ -713,7 +723,7 @@ namespace Latinium
 			this.optPlan.Name = "optPlan";
 			this.optPlan.Size = new System.Drawing.Size(152, 24);
 			this.optPlan.TabIndex = 1;
-			this.optPlan.Text = "Crédito";
+			this.optPlan.Text = "CrÃ©dito";
 			// 
 			// optTarjeta
 			// 
@@ -748,10 +758,44 @@ namespace Latinium
 			this.gbPrendas.TabStop = false;
 			this.gbPrendas.Visible = false;
 			// 
+			// gbDeUna
+			// 
+			this.gbDeUna.Controls.Add(this.label1);
+			this.gbDeUna.Controls.Add(this.txtnumeroTRX);
+			this.gbDeUna.Location = new System.Drawing.Point(8, 16);
+			this.gbDeUna.Name = "gbDeUna";
+			this.gbDeUna.Size = new System.Drawing.Size(344, 200);
+			this.gbDeUna.TabIndex = 177;
+			this.gbDeUna.TabStop = false;
+			this.gbDeUna.Visible = false;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.Color.Transparent;
+			this.label1.Location = new System.Drawing.Point(32, 88);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(85, 16);
+			this.label1.TabIndex = 172;
+			this.label1.Text = "Numero De TRX";
+			// 
+			// txtnumeroTRX
+			// 
+			appearance18.ForeColorDisabled = System.Drawing.Color.Black;
+			this.txtnumeroTRX.Appearance = appearance18;
+			this.txtnumeroTRX.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
+			this.txtnumeroTRX.Location = new System.Drawing.Point(152, 80);
+			this.txtnumeroTRX.MaxLength = 10;
+			this.txtnumeroTRX.Name = "txtnumeroTRX";
+			this.txtnumeroTRX.Size = new System.Drawing.Size(120, 22);
+			this.txtnumeroTRX.TabIndex = 2;
+			this.txtnumeroTRX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnumeroTRX_KeyPress);
+			// 
 			// ChequeTCLot
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
 			this.ClientSize = new System.Drawing.Size(362, 288);
+			this.Controls.Add(this.gbDeUna);
 			this.Controls.Add(this.gbTarjetas);
 			this.Controls.Add(this.lblReferencia);
 			this.Controls.Add(this.lblPlazo);
@@ -806,16 +850,58 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.optPlan)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.optTarjeta)).EndInit();
 			this.gbPrendas.ResumeLayout(false);
+			this.gbDeUna.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.txtnumeroTRX)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 		#endregion
 
+		private void AplicarConfiguracionMaxLength()
+		{
+			// Limites maximos definidos por SP GuardaDetFormaPagoLotte y columnas de DetalleFormaPago
+			const int MAX_NUMVOUCHER = 50;
+			const int MAX_LOTE       = 10;
+			const int MAX_NUMEROTX   = 50;
+
+			try
+			{
+				object v;
+				int val;
+
+				v = Funcion.iEscalarSQL(cdsBanco,
+					"SELECT TOP 1 Valor FROM DetalleFormaPagoConfiguracion WHERE Clave='MaxLengthNumVoucher' AND Activo=1");
+				if (v != null && v.ToString() != "")
+				{
+					val = Convert.ToInt32(v);
+					txtNumVoucher.MaxLength = (val < MAX_NUMVOUCHER) ? val : MAX_NUMVOUCHER;
+				}
+
+				v = Funcion.iEscalarSQL(cdsBanco,
+					"SELECT TOP 1 Valor FROM DetalleFormaPagoConfiguracion WHERE Clave='MaxLengthLote' AND Activo=1");
+				if (v != null && v.ToString() != "")
+				{
+					val = Convert.ToInt32(v);
+					txtLote.MaxLength = (val < MAX_LOTE) ? val : MAX_LOTE;
+				}
+
+				v = Funcion.iEscalarSQL(cdsBanco,
+					"SELECT TOP 1 Valor FROM DetalleFormaPagoConfiguracion WHERE Clave='MaxLengthNumeroTRX' AND Activo=1");
+				if (v != null && v.ToString() != "")
+				{
+					val = Convert.ToInt32(v);
+					txtnumeroTRX.MaxLength = (val < MAX_NUMEROTX) ? val : MAX_NUMEROTX;
+				}
+			}
+			catch { }
+		}
+
 		private void ChequeTCLot_Load(object sender, System.EventArgs e)
-		{	
+		{
 			//this.cmbBanco.DataSource = Funcion.dvProcedimiento(cdsBanco, "Select idBanco, Nombre From Banco Where Caja = 1 and idBanco in (23, 21) Order By Nombre");
 			this.cmbTarjeta.DataSource = Funcion.dvProcedimiento(cdsBanco, "Select idTarjeta, Nombre From TarjetasDeCredito Where idTarjeta < 3");
 			this.cmbPlanes.DataSource = Funcion.dvProcedimiento(cdsBanco, "Select idPlan, Descripcion From Planes Where idPlan In (1, 4) ");
+			AplicarConfiguracionMaxLength();
 
 			if (IFormaDePago == 2)
 			{
@@ -857,7 +943,7 @@ namespace Latinium
 			}
 			else if (IFormaDePago == 3 || IFormaDePago == 11)
 			{
-				this.Text = "TARJETA DE CRÉDITO - DÉBITO";
+				this.Text = "TARJETA DE CRÃ‰DITO - DÃ‰BITO";
 
 				this.gbTarjetas.Visible = true;
 				//				this.dtFecha.CalendarInfo.MinDate = DateTime.Today;
@@ -873,15 +959,15 @@ namespace Latinium
 				if (IdPlan > 0) this.optPlan.Value = IdPlan;
 				//if (IdPlazo > 0) this.cmbPlazo.Value = IdPlazo;
 
-//				if (IdTarjeta == 0)
-//				{
-					//this.cmbBanco.Enabled = false;
-					this.optTarjeta.Enabled = true;
-					this.optPlan.Enabled = true;
-					this.txtLote.Enabled = true;
-					//this.cmbPlazo.Enabled = false;
+				//				if (IdTarjeta == 0)
+				//				{
+				//this.cmbBanco.Enabled = false;
+				this.optTarjeta.Enabled = true;
+				this.optPlan.Enabled = true;
+				this.txtLote.Enabled = true;
+				//this.cmbPlazo.Enabled = false;
 
-					this.optTarjeta.Focus();				
+				this.optTarjeta.Focus();				
 			}	
 			else if (IFormaDePago == 7 || IFormaDePago == 13)
 			{
@@ -922,7 +1008,7 @@ namespace Latinium
 			}
 			else if (IFormaDePago == 11)
 			{
-				this.Text = "TARJETA DE DÉBITO";
+				this.Text = "TARJETA DE DÃ‰BITO";
 
 				if (IdBanco > 0) this.cmbBanco.Value = IdBanco;
 				if (IdTarjeta > 0)	this.cmbTarjeta.Value = IdTarjeta;
@@ -969,6 +1055,34 @@ namespace Latinium
 				this.txtDesPrenda.Enabled = true;
 				this.txtDesPrenda.Value = DesPrenda;
 				this.txtDesPrenda.Focus();
+			}
+			else if (IFormaDePago == 45)
+			{
+				this.Text = "DE UNA";
+
+				// Oculta todos los controles del formulario
+				for (int i = 0; i < this.Controls.Count; i++)
+				{
+					this.Controls[i].Visible = false;
+				}
+
+				// Muestra solo el groupbox de DE UNA
+				this.gbDeUna.Visible = true;
+				this.gbDeUna.Enabled = true;
+
+				// Muestra y habilita el nÃºmero de transacciÃ³n
+				this.txtnumeroTRX.Visible = true;
+				this.txtnumeroTRX.Enabled = true;
+
+				// Si ya viene un nÃºmero guardado, lo carga
+				if (SNumero.Length > 0) this.txtnumeroTRX.Text = SNumero;
+
+				// Deja visibles los botones para grabar/cancelar
+				this.btGrabar.Visible = true;
+				this.btCancelar.Visible = true;
+
+
+				this.txtnumeroTRX.Focus();
 			}
 		}
 
@@ -1061,7 +1175,7 @@ namespace Latinium
 				}
 				else
 				{
-					MessageBox.Show("Escriba el número de la cuenta.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Escriba el nÃºmero de la cuenta.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					this.txtCuentaCheque.Focus();
 				}
 			}
@@ -1095,7 +1209,7 @@ namespace Latinium
 				//				}
 				//				else
 				//				{
-				//					MessageBox.Show("Escriba el número de autorización.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				//					MessageBox.Show("Escriba el nÃºmero de autorizaciÃ³n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				//					return;
 				//				}
 			}
@@ -1342,20 +1456,20 @@ namespace Latinium
 				}
 				if (this.txtCuentaCheque.Text.ToString().Length == 0)
 				{
-					MessageBox.Show("Ingrese el número de cuenta", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Ingrese el nÃºmero de cuenta", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.txtCuentaCheque.Focus();
 					return;					
 				}
 				if (this.txtNumero.Text.ToString().Length == 0)
 				{
-					MessageBox.Show("Ingrese el número de cheque", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Ingrese el nÃºmero de cheque", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.txtNumero.Focus();
 					return;					
 				}
 			}
 			#endregion Cheque
 
-			#region Tarjeta de Crédito/Debito
+			#region Tarjeta de CrÃ©dito/Debito
 			if (IFormaDePago == 3 || IFormaDePago == 11)
 			{
 				//				if (this.cmbBanco.ActiveRow == null)
@@ -1367,7 +1481,7 @@ namespace Latinium
 
 				if (this.optTarjeta.Value == System.DBNull.Value)
 				{
-					MessageBox.Show("Seleccione la Tarjeta de Crédito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Seleccione la Tarjeta de CrÃ©dito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.cmbTarjeta.Focus();
 					return;					
 				}				
@@ -1394,7 +1508,7 @@ namespace Latinium
 
 				//				if (this.txtNumero.Text.ToString().Length == 0)
 				//				{
-				//					MessageBox.Show("Ingrese el Número de Tarjeta", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					MessageBox.Show("Ingrese el NÃºmero de Tarjeta", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 				//					this.txtNumero.Focus();
 				//					return;												
 				//				}
@@ -1428,17 +1542,18 @@ namespace Latinium
 				//				}
 				if (this.txtNumVoucher.Text == "")
 				{
-					MessageBox.Show("Ingrese el número de voucher", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);									
+					MessageBox.Show("Ingrese el nÃºmero de voucher", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);									
 					this.txtNumVoucher.Focus();
 					return;
 				}
 				//				if (this.txtAutorizacion.Text == "")
 				//				{
-				//					this.errorProvider1.SetError(this.txtAutorizacion, "Ingrese la autorización del voucher");
+				//					this.errorProvider1.SetError(this.txtAutorizacion, "Ingrese la autorizaciÃ³n del voucher");
 				//					bOk = false;
 				//				}
+
 			}
-			#endregion Tarjeta de crédito
+			#endregion Tarjeta de crÃ©dito
 
 			#region Transferencia - Deposito
 			if (IFormaDePago == 7 || IFormaDePago == 13)
@@ -1451,7 +1566,7 @@ namespace Latinium
 				}
 				if (this.txtNumero.Text.ToString().Length == 0)
 				{
-					MessageBox.Show("Ingrese el Número de Documento", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Ingrese el NÃºmero de Documento", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.txtNumero.Focus();
 					return;					
 				}
@@ -1467,6 +1582,18 @@ namespace Latinium
 					return;	
 				}
 			}
+			#region DeUna
+			if (IFormaDePago == 45)
+			{
+				if (this.txtnumeroTRX.Text.ToString().Length == 0)
+				{
+					MessageBox.Show("Ingrese el Â´NÃºmero de TRX", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					this.txtLote.Focus();
+					return;
+				}
+			}
+			#endregion DeUna
+
 			#endregion Validacion
 
 			this.DialogResult = DialogResult.OK;			
@@ -1514,7 +1641,7 @@ namespace Latinium
 
 		private void txtNumVoucher_Validating(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			#region Validación de voucher duplicado
+			#region ValidaciÃ³n de voucher duplicado
 
 			string sLote = txtLote.Text.Trim();
 			string sNumVoucher = txtNumVoucher.Text.Trim();
@@ -1532,7 +1659,7 @@ namespace Latinium
 
 				if (contador > 0)
 				{
-					MessageBox.Show("Ya existe un voucher registrado con ese número para el lote ingresado.","Duplicado",	MessageBoxButtons.OK,MessageBoxIcon.Warning);
+					MessageBox.Show("Ya existe un voucher registrado con ese nÃºmero para el lote ingresado.","Duplicado",	MessageBoxButtons.OK,MessageBoxIcon.Warning);
 
 					txtNumVoucher.Text = "";
 					e.Cancel = true;
@@ -1541,6 +1668,28 @@ namespace Latinium
 			}
 
 			#endregion
+		}
+
+		private void txtNumero_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			if (IFormaDePago != 7 && IFormaDePago != 13) return;
+
+			string sNumero = txtNumero.Text.Trim();
+			if (sNumero == "") return;
+
+			string sSQLValida = string.Format(
+				"SELECT COUNT(*) FROM DetalleFormaPago WHERE idFormaPago IN (7,13) AND Numero = '{0}'",
+				sNumero.Replace("'", "''"));
+			int contador = Convert.ToInt32(Funcion.iEscalarSQL(cdsBanco, sSQLValida));
+
+			if (contador > 0)
+			{
+				MessageBox.Show(
+					"Ya existe un deposito/transferencia registrado con ese numero de documento.",
+					"Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				txtNumero.Text = "";
+				e.Cancel = true;
+			}
 		}
 
 		private void txtNumVoucher_Leave(object sender, System.EventArgs e)
@@ -1560,6 +1709,14 @@ namespace Latinium
 			if (sonDigitos && texto.Length > 0 && texto.Length < 4)
 			{
 				txtNumVoucher.Text = texto.PadLeft(4, '0');
+			}
+		}
+
+		private void txtnumeroTRX_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+		{
+			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+			{
+				e.Handled = true;
 			}
 		}
 	}
