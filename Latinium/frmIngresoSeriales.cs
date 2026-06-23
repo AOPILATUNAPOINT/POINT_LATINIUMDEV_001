@@ -70,7 +70,7 @@ namespace Latinium
 		private Infragistics.Win.UltraWinGrid.UltraCombo cmbColor;
 		private Infragistics.Win.Misc.UltraLabel lblColor;
 		private Infragistics.Win.UltraWinDataSource.UltraDataSource ultraDataSource10;
-		public Infragistics.Win.UltraWinEditors.UltraNumericEditor txtAño;
+		public Infragistics.Win.UltraWinEditors.UltraNumericEditor txtAno;
 		private Infragistics.Win.UltraWinGrid.UltraDropDown cmbColores;
 		private Acceso miAcceso;
 
@@ -155,7 +155,7 @@ namespace Latinium
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn10 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Serial_Motor");
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn11 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Serial_Chasis");
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Numero_CPN");
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Año");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("AÃ±o");
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Color", -1, "cmbColores");
 			Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
@@ -174,7 +174,7 @@ namespace Latinium
 			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn10 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Serial_Motor");
 			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn11 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Serial_Chasis");
 			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn12 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Numero_CPN");
-			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn13 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Año");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn13 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("AÃ±o");
 			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn14 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Color");
 			Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
@@ -218,7 +218,7 @@ namespace Latinium
 			this.cmbColor = new Infragistics.Win.UltraWinGrid.UltraCombo();
 			this.ultraDataSource10 = new Infragistics.Win.UltraWinDataSource.UltraDataSource();
 			this.lblColor = new Infragistics.Win.Misc.UltraLabel();
-			this.txtAño = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
+			this.txtAno = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.cmbColores = new Infragistics.Win.UltraWinGrid.UltraDropDown();
 			((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).BeginInit();
@@ -233,7 +233,7 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.txtCPN)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.cmbColor)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource10)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtAño)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtAno)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.cmbColores)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -283,19 +283,19 @@ namespace Latinium
 			ultraGridColumn9.Width = 82;
 			ultraGridColumn10.Case = Infragistics.Win.UltraWinGrid.Case.Upper;
 			ultraGridColumn10.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
-			ultraGridColumn10.Header.Caption = "Número Motor";
+			ultraGridColumn10.Header.Caption = "Numero Motor";
 			ultraGridColumn10.Header.VisiblePosition = 4;
 			ultraGridColumn10.Hidden = true;
 			ultraGridColumn10.Width = 59;
 			ultraGridColumn11.Case = Infragistics.Win.UltraWinGrid.Case.Upper;
 			ultraGridColumn11.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
-			ultraGridColumn11.Header.Caption = "Número Chasis";
+			ultraGridColumn11.Header.Caption = "Numero Chasis";
 			ultraGridColumn11.Header.VisiblePosition = 5;
 			ultraGridColumn11.Hidden = true;
 			ultraGridColumn11.Width = 67;
 			ultraGridColumn12.Case = Infragistics.Win.UltraWinGrid.Case.Upper;
 			ultraGridColumn12.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
-			ultraGridColumn12.Header.Caption = "Número CPN";
+			ultraGridColumn12.Header.Caption = "Numero CPN";
 			ultraGridColumn12.Header.VisiblePosition = 6;
 			ultraGridColumn12.Hidden = true;
 			ultraGridColumn12.Width = 69;
@@ -396,7 +396,7 @@ namespace Latinium
 			this.lblCodigo.Name = "lblCodigo";
 			this.lblCodigo.Size = new System.Drawing.Size(38, 15);
 			this.lblCodigo.TabIndex = 18;
-			this.lblCodigo.Text = "Código";
+			this.lblCodigo.Text = "Codigo";
 			// 
 			// txtArticulo
 			// 
@@ -417,7 +417,7 @@ namespace Latinium
 			this.lblArticulo.Name = "lblArticulo";
 			this.lblArticulo.Size = new System.Drawing.Size(42, 15);
 			this.lblArticulo.TabIndex = 16;
-			this.lblArticulo.Text = "Artículo";
+			this.lblArticulo.Text = "Articulo";
 			// 
 			// txtCodigo
 			// 
@@ -438,7 +438,7 @@ namespace Latinium
 			this.lblNumero.Name = "lblNumero";
 			this.lblNumero.Size = new System.Drawing.Size(44, 15);
 			this.lblNumero.TabIndex = 157;
-			this.lblNumero.Text = "Número";
+			this.lblNumero.Text = "Numero";
 			// 
 			// spnLlegaron
 			// 
@@ -653,7 +653,7 @@ namespace Latinium
 			this.lblCPN.Name = "lblCPN";
 			this.lblCPN.Size = new System.Drawing.Size(84, 15);
 			this.lblCPN.TabIndex = 679;
-			this.lblCPN.Text = "Número de CPN";
+			this.lblCPN.Text = "Numero de CPN";
 			this.lblCPN.Visible = false;
 			// 
 			// lblYear
@@ -663,7 +663,7 @@ namespace Latinium
 			this.lblYear.Name = "lblYear";
 			this.lblYear.Size = new System.Drawing.Size(23, 15);
 			this.lblYear.TabIndex = 681;
-			this.lblYear.Text = "Año";
+			this.lblYear.Text = "Ano";
 			this.lblYear.Visible = false;
 			// 
 			// cmbColor
@@ -710,19 +710,19 @@ namespace Latinium
 			this.lblColor.Text = "Color";
 			this.lblColor.Visible = false;
 			// 
-			// txtAño
+			// txtAno
 			// 
-			this.txtAño.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
-			this.txtAño.Enabled = false;
-			this.txtAño.Location = new System.Drawing.Point(520, 64);
-			this.txtAño.Name = "txtAño";
-			this.txtAño.PromptChar = ' ';
-			this.txtAño.Size = new System.Drawing.Size(72, 22);
-			this.txtAño.SpinButtonAlignment = Infragistics.Win.ButtonAlignment.Left;
-			this.txtAño.TabIndex = 869;
-			this.txtAño.Visible = false;
-			this.txtAño.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAño_KeyDown_1);
-			this.txtAño.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAño_KeyPress);
+			this.txtAno.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
+			this.txtAno.Enabled = false;
+			this.txtAno.Location = new System.Drawing.Point(520, 64);
+			this.txtAno.Name = "txtAno";
+			this.txtAno.PromptChar = ' ';
+			this.txtAno.Size = new System.Drawing.Size(72, 22);
+			this.txtAno.SpinButtonAlignment = Infragistics.Win.ButtonAlignment.Left;
+			this.txtAno.TabIndex = 869;
+			this.txtAno.Visible = false;
+			this.txtAno.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAno_KeyDown_1);
+			this.txtAno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAno_KeyPress);
 			// 
 			// cmbColores
 			// 
@@ -753,7 +753,7 @@ namespace Latinium
 			this.ClientSize = new System.Drawing.Size(807, 399);
 			this.ControlBox = false;
 			this.Controls.Add(this.cmbColores);
-			this.Controls.Add(this.txtAño);
+			this.Controls.Add(this.txtAno);
 			this.Controls.Add(this.lblColor);
 			this.Controls.Add(this.cmbColor);
 			this.Controls.Add(this.lblYear);
@@ -803,7 +803,7 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.txtCPN)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.cmbColor)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource10)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtAño)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtAno)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.cmbColores)).EndInit();
 			this.ResumeLayout(false);
 
@@ -898,17 +898,17 @@ namespace Latinium
 			
 				this.ultraGrid1.DisplayLayout.Bands[0].Columns["Serial_Chasis"].Hidden = false;
 				this.ultraGrid1.DisplayLayout.Bands[0].Columns["Numero_CPN"].Hidden = false;
-				this.ultraGrid1.DisplayLayout.Bands[0].Columns["Año"].Hidden = false;
+				this.ultraGrid1.DisplayLayout.Bands[0].Columns["AÃ±o"].Hidden = false;
 				this.ultraGrid1.DisplayLayout.Bands[0].Columns["Color"].Hidden = false;
 
 				this.lblYear.Visible = true;
 				this.lblColor.Visible = true;
-				this.txtAño.Visible = true;
+				this.txtAno.Visible = true;
 				this.cmbColor.Visible = true;
 
 				this.lblYear.Enabled = true;
 				this.lblColor.Enabled = true;
-				this.txtAño.Enabled = true;
+				this.txtAno.Enabled = true;
 				this.cmbColor.Enabled = true;
 
 			}
@@ -924,12 +924,12 @@ namespace Latinium
 				this.ultraGrid1.DisplayLayout.Bands[0].Columns["Serial_Motor"].Hidden = true;
 				this.ultraGrid1.DisplayLayout.Bands[0].Columns["Serial_Chasis"].Hidden = true;
 				this.ultraGrid1.DisplayLayout.Bands[0].Columns["Numero_CPN"].Hidden = true;
-				this.ultraGrid1.DisplayLayout.Bands[0].Columns["Año"].Hidden = true;
+				this.ultraGrid1.DisplayLayout.Bands[0].Columns["AÃ±o"].Hidden = true;
 				this.ultraGrid1.DisplayLayout.Bands[0].Columns["Color"].Hidden = true;
 
 				this.lblYear.Visible = false;
 				this.lblColor.Visible = false;
-				this.txtAño.Visible = false;
+				this.txtAno.Visible = false;
 				this.cmbColor.Visible = false;
 			}
 
@@ -944,7 +944,7 @@ namespace Latinium
 		}
 
 		//---------------------------------------------------------
-		// OBTIENE EL ESTADO DE FACTURACIÓN DEL DETALLE
+		// OBTIENE EL ESTADO DE FACTURACION DEL DETALLE
 		//---------------------------------------------------------
 		private int ObtenerEstadoFacturacion()
 		{
@@ -972,9 +972,11 @@ namespace Latinium
 				this.ObtenerEstadoFacturacion();
 
 			//-----------------------------------------------------
-			// ESTADO 20 = BLOQUEO TOTAL
+			// ESTADO 20 = BLOQUEO TOTAL (factura en proceso)
+			// Estado 28 NO se bloquea: permite re-recepcionar
+			// mercaderia adicional antes de facturar (Escenario A)
 			//-----------------------------------------------------
-			if (iEstadoPorFacturacion == EstadoPorFacturar || iEstadoPorFacturacion == EstadoRecepcionBodega)
+			if (iEstadoPorFacturacion == EstadoPorFacturar)
 			{
 				this.bSoloVisual = true;
 				DeshabilitarTodo("ESTADO SOLO LECTURA");
@@ -1047,7 +1049,7 @@ namespace Latinium
 			this.txtChasis.Enabled = false;
 			this.txtCPN.Enabled = false;
 
-			this.txtAño.Enabled = false;
+			this.txtAno.Enabled = false;
 
 			this.cmbColor.Enabled = false;
 
@@ -1165,20 +1167,20 @@ namespace Latinium
 					
 					if (this.txtChasis.Text.ToString().Trim().Length == 0)
 					{
-						MessageBox.Show("Ingrese el número de Chasis", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+						MessageBox.Show("Ingrese el numero de Chasis", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						this.txtChasis.Text = "";
 						this.txtChasis.Focus();
 						return;
 					}
 					if (this.txtCPN.Text.ToString().Trim().Length == 0)
 					{
-						MessageBox.Show("Ingrese el número CPN", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+						MessageBox.Show("Ingrese el numero CPN", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						this.txtCPN.Text = "";
 						this.txtCPN.Focus();
 						return;
 					}
 
-					if (!Validacion.vbCampoEnteroVacio (this.txtAño,"Ingrese el año de la moto",2020,10000)) return;
+					if (!Validacion.vbCampoEnteroVacio (this.txtAno,"Ingrese el ano de la moto",2020,10000)) return;
 					if (!Validacion.vbComboVacio(this.cmbColor, "Seleccione el color de la moto")) return;
 				}
 				#endregion Valida ingreso serial
@@ -1273,7 +1275,7 @@ namespace Latinium
 							string sChasis = dr.Cells["Serial_Chasis"].Value.ToString();
 							if (this.txtChasis.Text.ToString() == sChasis)
 							{
-								MessageBox.Show("Ya registro este N° de chasis.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+								MessageBox.Show("Ya registro este N de chasis.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 								ModSerial = false;
 								this.txtChasis.Text = "";
 								this.txtChasis.Focus();
@@ -1291,7 +1293,7 @@ namespace Latinium
 							string Numero_CPN = dr.Cells["Numero_CPN"].Value.ToString();
 							if (this.txtCPN.Text.ToString() == Numero_CPN)
 							{
-								MessageBox.Show("Ya registro este N° de CPN.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+								MessageBox.Show("Ya registro este Numero de CPN.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 								ModSerial = false;
 								this.txtCPN.Text = "";
 								this.txtCPN.Focus();
@@ -1332,14 +1334,14 @@ namespace Latinium
 						{
 							this.ultraGrid1.ActiveRow.Cells["Serial_Chasis"].Value = this.txtChasis.Text.ToString();
 							this.ultraGrid1.ActiveRow.Cells["Numero_CPN"].Value = this.txtCPN.Text.ToString();
-							this.ultraGrid1.ActiveRow.Cells["Año"].Value = (int) this.txtAño.Value;
+							this.ultraGrid1.ActiveRow.Cells["AÃ±o"].Value = (int) this.txtAno.Value;
 							this.ultraGrid1.ActiveRow.Cells["Color"].Value = (int)this.cmbColor.Value;
 						}
 						else
 						{
 							this.ultraGrid1.ActiveRow.Cells["Serial_Chasis"].Value = "";
 							this.ultraGrid1.ActiveRow.Cells["Numero_CPN"].Value = "";
-							this.ultraGrid1.ActiveRow.Cells["Año"].Value = 0;
+							this.ultraGrid1.ActiveRow.Cells["AÃ±o"].Value = 0;
 							this.ultraGrid1.ActiveRow.Cells["Color"].Value = 0;
 						}
 					}
@@ -1440,7 +1442,7 @@ namespace Latinium
 					int iValida = Funcion.iEscalarSQL(cdsSeteoF, sSQL);
 					if (iValida == 0)
 					{
-						MessageBox.Show("La serial no pertenece a la Factura que hace referencia la Nota de crédito seleccionada.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+						MessageBox.Show("La serial no pertenece a la Factura que hace referencia la Nota de credito seleccionada.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						this.txtSerie.Text = "";
 						this.txtSerie.Focus();
 						return;
@@ -1656,7 +1658,7 @@ namespace Latinium
 							
 								this.ultraGrid1.ActiveRow.Cells["Serial_Chasis"].Value = this.txtChasis.Text.ToString();
 								this.ultraGrid1.ActiveRow.Cells["Numero_CPN"].Value = this.txtCPN.Text.ToString();
-								this.ultraGrid1.ActiveRow.Cells["Año"].Value = (int) this.txtAño.Value;
+								this.ultraGrid1.ActiveRow.Cells["AÃ±o"].Value = (int) this.txtAno.Value;
 								this.ultraGrid1.ActiveRow.Cells["Color"].Value = (int) this.cmbColor.Value;
 							}
 							if(iGrupoMoto > 0 && IdTipoFactura != 36)
@@ -1664,7 +1666,7 @@ namespace Latinium
 							
 								this.ultraGrid1.ActiveRow.Cells["Serial_Chasis"].Value = SChasis;
 								this.ultraGrid1.ActiveRow.Cells["Numero_CPN"].Value = SCPN;
-								this.ultraGrid1.ActiveRow.Cells["Año"].Value = Years;
+								this.ultraGrid1.ActiveRow.Cells["AÃ±o"].Value = Years;
 								this.ultraGrid1.ActiveRow.Cells["Color"].Value = Color;
 							}
 						}
@@ -1675,7 +1677,7 @@ namespace Latinium
 							this.ultraGrid1.ActiveRow.Cells["Serial"].Value = this.txtSerie.Text.ToString();	
 							this.ultraGrid1.ActiveRow.Cells["Serial_Chasis"].Value = SChasis;
 							this.ultraGrid1.ActiveRow.Cells["Numero_CPN"].Value = SCPN;
-							this.ultraGrid1.ActiveRow.Cells["Año"].Value = Years;
+							this.ultraGrid1.ActiveRow.Cells["AÃ±o"].Value = Years;
 							this.ultraGrid1.ActiveRow.Cells["Color"].Value = Color;
 
 							this.ultraGrid1.ActiveRow.Cells["Estado"].Value = 0;
@@ -1684,7 +1686,7 @@ namespace Latinium
 					}
 					else
 					{
-						MessageBox.Show("La serial no existe o no pertenece al artículo seleccionado, Comuniquese con Auditoria", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+						MessageBox.Show("La serial no existe o no pertenece al articulo seleccionado, Comuniquese con Auditoria", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						this.txtSerie.Text = "";
 						this.txtSerie.Focus();
 						return;
@@ -1695,7 +1697,7 @@ namespace Latinium
 				this.txtSerie.Text = "";
 				this.txtChasis.Text = "";
 				this.txtCPN.Text = "";
-				this.txtAño.Value = 0;
+				this.txtAno.Value = 0;
 				this.cmbColor.Value = 0;
 				ModSerial = false;
 				
@@ -1717,7 +1719,7 @@ namespace Latinium
 			if (this.bSoloVisual)
 			{
 				MessageBox.Show(
-					"No puede eliminar seriales porque el documento está bloqueado para facturación.",
+					"No puede eliminar seriales porque el documento esta bloqueado para facturacion.",
 					"Point Technology",
 					MessageBoxButtons.OK,
 					MessageBoxIcon.Stop);
@@ -1908,7 +1910,7 @@ namespace Latinium
 				{
 					if (miAcceso.BModificaSeriales)
 					{			
-						if (DialogResult.Yes ==	MessageBox.Show(string.Format("¿Desea Modificar la Serial '{0}'?", Serial), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+						if (DialogResult.Yes ==	MessageBox.Show(string.Format("Desea Modificar la Serial '{0}'?", Serial), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
 						{
 							this.txtSerie.Text = Serial; 
 							ModSerial = true;
@@ -1916,7 +1918,7 @@ namespace Latinium
 						else ModSerial = false;
 					}
 				}
-				else if (DialogResult.Yes ==	MessageBox.Show(string.Format("¿Desea Modificar la Serial '{0}'?", Serial), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+				else if (DialogResult.Yes ==	MessageBox.Show(string.Format("Desea Modificar la Serial '{0}'?", Serial), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
 				{
 					this.txtSerie.Text = Serial; 
 					ModSerial = true;
@@ -1949,12 +1951,12 @@ namespace Latinium
 		{
 			if ((int)this.ultraGrid1.Rows.Count == 0)
 			{
-				MessageBox.Show("Ingrese las seriales del Artículo", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);					
+				MessageBox.Show("Ingrese las seriales del Articulo", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);					
 				this.txtSerie.Focus();
 				return;
 			}
 
-			if (DialogResult.Yes == MessageBox.Show("Antes de Guardar Revise si las Seriales Ingresadas son las Correctas \n\n Una Vez Guardado No Puede Modificar \n\n\n ¿Esta Seguro de Guardar?.", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)) 
+			if (DialogResult.Yes == MessageBox.Show("Antes de Guardar Revise si las Seriales Ingresadas son las Correctas \n\n Una Vez Guardado No Puede Modificar \n\n\n  Esta Seguro de Guardar?.", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)) 
 			{
 				#region Estados
 				int iEstado = 0;
@@ -2003,7 +2005,7 @@ namespace Latinium
  
 								string sSQLGSeriales = string.Format("Exec GuardaSeriales {0}, {1}, '{2}', {3}, {4}, '{5}', '{6}', {7}, {8}", 
 									idSerial, (int)drSeriales.Cells["idArticulo"].Value, drSeriales.Cells["Serial"].Value.ToString(), iEstadoIngreso, iBod,
-									drSeriales.Cells["Serial_Chasis"].Value.ToString(),drSeriales.Cells["Numero_CPN"].Value.ToString(), drSeriales.Cells["Año"].Value.ToString(),
+									drSeriales.Cells["Serial_Chasis"].Value.ToString(),drSeriales.Cells["Numero_CPN"].Value.ToString(), drSeriales.Cells["AÃ±o"].Value.ToString(),
 									drSeriales.Cells["Color"].Value.ToString());
 								oCmdActualiza.CommandText = sSQLGSeriales;
 								int NIdSerial = (int)oCmdActualiza.ExecuteScalar();
@@ -2089,8 +2091,8 @@ namespace Latinium
 						#endregion Actualiza MovimientoSerial
 
 						#region Procesar el articulo
-						if (IdTipoFactura != 8 && IdTipoFactura != 9)
-						{								
+						if (IdTipoFactura != 8 && IdTipoFactura != 9 && IdTipoFactura != 2 && IdTipoFactura != 4 && IdTipoFactura != 36)
+						{
 							string sSQLProcesa = string.Format("Exec EstadoOrdenDeCompra {0}, {1}", IdCompra, IdTipoFactura);
 							oCmdActualiza.CommandText = sSQLProcesa;
 							oCmdActualiza.ExecuteNonQuery();
@@ -2152,7 +2154,7 @@ namespace Latinium
 				this.lblContador.Text = "SERIALES: " + this.ultraGrid1.Rows.Count + " DE " + DCantidad;				
 				this.btnAceptar.Focus();
 			}
-			else if (iFilas == DCantidad) MessageBox.Show("Las seriales de este artículo ya fueron registradas", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			else if (iFilas == DCantidad) MessageBox.Show("Las seriales de este articulo ya fueron registradas", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 		private void btnGeneraSeriales_Click(object sender, System.EventArgs e)
@@ -2173,7 +2175,7 @@ namespace Latinium
 			}
 			if (IFilas == DCantidad)
 			{
-				MessageBox.Show("Ya ha registrado las seriales de este Artículo", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				MessageBox.Show("Ya ha registrado las seriales de este Articulo", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 				this.txtDesde.Focus();
 				return;
 			}
@@ -2184,56 +2186,56 @@ namespace Latinium
 				return;
 			}
 							
-				int iCont = 0;
-				int iContS = 0;
-				string sMensajeGrid = "La(s) Serial(es) siguientes ya estan registradas : \n\n";
-				string sMensajeBDD = "\n\n\n La(s) Serial(es) siguientes ya estan registradas en la Base de Datos : \n\n";
+			int iCont = 0;
+			int iContS = 0;
+			string sMensajeGrid = "La(s) Serial(es) siguientes ya estan registradas : \n\n";
+			string sMensajeBDD = "\n\n\n La(s) Serial(es) siguientes ya estan registradas en la Base de Datos : \n\n";
 
-				string sSQL = string.Format("Exec GeneraSerialesOrdenDeCompra '{0}', '{1}', {2}", this.txtDesde.Text.ToString(), this.txtHasta.Text, IdArticulo);
-				SqlDataReader drGenera = Funcion.rEscalarSQL(cdsSeteoF, sSQL, true);
+			string sSQL = string.Format("Exec GeneraSerialesOrdenDeCompra '{0}', '{1}', {2}", this.txtDesde.Text.ToString(), this.txtHasta.Text, IdArticulo);
+			SqlDataReader drGenera = Funcion.rEscalarSQL(cdsSeteoF, sSQL, true);
 				
-				while (drGenera.Read())
-				{	
-					foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in ultraGrid1.Rows.All)
-					{						
-						if (drGenera.GetString(3) == dr.Cells["Serial"].Value.ToString())
-						{
-							iCont++;
-							sMensajeGrid = sMensajeGrid + drGenera.GetString(3) + "\n";
-						}
-					}
-							
-					if (iCont == 0)
+			while (drGenera.Read())
+			{	
+				foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in ultraGrid1.Rows.All)
+				{						
+					if (drGenera.GetString(3) == dr.Cells["Serial"].Value.ToString())
 					{
-						if (drGenera.GetInt32(5) == - 1)
-						{
-							iCont++;
-							sMensajeBDD = sMensajeBDD + drGenera.GetString(3) + "\n";
-						}
-						else
-						{
-							this.ultraGrid1.Rows.Band.AddNew();
-							this.ultraGrid1.ActiveRow.Cells["idSerial"].Value = drGenera.GetInt32(0);
-							this.ultraGrid1.ActiveRow.Cells["idDetalleSerial"].Value = drGenera.GetInt32(1);
-							this.ultraGrid1.ActiveRow.Cells["idArticulo"].Value = IdArticulo;
-							this.ultraGrid1.ActiveRow.Cells["Serial"].Value = drGenera.GetString(3);
-							this.ultraGrid1.ActiveRow.Cells["Estado"].Value = 9;
-
-							iContS ++;
-
-							int iFilas = this.ultraGrid1.Rows.Count;
-							this.spnLlegaron.Value = DCantidad - iFilas;
-							this.lblContador.Text = "SERIALES: " + iFilas + " DE " + DCantidad;
-						}
+						iCont++;
+						sMensajeGrid = sMensajeGrid + drGenera.GetString(3) + "\n";
 					}
 				}
-				drGenera.Close();
+							
+				if (iCont == 0)
+				{
+					if (drGenera.GetInt32(5) == - 1)
+					{
+						iCont++;
+						sMensajeBDD = sMensajeBDD + drGenera.GetString(3) + "\n";
+					}
+					else
+					{
+						this.ultraGrid1.Rows.Band.AddNew();
+						this.ultraGrid1.ActiveRow.Cells["idSerial"].Value = drGenera.GetInt32(0);
+						this.ultraGrid1.ActiveRow.Cells["idDetalleSerial"].Value = drGenera.GetInt32(1);
+						this.ultraGrid1.ActiveRow.Cells["idArticulo"].Value = IdArticulo;
+						this.ultraGrid1.ActiveRow.Cells["Serial"].Value = drGenera.GetString(3);
+						this.ultraGrid1.ActiveRow.Cells["Estado"].Value = 9;
 
-				if (iContS != int.Parse(this.txtHasta.Text.ToString())) MessageBox.Show(sMensajeGrid + sMensajeBDD,  "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						iContS ++;
+
+						int iFilas = this.ultraGrid1.Rows.Count;
+						this.spnLlegaron.Value = DCantidad - iFilas;
+						this.lblContador.Text = "SERIALES: " + iFilas + " DE " + DCantidad;
+					}
+				}
+			}
+			drGenera.Close();
+
+			if (iContS != int.Parse(this.txtHasta.Text.ToString())) MessageBox.Show(sMensajeGrid + sMensajeBDD,  "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				
-				IFilas = this.ultraGrid1.Rows.Count;
-				if (IFilas == DCantidad) this.btnAceptar.Focus();
-				else this.txtSerie.Focus();
+			IFilas = this.ultraGrid1.Rows.Count;
+			if (IFilas == DCantidad) this.btnAceptar.Focus();
+			else this.txtSerie.Focus();
 		}
 
 		private void txtMotor_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -2302,22 +2304,22 @@ namespace Latinium
 
 		private void txtSerie_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
 		{
-//			if (IdTipoFactura == 36) if (e.KeyCode == Keys.Enter)this.txtAño.Focus();
+			//			if (IdTipoFactura == 36) if (e.KeyCode == Keys.Enter)this.txtAno.Focus();
 		}
 
-		private void txtAño_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+		private void txtAno_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
 		{
-//			if (e.KeyCode == Keys.Enter)this.txtChasis.Focus();
+			//			if (e.KeyCode == Keys.Enter)this.txtChasis.Focus();
 		}
 
 		private void txtChasis_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
 		{
-//			if (e.KeyCode == Keys.Enter)this.txtCPN.Focus();
+			//			if (e.KeyCode == Keys.Enter)this.txtCPN.Focus();
 		}
 
 		private void txtCPN_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
 		{
-//			if (e.KeyCode == Keys.Enter)this.cmbColor.Focus();
+			//			if (e.KeyCode == Keys.Enter)this.cmbColor.Focus();
 		}
 
 		private void cmbColor_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -2341,12 +2343,12 @@ namespace Latinium
 			}
 		}
 
-		private void txtAño_KeyDown_1(object sender, System.Windows.Forms.KeyEventArgs e)
+		private void txtAno_KeyDown_1(object sender, System.Windows.Forms.KeyEventArgs e)
 		{
-//			if (e.KeyCode == Keys.Enter)this.txtChasis.Focus();
+			//			if (e.KeyCode == Keys.Enter)this.txtChasis.Focus();
 		}
 
-		private void txtAño_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+		private void txtAno_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
 		{
 			if (Char.IsControl(e.KeyChar))
 			{

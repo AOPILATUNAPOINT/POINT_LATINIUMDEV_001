@@ -21,7 +21,7 @@ using Infragistics.Win.UltraWinGrid;
 namespace Latinium
 {
 	/// <summary>
-	/// Descripción breve de frmEntregaRecepcionMercaderia.
+	/// Descripcion breve de frmEntregaRecepcionMercaderia.
 	/// </summary>
 	public class frmEntregaRecepcionMercaderia : System.Windows.Forms.Form
 	{
@@ -59,24 +59,24 @@ namespace Latinium
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button btnRecepcionBodega;
 		/// <summary>
-		/// Variable del diseñador requerida.
+		/// Variable del disenador requerida.
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 
 		public frmEntregaRecepcionMercaderia()
 		{
 			//
-			// Necesario para admitir el Diseñador de Windows Forms
+			// Necesario para admitir el Disenador de Windows Forms
 			//
 			InitializeComponent();
 
 			//
-			// TODO: agregar código de constructor después de llamar a InitializeComponent
+			// TODO: agregar codigo de constructor despues de llamar a InitializeComponent
 			//
 		}
 
 		/// <summary>
-		/// Limpiar los recursos que se estén utilizando.
+		/// Limpiar los recursos que se estan utilizando.
 		/// </summary>
 		protected override void Dispose( bool disposing )
 		{
@@ -90,10 +90,10 @@ namespace Latinium
 			base.Dispose( disposing );
 		}
 
-		#region Código generado por el Diseñador de Windows Forms
+		#region Codigo generado por el Disenador de Windows Forms
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido del método con el editor de código.
+		/// Metodo necesario para admitir el Disenador. No se puede modificar
+		/// el contenido del metodo con el editor de codigo.
 		/// </summary>
 		private void InitializeComponent()
 		{
@@ -524,7 +524,7 @@ namespace Latinium
 			this.btnGuiaDeRemision.Name = "btnGuiaDeRemision";
 			this.btnGuiaDeRemision.Size = new System.Drawing.Size(104, 23);
 			this.btnGuiaDeRemision.TabIndex = 670;
-			this.btnGuiaDeRemision.Text = "Guia De Remisión";
+			this.btnGuiaDeRemision.Text = "Gu\u00eda De Remisi\u00f3n";
 			this.btnGuiaDeRemision.Click += new System.EventHandler(this.btnGuiaDeRemision_Click);
 			// 
 			// btnGenerarSeriales
@@ -722,7 +722,7 @@ namespace Latinium
 			ultraGridColumn22.Hidden = true;
 			ultraGridColumn22.Width = 105;
 			ultraGridColumn23.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
-			ultraGridColumn23.Header.Caption = "Número";
+			ultraGridColumn23.Header.Caption = "N\u00famero";
 			ultraGridColumn23.Header.VisiblePosition = 1;
 			ultraGridColumn23.Width = 111;
 			ultraGridColumn24.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
@@ -875,7 +875,7 @@ namespace Latinium
 			this.btnRecepcionBodega.Name = "btnRecepcionBodega";
 			this.btnRecepcionBodega.Size = new System.Drawing.Size(104, 23);
 			this.btnRecepcionBodega.TabIndex = 680;
-			this.btnRecepcionBodega.Text = "Recepción Bodega";
+			this.btnRecepcionBodega.Text = "Recepci\u00f3n Bodega";
 			this.btnRecepcionBodega.Click += new System.EventHandler(this.btnRecepcionBodega_Click);
 			// 
 			// frmEntregaRecepcionMercaderia
@@ -911,7 +911,7 @@ namespace Latinium
 			this.KeyPreview = true;
 			this.MaximizeBox = false;
 			this.Name = "frmEntregaRecepcionMercaderia";
-			this.Text = "Entrega y Recepción Mercaderia";
+			this.Text = "Entrega y Recepci\u00f3n Mercader\u00eda";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmEntregaRecepcionMercaderia_KeyDown);
 			this.Load += new System.EventHandler(this.frmEntregaRecepcionMercaderia_Load);
 			((System.ComponentModel.ISupportInitialize)(this.cdsSeteoF)).EndInit();
@@ -937,9 +937,9 @@ namespace Latinium
 
 		private void frmEntregaRecepcionMercaderia_Load(object sender, System.EventArgs e)
 		{
-			if(MenuLatinium.stUsuario == "AOPILATUÑA")
+			if(MenuLatinium.stUsuario == "AOPILATU?A")
 			{
-			 this.button1.Visible = true;
+				this.button1.Visible = true;
 			}
 
 			Funcion.Resolucion(this, this.Height, this.Width);
@@ -1008,19 +1008,13 @@ namespace Latinium
 		private void ConfigurarBotonPorFacturar()
 		{
 			int iTipoFactura = (int)this.cmbTipoFactura.Value;
-
-			//---------------------------------------------------------
-			// SOLO ORDEN DE COMPRA (ID 2) PUEDE USAR RECEPCIÓN BODEGA
-			//---------------------------------------------------------
-			if (iTipoFactura == 2)
+			if (iTipoFactura == 2 &&
+				(this.cmbEstados.Text == "APROBADO" ||
+				this.cmbEstados.Text == "RECEPCIÃ“N BODEGA"))
 			{
 				this.btnRecepcionBodega.Enabled = true;
 				return;
 			}
-
-			//-----------------------------------------------------
-			// CUALQUIER OTRO TIPO SE BLOQUEA
-			//-----------------------------------------------------
 			this.btnRecepcionBodega.Enabled = false;
 		}
 
@@ -1042,12 +1036,13 @@ namespace Latinium
 			{								
 				this.cmbEstados.Items.Add("PENDIENTE");							
 			}								
-			if ((int)this.cmbTipoFactura.Value == 2 )								
-			{								
-				//				this.cmbEstados.Items.Add("PROCESADO");		
-				this.cmbEstados.Items.Add("RECEPCIÓN BODEGA");	
-				this.cmbEstados.Items.Add("FACTURADO");							
-				this.cmbEstados.Items.Add("APROBADO");							
+			if ((int)this.cmbTipoFactura.Value == 2 )
+			{
+				//				this.cmbEstados.Items.Add("PROCESADO");
+				this.cmbEstados.Items.Add("RECEPCI\u00d3N BODEGA");
+				this.cmbEstados.Items.Add("POR FACTURAR");
+				this.cmbEstados.Items.Add("FACTURADO");
+				this.cmbEstados.Items.Add("APROBADO");
 			}								
 											
 			if ( (int)this.cmbTipoFactura.Value == 11 || (int)this.cmbTipoFactura.Value == 13) /* ORDEN DE COMPRA - PEDIDO - RESERVA */								
@@ -1057,7 +1052,7 @@ namespace Latinium
 											
 				this.cmbEstados.Text = "PENDIENTE";							
 			}								
-			else if ((int)this.cmbTipoFactura.Value == 44) /* CONSIGNACIÓN */								
+			else if ((int)this.cmbTipoFactura.Value == 44) /* CONSIGNACI?N */								
 			{								
 				this.cmbEstados.Items.Add("PROCESADO");							
 				this.cmbEstados.Items.Add("LIQUIDADO");							
@@ -1072,13 +1067,13 @@ namespace Latinium
 				this.btnImprimir.Enabled = true;							
 				this.cmbEstados.Text = "PENDIENTE";							
 			}								
-			else if ((int)this.cmbTipoFactura.Value == 7) /* ORDÉN DE PRODUCCIÓN OBSEQUIOS */ 								
+			else if ((int)this.cmbTipoFactura.Value == 7) /* ORDEN DE PRODUCCI?N OBSEQUIOS */ 								
 			{								
 				this.cmbEstados.Items.Add("TERMINADO");							
 											
 				this.cmbEstados.Text = "PENDIENTE";							
 			}								
-			else /* ORDÉN DE PRODUCCIÓN COMBOS */ 								
+			else /* ORDEN DE PRODUCCI?N COMBOS */ 								
 			{								
 				this.cmbEstados.Items.Add("PROCESADO");							
 											
@@ -1164,8 +1159,12 @@ namespace Latinium
 			if (this.cmbEstados.Text.ToString() == "PROCESADO")
 				Estado = 3;
 
-			if (this.cmbEstados.Text.ToString() == "RECEPCIÓN BODEGA")
+			if (this.cmbEstados.Text.ToString() == "RECEPCI\u00d3N BODEGA")
 				Estado = 28;
+
+			if (this.cmbEstados.Text.ToString() == "POR FACTURAR" &&
+				(int)this.cmbTipoFactura.Value == 2)
+				Estado = 20;
 
 			if (this.cmbEstados.Text.ToString() == "TERMINADO")
 				Estado = 4;
@@ -1222,7 +1221,7 @@ namespace Latinium
 				ConfigurarVistaNormal();
 			}
 
-			// cierre de edición (IMPORTANTE en Infragistics viejo)
+			// cierre de edicion (IMPORTANTE en Infragistics viejo)
 			this.uGridTransacciones.PerformAction(UltraGridAction.ExitEditMode);
 
 			// repaint real en .NET 1.1
@@ -1246,7 +1245,7 @@ namespace Latinium
 			}
 			else 
 			{
-				this.uGridTransacciones.DisplayLayout.Bands[0].Columns["Codigo"].Header.Caption = "Codigo";
+				this.uGridTransacciones.DisplayLayout.Bands[0].Columns["Codigo"].Header.Caption = "C\u00f3digo";
 				this.uGridTransacciones.DisplayLayout.Bands[0].Columns["Nombre"].Header.Caption = "Nombre";
 			}
 			#endregion Encabezado Columnas Codigo y Nombre
@@ -1321,6 +1320,8 @@ namespace Latinium
 				}
 			}
 			else this.btnProcesar.Enabled = false;
+
+			this.ConfigurarBotonPorFacturar();
 			#endregion Controles
 		}
 
@@ -1329,7 +1330,7 @@ namespace Latinium
 		{
 			UltraGridBand band = this.uGridArticulos.DisplayLayout.Bands[0];
 
-			// Mostrar columnas nuevas de facturación
+			// Mostrar columnas nuevas de facturacion
 			if (band.Columns.Exists("EstadoFacturacionDescripcion"))
 				band.Columns["EstadoFacturacionDescripcion"].Hidden = false;
 
@@ -1342,6 +1343,9 @@ namespace Latinium
 			if (band.Columns.Exists("CantidadPendiente"))
 				band.Columns["CantidadPendiente"].Hidden = false;
 
+			if (band.Columns.Exists("CantidadRecibida"))
+				band.Columns["CantidadRecibida"].Hidden = false;
+
 			//  Opcional: ocultar columnas antiguas si no se usan en este tipo
 			// (solo si realmente quieres reemplazar la vista)
 			// band.Columns["Codigo"].Hidden = true;
@@ -1352,7 +1356,7 @@ namespace Latinium
 		{
 			UltraGridBand band = this.uGridArticulos.DisplayLayout.Bands[0];
 
-			// Ocultar columnas de facturación
+			// Ocultar columnas de facturacion
 			if (band.Columns.Exists("EstadoFacturacionDescripcion"))
 				band.Columns["EstadoFacturacionDescripcion"].Hidden = true;
 
@@ -1364,6 +1368,9 @@ namespace Latinium
 
 			if (band.Columns.Exists("CantidadPendiente"))
 				band.Columns["CantidadPendiente"].Hidden = true;
+
+			if (band.Columns.Exists("CantidadRecibida"))
+				band.Columns["CantidadRecibida"].Hidden = true;
 		}
 		#endregion
 
@@ -1443,25 +1450,25 @@ namespace Latinium
 			{
 				if ((int)this.cmbTipoFactura.Value != 7)
 				{
-					MessageBox.Show("Se genera seriales solo para Ordenes de producción.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Se genera seriales solo para Ordenes de producci\u00f3n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
 				
 				if (this.uGridTransacciones.Rows.Count == 0)
 				{
-					MessageBox.Show("No existen Ordenes de Producción, intente con otros parametros de busqueda.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("No existen Ordenes de Producci\u00f3n, intente con otros par\u00e1metros de b\u00fasqueda.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
 
 				if (this.uGridTransacciones.ActiveRow == null || this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value == System.DBNull.Value)
 				{
-					MessageBox.Show("Seleccione una Orden de Produccion.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Seleccione una Orden de Producci\u00f3n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
 
 				if (this.cmbEstados.Text.ToString().Trim() == "PENDIENTE") 
 				{
-					if (DialogResult.No == MessageBox.Show("¿Seguro de generar las seriales para esta Orden de Produccion?, \n\n Este Proceso es irreversible.", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) return;
+					if (DialogResult.No == MessageBox.Show("\u00bfSeguro de generar las seriales para esta Orden de Producci\u00f3n?\n\n Este Proceso es irreversible.", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) return;
 			
 					#region Generar
 					using (SqlConnection oConexion = new SqlConnection("Password=Bl45o6$9;Persist Security Info=True;User ID= " + MenuLatinium.stUsuario + ";Initial Catalog=" + MenuLatinium.stDirFacturacion + ";Data Source=" + MenuLatinium.stDirServidor + "; max pool size=1024"))
@@ -1495,9 +1502,9 @@ namespace Latinium
 						}
 						catch(Exception ex)
 						{
-								oTransaction.Rollback();
-								oConexion.Close();
-								MessageBox.Show(string.Format("Commit Exception Type : {0} {1}", ex.GetType(), ex.Message), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);						
+							oTransaction.Rollback();
+							oConexion.Close();
+							MessageBox.Show(string.Format("Commit Exception Type : {0} {1}", ex.GetType(), ex.Message), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);						
 						}
 						finally
 						{
@@ -1514,7 +1521,7 @@ namespace Latinium
 			}
 			catch(Exception oExc)
 			{
-				MessageBox.Show(oExc.ToString() + " Error del Sistema Comuniquese Con Sistemas", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);	
+				MessageBox.Show(oExc.ToString() + " Error del Sistema Comun\u00edquese Con Sistemas", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);	
 			}
 		}
 
@@ -1536,7 +1543,7 @@ namespace Latinium
 						if (GuiaDeRemision.bNuevo) 
 							if (iBodega == 95) iBodega = 156;
 
-							GuiaDeRemision.txtNumero.Text = Funcion.sEscalarSQL(cdsSeteoF, string.Format("Exec NumeracionLocales 30, {0}, 0", iBodega));
+					GuiaDeRemision.txtNumero.Text = Funcion.sEscalarSQL(cdsSeteoF, string.Format("Exec NumeracionLocales 30, {0}, 0", iBodega));
 
 					#region Guarda Guia de Remision
 					using (frmNumeracionGuiaRemision Numero = new frmNumeracionGuiaRemision(GuiaDeRemision.txtNumero.Text))
@@ -1636,17 +1643,17 @@ namespace Latinium
 			Compra.CurrentValues.Add (IdCompra);
 			paramFields.Add (Compra);
 
-//			ParameterField Factura = new ParameterField ();
-//			ParameterDiscreteValue TipoFactura = new ParameterDiscreteValue ();
-//			Factura.ParameterFieldName = "@idTipofactura";
-//			TipoFactura.Value = (int)this.cmbTipoFactura.Value;
-//			Factura.CurrentValues.Add (TipoFactura);
-//			paramFields.Add (Factura);
+			//			ParameterField Factura = new ParameterField ();
+			//			ParameterDiscreteValue TipoFactura = new ParameterDiscreteValue ();
+			//			Factura.ParameterFieldName = "@idTipofactura";
+			//			TipoFactura.Value = (int)this.cmbTipoFactura.Value;
+			//			Factura.CurrentValues.Add (TipoFactura);
+			//			paramFields.Add (Factura);
 
-//			Reporte miRep = new Reporte("GuiaDeRemision.rpt", "");
+			//			Reporte miRep = new Reporte("GuiaDeRemision.rpt", "");
 			Reporte miRep = new Reporte("Doc_GR.rpt", "");
 			miRep.MdiParent = this.MdiParent;
-			miRep.Titulo("Guia de Remisión");
+			miRep.Titulo("Gu\u00eda de Remisi\u00f3n");
 			miRep.crVista.ParameterFieldInfo = paramFields;
 			miRep.Show();
 			
@@ -1654,10 +1661,10 @@ namespace Latinium
 		}
 
 		/// <summary>
-		/// Llama al servicio de transferencia con el código dado
+		/// Llama al servicio de transferencia con el codigo dado
 		/// y maneja la respuesta.
 		/// </summary>
-		/// <param name="codigoTransf">Código de la transferencia</param>
+		/// <param name="codigoTransf">Codigo de la transferencia</param>
 		private void btnProcesar_Click(object sender, System.EventArgs e)
 		{
 			/*
@@ -1734,7 +1741,7 @@ namespace Latinium
 
 			if (Funcion.bEscalarSQL(cdsSeteoF, string.Format("Select Borrar From Compra Where idCompra = {0}", (int)this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value), true))
 			{
-				MessageBox.Show("El documento esta Anulado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				MessageBox.Show("El documento est\u00e1 Anulado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 				this.Informacion();
 				return;
 			}
@@ -1796,7 +1803,7 @@ namespace Latinium
 				{					
 					if (!miAcceso.BProcesarSerialesFaltantes)
 					{
-						MessageBox.Show(string.Format("Ingrese todas las Seriales del Articulo : '{0}'", dr.Cells["Codigo"].Value.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+						MessageBox.Show(string.Format("Ingrese todas las Seriales del Art\u00edculo : '{0}'", dr.Cells["Codigo"].Value.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						this.uGridArticulos.ActiveRow = dr;
 						this.uGridArticulos.ActiveRow.Selected = true;
 						return;
@@ -1806,14 +1813,14 @@ namespace Latinium
 						#region Validar Notas
 						if (dr.Cells["Notas"].Value.ToString().Length == 0)
 						{
-							MessageBox.Show(string.Format("Del articulo : '{0}' no se ha registrado todas las seriales \n\nIngrese el motivo por el cual no se transfiere completo", dr.Cells["Codigo"].Value.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+							MessageBox.Show(string.Format("Del art\u00edculo : '{0}' no se ha registrado todas las seriales \n\nIngrese el motivo por el cual no se transfiere completo", dr.Cells["Codigo"].Value.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 							this.uGridArticulos.ActiveRow = dr;
 							this.uGridArticulos.ActiveRow.Selected = true;
 							return;
 						}
 						if (dr.Cells["Notas"].Value.ToString().Length < 20)
 						{
-							MessageBox.Show(string.Format("Del articulo : '{0}' no se ha registrado todas las seriales \n\nDebe ingresar el motivo con un minimo de 20 caracteres", dr.Cells["Codigo"].Value.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+							MessageBox.Show(string.Format("Del art\u00edculo : '{0}' no se ha registrado todas las seriales \n\nDebe ingresar el motivo con un m\u00ednimo de 20 caracteres", dr.Cells["Codigo"].Value.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 							this.uGridArticulos.ActiveRow = dr;
 							this.uGridArticulos.ActiveRow.Selected = true;
 							return;
@@ -1854,7 +1861,7 @@ namespace Latinium
 								{
 									sVSerial = Funcion.sEscalarSQL(cdsSeteoF, string.Format("Exec [ValidaSerialesConteoMensaje] {0}", iVSerial));
 
-									MessageBox.Show("" + sVSerial + "\n\n  No existe por favor comunicarse con el área de \n\n Auditoria Ext: 2011 / 2010 ", "Point Technology");
+									MessageBox.Show("" + sVSerial + "\n\n  No existe por favor comunicarse con el \u00e1rea de \n\n Auditoria Ext: 2011 / 2010 ", "Point Technology");
 									return;
 								}
 							}
@@ -1864,7 +1871,7 @@ namespace Latinium
 			}
 			#endregion Valida Existencia Invenatrio enero
 
-			if (DialogResult.No == MessageBox.Show("¿Esta seguro de procesar la transferencia seleccionada?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)) 
+			if (DialogResult.No == MessageBox.Show("\u00bfEst\u00e1 seguro de procesar la transferencia seleccionada?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
 			{
 				this.Informacion();
 				return;
@@ -1901,11 +1908,11 @@ namespace Latinium
 			{
 				if (!miAcceso.BProcesarSerialesFaltantes) 
 				{
-					MessageBox.Show("Hay Articulos que no se han cargado todas las Seriales \n\n Ingrese todas las Seriales o Consulte al Administrador", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+					MessageBox.Show("Hay Art\u00edculos que no se han cargado todas las Seriales \n\n Ingrese todas las Seriales o Consulte al Administrador", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
 					return;
 				}
 
-				if (DialogResult.No == MessageBox.Show("La transferencia seleccionada tiene articulos que no se han cargado todas las seriales. \n\n\n\n" + sMensaje + "\n\n\n\n ¿Esta seguro de procesarla?", 
+				if (DialogResult.No == MessageBox.Show("La transferencia seleccionada tiene art\u00edculos que no se han cargado todas las seriales. \n\n\n\n" + sMensaje + "\n\n\n\n \u00bfEst\u00e1 seguro de procesarla?",
 					"Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)) return;
 			}
 			#endregion Muestra mensaje de confirmacion validando si hay permiso de procesar faltantes
@@ -1916,7 +1923,7 @@ namespace Latinium
 			string sSQLBloqueo = string.Format("Exec RegistraBloqueoTransacciones 0, 1, {0}, 1", (int)this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value);
 			idBloqueaTransacciones = Funcion.iEscalarSQL(cdsSeteoF, sSQLBloqueo, true);
 
-			#region Guia de remisión en transferencia de salida
+			#region Guia de remision en transferencia de salida
 			bool bCreaGuiaDeRemision = false;
 			if ((int)this.cmbTipoFactura.Value == 8)
 			{
@@ -1939,7 +1946,7 @@ namespace Latinium
 					}
 				}
 			}
-			#endregion Guia de remisión en transferencia de salida
+			#endregion Guia de remision en transferencia de salida
 
 			using (SqlConnection oConexion = new SqlConnection("Password=Bl45o6$9;Persist Security Info=True;User ID= " + MenuLatinium.stUsuario + ";Initial Catalog=" + MenuLatinium.stDirFacturacion + ";Data Source=" + MenuLatinium.stDirServidor + ";Max Pool Size = 1024;"))
 			{
@@ -1993,9 +2000,9 @@ namespace Latinium
 					#endregion Mail de control - Actualiza cantidad transferido en conteo de inventario
 
 					#region Asiento
-//					oCmdActualiza.CommandText = string.Format("Exec AsientoTransferencias {0}, {1}", 
-//						(int)this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value, (int)this.cmbTipoFactura.Value);
-//					oCmdActualiza.ExecuteNonQuery();
+					//					oCmdActualiza.CommandText = string.Format("Exec AsientoTransferencias {0}, {1}", 
+					//						(int)this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value, (int)this.cmbTipoFactura.Value);
+					//					oCmdActualiza.ExecuteNonQuery();
 					#endregion Asiento
 
 					#region Inventario
@@ -2012,7 +2019,7 @@ namespace Latinium
 					if ((int)this.cmbTipoFactura.Value == 9 && MenuLatinium.stDirFacturacion == "POINT")
 					{
 						oCmdActualiza.CommandText = string.Format("Exec ERMIBRecepcionIncompleta {0}", (int)this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value);
-            int idCompraIMR = (int)oCmdActualiza.ExecuteScalar();
+						int idCompraIMR = (int)oCmdActualiza.ExecuteScalar();
 
 						if (idCompraIMR > 0)
 						{
@@ -2021,7 +2028,7 @@ namespace Latinium
 							oCmdActualiza.ExecuteNonQuery();
 							#endregion Inventario
 
-							MessageBox.Show("Ajuste de ingreso de mercaderia no recibida generado correctamente", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							MessageBox.Show("Ajuste de ingreso de mercader\u00eda no recibida generado correctamente", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					
 							#region Imprime el reporte
 							string stFiltro = "{Compra.idCompra} = " + idCompraIMR.ToString();					
@@ -2042,11 +2049,11 @@ namespace Latinium
 
 					oTransaction.Commit();
 
-					if ((int)this.cmbTipoFactura.Value == 8 && MenuLatinium.stIdDB == 1) // Solo salida, Solo POINT
+					if ((int)this.cmbTipoFactura.Value == 8 && (MenuLatinium.stIdDB == 1 || MenuLatinium.stIdDB == 3)) // Solo salida, Solo POINT
 					{
 						string codigoTransf = this.uGridTransacciones.ActiveRow.Cells["Numero"].Value.ToString();
     
-						// Llamada simple al servicio (ya no ensuciamos el front con lógica de logs ni API)
+						// Llamada simple al servicio (ya no ensuciamos el front con logica de logs ni API)
 						TransferenciaService service = new TransferenciaService();
 						service.EjecutarProcesamiento(codigoTransf);
 					}
@@ -2095,204 +2102,204 @@ namespace Latinium
 			{
 
 				#region Codigo Anterior
-//				#region Validacion
-//				int idRegistroBloqueaERMercaderia = 0;
-//				int idBloqueaTransacciones = 0;
-//
-//				#region Transacciones
-//				if (this.uGridTransacciones.Rows.Count == 0)
-//				{
-//					MessageBox.Show("No existen documentos con estos parámetros de búsqueda.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					return;
-//				}
-//
-//				if (this.uGridTransacciones.ActiveRow == null)
-//				{
-//					MessageBox.Show("Seleccione un documento", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					return;
-//				}
-//
-//				if (Funcion.ValidaBloqueo((int)this.uGridArticulos.ActiveRow.Cells["idCompra"].Value, 1, cdsSeteoF)) return;	
-//
-//				#region Estado Documento
-//				if (Funcion.bEscalarSQL(cdsSeteoF, string.Format("Select Borrar From Compra Where idCompra = {0}", (int)this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value), true))
-//				{
-//					MessageBox.Show("El documento esta Anulado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					this.Informacion();
-//					return;
-//				}
-//				int iEstadoDoc = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select Estado From Compra Where idCompra = {0}", 
-//					(int)this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value));
-//				if (!miAcceso.BVerSerialesProcesadas && iEstadoDoc == 3)
-//				{
-//					MessageBox.Show("El documento ya fue Procesado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					this.Informacion();
-//					return;
-//				}
-//				if (!miAcceso.BVerSerialesProcesadas && iEstadoDoc == 9)
-//				{
-//					MessageBox.Show("El documento ya fue Facturado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					this.Informacion();
-//					return;
-//				}
-//				#endregion Estado Documento			
-//				#endregion Transacciones
-//
-//				#region Articulos
-//				if (this.uGridArticulos.ActiveRow == null)
-//				{
-//					MessageBox.Show("Seleccione un documento", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					return;
-//				}
-//
-//				if (this.uGridArticulos.ActiveRow.Cells["idArticulo"].Value == System.DBNull.Value)
-//				{
-//					MessageBox.Show("Seleccione un item", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					return;
-//				}
-//
-//				if ((int)this.uGridArticulos.ActiveRow.Cells["idArticulo"].Value == 0)
-//				{
-//					MessageBox.Show("Seleccione un item", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					return;
-//				}
-//
-//				if ((int)this.uGridArticulos.ActiveRow.Cells["Cantidad"].Value == 0)
-//				{
-//					MessageBox.Show("Cantidad en 0", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					return;
-//				}
-//				#region Estado Articulos
-//				if (!Funcion.bEscalarSQL(cdsSeteoF, string.Format("Declare @Res Bit = 0 If Exists(Select idCompra From DetCompra Where idDetCompra = {0}) Set @Res = 1 Select @Res", 
-//					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value), true))
-//				{
-//					MessageBox.Show("El Articulo Fue Eliminado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					this.Informacion();
-//					return;
-//				}
-//				if (!Funcion.bEscalarSQL(cdsSeteoF, string.Format("Declare @Res Bit = 0 If ((Select idArticulo From DetCompra Where idDetCompra = {0}) = {1}) Set @Res = 1 Select @Res", 
-//					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value, (int)this.uGridArticulos.ActiveRow.Cells["idArticulo"].Value), true))
-//				{
-//					MessageBox.Show("Se ha cambiado de producto", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					this.Informacion();
-//					return;
-//				}
-//				if (!Funcion.bEscalarSQL(cdsSeteoF, string.Format("Declare @Res Bit = 0 If ((Select Cantidad From DetCompra Where idDetCompra = {0}) = {1}) Set @Res = 1 Select @Res", 
-//					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value, (int)this.uGridArticulos.ActiveRow.Cells["Cantidad"].Value), true))
-//				{
-//					MessageBox.Show(string.Format("Se ha modificado la cantidad a procesar del articulo '{0}'", this.uGridArticulos.ActiveRow.Cells["Codigo"].Value.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					this.Informacion();
-//					return;
-//				}								
-//				bool bEstadoSerial = Funcion.bEscalarSQL(cdsSeteoF, string.Format("Select EstadoSerial From DetCompra Where idDetCompra = {0}", 
-//					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value), true);
-//				if (!miAcceso.BVerSerialesProcesadas && bEstadoSerial)
-//				{
-//					MessageBox.Show("El Articulo ya esta PROCESADO", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//					this.Informacion();
-//					return;
-//				}
-//				#endregion Estado Articulos
-//				#endregion Articulos
-//
-//				#region Valida Usuario Activo
-//				string sSQLValRB = string.Format("Select COUNT(*) From RegistroBloqueaERMercaderia Where Bloqueo = 1 And idDetCompra = {0}", (int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value);
-//				if (Funcion.iEscalarSQL(cdsSeteoF, sSQLValRB, true) > 0)
-//				{
-//					string sSQLCB = string.Format("Select Top 1 Usuario From RegistroBloqueaERMercaderia Where Bloqueo = 1 And idDetCompra = {0} Order By Fecha Desc", (int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value);
-//					string sUsuario = Funcion.sEscalarSQL(cdsSeteoF, sSQLCB);
-//												
-//					MessageBox.Show(string.Format("No puede ingresar a Registro de Seriales de este Articulo Hasta que el usuario '{0}' cierre esta Pantalla", sUsuario), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-//				
-//					return;				
-//				}										
-//				#endregion Valida Usuario Activo
-//				#endregion Validacion
-//
-//				#region Variables
-//				int IdDetCompra = (int) this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value;
-//				int IdCompra = (int) this.uGridArticulos.ActiveRow.Cells["idCompra"].Value;				
-//				int Cantidad = (int) this.uGridArticulos.ActiveRow.Cells["Cantidad"].Value;
-//				string Codigo = (string) this.uGridArticulos.ActiveRow.Cells["Codigo"].Value;
-//				string Articulo = (string) this.uGridArticulos.ActiveRow.Cells["Articulo"].Value;			
-//				int IdArticulo = (int) this.uGridArticulos.ActiveRow.Cells["idArticulo"].Value;
-//				int IdTipoFactura = (int)this.cmbTipoFactura.Value;
-//				int iBodega = (int) this.cmbBodega.Value;				
-//				bool ManejaSerial = Funcion.bEscalarSQL(cdsSeteoF, string.Format("Select ManejaSerial From Articulo Where idArticulo = {0}", IdArticulo), true);
-//				
-//				string sNum = "";				
-//				int iDisponible = 0;
-//				bool bUsado = true;				
-//				#endregion Variables			
-//
-//				string sSQLBloqueo = string.Format("Exec RegistraBloqueoTransacciones 0, 1, {0}, 1", IdCompra);
-//				idBloqueaTransacciones = Funcion.iEscalarSQL(cdsSeteoF, sSQLBloqueo, true);
-//
-//				string sSQLB = string.Format("Exec BloqueaERMercaderia 1, {0}, {1}", IdDetCompra, idRegistroBloqueaERMercaderia);
-//				idRegistroBloqueaERMercaderia = Funcion.iEscalarSQL(cdsSeteoF, sSQLB, true);
-//
-//				#region Registro de Mercaderia
-//				#region Registro Productos con Seriales
-//				if (ManejaSerial)
-//				{	
-//					using (frmIngresoSeriales Serial = new frmIngresoSeriales(IdCompra, IdTipoFactura, sNum, IdDetCompra, Cantidad, IdArticulo, Codigo, Articulo, iBodega, Estado))
-//					{							
-//						if (DialogResult.OK == Serial.ShowDialog())
-//						{
-//							#region Seriales de importación mixta
-//							if (IdTipoFactura == 2 && (int)this.uGridTransacciones.ActiveRow.Cells["Estado"].Value == 12)
-//							{
-//								string sSQLGenSer =  string.Format("Exec SerialesImpMixOCCompra {0}", IdCompra);
-//								Funcion.EjecutaSQL(cdsSeteoF, sSQLGenSer, true);
-//							}
-//							#endregion Seriales de importación mixta
-//																					
-//							string sSQLEstado = string.Format("Select Estado From Compra Where idCompra = {0}", IdCompra);
-//							int iEstado = Funcion.iEscalarSQL(cdsSeteoF, sSQLEstado);
-//							
-//							if (IdTipoFactura == 36)
-//								if (iEstado == 3)
-//									foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.uGridArticulos.Rows.All)
-//										Funcion.EjecutaSQL(cdsSeteoF, string.Format("Update DetCompra Set Principal = 1 Where idDetCompra = {0}", (int)dr.Cells["idDetCompra"].Value));
-//
-//							if (iEstado == 3 || iEstado == 13) IdCompra = 0;
-//
-//							this.ListaDetalle();
-//						}
-//						else this.ListaDetalle();
-//					}					
-//				}
-//				#endregion Registro Productos con Seriales
-//
-//				#region Registro Productos sin Seriales
-//				if (!ManejaSerial)
-//				{					
-//					using (ArticulosSinSerial Serial = new ArticulosSinSerial(Cantidad, IdArticulo, Codigo, Articulo, IdCompra, sNum, iDisponible, IdTipoFactura, IdDetCompra, bUsado, iBodega, false, this.uGridArticulos.ActiveRow.Cells["Notas"].Value.ToString()))
-//					{												
-//						if (DialogResult.OK == Serial.ShowDialog())
-//						{							
-//							string sSQLEstado = string.Format("Select Estado From Compra Where idCompra = {0}", IdCompra);
-//							int Est = Funcion.iEscalarSQL(cdsSeteoF, sSQLEstado);
-//							if (Est == 3) IdCompra = 0;
-//
-//							this.ListaDetalle();
-//						}
-//						else this.ListaDetalle();
-//					}					
-//				}
-//				#endregion Registro Productos sin Seriales
-//				
-//				string sSQLDesbloqueo = string.Format("Exec RegistraBloqueoTransacciones {0}, 0, {1}, 1", idBloqueaTransacciones, IdCompra);
-//				Funcion.EjecutaSQL(cdsSeteoF, sSQLDesbloqueo, true);
-//
-//				string sSQLDB = string.Format("Exec BloqueaERMercaderia 0, {0}, {1}", IdDetCompra, idRegistroBloqueaERMercaderia);
-//				Funcion.EjecutaSQL(cdsSeteoF, sSQLDB, true);
-//
-//				idRegistroBloqueaERMercaderia = 0;
-//				idBloqueaTransacciones = 0;
-//				#endregion Registro de Mercaderia
+				//				#region Validacion
+				//				int idRegistroBloqueaERMercaderia = 0;
+				//				int idBloqueaTransacciones = 0;
+				//
+				//				#region Transacciones
+				//				if (this.uGridTransacciones.Rows.Count == 0)
+				//				{
+				//					MessageBox.Show("No existen documentos con estos parametros de busqueda.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					return;
+				//				}
+				//
+				//				if (this.uGridTransacciones.ActiveRow == null)
+				//				{
+				//					MessageBox.Show("Seleccione un documento", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					return;
+				//				}
+				//
+				//				if (Funcion.ValidaBloqueo((int)this.uGridArticulos.ActiveRow.Cells["idCompra"].Value, 1, cdsSeteoF)) return;	
+				//
+				//				#region Estado Documento
+				//				if (Funcion.bEscalarSQL(cdsSeteoF, string.Format("Select Borrar From Compra Where idCompra = {0}", (int)this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value), true))
+				//				{
+				//					MessageBox.Show("El documento esta Anulado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					this.Informacion();
+				//					return;
+				//				}
+				//				int iEstadoDoc = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select Estado From Compra Where idCompra = {0}", 
+				//					(int)this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value));
+				//				if (!miAcceso.BVerSerialesProcesadas && iEstadoDoc == 3)
+				//				{
+				//					MessageBox.Show("El documento ya fue Procesado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					this.Informacion();
+				//					return;
+				//				}
+				//				if (!miAcceso.BVerSerialesProcesadas && iEstadoDoc == 9)
+				//				{
+				//					MessageBox.Show("El documento ya fue Facturado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					this.Informacion();
+				//					return;
+				//				}
+				//				#endregion Estado Documento			
+				//				#endregion Transacciones
+				//
+				//				#region Articulos
+				//				if (this.uGridArticulos.ActiveRow == null)
+				//				{
+				//					MessageBox.Show("Seleccione un documento", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					return;
+				//				}
+				//
+				//				if (this.uGridArticulos.ActiveRow.Cells["idArticulo"].Value == System.DBNull.Value)
+				//				{
+				//					MessageBox.Show("Seleccione un item", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					return;
+				//				}
+				//
+				//				if ((int)this.uGridArticulos.ActiveRow.Cells["idArticulo"].Value == 0)
+				//				{
+				//					MessageBox.Show("Seleccione un item", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					return;
+				//				}
+				//
+				//				if ((int)this.uGridArticulos.ActiveRow.Cells["Cantidad"].Value == 0)
+				//				{
+				//					MessageBox.Show("Cantidad en 0", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					return;
+				//				}
+				//				#region Estado Articulos
+				//				if (!Funcion.bEscalarSQL(cdsSeteoF, string.Format("Declare @Res Bit = 0 If Exists(Select idCompra From DetCompra Where idDetCompra = {0}) Set @Res = 1 Select @Res", 
+				//					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value), true))
+				//				{
+				//					MessageBox.Show("El Articulo Fue Eliminado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					this.Informacion();
+				//					return;
+				//				}
+				//				if (!Funcion.bEscalarSQL(cdsSeteoF, string.Format("Declare @Res Bit = 0 If ((Select idArticulo From DetCompra Where idDetCompra = {0}) = {1}) Set @Res = 1 Select @Res", 
+				//					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value, (int)this.uGridArticulos.ActiveRow.Cells["idArticulo"].Value), true))
+				//				{
+				//					MessageBox.Show("Se ha cambiado de producto", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					this.Informacion();
+				//					return;
+				//				}
+				//				if (!Funcion.bEscalarSQL(cdsSeteoF, string.Format("Declare @Res Bit = 0 If ((Select Cantidad From DetCompra Where idDetCompra = {0}) = {1}) Set @Res = 1 Select @Res", 
+				//					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value, (int)this.uGridArticulos.ActiveRow.Cells["Cantidad"].Value), true))
+				//				{
+				//					MessageBox.Show(string.Format("Se ha modificado la cantidad a procesar del articulo '{0}'", this.uGridArticulos.ActiveRow.Cells["Codigo"].Value.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					this.Informacion();
+				//					return;
+				//				}								
+				//				bool bEstadoSerial = Funcion.bEscalarSQL(cdsSeteoF, string.Format("Select EstadoSerial From DetCompra Where idDetCompra = {0}", 
+				//					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value), true);
+				//				if (!miAcceso.BVerSerialesProcesadas && bEstadoSerial)
+				//				{
+				//					MessageBox.Show("El Articulo ya esta PROCESADO", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//					this.Informacion();
+				//					return;
+				//				}
+				//				#endregion Estado Articulos
+				//				#endregion Articulos
+				//
+				//				#region Valida Usuario Activo
+				//				string sSQLValRB = string.Format("Select COUNT(*) From RegistroBloqueaERMercaderia Where Bloqueo = 1 And idDetCompra = {0}", (int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value);
+				//				if (Funcion.iEscalarSQL(cdsSeteoF, sSQLValRB, true) > 0)
+				//				{
+				//					string sSQLCB = string.Format("Select Top 1 Usuario From RegistroBloqueaERMercaderia Where Bloqueo = 1 And idDetCompra = {0} Order By Fecha Desc", (int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value);
+				//					string sUsuario = Funcion.sEscalarSQL(cdsSeteoF, sSQLCB);
+				//												
+				//					MessageBox.Show(string.Format("No puede ingresar a Registro de Seriales de este Articulo Hasta que el usuario '{0}' cierre esta Pantalla", sUsuario), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				//				
+				//					return;				
+				//				}										
+				//				#endregion Valida Usuario Activo
+				//				#endregion Validacion
+				//
+				//				#region Variables
+				//				int IdDetCompra = (int) this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value;
+				//				int IdCompra = (int) this.uGridArticulos.ActiveRow.Cells["idCompra"].Value;				
+				//				int Cantidad = (int) this.uGridArticulos.ActiveRow.Cells["Cantidad"].Value;
+				//				string Codigo = (string) this.uGridArticulos.ActiveRow.Cells["Codigo"].Value;
+				//				string Articulo = (string) this.uGridArticulos.ActiveRow.Cells["Articulo"].Value;			
+				//				int IdArticulo = (int) this.uGridArticulos.ActiveRow.Cells["idArticulo"].Value;
+				//				int IdTipoFactura = (int)this.cmbTipoFactura.Value;
+				//				int iBodega = (int) this.cmbBodega.Value;				
+				//				bool ManejaSerial = Funcion.bEscalarSQL(cdsSeteoF, string.Format("Select ManejaSerial From Articulo Where idArticulo = {0}", IdArticulo), true);
+				//				
+				//				string sNum = "";				
+				//				int iDisponible = 0;
+				//				bool bUsado = true;				
+				//				#endregion Variables			
+				//
+				//				string sSQLBloqueo = string.Format("Exec RegistraBloqueoTransacciones 0, 1, {0}, 1", IdCompra);
+				//				idBloqueaTransacciones = Funcion.iEscalarSQL(cdsSeteoF, sSQLBloqueo, true);
+				//
+				//				string sSQLB = string.Format("Exec BloqueaERMercaderia 1, {0}, {1}", IdDetCompra, idRegistroBloqueaERMercaderia);
+				//				idRegistroBloqueaERMercaderia = Funcion.iEscalarSQL(cdsSeteoF, sSQLB, true);
+				//
+				//				#region Registro de Mercaderia
+				//				#region Registro Productos con Seriales
+				//				if (ManejaSerial)
+				//				{	
+				//					using (frmIngresoSeriales Serial = new frmIngresoSeriales(IdCompra, IdTipoFactura, sNum, IdDetCompra, Cantidad, IdArticulo, Codigo, Articulo, iBodega, Estado))
+				//					{							
+				//						if (DialogResult.OK == Serial.ShowDialog())
+				//						{
+				//							#region Seriales de importacion mixta
+				//							if (IdTipoFactura == 2 && (int)this.uGridTransacciones.ActiveRow.Cells["Estado"].Value == 12)
+				//							{
+				//								string sSQLGenSer =  string.Format("Exec SerialesImpMixOCCompra {0}", IdCompra);
+				//								Funcion.EjecutaSQL(cdsSeteoF, sSQLGenSer, true);
+				//							}
+				//							#endregion Seriales de importacion mixta
+				//																					
+				//							string sSQLEstado = string.Format("Select Estado From Compra Where idCompra = {0}", IdCompra);
+				//							int iEstado = Funcion.iEscalarSQL(cdsSeteoF, sSQLEstado);
+				//							
+				//							if (IdTipoFactura == 36)
+				//								if (iEstado == 3)
+				//									foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.uGridArticulos.Rows.All)
+				//										Funcion.EjecutaSQL(cdsSeteoF, string.Format("Update DetCompra Set Principal = 1 Where idDetCompra = {0}", (int)dr.Cells["idDetCompra"].Value));
+				//
+				//							if (iEstado == 3 || iEstado == 13) IdCompra = 0;
+				//
+				//							this.ListaDetalle();
+				//						}
+				//						else this.ListaDetalle();
+				//					}					
+				//				}
+				//				#endregion Registro Productos con Seriales
+				//
+				//				#region Registro Productos sin Seriales
+				//				if (!ManejaSerial)
+				//				{					
+				//					using (ArticulosSinSerial Serial = new ArticulosSinSerial(Cantidad, IdArticulo, Codigo, Articulo, IdCompra, sNum, iDisponible, IdTipoFactura, IdDetCompra, bUsado, iBodega, false, this.uGridArticulos.ActiveRow.Cells["Notas"].Value.ToString()))
+				//					{												
+				//						if (DialogResult.OK == Serial.ShowDialog())
+				//						{							
+				//							string sSQLEstado = string.Format("Select Estado From Compra Where idCompra = {0}", IdCompra);
+				//							int Est = Funcion.iEscalarSQL(cdsSeteoF, sSQLEstado);
+				//							if (Est == 3) IdCompra = 0;
+				//
+				//							this.ListaDetalle();
+				//						}
+				//						else this.ListaDetalle();
+				//					}					
+				//				}
+				//				#endregion Registro Productos sin Seriales
+				//				
+				//				string sSQLDesbloqueo = string.Format("Exec RegistraBloqueoTransacciones {0}, 0, {1}, 1", idBloqueaTransacciones, IdCompra);
+				//				Funcion.EjecutaSQL(cdsSeteoF, sSQLDesbloqueo, true);
+				//
+				//				string sSQLDB = string.Format("Exec BloqueaERMercaderia 0, {0}, {1}", IdDetCompra, idRegistroBloqueaERMercaderia);
+				//				Funcion.EjecutaSQL(cdsSeteoF, sSQLDB, true);
+				//
+				//				idRegistroBloqueaERMercaderia = 0;
+				//				idBloqueaTransacciones = 0;
+				//				#endregion Registro de Mercaderia
 
-         #endregion Codigo Anterior
+				#endregion Codigo Anterior
 
 				#region Validacion
 				int idRegistroBloqueaERMercaderia = 0;
@@ -2301,7 +2308,7 @@ namespace Latinium
 				#region Transacciones
 				if (this.uGridTransacciones.Rows.Count == 0)
 				{
-					MessageBox.Show("No existen documentos con estos parámetros de búsqueda.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("No existen documentos con estos par\u00e1metros de b\u00fasqueda.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
 
@@ -2316,7 +2323,7 @@ namespace Latinium
 				#region Estado Documento
 				if (Funcion.bEscalarSQL(cdsSeteoF, string.Format("Select Borrar From Compra Where idCompra = {0}", (int)this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value), true))
 				{
-					MessageBox.Show("El documento esta Anulado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("El documento est\u00e1 Anulado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.Informacion();
 					return;
 				}
@@ -2365,7 +2372,7 @@ namespace Latinium
 				if (!Funcion.bEscalarSQL(cdsSeteoF, string.Format("Declare @Res Bit = 0 If Exists(Select idCompra From DetCompra Where idDetCompra = {0}) Set @Res = 1 Select @Res", 
 					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value), true))
 				{
-					MessageBox.Show("El Articulo Fue Eliminado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("El Art\u00edculo Fue Eliminado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.Informacion();
 					return;
 				}
@@ -2379,7 +2386,7 @@ namespace Latinium
 				if (!Funcion.bEscalarSQL(cdsSeteoF, string.Format("Declare @Res Bit = 0 If ((Select Cantidad From DetCompra Where idDetCompra = {0}) = {1}) Set @Res = 1 Select @Res", 
 					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value, (int)this.uGridArticulos.ActiveRow.Cells["Cantidad"].Value), true))
 				{
-					MessageBox.Show(string.Format("Se ha modificado la cantidad a procesar del articulo '{0}'", this.uGridArticulos.ActiveRow.Cells["Codigo"].Value.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show(string.Format("Se ha modificado la cantidad a procesar del art\u00edculo '{0}'", this.uGridArticulos.ActiveRow.Cells["Codigo"].Value.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.Informacion();
 					return;
 				}								
@@ -2387,7 +2394,7 @@ namespace Latinium
 					(int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value), true);
 				if (!miAcceso.BVerSerialesProcesadas && bEstadoSerial)
 				{
-					MessageBox.Show("El Articulo ya esta PROCESADO", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("El Art\u00edculo ya est\u00e1 PROCESADO", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.Informacion();
 					return;
 				}
@@ -2401,7 +2408,7 @@ namespace Latinium
 					string sSQLCB = string.Format("Select Top 1 Usuario From RegistroBloqueaERMercaderia Where Bloqueo = 1 And idDetCompra = {0} Order By Fecha Desc", (int)this.uGridArticulos.ActiveRow.Cells["idDetCompra"].Value);
 					string sUsuario = Funcion.sEscalarSQL(cdsSeteoF, sSQLCB);
 												
-					MessageBox.Show(string.Format("No puede ingresar a Registro de Seriales de este Articulo Hasta que el usuario '{0}' cierre esta Pantalla", sUsuario), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show(string.Format("No puede ingresar a Registro de Seriales de este Art\u00edculo Hasta que el usuario '{0}' cierre esta Pantalla", sUsuario), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 				
 					return;				
 				}										
@@ -2440,13 +2447,13 @@ namespace Latinium
 					{							
 						if (DialogResult.OK == Serial.ShowDialog())
 						{
-							#region Seriales de importación mixta
+							#region Seriales de importacion mixta
 							if (IdTipoFactura == 2 && (int)this.uGridTransacciones.ActiveRow.Cells["Estado"].Value == 12)
 							{
 								string sSQLGenSer =  string.Format("Exec SerialesImpMixOCCompra {0}", IdCompra);
 								Funcion.EjecutaSQL(cdsSeteoF, sSQLGenSer, true);
 							}
-							#endregion Seriales de importación mixta
+							#endregion Seriales de importacion mixta
 																					
 							string sSQLEstado = string.Format("Select Estado From Compra Where idCompra = {0}", IdCompra);
 							int iEstado = Funcion.iEscalarSQL(cdsSeteoF, sSQLEstado);
@@ -2495,7 +2502,7 @@ namespace Latinium
 			}
 			catch(Exception oExc)
 			{
-				MessageBox.Show(oExc.ToString() + "Error del Sistema Comuniquese Con Sistemas", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);	
+				MessageBox.Show(oExc.ToString() + "Error del Sistema Comun\u00edquese Con Sistemas", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);	
 			}
 		}
 
@@ -2636,7 +2643,7 @@ namespace Latinium
 					if (bAutomatico) 
 						if (GuiaDeRemision.bNuevo) 
 							if ((int)this.cmbBodega.Value == 95) this.cmbBodega.Value = 156;
-							GuiaDeRemision.txtNumero.Text = Funcion.sEscalarSQL(cdsSeteoF, string.Format("Exec NumeracionLocales 30, {0}, 0", (int)this.cmbBodega.Value));
+					GuiaDeRemision.txtNumero.Text = Funcion.sEscalarSQL(cdsSeteoF, string.Format("Exec NumeracionLocales 30, {0}, 0", (int)this.cmbBodega.Value));
 
 					string sSQL = string.Format("Exec GGuiaRemision {0}, {1}, '{2}', '{3}', {4}, '{5}', {6}, {7}, {8}, '{9}', '{10}', {11}", 
 						GuiaDeRemision.txtIdGuiaRemision.Value, GuiaDeRemision.txtIdCompra.Value, 
@@ -2689,7 +2696,7 @@ namespace Latinium
 				SerialPropia = Funcion.bEscalarSQL(cdsSeteoF, string.Format("Select SeriePropiaAlterna From Articulo Where idArticulo = {0}", (int)this.uGridArticulos.ActiveRow.Cells["idArticulo"].Value), true);
 				if (!SerialPropia)
 				{
-					MessageBox.Show("El Artículo Seleccionado No Genera Serial de POINT", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("El Art\u00edculo Seleccionado No Genera Serial de POINT", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.txtBuscar.Focus();
 					return;
 				}				
@@ -2737,15 +2744,18 @@ namespace Latinium
 
 		private void button1_Click(object sender, System.EventArgs e)
 		{
-			if ((int)this.cmbTipoFactura.Value == 8 && MenuLatinium.stIdDB == 1) // Solo salida, Solo POINT
+			if ((int)this.cmbTipoFactura.Value == 8 && (MenuLatinium.stIdDB == 1 || MenuLatinium.stIdDB == 3)) // Solo salida, Solo POINT
 			{
 				string codigoTransf = this.uGridTransacciones.ActiveRow.Cells["Numero"].Value.ToString();
     
-				// Llamada simple al servicio (ya no ensuciamos el front con lógica de logs ni API)
+				// Llamada simple al servicio (ya no ensuciamos el front con logica de logs ni API)
 				TransferenciaService service = new TransferenciaService();
 				service.EjecutarProcesamiento(codigoTransf);
 			}
 		}
+
+		public static int CompraEstadoAprobado = 5;
+		public static int idTipoFacturaODC = 2;
 
 		private void btnRecepcionBodega_Click(object sender, System.EventArgs e)
 		{
@@ -2775,10 +2785,10 @@ namespace Latinium
 					return;
 				}
 
-				if ((int)this.cmbTipoFactura.Value != 2)
+				if ((int)this.cmbTipoFactura.Value != idTipoFacturaODC)
 				{
 					MessageBox.Show(
-						"Solo las Ordenes de compra pueden enviarse a RECEPCIÓN BODEGA.",
+						"Solo las Ã¯Â¿Â½rdenes de compra pueden enviarse a RECEPCIÃ¯Â¿Â½N BODEGA.",
 						"Sistema",
 						MessageBoxButtons.OK,
 						MessageBoxIcon.Warning);
@@ -2790,10 +2800,54 @@ namespace Latinium
 					Convert.ToInt32(
 					this.uGridTransacciones.ActiveRow.Cells["idCompra"].Value);
 
+				/* VALIDAR ESTADO ACTUAL EN BASE */
+
+				int estadoCompra = 0;
+
+				using (SqlConnection cn =
+								 new SqlConnection(MenuLatinium.sconexionEmpresa))
+				{
+					cn.Open();
+
+					SqlCommand cmd = new SqlCommand(
+						@"SELECT ISNULL(Estado,0)
+          FROM Compra
+          WHERE idCompra = @idCompra",
+						cn);
+
+					cmd.Parameters.Add(
+						"@idCompra",
+						SqlDbType.Int).Value = idCompra;
+
+					object resultEstado = cmd.ExecuteScalar();
+
+					if (resultEstado != null &&
+						resultEstado != DBNull.Value)
+					{
+						estadoCompra =
+							Convert.ToInt32(resultEstado);
+					}
+				}
+
+				if (estadoCompra != CompraEstadoAprobado &&
+					estadoCompra != 28)
+				{
+					MessageBox.Show(
+						"La orden de compra debe estar en estado APROBADO o RECEPCIÃ“N BODEGA.\n\n" +
+						"Actualice la informaciÃ³n e intente nuevamente.",
+						"Sistema",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Warning);
+
+					this.Informacion();
+
+					return;
+				}
+
 				DialogResult result =
 					MessageBox.Show(
-					"¿Desea enviar la orden a RECEPCIÓN BODEGA?",
-					"Confirmación",
+					"Â¿Desea enviar la orden a RECEPCION BODEGA?",
+					"Confirmacion",
 					MessageBoxButtons.YesNo,
 					MessageBoxIcon.Question);
 
@@ -2817,14 +2871,14 @@ namespace Latinium
 				#region MENSAJE
 
 				MessageBox.Show(
-					"Orden enviada correctamente a RECEPCIÓN BODEGA.",
+					"Orden enviada correctamente a RECEPCION BODEGA.",
 					"Sistema",
 					MessageBoxButtons.OK,
 					MessageBoxIcon.Information);
 
 				#endregion
 
-				#region RECARGAR INFORMACIÓN
+				#region RECARGAR INFORMACION
 
 				this.Informacion();
 
@@ -2839,6 +2893,5 @@ namespace Latinium
 					MessageBoxIcon.Error);
 			}
 		}
-
 	}
 }

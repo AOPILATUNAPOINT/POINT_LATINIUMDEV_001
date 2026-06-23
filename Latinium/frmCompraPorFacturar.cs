@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 namespace Latinium
 {
 	/// <summary>
-	/// Descripción breve de frmCompraPorFacturar.
+	/// Descripcion breve de frmCompraPorFacturar.
 	/// </summary>
 	public class frmCompraPorFacturar : System.Windows.Forms.Form
 	{
@@ -20,26 +20,29 @@ namespace Latinium
 		private Infragistics.Win.UltraWinDataSource.UltraDataSource ultraDataSource1;
 		private C1.Data.C1DataSet cdsSeteoF;
 		/// <summary>
-		/// Variable del diseñador requerida.
+		/// Variable del disenador requerida.
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 		public static int idCompra = 0;
+		private System.Windows.Forms.TextBox txtBuscarArticulo;
+		private System.Data.DataTable dtArticulos;
+		private bool _actualizandoProgramaticamente = false;
 
 		public frmCompraPorFacturar(int IdCompra)
 		{
 			idCompra = IdCompra;
 			//
-			// Necesario para admitir el Diseñador de Windows Forms
+			// Necesario para admitir el Disenador de Windows Forms
 			//
 			InitializeComponent();
 
 			//
-			// TODO: agregar código de constructor después de llamar a InitializeComponent
+			// TODO: agregar codigo de constructor despues de llamar a InitializeComponent
 			//
 		}
 
 		/// <summary>
-		/// Limpiar los recursos que se estén utilizando.
+		/// Limpiar los recursos que se estan utilizando.
 		/// </summary>
 		protected override void Dispose( bool disposing )
 		{
@@ -53,11 +56,13 @@ namespace Latinium
 			base.Dispose( disposing );
 		}
 
-		#region Código generado por el Diseñador de Windows Forms
+		#region Codigo generado por el Disenador de Windows Forms
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido del método con el editor de código.
+		/// Metodo necesario para admitir el Disenador. No se puede modificar
+		/// el contenido del metodo con el editor de codigo.
 		/// </summary>
+		private System.Windows.Forms.Label lblBuscarArticulo;
+
 		private void InitializeComponent()
 		{
 			Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
@@ -82,7 +87,7 @@ namespace Latinium
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn10 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("EstadoFacturacion");
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn11 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Numero");
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("ManejaSerial");
-			aopilatuñaInfragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Row", 0);
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Row", 0);
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("btnSeriales", 1);
 			Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(frmCompraPorFacturar));
@@ -121,6 +126,8 @@ namespace Latinium
 			this.btnCancelar = new System.Windows.Forms.Button();
 			this.btnGenerar = new System.Windows.Forms.Button();
 			this.cdsSeteoF = new C1.Data.C1DataSet();
+			this.lblBuscarArticulo = new System.Windows.Forms.Label();
+			this.txtBuscarArticulo = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.grdDetalle)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.cdsSeteoF)).BeginInit();
@@ -256,7 +263,7 @@ namespace Latinium
 			appearance17.ForeColorDisabled = System.Drawing.Color.Black;
 			this.grdDetalle.DisplayLayout.Override.ActiveRowAppearance = appearance17;
 			this.grdDetalle.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
-			this.grdDetalle.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.True;
+			this.grdDetalle.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
 			this.grdDetalle.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.True;
 			appearance18.BackColor = System.Drawing.Color.Transparent;
 			this.grdDetalle.DisplayLayout.Override.CardAreaAppearance = appearance18;
@@ -355,11 +362,29 @@ namespace Latinium
 			this.cdsSeteoF.SchemaClassName = "LibFacturacion.DataClass";
 			this.cdsSeteoF.SchemaDef = null;
 			this.cdsSeteoF.BeforeFill += new C1.Data.FillEventHandler(this.cdsSeteoF_BeforeFill);
-			// 
+			//
+			// lblBuscarArticulo
+			//
+			this.lblBuscarArticulo.Location = new System.Drawing.Point(808, 16);
+			this.lblBuscarArticulo.Name = "lblBuscarArticulo";
+			this.lblBuscarArticulo.Size = new System.Drawing.Size(46, 16);
+			this.lblBuscarArticulo.TabIndex = 20;
+			this.lblBuscarArticulo.Text = "Buscar:";
+			//
+			// txtBuscarArticulo
+			//
+			this.txtBuscarArticulo.Location = new System.Drawing.Point(856, 13);
+			this.txtBuscarArticulo.Name = "txtBuscarArticulo";
+			this.txtBuscarArticulo.Size = new System.Drawing.Size(350, 20);
+			this.txtBuscarArticulo.TabIndex = 21;
+			this.txtBuscarArticulo.TextChanged += new System.EventHandler(this.txtBuscarArticulo_TextChanged);
+			//
 			// frmCompraPorFacturar
-			// 
+			//
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			this.ClientSize = new System.Drawing.Size(1224, 510);
+			this.Controls.Add(this.txtBuscarArticulo);
+			this.Controls.Add(this.lblBuscarArticulo);
 			this.Controls.Add(this.btnCancelar);
 			this.Controls.Add(this.btnGenerar);
 			this.Controls.Add(this.label1);
@@ -386,11 +411,11 @@ namespace Latinium
 			MenuLatinium.MostrarModalProcesando();
 			try
 			{
-				this.grdDetalle.DataSource =
-					FuncionesProcedimientos.dtEjecucionGeneral(
+				dtArticulos = FuncionesProcedimientos.dtEjecucionGeneral(
 					MenuLatinium.sconexionEmpresa,
 					string.Format("EXEC OrdenDeCompraDetalleRecibidoCon {0}", idCompra));
 
+				this.grdDetalle.DataSource = new System.Data.DataView(dtArticulos);
 				this.grdDetalle = Funcion.ContadorFilas(this.grdDetalle, "Row");
 				this.ConfigurarGridFacturacion();
 			}
@@ -404,6 +429,65 @@ namespace Latinium
 			{
 				MenuLatinium.OcultarModalProcesando();
 			}
+		}
+
+		private System.Collections.Hashtable GuardarCantidades()
+		{
+			System.Collections.Hashtable ht = new System.Collections.Hashtable();
+			foreach (Infragistics.Win.UltraWinGrid.UltraGridRow row in this.grdDetalle.Rows.All)
+			{
+				if (row.IsAddRow) continue;
+				if (row.Cells["idDetCompra"].Value == DBNull.Value) continue;
+				if (row.Cells["CantidadPorFacturar"].Value == DBNull.Value) continue;
+				decimal cant = 0;
+				try { cant = Convert.ToDecimal(row.Cells["CantidadPorFacturar"].Value); } catch {}
+				if (cant > 0)
+					ht[Convert.ToInt32(row.Cells["idDetCompra"].Value)] = cant;
+			}
+			return ht;
+		}
+
+		private void RestaurarCantidades(System.Collections.Hashtable ht)
+		{
+			if (ht == null || ht.Count == 0) return;
+			_actualizandoProgramaticamente = true;
+			try
+			{
+				foreach (Infragistics.Win.UltraWinGrid.UltraGridRow row in this.grdDetalle.Rows.All)
+				{
+					if (row.IsAddRow) continue;
+					if (row.Cells["idDetCompra"].Value == DBNull.Value) continue;
+					int id = Convert.ToInt32(row.Cells["idDetCompra"].Value);
+					if (ht.Contains(id))
+						row.Cells["CantidadPorFacturar"].Value = ht[id];
+				}
+			}
+			finally
+			{
+				_actualizandoProgramaticamente = false;
+			}
+		}
+
+		private void AplicarFiltroBusqueda()
+		{
+			if (dtArticulos == null) return;
+			System.Data.DataView dv = this.grdDetalle.DataSource as System.Data.DataView;
+			if (dv == null) return;
+			string filtro = (txtBuscarArticulo != null) ? txtBuscarArticulo.Text.Trim() : "";
+			if (filtro.Length == 0)
+				dv.RowFilter = "";
+			else
+				dv.RowFilter = string.Format(
+					"Articulo LIKE '%{0}%' OR Codigo LIKE '%{0}%'",
+					filtro.Replace("'", "''").Replace("[", "[[]"));
+			ConfigurarGridFacturacion();
+		}
+
+		private void txtBuscarArticulo_TextChanged(object sender, System.EventArgs e)
+		{
+			System.Collections.Hashtable ht = GuardarCantidades();
+			AplicarFiltroBusqueda();
+			RestaurarCantidades(ht);
 		}
 
 		private void ConfigurarGridFacturacion()
@@ -432,6 +516,12 @@ namespace Latinium
 					row.Cells["CantidadPorFacturar"].Activation =
 						Infragistics.Win.UltraWinGrid.Activation.AllowEdit;
 				}
+				else
+				{
+					// Con serial: la cantidad la determina el proceso de seriales, no se edita aqui
+					row.Cells["CantidadPorFacturar"].Activation =
+						Infragistics.Win.UltraWinGrid.Activation.NoEdit;
+				}
 			}
 		}
 
@@ -447,6 +537,10 @@ namespace Latinium
 			if (e.Cell.Column.Key != "CantidadPorFacturar")
 				return;
 
+			// Asignación programática (restaurar cantidades al filtrar) — omitir validación
+			if (_actualizandoProgramaticamente)
+				return;
+
 			try
 			{
 				decimal cantidadRecibida   = 0;
@@ -454,10 +548,12 @@ namespace Latinium
 				decimal nuevaCantidad       = 0;
 
 				if (e.Cell.Row.Cells["CantidadRecibida"].Value != DBNull.Value)
-					try { cantidadRecibida = Convert.ToDecimal(e.Cell.Row.Cells["CantidadRecibida"].Value); } catch {}
+					try { cantidadRecibida = Convert.ToDecimal(e.Cell.Row.Cells["CantidadRecibida"].Value); } 
+					catch {}
 
 				if (e.Cell.Row.Cells["CantidadFacturada"].Value != DBNull.Value)
-					try { cantidadFacturada = Convert.ToDecimal(e.Cell.Row.Cells["CantidadFacturada"].Value); } catch {}
+					try { cantidadFacturada = Convert.ToDecimal(e.Cell.Row.Cells["CantidadFacturada"].Value); } 
+					catch {}
 
 				if (e.NewValue == null || e.NewValue == DBNull.Value ||
 					e.NewValue.ToString().Trim().Length == 0)
@@ -487,8 +583,8 @@ namespace Latinium
 				{
 					MessageBox.Show(
 						string.Format(
-							"Cantidad ingresada ({0}) supera el disponible ({1}).\nRecibida: {2}   Facturada: {3}",
-							nuevaCantidad, disponible, cantidadRecibida, cantidadFacturada),
+						"La cantidad ingresada ({0}) supera el disponible ({1}).\nRecibida: {2}   Facturada: {3}",
+						nuevaCantidad, disponible, cantidadRecibida, cantidadFacturada),
 						"Cantidad no válida", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					e.Cancel = true;
 				}
@@ -514,11 +610,50 @@ namespace Latinium
 
 				int idDetCompra = Convert.ToInt32(e.Cell.Row.Cells["idDetCompra"].Value);
 
+				// Preservar cantidades ingresadas en filas sin serial antes de recargar el grid
+				System.Collections.Hashtable cantidadesSinSerial = new System.Collections.Hashtable();
+				foreach (Infragistics.Win.UltraWinGrid.UltraGridRow row in this.grdDetalle.Rows)
+				{
+					if (row.IsAddRow) continue;
+					if (row.Cells["idDetCompra"].Value == DBNull.Value) continue;
+
+					bool tieneSerial = false;
+					if (row.Cells["ManejaSerial"].Value != DBNull.Value)
+						try { tieneSerial = Convert.ToBoolean(row.Cells["ManejaSerial"].Value); } catch {}
+
+					if (!tieneSerial)
+					{
+						decimal cant = 0;
+						if (row.Cells["CantidadPorFacturar"].Value != DBNull.Value)
+							try { cant = Convert.ToDecimal(row.Cells["CantidadPorFacturar"].Value); } catch {}
+
+						if (cant > 0)
+							cantidadesSinSerial[Convert.ToInt32(row.Cells["idDetCompra"].Value)] = cant;
+					}
+				}
+
 				using (frmCompraPorFacturarSeriales frm =
-					new frmCompraPorFacturarSeriales(idDetCompra))
+								 new frmCompraPorFacturarSeriales(idDetCompra))
 				{
 					frm.ShowDialog();
 					OrdenDeCompraDetalleRecibidoCon();
+
+					// Re-aplicar filtro de búsqueda si estaba activo
+					AplicarFiltroBusqueda();
+
+					// Restaurar cantidades que el usuario ya habia ingresado para filas sin serial
+					if (cantidadesSinSerial.Count > 0)
+					{
+						foreach (Infragistics.Win.UltraWinGrid.UltraGridRow row in this.grdDetalle.Rows.All)
+						{
+							if (row.IsAddRow) continue;
+							if (row.Cells["idDetCompra"].Value == DBNull.Value) continue;
+
+							int rowId = Convert.ToInt32(row.Cells["idDetCompra"].Value);
+							if (cantidadesSinSerial.Contains(rowId))
+								row.Cells["CantidadPorFacturar"].Value = cantidadesSinSerial[rowId];
+						}
+					}
 				}
 			}
 			catch (Exception ex)
@@ -540,11 +675,11 @@ namespace Latinium
 			System.Text.StringBuilder sqlUpdates = new System.Text.StringBuilder();
 			int iItemsFacturar = 0;
 
-			// --- Paso 1: validar todos los artículos antes de escribir en BD ---
+			// --- Paso 1: validar todos los articulos antes de escribir en BD ---
 			try
 			{
 				foreach (Infragistics.Win.UltraWinGrid.UltraGridRow dr
-					in this.grdDetalle.Rows.All)
+									 in this.grdDetalle.Rows.All)
 				{
 					if (dr.Cells["idDetCompra"].Value == DBNull.Value) continue;
 
@@ -555,7 +690,8 @@ namespace Latinium
 
 					decimal cantidadPorFacturar = 0;
 					if (dr.Cells["CantidadPorFacturar"].Value != DBNull.Value)
-						try { cantidadPorFacturar = Convert.ToDecimal(dr.Cells["CantidadPorFacturar"].Value); } catch {}
+						try { cantidadPorFacturar = Convert.ToDecimal(dr.Cells["CantidadPorFacturar"].Value); } 
+						catch {}
 
 					if (cantidadPorFacturar > 0)
 					{
@@ -564,7 +700,8 @@ namespace Latinium
 						// Leer ManejaSerial del grid (ya cargado, sin consulta extra a BD)
 						bool bManejaSerial = false;
 						if (dr.Cells["ManejaSerial"].Value != DBNull.Value)
-							try { bManejaSerial = Convert.ToBoolean(dr.Cells["ManejaSerial"].Value); } catch {}
+							try { bManejaSerial = Convert.ToBoolean(dr.Cells["ManejaSerial"].Value); } 
+							catch {}
 
 						if (bManejaSerial)
 						{
@@ -575,8 +712,8 @@ namespace Latinium
 								iSerialesSeleccionados = Convert.ToInt32(
 									Funcion.iEjecucion(MenuLatinium.sconexionEmpresa,
 									string.Format(
-										"SELECT COUNT(*) FROM DetalleSeriales\nWHERE idDetCompra = {0} AND EstadoFacturacion = 4 AND Disponible = 1",
-										idDetCompra), false));
+									"SELECT COUNT(*) FROM DetalleSeriales\nWHERE idDetCompra = {0} AND EstadoFacturacion = 4 AND Disponible = 1",
+									idDetCompra), false));
 							}
 							catch {}
 
@@ -584,8 +721,8 @@ namespace Latinium
 							{
 								MessageBox.Show(
 									string.Format(
-										"Artículo '{0}': seriales marcados ({1}) no coinciden con la cantidad a facturar ({2}).\nRevise los seriales antes de continuar.",
-										articulo, iSerialesSeleccionados, cantidadPorFacturar),
+									"Artículo '{0}': seriales marcados ({1}) no coinciden con la cantidad a facturar ({2}).\nRevise los seriales antes de continuar.",
+									articulo, iSerialesSeleccionados, cantidadPorFacturar),
 									"Seriales no coinciden", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 								return;
 							}
@@ -597,9 +734,11 @@ namespace Latinium
 							decimal dCantidadFacturada = 0;
 
 							if (dr.Cells["CantidadRecibida"].Value != DBNull.Value)
-								try { dCantidadRecibida = Convert.ToDecimal(dr.Cells["CantidadRecibida"].Value); } catch {}
+								try { dCantidadRecibida = Convert.ToDecimal(dr.Cells["CantidadRecibida"].Value); } 
+								catch {}
 							if (dr.Cells["CantidadFacturada"].Value != DBNull.Value)
-								try { dCantidadFacturada = Convert.ToDecimal(dr.Cells["CantidadFacturada"].Value); } catch {}
+								try { dCantidadFacturada = Convert.ToDecimal(dr.Cells["CantidadFacturada"].Value); } 
+								catch {}
 
 							decimal dDisponible = dCantidadRecibida - dCantidadFacturada;
 							if (dDisponible < 0) dDisponible = 0;
@@ -608,8 +747,8 @@ namespace Latinium
 							{
 								MessageBox.Show(
 									string.Format(
-										"Artículo '{0}': la cantidad a facturar ({1}) supera el disponible ({2}).",
-										articulo, cantidadPorFacturar, dDisponible),
+									"Artículo '{0}': la cantidad a facturar ({1}) supera el disponible ({2}).",
+									articulo, cantidadPorFacturar, dDisponible),
 									"Cantidad no válida", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 								return;
 							}
@@ -637,16 +776,16 @@ namespace Latinium
 			if (iItemsFacturar == 0)
 			{
 				MessageBox.Show(
-					"No hay artículos con cantidad por facturar mayor a cero.",
+					"No hay artículos con cantidad por facturar mayor que cero.",
 					"Sin artículos", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 				return;
 			}
 
-			// --- Paso 2: confirmación del usuario ---
+			// --- Paso 2: confirmacion del usuario ---
 			if (MessageBox.Show(
 				string.Format(
-					"¿Confirma la generación de {0} artículo(s) para facturación?",
-					iItemsFacturar),
+				"Confirma la generación de {0} articulo(s) para facturación?",
+				iItemsFacturar),
 				"Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
 				MessageBoxDefaultButton.Button2) != DialogResult.Yes)
 				return;
@@ -668,7 +807,7 @@ namespace Latinium
 					Funcion.EjecusionEjecutaSQL(
 						MenuLatinium.sconexionEmpresa,
 						string.Format(
-							"EXEC OrdenDeCompraEnviarPorFacturar @idCompra = {0}, @Usuario = '{1}'",
+						"EXEC OrdenDeCompraEnviarPorFacturar @idCompra = {0}, @Usuario = '{1}'",
 						idCompra, MenuLatinium.stUsuario.Replace("'", "''")),
 						false);
 

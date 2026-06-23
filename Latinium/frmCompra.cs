@@ -3923,85 +3923,85 @@ namespace Latinium
 			}
 		}
 
-//		private void ultraGrid1_InitializeLayout(object sender, Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
-//		{
-//			drSeteoF = cdsSeteoF.TableViews["SeteoF"].Rows[0];
-//															
-//			#region Iva
-//			if (drSeteoF["CambiarIvaC"] == DBNull.Value || !(bool)drSeteoF["CambiarIvaC"]) e.Layout.Bands[0].Columns["Impuesto"].CellActivation = Activation.Disabled;			
-//			#endregion Iva
-//
-//			#region Formato numerico
-//			CultureInfo cultureENUS = CultureInfo.CreateSpecificCulture("ja-jp");
-//			string stMoneda = "#,##0.";
-//			string stMascara = "nnn,nnn,nnn.";
-//			string stCeros = "0000000000";
-//			string stNumero = "nnnnnnnnnn";
-//			string stFormato = "";
-//			string stInput = "";
-//			#endregion Formato numerico
-//
-//			#region Decimales para el total
-//			stFormato = stMoneda + stCeros.Substring(0, (int) drSeteoF["decTotal"]);
-//			stInput = stMascara + stNumero.Substring(0, (int) drSeteoF["decTotal"]);
-//			e.Layout.Bands[0].Columns["SubTotal"].Format = stFormato; 
-//			e.Layout.Bands[0].Columns["DescuentoArt"].Format = stFormato;
-//
-//			this.txtDescIvaTotal.FormatString = stFormato;
-//			this.txtIvaTotal.FormatString = stFormato;
-//			this.txtIva.FormatString = stFormato;
-//			this.txtIva0.FormatString = stFormato;
-//			this.txtTotal.FormatString = stFormato;
-//			this.txtDescIva0Total.FormatString = stFormato;
-//						
-//			this.txtDescIvaTotal.MaskInput = stInput;
-//			this.txtIvaTotal.MaskInput = stInput;
-//			this.txtIva.MaskInput = stInput;
-//			this.txtIva0.MaskInput = stInput;
-//			this.txtTotal.MaskInput = stInput;
-//			this.txtDescIva0Total.MaskInput = stInput;
-//			#endregion Decimales para el total
-//
-//			#region Decimales para el precio
-//			stFormato = stMoneda + stCeros.Substring(0, 5);// (int) drSeteoF["decPrecio"]);
-//			e.Layout.Bands[0].Columns["Precio"].Format = stFormato;
-//			stInput = stMascara + stNumero.Substring(0, 5);// (int) drSeteoF["decPrecio"]);
-//			e.Layout.Bands[0].Columns["Precio"].MaskInput = stInput;			
-//			#endregion Decimales para el precio
-//			#region Decimales para el Courier
-//			stFormato = stMoneda + stCeros.Substring(0, 4);// (int) drSeteoF["decPrecio"]);
-//			e.Layout.Bands[0].Columns["Courier"].Format = stFormato;
-//			stInput = stMascara + stNumero.Substring(0, 4);// (int) drSeteoF["decPrecio"]);
-//			e.Layout.Bands[0].Columns["Courier"].MaskInput = stInput;			
-//			#endregion Decimales para Courier
-//			stFormato = stMoneda + stCeros.Substring(0, 4);
-//			e.Layout.Bands[0].Columns["Peso"].Format = stFormato;		
-//			stInput = stMascara + stNumero.Substring(0, 4);
-//			e.Layout.Bands[0].Columns["Peso"].MaskInput = stInput;			
-//			stFormato = stMoneda + stCeros.Substring(0, 4);
-//			e.Layout.Bands[0].Columns["Arancel"].Format = stFormato;		
-//			stInput = stMascara + stNumero.Substring(0, 4);
-//			e.Layout.Bands[0].Columns["Arancel"].MaskInput = stInput;
-//			#region Decimales para el Impuesto
-//			stFormato = stMoneda + stCeros.Substring(0, (int) drSeteoF["decImpuesto"]);
-//			e.Layout.Bands[0].Columns["Impuesto"].Format = stFormato;
-//			stInput = stMascara + stNumero.Substring(0, (int) drSeteoF["decImpuesto"]);
-//			e.Layout.Bands[0].Columns["Impuesto"].MaskInput = stInput;
-//			stInput = stMascara + stNumero.Substring(0, 2);
-//			e.Layout.Bands[0].Columns["Valores"].MaskInput = stInput;
-//			#endregion Decimales para el Impuesto
-//			#region Decimales para porcentaje de descuento
-//			stFormato = stMoneda + stCeros.Substring(0, 3);//(int) drSeteoF["decPorcDesc"]);
-//			e.Layout.Bands[0].Columns["DescuentoPorc"].Format = stFormato;
-//			e.Layout.Bands[0].Columns["DescNC"].Format = stFormato;
-//			int iDecPorD = 0;
-//			if (drSeteoF["decPorcDesc"] != null) iDecPorD = (int) drSeteoF["decPorcDesc"];
-//
-//			stInput = stMascara + stNumero.Substring(0, iDecPorD);
-//			e.Layout.Bands[0].Columns["DescuentoPorc"].MaskInput = stInput;
-//			e.Layout.Bands[0].Columns["DescNC"].MaskInput = stInput;
-//			#endregion Decimales para porcentaje de descuento
-//		}
+		//		private void ultraGrid1_InitializeLayout(object sender, Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
+		//		{
+		//			drSeteoF = cdsSeteoF.TableViews["SeteoF"].Rows[0];
+		//															
+		//			#region Iva
+		//			if (drSeteoF["CambiarIvaC"] == DBNull.Value || !(bool)drSeteoF["CambiarIvaC"]) e.Layout.Bands[0].Columns["Impuesto"].CellActivation = Activation.Disabled;			
+		//			#endregion Iva
+		//
+		//			#region Formato numerico
+		//			CultureInfo cultureENUS = CultureInfo.CreateSpecificCulture("ja-jp");
+		//			string stMoneda = "#,##0.";
+		//			string stMascara = "nnn,nnn,nnn.";
+		//			string stCeros = "0000000000";
+		//			string stNumero = "nnnnnnnnnn";
+		//			string stFormato = "";
+		//			string stInput = "";
+		//			#endregion Formato numerico
+		//
+		//			#region Decimales para el total
+		//			stFormato = stMoneda + stCeros.Substring(0, (int) drSeteoF["decTotal"]);
+		//			stInput = stMascara + stNumero.Substring(0, (int) drSeteoF["decTotal"]);
+		//			e.Layout.Bands[0].Columns["SubTotal"].Format = stFormato; 
+		//			e.Layout.Bands[0].Columns["DescuentoArt"].Format = stFormato;
+		//
+		//			this.txtDescIvaTotal.FormatString = stFormato;
+		//			this.txtIvaTotal.FormatString = stFormato;
+		//			this.txtIva.FormatString = stFormato;
+		//			this.txtIva0.FormatString = stFormato;
+		//			this.txtTotal.FormatString = stFormato;
+		//			this.txtDescIva0Total.FormatString = stFormato;
+		//						
+		//			this.txtDescIvaTotal.MaskInput = stInput;
+		//			this.txtIvaTotal.MaskInput = stInput;
+		//			this.txtIva.MaskInput = stInput;
+		//			this.txtIva0.MaskInput = stInput;
+		//			this.txtTotal.MaskInput = stInput;
+		//			this.txtDescIva0Total.MaskInput = stInput;
+		//			#endregion Decimales para el total
+		//
+		//			#region Decimales para el precio
+		//			stFormato = stMoneda + stCeros.Substring(0, 5);// (int) drSeteoF["decPrecio"]);
+		//			e.Layout.Bands[0].Columns["Precio"].Format = stFormato;
+		//			stInput = stMascara + stNumero.Substring(0, 5);// (int) drSeteoF["decPrecio"]);
+		//			e.Layout.Bands[0].Columns["Precio"].MaskInput = stInput;			
+		//			#endregion Decimales para el precio
+		//			#region Decimales para el Courier
+		//			stFormato = stMoneda + stCeros.Substring(0, 4);// (int) drSeteoF["decPrecio"]);
+		//			e.Layout.Bands[0].Columns["Courier"].Format = stFormato;
+		//			stInput = stMascara + stNumero.Substring(0, 4);// (int) drSeteoF["decPrecio"]);
+		//			e.Layout.Bands[0].Columns["Courier"].MaskInput = stInput;			
+		//			#endregion Decimales para Courier
+		//			stFormato = stMoneda + stCeros.Substring(0, 4);
+		//			e.Layout.Bands[0].Columns["Peso"].Format = stFormato;		
+		//			stInput = stMascara + stNumero.Substring(0, 4);
+		//			e.Layout.Bands[0].Columns["Peso"].MaskInput = stInput;			
+		//			stFormato = stMoneda + stCeros.Substring(0, 4);
+		//			e.Layout.Bands[0].Columns["Arancel"].Format = stFormato;		
+		//			stInput = stMascara + stNumero.Substring(0, 4);
+		//			e.Layout.Bands[0].Columns["Arancel"].MaskInput = stInput;
+		//			#region Decimales para el Impuesto
+		//			stFormato = stMoneda + stCeros.Substring(0, (int) drSeteoF["decImpuesto"]);
+		//			e.Layout.Bands[0].Columns["Impuesto"].Format = stFormato;
+		//			stInput = stMascara + stNumero.Substring(0, (int) drSeteoF["decImpuesto"]);
+		//			e.Layout.Bands[0].Columns["Impuesto"].MaskInput = stInput;
+		//			stInput = stMascara + stNumero.Substring(0, 2);
+		//			e.Layout.Bands[0].Columns["Valores"].MaskInput = stInput;
+		//			#endregion Decimales para el Impuesto
+		//			#region Decimales para porcentaje de descuento
+		//			stFormato = stMoneda + stCeros.Substring(0, 3);//(int) drSeteoF["decPorcDesc"]);
+		//			e.Layout.Bands[0].Columns["DescuentoPorc"].Format = stFormato;
+		//			e.Layout.Bands[0].Columns["DescNC"].Format = stFormato;
+		//			int iDecPorD = 0;
+		//			if (drSeteoF["decPorcDesc"] != null) iDecPorD = (int) drSeteoF["decPorcDesc"];
+		//
+		//			stInput = stMascara + stNumero.Substring(0, iDecPorD);
+		//			e.Layout.Bands[0].Columns["DescuentoPorc"].MaskInput = stInput;
+		//			e.Layout.Bands[0].Columns["DescNC"].MaskInput = stInput;
+		//			#endregion Decimales para porcentaje de descuento
+		//		}
 
 		private void ultraGrid1_InitializeLayout(
 			object sender,
@@ -5105,7 +5105,7 @@ namespace Latinium
 			#endregion Google Nuevo
 
 			if (!ValidaEstadoDocumento())
-			return; 
+				return; 
 
 			#endregion Validacion Detalle
 
@@ -7596,65 +7596,65 @@ namespace Latinium
 		}
 
 
-		
-	
 
-		public string NuevoGoogle(string txtDirectorioarchivo )
+		// Cambia aquí según el entorno:
+		// Producción:  @"\\192.168.1.10\Proyectos"
+		// Local (VM):  @"J:"
+		public static string RutaBase = @"J:\Proyectos";
+    
+		// También puedes detectarlo automáticamente:
+		// public static string RutaBase = Directory.Exists(@"J:\Proyectos") 
+		//     ? @"J:" 
+		//     : @"\\192.168.1.10\Proyectos";
+	
+		public string NuevoGoogle(string txtDirectorioarchivo)
 		{
-			if ( !File.Exists(txtDirectorioarchivo))
+			if (!File.Exists(txtDirectorioarchivo))
 			{
-				MessageBox.Show("El archivo seleccionado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("El archivo seleccionado no existe.", "Error", 
+					MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return null;
 			}
-
 			try
 			{
-				// Configuraci?n de la ruta destino
-				string carpetaDestino = @"\\192.168.1.10\Proyectos\Imagenes\" 
-					+ MenuLatinium.stDirFacturacion 
-					+ @"\Compras" 
-					+ @"\" 
-					+ (string)this.txtRuc.Text;
+				// Usa la variable global para construir la ruta
+				string carpetaDestino = Path.Combine(RutaBase, "Imagenes");
+				carpetaDestino = Path.Combine(carpetaDestino, MenuLatinium.stDirFacturacion);
+				carpetaDestino = Path.Combine(carpetaDestino, "Compras");
+				carpetaDestino = Path.Combine(carpetaDestino, (string)this.txtRuc.Text);
 
-     
 				// Crear carpeta si no existe
 				if (!Directory.Exists(carpetaDestino))
 				{
 					Directory.CreateDirectory(carpetaDestino);
 				}
-
 				// Obtener info del archivo original
 				FileInfo fi = new FileInfo(txtDirectorioarchivo);
 				string extension = fi.Extension;
-
-				// Generar nombre ?nico con timestamp
+				// Generar nombre único con timestamp
 				string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss_fff");
 				string nuevoNombreArchivo = "archivo_" + timestamp + extension;
 				sCarpeta = nuevoNombreArchivo;
-
-
-
 				string rutaDestinoFinal = Path.Combine(carpetaDestino, nuevoNombreArchivo);
-
-				// Si ya existe un archivo con ese nombre, lo elimina (altamente improbable por timestamp)
+				// Si ya existe, lo elimina
 				if (File.Exists(rutaDestinoFinal))
 				{
 					File.Delete(rutaDestinoFinal);
 				}
-
-				// Conexi?n a red (forzar acceso)
-				Directory.GetDirectories(@"\\192.168.1.10\Proyectos");
-				Process.Start("cmd.exe", "/C net use \\\\192.168.1.10 /user:latinium 10dgpv15.p");
-
-				// Mover archivo
+				// Conexión a red solo si es ruta UNC (no local)
+				if (RutaBase.StartsWith(@"\\"))
+				{
+					Directory.GetDirectories(RutaBase);
+					Process.Start("cmd.exe", "/C net use \\\\" + "192.168.1.10" + " /user:latinium 10dgpv15.p");
+				}
+				// Copiar archivo
 				File.Copy(txtDirectorioarchivo, rutaDestinoFinal);
-
-				// Confirmaci?n opcional
 				return rutaDestinoFinal;
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Error: " + ex.Message, "Error", 
+					MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return null;
 			}
 		}

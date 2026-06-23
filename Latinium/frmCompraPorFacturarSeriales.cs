@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace Latinium
 {
 	/// <summary>
-	/// Descripción breve de frmCompraPorFacturarSeriales.
+	/// DescripciÃ³n breve de frmCompraPorFacturarSeriales.
 	/// </summary>
 	public class frmCompraPorFacturarSeriales : System.Windows.Forms.Form
 	{
@@ -18,9 +18,11 @@ namespace Latinium
 		private Infragistics.Win.UltraWinDataSource.UltraDataSource ultraDataSource1;
 		private C1.Data.C1DataSet cdsSeteoF;
 		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.Label lblBuscarSerial;
 		public static int idDetCompra = 0;
+		private System.Windows.Forms.TextBox txtBuscarSerial;
 		/// <summary>
-		/// Variable del diseñador requerida.
+		/// Variable del diseÃ±ador requerida.
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 
@@ -28,17 +30,17 @@ namespace Latinium
 		{
 			idDetCompra = IdDetCompra;
 			//
-			// Necesario para admitir el Diseñador de Windows Forms
+			// Necesario para admitir el DiseÃ±ador de Windows Forms
 			//
 			InitializeComponent();
 
 			//
-			// TODO: agregar código de constructor después de llamar a InitializeComponent
+			// TODO: agregar cÃ³digo de constructor despuÃ©s de llamar a InitializeComponent
 			//
 		}
 
 		/// <summary>
-		/// Limpiar los recursos que se estén utilizando.
+		/// Limpiar los recursos que se estÃ¡n utilizando.
 		/// </summary>
 		protected override void Dispose( bool disposing )
 		{
@@ -52,10 +54,10 @@ namespace Latinium
 			base.Dispose( disposing );
 		}
 
-		#region Código generado por el Diseñador de Windows Forms
+		#region CÃ³digo generado por el DiseÃ±ador de Windows Forms
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido del método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido del mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		private void InitializeComponent()
 		{
@@ -97,6 +99,8 @@ namespace Latinium
 			this.label1 = new System.Windows.Forms.Label();
 			this.cdsSeteoF = new C1.Data.C1DataSet();
 			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.lblBuscarSerial = new System.Windows.Forms.Label();
+			this.txtBuscarSerial = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.grdDetalle)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.cdsSeteoF)).BeginInit();
@@ -126,28 +130,34 @@ namespace Latinium
 			ultraGridColumn4.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			ultraGridColumn4.Header.VisiblePosition = 3;
 			ultraGridColumn4.Width = 181;
+			ultraGridColumn5.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			ultraGridColumn5.Header.VisiblePosition = 6;
 			ultraGridColumn5.Hidden = true;
 			ultraGridColumn5.Width = 93;
+			ultraGridColumn6.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			ultraGridColumn6.Header.VisiblePosition = 5;
 			ultraGridColumn6.Width = 221;
 			ultraGridColumn7.Header.Caption = "...";
 			ultraGridColumn7.Header.VisiblePosition = 7;
 			ultraGridColumn7.Width = 67;
+			ultraGridColumn8.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			ultraGridColumn8.Header.VisiblePosition = 8;
 			ultraGridColumn8.Hidden = true;
 			ultraGridColumn8.Width = 83;
+			ultraGridColumn9.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			ultraGridColumn9.Header.VisiblePosition = 9;
 			ultraGridColumn9.Hidden = true;
 			ultraGridColumn9.Width = 82;
+			ultraGridColumn10.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			ultraGridColumn10.Header.VisiblePosition = 10;
 			ultraGridColumn10.Hidden = true;
 			ultraGridColumn10.Width = 143;
+			ultraGridColumn11.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			ultraGridColumn11.Header.VisiblePosition = 11;
 			ultraGridColumn11.Hidden = true;
 			ultraGridColumn11.Width = 66;
 			ultraGridColumn12.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
-			ultraGridColumn12.Header.Caption = "N°";
+			ultraGridColumn12.Header.Caption = "NÂº";
 			ultraGridColumn12.Header.VisiblePosition = 2;
 			ultraGridColumn12.Width = 51;
 			ultraGridBand1.Columns.AddRange(new object[] {
@@ -168,7 +178,7 @@ namespace Latinium
 			appearance2.ForeColorDisabled = System.Drawing.Color.Black;
 			this.grdDetalle.DisplayLayout.Override.ActiveRowAppearance = appearance2;
 			this.grdDetalle.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
-			this.grdDetalle.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.True;
+			this.grdDetalle.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
 			this.grdDetalle.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.True;
 			appearance3.BackColor = System.Drawing.Color.Transparent;
 			this.grdDetalle.DisplayLayout.Override.CardAreaAppearance = appearance3;
@@ -194,7 +204,7 @@ namespace Latinium
 			appearance7.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
 			this.grdDetalle.DisplayLayout.Override.SelectedRowAppearance = appearance7;
 			this.grdDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.grdDetalle.Location = new System.Drawing.Point(16, 64);
+			this.grdDetalle.Location = new System.Drawing.Point(16, 90);
 			this.grdDetalle.Name = "grdDetalle";
 			this.grdDetalle.Size = new System.Drawing.Size(824, 312);
 			this.grdDetalle.TabIndex = 6;
@@ -224,7 +234,7 @@ namespace Latinium
 			// btnCancelar
 			// 
 			this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnCancelar.Location = new System.Drawing.Point(760, 392);
+			this.btnCancelar.Location = new System.Drawing.Point(760, 418);
 			this.btnCancelar.Name = "btnCancelar";
 			this.btnCancelar.Size = new System.Drawing.Size(75, 30);
 			this.btnCancelar.TabIndex = 10;
@@ -234,7 +244,7 @@ namespace Latinium
 			// btnGenerar
 			// 
 			this.btnGenerar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnGenerar.Location = new System.Drawing.Point(680, 392);
+			this.btnGenerar.Location = new System.Drawing.Point(680, 418);
 			this.btnGenerar.Name = "btnGenerar";
 			this.btnGenerar.Size = new System.Drawing.Size(75, 30);
 			this.btnGenerar.TabIndex = 9;
@@ -264,7 +274,7 @@ namespace Latinium
 			// 
 			// checkBox1
 			// 
-			this.checkBox1.Location = new System.Drawing.Point(824, 64);
+			this.checkBox1.Location = new System.Drawing.Point(824, 90);
 			this.checkBox1.Name = "checkBox1";
 			this.checkBox1.Size = new System.Drawing.Size(16, 16);
 			this.checkBox1.TabIndex = 12;
@@ -272,15 +282,36 @@ namespace Latinium
 			// 
 			// frmCompraPorFacturarSeriales
 			// 
+			//
+			// lblBuscarSerial
+			//
+			this.lblBuscarSerial.Location = new System.Drawing.Point(24, 67);
+			this.lblBuscarSerial.Name = "lblBuscarSerial";
+			this.lblBuscarSerial.Size = new System.Drawing.Size(80, 16);
+			this.lblBuscarSerial.TabIndex = 20;
+			this.lblBuscarSerial.Text = "Buscar:";
+			//
+			// txtBuscarSerial
+			//
+			this.txtBuscarSerial.Location = new System.Drawing.Point(107, 64);
+			this.txtBuscarSerial.Name = "txtBuscarSerial";
+			this.txtBuscarSerial.Size = new System.Drawing.Size(220, 20);
+			this.txtBuscarSerial.TabIndex = 21;
+			this.txtBuscarSerial.TextChanged += new System.EventHandler(this.txtBuscarSerial_TextChanged);
+			//
+			// frmCompraPorFacturarSeriales
+			//
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(856, 438);
+			this.ClientSize = new System.Drawing.Size(856, 464);
+			this.Controls.Add(this.txtBuscarSerial);
+			this.Controls.Add(this.lblBuscarSerial);
 			this.Controls.Add(this.checkBox1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnCancelar);
 			this.Controls.Add(this.btnGenerar);
 			this.Controls.Add(this.grdDetalle);
 			this.Name = "frmCompraPorFacturarSeriales";
-			this.Text = "Asignación de Seriales a Factura";
+			this.Text = "AsignaciÃ³n de Seriales a Factura";
 			this.Load += new System.EventHandler(this.frmCompraPorFacturarSeriales_Load);
 			((System.ComponentModel.ISupportInitialize)(this.grdDetalle)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).EndInit();
@@ -318,7 +349,7 @@ namespace Latinium
 					MessageBoxButtons.OK,
 					MessageBoxIcon.Error
 					);
-			}			
+			}
 			finally
 			{
 				// Ocultar modal
@@ -327,6 +358,33 @@ namespace Latinium
 			// Contador filas
 			this.grdDetalle =
 				Funcion.ContadorFilas(this.grdDetalle, "Row");
+
+			// Pre-seleccionar seriales ya marcados FAC_SEL (EstadoFacturacion = 4)
+			// Garantiza que al reabrir el formulario se muestren los seleccionados anteriormente
+			foreach (Infragistics.Win.UltraWinGrid.UltraGridRow row in this.grdDetalle.Rows)
+			{
+				if (row.IsAddRow) continue;
+				if (row.Cells["EstadoFacturacion"].Value == DBNull.Value) continue;
+				int estado = 0;
+				try { estado = Convert.ToInt32(row.Cells["EstadoFacturacion"].Value); } catch {}
+				if (estado == 4) // FAC_SEL
+					row.Cells["Sel"].Value = true;
+			}
+		}
+
+		private void txtBuscarSerial_TextChanged(object sender, System.EventArgs e)
+		{
+			System.Data.DataView dv = this.grdDetalle.DataSource as System.Data.DataView;
+			if (dv == null) return;
+			string filtro = txtBuscarSerial.Text.Trim();
+			if (filtro.Length == 0)
+				dv.RowFilter = "";
+			else
+				{
+				string f = filtro.Replace("'", "''").Replace("[", "[[]");
+				dv.RowFilter = string.Format(
+					"Serial LIKE '%{0}%' OR Codigo LIKE '%{0}%' OR Articulo LIKE '%{0}%'", f);
+			}
 		}
 
 		private void btnGenerar_Click(object sender, System.EventArgs e)
@@ -459,9 +517,11 @@ namespace Latinium
 			{
 				bool bSeleccionarTodos = this.checkBox1.Checked;
 
+				// Usar Rows (solo visibles) para respetar el filtro de bÃºsqueda activo
 				foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr
-									in this.grdDetalle.Rows.All)
+									in this.grdDetalle.Rows)
 				{
+					if (dr.IsAddRow) continue;
 					dr.Cells["Sel"].Value = bSeleccionarTodos;
 				}
 			}

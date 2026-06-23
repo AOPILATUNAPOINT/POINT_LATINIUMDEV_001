@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data;
 using System.Data.SqlClient;
+using Latinium.Services.OrdenDeCompra.Bodega;
 
 namespace Latinium
 {
@@ -171,7 +172,7 @@ namespace Latinium
 			this.ultraLabel2.Name = "ultraLabel2";
 			this.ultraLabel2.Size = new System.Drawing.Size(38, 15);
 			this.ultraLabel2.TabIndex = 156;
-			this.ultraLabel2.Text = "Código";
+			this.ultraLabel2.Text = "CÃ³digo";
 			// 
 			// txtCodigo
 			// 
@@ -192,7 +193,7 @@ namespace Latinium
 			this.ultraLabel1.Name = "ultraLabel1";
 			this.ultraLabel1.Size = new System.Drawing.Size(42, 15);
 			this.ultraLabel1.TabIndex = 154;
-			this.ultraLabel1.Text = "Artículo";
+			this.ultraLabel1.Text = "ArtÃ­culo";
 			// 
 			// txtArticulo
 			// 
@@ -448,9 +449,11 @@ namespace Latinium
 
 			//-----------------------------------------------------
 			// ESTADOS BLOQUEADOS
+			// Solo estado 20 (factura en proceso) bloquea.
+			// Estado 28 NO bloquea: permite re-recepcionar
+			// mercaderia adicional antes de facturar (Escenario A)
 			//-----------------------------------------------------
-			if (iEstadoFacturacion == frmIngresoSeriales.EstadoPorFacturar ||
-				iEstadoFacturacion == frmIngresoSeriales.EstadoRecepcionBodega)
+			if (iEstadoFacturacion == frmIngresoSeriales.EstadoPorFacturar)
 			{
 				this.spnLlegaron.Enabled = false;
 				this.btAceptar.Enabled = false;
@@ -482,7 +485,7 @@ namespace Latinium
 				if ((int)this.spnLlegaron.Value == 0)
 				{
 					MessageBox.Show(
-						"Ingrese la cantidad recibida del Artículo",
+						"Ingrese la cantidad recibida del ArtÃ­culo",
 						"Point Technology",
 						MessageBoxButtons.OK,
 						MessageBoxIcon.Error);
@@ -521,8 +524,8 @@ namespace Latinium
 				{
 					MessageBox.Show(
 						string.Format(
-						"No puede registrar ({0}) artículos.\n\n" +
-						"Ya existen ({1}) registrados y la cantidad máxima es ({2}).",
+						"No puede registrar ({0}) artÃ­culos.\n\n" +
+						"Ya existen ({1}) registrados y la cantidad mÃ¡xima es ({2}).",
 						(int)this.spnLlegaron.Value,
 						iCantidadRegistrada,
 						DCantidad),
@@ -539,7 +542,7 @@ namespace Latinium
 					if (this.txtObservaciones.Text.ToString().Trim() == "")
 					{
 						MessageBox.Show(
-							"El valor ingresado aún no completa la cantidad del documento.\n\nIngrese una OBSERVACIÓN.",
+							"El valor ingresado aÃºn no completa la cantidad del documento.\n\nIngrese una OBSERVACIÃ“N.",
 							"Point Technology",
 							MessageBoxButtons.OK,
 							MessageBoxIcon.Warning);
@@ -548,8 +551,8 @@ namespace Latinium
 					}
 
 					MessageBox.Show(
-						"El artículo quedará parcialmente recibido.\n\n" +
-						"Podrá registrar cantidades adicionales posteriormente hasta completar el total.",
+						"El artÃ­culo quedarÃ¡ parcialmente recibido.\n\n" +
+						"PodrÃ¡ registrar cantidades adicionales posteriormente hasta completar el total.",
 						"Point Technology",
 						MessageBoxButtons.OK,
 						MessageBoxIcon.Warning);
@@ -564,7 +567,7 @@ namespace Latinium
 				if ((int)this.spnLlegaron.Value == 0)
 				{
 					MessageBox.Show(
-						"Ingrese la cantidad recibida del Artículo",
+						"Ingrese la cantidad recibida del ArtÃ­culo",
 						"Point Technology",
 						MessageBoxButtons.OK,
 						MessageBoxIcon.Error);
@@ -576,7 +579,7 @@ namespace Latinium
 				{
 					MessageBox.Show(
 						string.Format(
-						"El número de articulos ({0}) no puede ser mayor a ({1})",
+						"El nÃºmero de articulos ({0}) no puede ser mayor a ({1})",
 						(int)this.spnLlegaron.Value,
 						DCantidad),
 						"Point Technology",
@@ -591,7 +594,7 @@ namespace Latinium
 					if (this.txtObservaciones.Text.ToString().Trim() == "")
 					{
 						MessageBox.Show(
-							"El valor que ingreso es menor al del Documento.\n\nIngrese una OBSERVACIÓN.",
+							"El valor que ingreso es menor al del Documento.\n\nIngrese una OBSERVACIÃ“N.",
 							"Point Technology",
 							MessageBoxButtons.OK,
 							MessageBoxIcon.Warning);
@@ -600,7 +603,7 @@ namespace Latinium
 					}
 
 					MessageBox.Show(
-						"El valor que ingreso es menor al del Documento.\n\nEste artículo estara en tránsito hasta que registre que todos los artículos han llegado.",
+						"El valor que ingreso es menor al del Documento.\n\nEste artÃ­culo estara en trÃ¡nsito hasta que registre que todos los artÃ­culos han llegado.",
 						"Point Technology",
 						MessageBoxButtons.OK,
 						MessageBoxIcon.Warning);
@@ -691,17 +694,17 @@ namespace Latinium
 
 					if (IdTipoFactura == 2)
 					{
-						// NUEVO PROCESO ACUMULATIVO
-						if (iNuevaCantidad == DCantidad)
-						{
-							oCmd.CommandText = string.Format(
-								@"Update DetCompra 
-			  Set EstadoSerial = 1 
-			  Where idDetCompra = {0}",
-								IdDetCompra);
-
-							oCmd.ExecuteNonQuery();
-						}
+//						// NUEVO PROCESO ACUMULATIVO
+//						if (iNuevaCantidad == DCantidad)
+//						{
+//							oCmd.CommandText = string.Format(
+//								@"Update DetCompra 
+//			  Set EstadoSerial = 1 
+//			  Where idDetCompra = {0}",
+//								IdDetCompra);
+//
+//							oCmd.ExecuteNonQuery();
+//						}
 					}
 					else
 					{
@@ -722,27 +725,30 @@ namespace Latinium
 
 					#region Procesar Estado Orden Compra
 
-					oCmd.CommandText = string.Format(
-						@"Exec EstadoOrdenDeCompra 
-					{0}, 
+					if (IdTipoFactura != 2 && IdTipoFactura != 4 && IdTipoFactura != 36)
+					{
+						oCmd.CommandText = string.Format(
+							@"Exec EstadoOrdenDeCompra
+					{0},
 					{1}",
-						IdCompra,
-						IdTipoFactura);
+							IdCompra,
+							IdTipoFactura);
 
-					oCmd.ExecuteNonQuery();
+						oCmd.ExecuteNonQuery();
+					}
 
 					#endregion Procesar Estado Orden Compra
 
 					#region Actualizar Facturacion
 
-					oCmd.CommandText = string.Format(
-						@"Exec OrdenDeCompraActualizarFacturacion 
-					{0}, 
-					'{1}'",
-						IdDetCompra,
-						MenuLatinium.stUsuario.Replace("'", "''"));
+					OrdenDeCompraService oService =
+						new OrdenDeCompraService(cdsSerie);
 
-					oCmd.ExecuteNonQuery();
+					oService.ActualizarFacturacionDetalleNoSerial(
+						oConexion,
+						oTransaction,
+						IdDetCompra,
+						MenuLatinium.stUsuario);
 
 					#endregion Actualizar Facturacion
 
