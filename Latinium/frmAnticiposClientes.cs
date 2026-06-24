@@ -87,9 +87,6 @@ namespace Latinium
 		public Infragistics.Win.UltraWinEditors.UltraNumericEditor txtTurno;
 		private Infragistics.Win.UltraWinEditors.UltraCheckEditor chkFechaCupon;
 		public Infragistics.Win.UltraWinSchedule.UltraCalendarCombo dtFechaCupon;
-		public System.Windows.Forms.Label label11;
-		private Infragistics.Win.UltraWinDataSource.UltraDataSource ultraDataSource5;
-		public Infragistics.Win.UltraWinGrid.UltraCombo cmbVendedor;
 
 		int IdAnticipo = 0;
 
@@ -252,12 +249,6 @@ namespace Latinium
 			Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton2 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
 			Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
 			Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton3 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
-			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn10 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idNomina");
-			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn11 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Vendedor");
-			Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
-			Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand6 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idNomina");
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Vendedor");
 			this.txtIdAsiento = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.txtEstado = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.txtBodegaPredefinida = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
@@ -316,9 +307,6 @@ namespace Latinium
 			this.txtTurno = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.chkFechaCupon = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
 			this.dtFechaCupon = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
-			this.label11 = new System.Windows.Forms.Label();
-			this.ultraDataSource5 = new Infragistics.Win.UltraWinDataSource.UltraDataSource();
-			this.cmbVendedor = new Infragistics.Win.UltraWinGrid.UltraCombo();
 			((System.ComponentModel.ISupportInitialize)(this.txtIdAsiento)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtEstado)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtBodegaPredefinida)).BeginInit();
@@ -349,8 +337,6 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.dtFechaReserva)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtTurno)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dtFechaCupon)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.cmbVendedor)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// txtIdAsiento
@@ -358,10 +344,10 @@ namespace Latinium
 			this.txtIdAsiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtIdAsiento.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIdAsiento.Enabled = false;
-			this.txtIdAsiento.Location = new System.Drawing.Point(624, 352);
+			this.txtIdAsiento.Location = new System.Drawing.Point(749, 402);
 			this.txtIdAsiento.Name = "txtIdAsiento";
 			this.txtIdAsiento.PromptChar = ' ';
-			this.txtIdAsiento.Size = new System.Drawing.Size(16, 22);
+			this.txtIdAsiento.Size = new System.Drawing.Size(19, 25);
 			this.txtIdAsiento.TabIndex = 342;
 			this.txtIdAsiento.Visible = false;
 			// 
@@ -370,10 +356,10 @@ namespace Latinium
 			this.txtEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtEstado.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtEstado.Enabled = false;
-			this.txtEstado.Location = new System.Drawing.Point(640, 352);
+			this.txtEstado.Location = new System.Drawing.Point(768, 402);
 			this.txtEstado.Name = "txtEstado";
 			this.txtEstado.PromptChar = ' ';
-			this.txtEstado.Size = new System.Drawing.Size(16, 22);
+			this.txtEstado.Size = new System.Drawing.Size(19, 25);
 			this.txtEstado.TabIndex = 341;
 			this.txtEstado.Visible = false;
 			// 
@@ -382,18 +368,18 @@ namespace Latinium
 			this.txtBodegaPredefinida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtBodegaPredefinida.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtBodegaPredefinida.Enabled = false;
-			this.txtBodegaPredefinida.Location = new System.Drawing.Point(656, 352);
+			this.txtBodegaPredefinida.Location = new System.Drawing.Point(787, 402);
 			this.txtBodegaPredefinida.Name = "txtBodegaPredefinida";
 			this.txtBodegaPredefinida.PromptChar = ' ';
-			this.txtBodegaPredefinida.Size = new System.Drawing.Size(16, 22);
+			this.txtBodegaPredefinida.Size = new System.Drawing.Size(19, 25);
 			this.txtBodegaPredefinida.TabIndex = 340;
 			this.txtBodegaPredefinida.Visible = false;
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Location = new System.Drawing.Point(0, 384);
+			this.groupBox1.Location = new System.Drawing.Point(0, 439);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(720, 8);
+			this.groupBox1.Size = new System.Drawing.Size(864, 9);
 			this.groupBox1.TabIndex = 339;
 			this.groupBox1.TabStop = false;
 			// 
@@ -404,9 +390,9 @@ namespace Latinium
 			this.btnAsiento.Enabled = false;
 			this.btnAsiento.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnAsiento.ImageIndex = 36;
-			this.btnAsiento.Location = new System.Drawing.Point(403, 400);
+			this.btnAsiento.Location = new System.Drawing.Point(484, 457);
 			this.btnAsiento.Name = "btnAsiento";
-			this.btnAsiento.Size = new System.Drawing.Size(80, 23);
+			this.btnAsiento.Size = new System.Drawing.Size(96, 26);
 			this.btnAsiento.TabIndex = 337;
 			this.btnAsiento.Text = "Asiento";
 			this.btnAsiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -419,9 +405,9 @@ namespace Latinium
 			this.btnNuevo.CausesValidation = false;
 			this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
 			this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnNuevo.Location = new System.Drawing.Point(9, 400);
+			this.btnNuevo.Location = new System.Drawing.Point(11, 457);
 			this.btnNuevo.Name = "btnNuevo";
-			this.btnNuevo.Size = new System.Drawing.Size(72, 23);
+			this.btnNuevo.Size = new System.Drawing.Size(86, 26);
 			this.btnNuevo.TabIndex = 332;
 			this.btnNuevo.Text = "Nuevo";
 			this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -434,9 +420,9 @@ namespace Latinium
 			this.btnEditar.Enabled = false;
 			this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
 			this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnEditar.Location = new System.Drawing.Point(165, 400);
+			this.btnEditar.Location = new System.Drawing.Point(198, 457);
 			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(76, 23);
+			this.btnEditar.Size = new System.Drawing.Size(91, 26);
 			this.btnEditar.TabIndex = 336;
 			this.btnEditar.Text = "Editar";
 			this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -449,9 +435,9 @@ namespace Latinium
 			this.btnImprimir.Enabled = false;
 			this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
 			this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnImprimir.Location = new System.Drawing.Point(244, 400);
+			this.btnImprimir.Location = new System.Drawing.Point(293, 457);
 			this.btnImprimir.Name = "btnImprimir";
-			this.btnImprimir.Size = new System.Drawing.Size(77, 23);
+			this.btnImprimir.Size = new System.Drawing.Size(92, 26);
 			this.btnImprimir.TabIndex = 335;
 			this.btnImprimir.Text = "Imprimir";
 			this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -463,9 +449,9 @@ namespace Latinium
 			this.btnGuardar.Enabled = false;
 			this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
 			this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnGuardar.Location = new System.Drawing.Point(324, 400);
+			this.btnGuardar.Location = new System.Drawing.Point(389, 457);
 			this.btnGuardar.Name = "btnGuardar";
-			this.btnGuardar.Size = new System.Drawing.Size(76, 23);
+			this.btnGuardar.Size = new System.Drawing.Size(91, 26);
 			this.btnGuardar.TabIndex = 334;
 			this.btnGuardar.Text = "Guardar";
 			this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -478,9 +464,9 @@ namespace Latinium
 			this.btnCancelar.Enabled = false;
 			this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
 			this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnCancelar.Location = new System.Drawing.Point(565, 400);
+			this.btnCancelar.Location = new System.Drawing.Point(678, 457);
 			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(72, 23);
+			this.btnCancelar.Size = new System.Drawing.Size(86, 26);
 			this.btnCancelar.TabIndex = 338;
 			this.btnCancelar.Text = "Cancelar";
 			this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -493,9 +479,9 @@ namespace Latinium
 			this.btnAnular.Enabled = false;
 			this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
 			this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAnular.Location = new System.Drawing.Point(486, 400);
+			this.btnAnular.Location = new System.Drawing.Point(583, 457);
 			this.btnAnular.Name = "btnAnular";
-			this.btnAnular.Size = new System.Drawing.Size(76, 23);
+			this.btnAnular.Size = new System.Drawing.Size(91, 26);
 			this.btnAnular.TabIndex = 331;
 			this.btnAnular.Text = "&Anular";
 			this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -504,9 +490,9 @@ namespace Latinium
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(472, 75);
+			this.label8.Location = new System.Drawing.Point(566, 86);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(81, 16);
+			this.label8.Size = new System.Drawing.Size(95, 18);
 			this.label8.TabIndex = 330;
 			this.label8.Text = "Dcto. UniBanco";
 			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -514,9 +500,9 @@ namespace Latinium
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(16, 75);
+			this.label5.Location = new System.Drawing.Point(19, 86);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(26, 16);
+			this.label5.Size = new System.Drawing.Size(30, 18);
 			this.label5.TabIndex = 327;
 			this.label5.Text = "Tipo";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -525,9 +511,9 @@ namespace Latinium
 			// 
 			this.lblComprobante.AutoSize = true;
 			this.lblComprobante.BackColor = System.Drawing.Color.Transparent;
-			this.lblComprobante.Location = new System.Drawing.Point(376, 42);
+			this.lblComprobante.Location = new System.Drawing.Point(451, 48);
 			this.lblComprobante.Name = "lblComprobante";
-			this.lblComprobante.Size = new System.Drawing.Size(83, 16);
+			this.lblComprobante.Size = new System.Drawing.Size(98, 18);
 			this.lblComprobante.TabIndex = 324;
 			this.lblComprobante.Text = "Centro de costo";
 			this.lblComprobante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -535,9 +521,9 @@ namespace Latinium
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(16, 264);
+			this.label4.Location = new System.Drawing.Point(19, 302);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(39, 16);
+			this.label4.Size = new System.Drawing.Size(46, 18);
 			this.label4.TabIndex = 317;
 			this.label4.Text = "Detalle";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -545,9 +531,9 @@ namespace Latinium
 			// lblIce
 			// 
 			this.lblIce.AutoSize = true;
-			this.lblIce.Location = new System.Drawing.Point(16, 340);
+			this.lblIce.Location = new System.Drawing.Point(19, 389);
 			this.lblIce.Name = "lblIce";
-			this.lblIce.Size = new System.Drawing.Size(49, 16);
+			this.lblIce.Size = new System.Drawing.Size(58, 18);
 			this.lblIce.TabIndex = 316;
 			this.lblIce.Text = "Abono $.";
 			this.lblIce.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -556,9 +542,9 @@ namespace Latinium
 			// 
 			this.label2.AutoSize = true;
 			this.label2.BackColor = System.Drawing.Color.Transparent;
-			this.label2.Location = new System.Drawing.Point(16, 234);
+			this.label2.Location = new System.Drawing.Point(19, 267);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(80, 16);
+			this.label2.Size = new System.Drawing.Size(94, 18);
 			this.label2.TabIndex = 315;
 			this.label2.Text = "Forma de pago";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -567,9 +553,9 @@ namespace Latinium
 			// 
 			this.label7.AutoSize = true;
 			this.label7.BackColor = System.Drawing.Color.Transparent;
-			this.label7.Location = new System.Drawing.Point(16, 203);
+			this.label7.Location = new System.Drawing.Point(19, 232);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(48, 16);
+			this.label7.Size = new System.Drawing.Size(56, 18);
 			this.label7.TabIndex = 314;
 			this.label7.Text = "Teléfono";
 			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -578,9 +564,9 @@ namespace Latinium
 			// 
 			this.label3.AutoSize = true;
 			this.label3.BackColor = System.Drawing.Color.Transparent;
-			this.label3.Location = new System.Drawing.Point(16, 171);
+			this.label3.Location = new System.Drawing.Point(19, 195);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(50, 16);
+			this.label3.Size = new System.Drawing.Size(59, 18);
 			this.label3.TabIndex = 313;
 			this.label3.Text = "Dirección";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -588,9 +574,9 @@ namespace Latinium
 			// lblCliente
 			// 
 			this.lblCliente.AutoSize = true;
-			this.lblCliente.Location = new System.Drawing.Point(16, 139);
+			this.lblCliente.Location = new System.Drawing.Point(19, 159);
 			this.lblCliente.Name = "lblCliente";
-			this.lblCliente.Size = new System.Drawing.Size(38, 16);
+			this.lblCliente.Size = new System.Drawing.Size(45, 18);
 			this.lblCliente.TabIndex = 312;
 			this.lblCliente.Text = "Cliente";
 			this.lblCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -598,9 +584,9 @@ namespace Latinium
 			// lblIdentificacion
 			// 
 			this.lblIdentificacion.AutoSize = true;
-			this.lblIdentificacion.Location = new System.Drawing.Point(16, 107);
+			this.lblIdentificacion.Location = new System.Drawing.Point(19, 122);
 			this.lblIdentificacion.Name = "lblIdentificacion";
-			this.lblIdentificacion.Size = new System.Drawing.Size(48, 16);
+			this.lblIdentificacion.Size = new System.Drawing.Size(56, 18);
 			this.lblIdentificacion.TabIndex = 311;
 			this.lblIdentificacion.Text = "RUC/C.I.";
 			this.lblIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -608,9 +594,9 @@ namespace Latinium
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(504, 11);
+			this.label1.Location = new System.Drawing.Point(605, 13);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(44, 16);
+			this.label1.Size = new System.Drawing.Size(52, 18);
 			this.label1.TabIndex = 310;
 			this.label1.Text = "Numero";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -618,9 +604,9 @@ namespace Latinium
 			// lblBodega
 			// 
 			this.lblBodega.AutoSize = true;
-			this.lblBodega.Location = new System.Drawing.Point(16, 42);
+			this.lblBodega.Location = new System.Drawing.Point(19, 48);
 			this.lblBodega.Name = "lblBodega";
-			this.lblBodega.Size = new System.Drawing.Size(30, 16);
+			this.lblBodega.Size = new System.Drawing.Size(35, 18);
 			this.lblBodega.TabIndex = 309;
 			this.lblBodega.Text = "Local";
 			this.lblBodega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -628,9 +614,9 @@ namespace Latinium
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(16, 11);
+			this.label6.Location = new System.Drawing.Point(19, 13);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(34, 16);
+			this.label6.Size = new System.Drawing.Size(40, 18);
 			this.label6.TabIndex = 308;
 			this.label6.Text = "Fecha";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -641,9 +627,9 @@ namespace Latinium
 			this.txtDctoSolidario.Appearance = appearance1;
 			this.txtDctoSolidario.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtDctoSolidario.Enabled = false;
-			this.txtDctoSolidario.Location = new System.Drawing.Point(584, 72);
+			this.txtDctoSolidario.Location = new System.Drawing.Point(701, 82);
 			this.txtDctoSolidario.Name = "txtDctoSolidario";
-			this.txtDctoSolidario.Size = new System.Drawing.Size(120, 22);
+			this.txtDctoSolidario.Size = new System.Drawing.Size(144, 25);
 			this.txtDctoSolidario.TabIndex = 329;
 			// 
 			// cmbTipo
@@ -664,10 +650,10 @@ namespace Latinium
 			this.cmbTipo.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
 			this.cmbTipo.Enabled = false;
 			this.cmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.cmbTipo.Location = new System.Drawing.Point(104, 73);
+			this.cmbTipo.Location = new System.Drawing.Point(125, 83);
 			this.cmbTipo.MaxDropDownItems = 30;
 			this.cmbTipo.Name = "cmbTipo";
-			this.cmbTipo.Size = new System.Drawing.Size(312, 21);
+			this.cmbTipo.Size = new System.Drawing.Size(374, 25);
 			this.cmbTipo.TabIndex = 328;
 			this.cmbTipo.ValueMember = "Tipo";
 			this.cmbTipo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTipo_KeyDown);
@@ -701,9 +687,9 @@ namespace Latinium
 			this.cmbFormaPago.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
 			this.cmbFormaPago.Enabled = false;
 			this.cmbFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.cmbFormaPago.Location = new System.Drawing.Point(104, 232);
+			this.cmbFormaPago.Location = new System.Drawing.Point(125, 265);
 			this.cmbFormaPago.Name = "cmbFormaPago";
-			this.cmbFormaPago.Size = new System.Drawing.Size(224, 21);
+			this.cmbFormaPago.Size = new System.Drawing.Size(269, 25);
 			this.cmbFormaPago.TabIndex = 326;
 			this.cmbFormaPago.ValueMember = "idFormaPago";
 			this.cmbFormaPago.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbFormaPago_KeyDown);
@@ -732,9 +718,9 @@ namespace Latinium
 			this.cmbProyecto.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
 			this.cmbProyecto.Enabled = false;
 			this.cmbProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.cmbProyecto.Location = new System.Drawing.Point(480, 40);
+			this.cmbProyecto.Location = new System.Drawing.Point(576, 46);
 			this.cmbProyecto.Name = "cmbProyecto";
-			this.cmbProyecto.Size = new System.Drawing.Size(225, 21);
+			this.cmbProyecto.Size = new System.Drawing.Size(270, 25);
 			this.cmbProyecto.TabIndex = 325;
 			this.cmbProyecto.ValueMember = "idProyecto";
 			// 
@@ -744,9 +730,9 @@ namespace Latinium
 			this.lblEstado.AutoSize = true;
 			this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.lblEstado.ForeColor = System.Drawing.Color.Firebrick;
-			this.lblEstado.Location = new System.Drawing.Point(568, 335);
+			this.lblEstado.Location = new System.Drawing.Point(682, 383);
 			this.lblEstado.Name = "lblEstado";
-			this.lblEstado.Size = new System.Drawing.Size(0, 26);
+			this.lblEstado.Size = new System.Drawing.Size(0, 32);
 			this.lblEstado.TabIndex = 322;
 			// 
 			// cmbTipoRuc
@@ -770,9 +756,9 @@ namespace Latinium
 			this.cmbTipoRuc.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
 			this.cmbTipoRuc.Enabled = false;
 			this.cmbTipoRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.cmbTipoRuc.Location = new System.Drawing.Point(104, 105);
+			this.cmbTipoRuc.Location = new System.Drawing.Point(125, 120);
 			this.cmbTipoRuc.Name = "cmbTipoRuc";
-			this.cmbTipoRuc.Size = new System.Drawing.Size(144, 21);
+			this.cmbTipoRuc.Size = new System.Drawing.Size(173, 25);
 			this.cmbTipoRuc.TabIndex = 321;
 			this.cmbTipoRuc.ValueMember = "idTipoRuc";
 			this.cmbTipoRuc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTipoRuc_KeyDown);
@@ -789,10 +775,10 @@ namespace Latinium
 			this.txtIdCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtIdCliente.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIdCliente.Enabled = false;
-			this.txtIdCliente.Location = new System.Drawing.Point(672, 352);
+			this.txtIdCliente.Location = new System.Drawing.Point(806, 402);
 			this.txtIdCliente.Name = "txtIdCliente";
 			this.txtIdCliente.PromptChar = ' ';
-			this.txtIdCliente.Size = new System.Drawing.Size(16, 22);
+			this.txtIdCliente.Size = new System.Drawing.Size(20, 25);
 			this.txtIdCliente.TabIndex = 319;
 			this.txtIdCliente.Visible = false;
 			// 
@@ -801,10 +787,10 @@ namespace Latinium
 			this.txtIdAnticipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtIdAnticipo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIdAnticipo.Enabled = false;
-			this.txtIdAnticipo.Location = new System.Drawing.Point(688, 352);
+			this.txtIdAnticipo.Location = new System.Drawing.Point(826, 402);
 			this.txtIdAnticipo.Name = "txtIdAnticipo";
 			this.txtIdAnticipo.PromptChar = ' ';
-			this.txtIdAnticipo.Size = new System.Drawing.Size(16, 22);
+			this.txtIdAnticipo.Size = new System.Drawing.Size(19, 25);
 			this.txtIdAnticipo.TabIndex = 318;
 			this.txtIdAnticipo.Visible = false;
 			// 
@@ -815,10 +801,10 @@ namespace Latinium
 			this.txtDetalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtDetalle.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtDetalle.Enabled = false;
-			this.txtDetalle.Location = new System.Drawing.Point(104, 264);
+			this.txtDetalle.Location = new System.Drawing.Point(125, 302);
 			this.txtDetalle.Multiline = true;
 			this.txtDetalle.Name = "txtDetalle";
-			this.txtDetalle.Size = new System.Drawing.Size(600, 64);
+			this.txtDetalle.Size = new System.Drawing.Size(720, 73);
 			this.txtDetalle.TabIndex = 306;
 			this.txtDetalle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDetalle_KeyDown);
 			this.txtDetalle.Validating += new System.ComponentModel.CancelEventHandler(this.txtDetalle_Validating);
@@ -831,11 +817,11 @@ namespace Latinium
 			this.txtAbono.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtAbono.Enabled = false;
 			this.txtAbono.FormatString = "#,##0.00";
-			this.txtAbono.Location = new System.Drawing.Point(104, 337);
+			this.txtAbono.Location = new System.Drawing.Point(125, 385);
 			this.txtAbono.Name = "txtAbono";
 			this.txtAbono.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtAbono.PromptChar = ' ';
-			this.txtAbono.Size = new System.Drawing.Size(112, 22);
+			this.txtAbono.Size = new System.Drawing.Size(134, 25);
 			this.txtAbono.TabIndex = 307;
 			this.txtAbono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAbono_KeyDown);
 			this.txtAbono.Click += new System.EventHandler(this.txtAbono_Click);
@@ -849,9 +835,9 @@ namespace Latinium
 			this.txtTelefono.Appearance = appearance7;
 			this.txtTelefono.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtTelefono.Enabled = false;
-			this.txtTelefono.Location = new System.Drawing.Point(104, 200);
+			this.txtTelefono.Location = new System.Drawing.Point(125, 229);
 			this.txtTelefono.Name = "txtTelefono";
-			this.txtTelefono.Size = new System.Drawing.Size(112, 22);
+			this.txtTelefono.Size = new System.Drawing.Size(134, 25);
 			this.txtTelefono.TabIndex = 305;
 			// 
 			// txtDireccion
@@ -861,9 +847,9 @@ namespace Latinium
 			this.txtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtDireccion.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtDireccion.Enabled = false;
-			this.txtDireccion.Location = new System.Drawing.Point(104, 168);
+			this.txtDireccion.Location = new System.Drawing.Point(125, 192);
 			this.txtDireccion.Name = "txtDireccion";
-			this.txtDireccion.Size = new System.Drawing.Size(600, 22);
+			this.txtDireccion.Size = new System.Drawing.Size(720, 25);
 			this.txtDireccion.TabIndex = 304;
 			// 
 			// txtNombre
@@ -873,9 +859,9 @@ namespace Latinium
 			this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtNombre.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNombre.Enabled = false;
-			this.txtNombre.Location = new System.Drawing.Point(104, 136);
+			this.txtNombre.Location = new System.Drawing.Point(125, 155);
 			this.txtNombre.Name = "txtNombre";
-			this.txtNombre.Size = new System.Drawing.Size(512, 22);
+			this.txtNombre.Size = new System.Drawing.Size(614, 25);
 			this.txtNombre.TabIndex = 303;
 			// 
 			// txtRuc
@@ -884,10 +870,10 @@ namespace Latinium
 			this.txtRuc.Appearance = appearance10;
 			this.txtRuc.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtRuc.Enabled = false;
-			this.txtRuc.Location = new System.Drawing.Point(256, 104);
+			this.txtRuc.Location = new System.Drawing.Point(307, 119);
 			this.txtRuc.MaxLength = 13;
 			this.txtRuc.Name = "txtRuc";
-			this.txtRuc.Size = new System.Drawing.Size(128, 22);
+			this.txtRuc.Size = new System.Drawing.Size(154, 25);
 			this.txtRuc.TabIndex = 302;
 			this.txtRuc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRuc_KeyDown);
 			this.txtRuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRuc_KeyPress);
@@ -901,9 +887,9 @@ namespace Latinium
 			this.txtNumero.Appearance = appearance11;
 			this.txtNumero.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNumero.Enabled = false;
-			this.txtNumero.Location = new System.Drawing.Point(584, 8);
+			this.txtNumero.Location = new System.Drawing.Point(701, 9);
 			this.txtNumero.Name = "txtNumero";
-			this.txtNumero.Size = new System.Drawing.Size(120, 22);
+			this.txtNumero.Size = new System.Drawing.Size(144, 25);
 			this.txtNumero.TabIndex = 301;
 			// 
 			// dtFecha
@@ -915,10 +901,10 @@ namespace Latinium
 			this.dtFecha.DateButtons.Add(dateButton1);
 			this.dtFecha.Enabled = false;
 			this.dtFecha.Format = "dd/MM/yyyy HH:mm";
-			this.dtFecha.Location = new System.Drawing.Point(104, 9);
+			this.dtFecha.Location = new System.Drawing.Point(125, 10);
 			this.dtFecha.Name = "dtFecha";
 			this.dtFecha.NonAutoSizeHeight = 23;
-			this.dtFecha.Size = new System.Drawing.Size(112, 21);
+			this.dtFecha.Size = new System.Drawing.Size(134, 24);
 			this.dtFecha.SpinButtonsVisible = true;
 			this.dtFecha.TabIndex = 300;
 			this.dtFecha.Value = ((object)(resources.GetObject("dtFecha.Value")));
@@ -933,9 +919,9 @@ namespace Latinium
 			this.btnSalir.CausesValidation = false;
 			this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
 			this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnSalir.Location = new System.Drawing.Point(640, 400);
+			this.btnSalir.Location = new System.Drawing.Point(768, 457);
 			this.btnSalir.Name = "btnSalir";
-			this.btnSalir.Size = new System.Drawing.Size(72, 23);
+			this.btnSalir.Size = new System.Drawing.Size(86, 26);
 			this.btnSalir.TabIndex = 343;
 			this.btnSalir.Text = "Salir";
 			this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -961,9 +947,9 @@ namespace Latinium
 			this.btnConsultar.ForeColor = System.Drawing.Color.FromArgb(((System.Byte)(50)), ((System.Byte)(50)), ((System.Byte)(50)));
 			this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
 			this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnConsultar.Location = new System.Drawing.Point(84, 400);
+			this.btnConsultar.Location = new System.Drawing.Point(101, 457);
 			this.btnConsultar.Name = "btnConsultar";
-			this.btnConsultar.Size = new System.Drawing.Size(78, 23);
+			this.btnConsultar.Size = new System.Drawing.Size(93, 26);
 			this.btnConsultar.TabIndex = 333;
 			this.btnConsultar.Text = "Consultar";
 			this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -988,10 +974,10 @@ namespace Latinium
 			this.cmbBodega.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
 			this.cmbBodega.Enabled = false;
 			this.cmbBodega.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.cmbBodega.Location = new System.Drawing.Point(104, 40);
+			this.cmbBodega.Location = new System.Drawing.Point(125, 46);
 			this.cmbBodega.MaxDropDownItems = 30;
 			this.cmbBodega.Name = "cmbBodega";
-			this.cmbBodega.Size = new System.Drawing.Size(225, 21);
+			this.cmbBodega.Size = new System.Drawing.Size(270, 25);
 			this.cmbBodega.TabIndex = 344;
 			this.cmbBodega.ValueMember = "Bodega";
 			this.cmbBodega.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbBodega_KeyDown);
@@ -1010,10 +996,10 @@ namespace Latinium
 			this.txtIdOrigen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtIdOrigen.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIdOrigen.Enabled = false;
-			this.txtIdOrigen.Location = new System.Drawing.Point(608, 352);
+			this.txtIdOrigen.Location = new System.Drawing.Point(730, 402);
 			this.txtIdOrigen.Name = "txtIdOrigen";
 			this.txtIdOrigen.PromptChar = ' ';
-			this.txtIdOrigen.Size = new System.Drawing.Size(16, 22);
+			this.txtIdOrigen.Size = new System.Drawing.Size(19, 25);
 			this.txtIdOrigen.TabIndex = 345;
 			this.txtIdOrigen.Visible = false;
 			// 
@@ -1022,19 +1008,19 @@ namespace Latinium
 			this.txtidArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtidArticulo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtidArticulo.Enabled = false;
-			this.txtidArticulo.Location = new System.Drawing.Point(592, 352);
+			this.txtidArticulo.Location = new System.Drawing.Point(710, 402);
 			this.txtidArticulo.Name = "txtidArticulo";
 			this.txtidArticulo.PromptChar = ' ';
-			this.txtidArticulo.Size = new System.Drawing.Size(16, 22);
+			this.txtidArticulo.Size = new System.Drawing.Size(20, 25);
 			this.txtidArticulo.TabIndex = 346;
 			this.txtidArticulo.Visible = false;
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(360, 234);
+			this.label9.Location = new System.Drawing.Point(432, 267);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(42, 16);
+			this.label9.Size = new System.Drawing.Size(49, 18);
 			this.label9.TabIndex = 348;
 			this.label9.Text = "Articulo";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1046,9 +1032,9 @@ namespace Latinium
 			this.txtArticulo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtArticulo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtArticulo.Enabled = false;
-			this.txtArticulo.Location = new System.Drawing.Point(408, 231);
+			this.txtArticulo.Location = new System.Drawing.Point(490, 264);
 			this.txtArticulo.Name = "txtArticulo";
-			this.txtArticulo.Size = new System.Drawing.Size(296, 22);
+			this.txtArticulo.Size = new System.Drawing.Size(355, 25);
 			this.txtArticulo.TabIndex = 347;
 			this.txtArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtArticulo_KeyDown);
 			this.txtArticulo.Validated += new System.EventHandler(this.txtArticulo_Validated);
@@ -1056,9 +1042,9 @@ namespace Latinium
 			// btnCliente
 			// 
 			this.btnCliente.Enabled = false;
-			this.btnCliente.Location = new System.Drawing.Point(392, 104);
+			this.btnCliente.Location = new System.Drawing.Point(470, 119);
 			this.btnCliente.Name = "btnCliente";
-			this.btnCliente.Size = new System.Drawing.Size(24, 22);
+			this.btnCliente.Size = new System.Drawing.Size(29, 25);
 			this.btnCliente.TabIndex = 349;
 			this.btnCliente.Text = "...";
 			this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
@@ -1066,9 +1052,9 @@ namespace Latinium
 			// label10
 			// 
 			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(232, 11);
+			this.label10.Location = new System.Drawing.Point(278, 13);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(97, 16);
+			this.label10.Size = new System.Drawing.Size(115, 18);
 			this.label10.TabIndex = 351;
 			this.label10.Text = "Fecha Reservación";
 			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1083,10 +1069,10 @@ namespace Latinium
 			this.dtFechaReserva.DateButtons.Add(dateButton2);
 			this.dtFechaReserva.Enabled = false;
 			this.dtFechaReserva.Format = "dd/MM/yyyy HH:mm";
-			this.dtFechaReserva.Location = new System.Drawing.Point(336, 9);
+			this.dtFechaReserva.Location = new System.Drawing.Point(403, 10);
 			this.dtFechaReserva.Name = "dtFechaReserva";
 			this.dtFechaReserva.NonAutoSizeHeight = 23;
-			this.dtFechaReserva.Size = new System.Drawing.Size(112, 21);
+			this.dtFechaReserva.Size = new System.Drawing.Size(135, 24);
 			this.dtFechaReserva.SpinButtonsVisible = true;
 			this.dtFechaReserva.TabIndex = 423;
 			this.dtFechaReserva.Value = ((object)(resources.GetObject("dtFechaReserva.Value")));
@@ -1097,10 +1083,10 @@ namespace Latinium
 			this.txtTurno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtTurno.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtTurno.Enabled = false;
-			this.txtTurno.Location = new System.Drawing.Point(576, 352);
+			this.txtTurno.Location = new System.Drawing.Point(691, 402);
 			this.txtTurno.Name = "txtTurno";
 			this.txtTurno.PromptChar = ' ';
-			this.txtTurno.Size = new System.Drawing.Size(16, 22);
+			this.txtTurno.Size = new System.Drawing.Size(19, 25);
 			this.txtTurno.TabIndex = 424;
 			this.txtTurno.Visible = false;
 			// 
@@ -1108,9 +1094,9 @@ namespace Latinium
 			// 
 			this.chkFechaCupon.BackColor = System.Drawing.Color.Transparent;
 			this.chkFechaCupon.Enabled = false;
-			this.chkFechaCupon.Location = new System.Drawing.Point(440, 104);
+			this.chkFechaCupon.Location = new System.Drawing.Point(528, 119);
 			this.chkFechaCupon.Name = "chkFechaCupon";
-			this.chkFechaCupon.Size = new System.Drawing.Size(152, 21);
+			this.chkFechaCupon.Size = new System.Drawing.Size(182, 24);
 			this.chkFechaCupon.TabIndex = 425;
 			this.chkFechaCupon.Text = "Vencimiento Fecha Cupon";
 			this.chkFechaCupon.Visible = false;
@@ -1125,71 +1111,25 @@ namespace Latinium
 			this.dtFechaCupon.DateButtons.Add(dateButton3);
 			this.dtFechaCupon.Enabled = false;
 			this.dtFechaCupon.Format = "dd/MM/yyyy HH:mm";
-			this.dtFechaCupon.Location = new System.Drawing.Point(592, 104);
+			this.dtFechaCupon.Location = new System.Drawing.Point(710, 119);
 			this.dtFechaCupon.Name = "dtFechaCupon";
 			this.dtFechaCupon.NonAutoSizeHeight = 23;
-			this.dtFechaCupon.Size = new System.Drawing.Size(112, 21);
+			this.dtFechaCupon.Size = new System.Drawing.Size(135, 24);
 			this.dtFechaCupon.SpinButtonsVisible = true;
 			this.dtFechaCupon.TabIndex = 426;
 			this.dtFechaCupon.Value = ((object)(resources.GetObject("dtFechaCupon.Value")));
 			this.dtFechaCupon.Visible = false;
 			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.BackColor = System.Drawing.Color.Transparent;
-			this.label11.Location = new System.Drawing.Point(240, 203);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(52, 16);
-			this.label11.TabIndex = 427;
-			this.label11.Text = "Vendedor";
-			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// ultraDataSource5
-			// 
-			this.ultraDataSource5.Band.Columns.AddRange(new object[] {
-																																 ultraDataColumn10,
-																																 ultraDataColumn11});
-			// 
-			// cmbVendedor
-			// 
-			appearance16.ForeColorDisabled = System.Drawing.Color.Black;
-			this.cmbVendedor.Appearance = appearance16;
-			this.cmbVendedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-			this.cmbVendedor.Cursor = System.Windows.Forms.Cursors.Default;
-			this.cmbVendedor.DataSource = this.ultraDataSource5;
-			ultraGridColumn12.Header.VisiblePosition = 0;
-			ultraGridColumn12.Hidden = true;
-			ultraGridColumn13.Header.VisiblePosition = 1;
-			ultraGridColumn13.Width = 240;
-			ultraGridBand6.Columns.AddRange(new object[] {
-																										 ultraGridColumn12,
-																										 ultraGridColumn13});
-			this.cmbVendedor.DisplayLayout.BandsSerializer.Add(ultraGridBand6);
-			this.cmbVendedor.DisplayMember = "Vendedor";
-			this.cmbVendedor.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
-			this.cmbVendedor.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
-			this.cmbVendedor.Enabled = false;
-			this.cmbVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.cmbVendedor.Location = new System.Drawing.Point(296, 200);
-			this.cmbVendedor.Name = "cmbVendedor";
-			this.cmbVendedor.Size = new System.Drawing.Size(240, 21);
-			this.cmbVendedor.TabIndex = 429;
-			this.cmbVendedor.ValueMember = "idNomina";
-			// 
 			// frmAnticiposClientes
 			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
+			this.AutoScaleBaseSize = new System.Drawing.Size(6, 16);
 			this.CausesValidation = false;
-			this.ClientSize = new System.Drawing.Size(720, 430);
-			this.Controls.Add(this.cmbVendedor);
-			this.Controls.Add(this.label11);
+			this.ClientSize = new System.Drawing.Size(864, 491);
 			this.Controls.Add(this.dtFechaCupon);
 			this.Controls.Add(this.chkFechaCupon);
 			this.Controls.Add(this.txtTurno);
 			this.Controls.Add(this.dtFechaReserva);
 			this.Controls.Add(this.label10);
-			this.Controls.Add(this.btnCliente);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.label5);
@@ -1204,6 +1144,7 @@ namespace Latinium
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.lblBodega);
 			this.Controls.Add(this.label6);
+			this.Controls.Add(this.btnCliente);
 			this.Controls.Add(this.txtArticulo);
 			this.Controls.Add(this.txtidArticulo);
 			this.Controls.Add(this.txtIdOrigen);
@@ -1278,8 +1219,6 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.dtFechaReserva)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtTurno)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dtFechaCupon)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.cmbVendedor)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -1310,12 +1249,12 @@ namespace Latinium
 						
 			this.cmbProyecto.DataSource = Funcion.dvProcedimiento(cdsSeteoF, "Exec ProyectoCarga 24");
 			
-			if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36)
+			if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36 || MenuLatinium.stIdDB == 70)
 			{
 				this.cmbFormaPago.DataSource = Funcion.dvProcedimiento(cdsSeteoF, string.Format("Select idFormaPago, FormaPago From CompraFormaPago Where idFormaPago In (1, 3, 45)"));
 				string sSQLT = string.Format("Exec RetornaTurno '{0}'", dtHoy.ToString("yyyyMMdd HH:mm"));		
 				this.txtTurno.Value = Funcion.iEscalarSQL(cdsSeteoF, sSQLT);
-				this.cmbVendedor.DataSource = Funcion.dvProcedimiento(cdsSeteoF, string.Format(" select idNomina,ApellidoPaterno + ' '+ ApellidoMaterno + ' ' +PrimerNombre + ' ' +SegundoNombre as Vendedor From Nomina where Vendedor = 1 and Estado = 1"));
+
 				this.lblIce.Text = "Valor $.";
 
 				#region Fecha Cupon
@@ -1356,25 +1295,13 @@ namespace Latinium
 				this.cmbBodega.Value = iBodega;
 				
 				#region Fecha
-				if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36)
+				if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36 || MenuLatinium.stIdDB == 70)
 					this.dtFecha.Value = Funcion.dtEscalarSQL(cdsSeteoF, "Select dbo.FacturacionRetornaFecha()");
 				else
 					FuncionesProcedimientos.RetornaFechaServidor(this.dtFecha, cdsSeteoF, false);
 				#endregion Fecha
 				
 				this.cmbTipo.Value = iTipo;
-
-				if (iTipo == 16)
-				{
-					this.label11.Visible = true;
-					this.cmbVendedor.Visible = true;
-					this.cmbVendedor.Enabled = true;
-				}
-				else
-				{
-					this.label11.Visible = false;
-					this.cmbVendedor.Visible = false;
-				}
 
 				this.cmbTipoRuc.Value = 5;
 				if (idTipoRuc > 0) this.cmbTipoRuc.Value = idTipoRuc;				
@@ -1412,19 +1339,15 @@ namespace Latinium
 					this.txtDetalle.Text = "COBRO MANUAL DE CREDIPOINT";
 				else
 				{
-					this.txtDetalle.Text = "REGISTRO A C";
+          this.txtDetalle.Text = "REGISTRO A C";
 					this.txtAbono.MinValue = dCobro;
 					this.txtAbono.Enabled = true;
 				}
 		
-				if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36) 
+				if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36 || MenuLatinium.stIdDB == 70) 
 				{
 					if (iTipo == 5) this.txtDetalle.Text = "VALIDO POR 30 DIAS A PARTIR DE SU EMISION\nVALIDO PARA SUITS PREMIUM DE $35\nSUJETO A DISPONIBILIDAD\nTIEMPO DE USO 4 HORAS";
-					if (iTipo == 15)
-					{
-						this.txtDetalle.Text = "COBRO ANTICIPADO HOSPEDAJE";
-						this.cmbFormaPago.Enabled = true;
-					}
+					if (iTipo == 15) this.txtDetalle.Text = "COBRO ANTICIPADO HOSPEDAJE";
 				}
 
 				this.txtAbono.Value = dCobro;
@@ -1514,10 +1437,6 @@ namespace Latinium
 			this.btnCancelar.Enabled = false;
 			this.btnCliente.Enabled = false;
 
-			this.cmbVendedor.Value = System.DBNull.Value;
-			this.cmbVendedor.Visible = false;
-			this.label11.Visible = false;
-
 			this.btnAnular.Text = "Anular";
 			
 			this.cmbTipo.DataSource = Funcion.dvProcedimiento(cdsSeteoF, "Select Tipo, Descripcion From TiposDeAnticipos Order By Tipo Asc");
@@ -1559,24 +1478,21 @@ namespace Latinium
 					MessageBox.Show("El Documento esta Bloqueado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
-				if (!miAcceso.AnulaCancelado)
+				if ((int)this.txtEstado.Value == 3 
+					&& ((int)this.cmbTipo.Value != 1 && (int)this.cmbTipo.Value != 3 && (int)this.cmbTipo.Value != 5 && (int)this.cmbTipo.Value != 7 
+					&& (int)this.cmbTipo.Value != 12 && (int)this.cmbTipo.Value != 15 && (int)this.cmbTipo.Value != 16 && (int)this.cmbTipo.Value != 17
+					&& (int)this.cmbTipo.Value != 18 && (int)this.cmbTipo.Value != 19 && (int)this.cmbTipo.Value != 20 && (int)this.cmbTipo.Value != 21
+					&& (int)this.cmbTipo.Value != 25 && (int)this.cmbTipo.Value != 26 && (int)this.cmbTipo.Value != 27 && (int)this.cmbTipo.Value != 2 
+					&& (int)this.cmbTipo.Value != 29 && (int)this.cmbTipo.Value != 30 && (int)this.cmbTipo.Value != 31 && (int)this.cmbTipo.Value != 32))
 				{
-					if ((int)this.txtEstado.Value == 3 
-						&& ((int)this.cmbTipo.Value != 1 && (int)this.cmbTipo.Value != 3 && (int)this.cmbTipo.Value != 5 && (int)this.cmbTipo.Value != 7 
-						&& (int)this.cmbTipo.Value != 12 && (int)this.cmbTipo.Value != 15 && (int)this.cmbTipo.Value != 16 && (int)this.cmbTipo.Value != 17
-						&& (int)this.cmbTipo.Value != 18 && (int)this.cmbTipo.Value != 19 && (int)this.cmbTipo.Value != 20 && (int)this.cmbTipo.Value != 21
-						&& (int)this.cmbTipo.Value != 25 && (int)this.cmbTipo.Value != 26 && (int)this.cmbTipo.Value != 27 && (int)this.cmbTipo.Value != 2 
-						&& (int)this.cmbTipo.Value != 29 && (int)this.cmbTipo.Value != 30 && (int)this.cmbTipo.Value != 31 && (int)this.cmbTipo.Value != 32))
-					{
-						MessageBox.Show("No puede Anular el Documento Esta Cancelado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);				
-						return;
-					}
-					if (((int)this.cmbTipo.Value == 1 || (int)this.cmbTipo.Value == 5) && Funcion.decEscalarSQL(cdsSeteoF, string.Format("Select ROUND(IsNull(Saldo, 0), 2) From Anticipos Where idAnticipo = {0}", (int)this.txtIdAnticipo.Value)) < Convert.ToDecimal(this.txtAbono.Value))
-					{
-						MessageBox.Show("No puede Anular el Documento ya ha sido utilizado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						return;
-					}
+					MessageBox.Show("No puede Anular el Documento Esta Cancelado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);				
+					return;
 				}
+				if (((int)this.cmbTipo.Value == 1 || (int)this.cmbTipo.Value == 5) && Funcion.decEscalarSQL(cdsSeteoF, string.Format("Select ROUND(IsNull(Saldo, 0), 2) From Anticipos Where idAnticipo = {0}", (int)this.txtIdAnticipo.Value)) < Convert.ToDecimal(this.txtAbono.Value))
+				{
+					MessageBox.Show("No puede Anular el Documento ya ha sido utilizado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}				
 				if ((int)this.cmbTipo.Value == 5 && Funcion.decEscalarSQL(cdsSeteoF, string.Format("Select IsNull(Saldo, 0) From Anticipos Where idAnticipo = {0}", (int)this.txtIdAnticipo.Value)) < Convert.ToDecimal(this.txtAbono.Value))
 				{
 					MessageBox.Show("No puede Anular ya ha sido pagado al Banco", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1707,7 +1623,7 @@ namespace Latinium
 			ListaTiposDeAnticipos(true);
 
 			#region Fecha			
-			if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36)
+			if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36 || MenuLatinium.stIdDB == 70)
 				this.dtFecha.Value = Funcion.dtEscalarSQL(cdsSeteoF, "Select dbo.FacturacionRetornaFecha()");
 			else
 				FuncionesProcedimientos.RetornaFechaServidor(this.dtFecha, cdsSeteoF, false);
@@ -2022,7 +1938,7 @@ namespace Latinium
 				
 				if ((int)this.cmbTipo.Value == 1)
 				{
-					if (MenuLatinium.stIdDB == 36 || MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34) //29, 34
+					if (MenuLatinium.stIdDB == 36 || MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 70) //29, 34
 					{
 						this.txtArticulo.Enabled = false;
 					}
@@ -2044,17 +1960,6 @@ namespace Latinium
 				{
 					this.txtidArticulo.Value = 0;
 					this.txtArticulo.Text = "";
-				}
-				if ((int)this.cmbTipo.Value == 16)
-				{
-					this.label11.Visible = true;
-					this.cmbVendedor.Visible = true;
-					this.cmbVendedor.Enabled = true;
-				}
-				else
-				{
-					this.label11.Visible = false;
-					this.cmbVendedor.Visible = false;
 				}
 			}
 		}
@@ -2138,7 +2043,6 @@ namespace Latinium
 					this.txtArticulo.Text = dr.GetString(24);
 					this.dtFechaReserva.Value = dr.GetDateTime(25);
 					this.txtTurno.Value = dr.GetInt32(26);
-					this.cmbVendedor.Value = dr.GetInt32(27);
 				}
 				dr.Close();
 			
@@ -2167,11 +2071,6 @@ namespace Latinium
 					this.btnAnular.Enabled = true;
 					this.btnAnular.Text = "Eliminar";
 				}
-				if((int)this.cmbTipo.Value == 16)
-				{
-					this.label11.Visible = true;
-					this.cmbVendedor.Visible = true;				
-				}
 								
 				this.cmbBodega.Value = IBodega;
 				this.cmbTipoRuc.DataSource = FuncionesProcedimientos.Lista_TiposDeIdentificacion((int)this.cmbBodega.Value, 24, cdsSeteoF);
@@ -2182,7 +2081,7 @@ namespace Latinium
 				this.btnCancelar.Enabled = true;
 
 				#region Fecha Cupones
-				if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36)
+				if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36 || MenuLatinium.stIdDB == 70)
 				{
 					iValCupon = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select COUNT(1) From CuponesAnticipoCompra Where idAnticipo = {0}", this.txtIdAnticipo.Value));
 				}
@@ -2210,7 +2109,6 @@ namespace Latinium
 		private void btnGuardar_Click(object sender, System.EventArgs e)
 		{
 			int iOrigen = 2;
-			int iVendedor = 0;
 			if ((int)this.cmbTipo.Value == 2) iOrigen = 3;
 			if ((int)this.cmbTipo.Value == 3) iOrigen = 4;
 
@@ -2331,24 +2229,9 @@ namespace Latinium
 				this.txtRuc.Focus();
 				return;
 			}
-			int idVendedor = 0;
-			if (this.cmbVendedor.Value != null && this.cmbVendedor.Value != DBNull.Value)
-				idVendedor = (int)this.cmbVendedor.Value;
-
-			if ((int)this.cmbTipo.Value == 16 && bNuevo && idVendedor == 0)
-			{
-				MessageBox.Show("Seleccione un Vendedor","Point Technology",MessageBoxButtons.OK,MessageBoxIcon.Stop);
-				this.cmbVendedor.Focus();
-				return;
-			}
 			#endregion Validacion
 
-			if (cmbVendedor.Value == null || cmbVendedor.Value == DBNull.Value)
-				iVendedor = 0;
-			else
-				iVendedor = Convert.ToInt32(cmbVendedor.Value);
-
-			if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36)
+			if (MenuLatinium.stIdDB == 29 || MenuLatinium.stIdDB == 34 || MenuLatinium.stIdDB == 36 || MenuLatinium.stIdDB == 70)
 			{
 				using (VentaFPagoLot miCobro = new VentaFPagoLot ((int)this.txtIdAnticipo.Value, (int)this.cmbFormaPago.Value, Convert.ToDecimal(this.txtAbono.Value), iOrigen, 4))
 				{
@@ -2384,10 +2267,10 @@ namespace Latinium
 								DateTime dtFechaReserva = DateTime.Today;
 								if (this.dtFechaReserva.Value != System.DBNull.Value) dtFechaReserva = (DateTime) this.dtFechaReserva.Value;
 
-								string sSQLGraba = string.Format("Exec GuardaAnticipos {0}, {1}, '{2}', {3}, '{4}', {5}, {6}, {7}, '{8}', {9}, {10}, {11}, '{12}', {13}, '{14}', '{15}', {16},{17}", 
+								string sSQLGraba = string.Format("Exec GuardaAnticipos {0}, {1}, '{2}', {3}, '{4}', {5}, {6}, {7}, '{8}', {9}, {10}, {11}, '{12}', {13}, '{14}', '{15}', {16}", 
 									(int)this.txtIdAnticipo.Value, 0, dtFecha.ToString("yyyyMMdd"), (int)this.cmbBodega.Value, this.txtNumero.Text.ToString(), (int)this.txtIdCliente.Value, (int)this.cmbFormaPago.Value, 0, 
 									this.txtDetalle.Text.ToString(), (int)this.txtEstado.Value, Convert.ToDecimal(this.txtAbono.Value), (int)this.cmbTipo.Value, this.txtDctoSolidario.Text.ToString(),
-									(int)this.txtIdOrigen.Value, (int)this.txtidArticulo.Value, dtFechaReserva.ToString("yyyyMMdd"), (int)this.txtTurno.Value,iVendedor);
+									(int)this.txtIdOrigen.Value, (int)this.txtidArticulo.Value, dtFechaReserva.ToString("yyyyMMdd"), (int)this.txtTurno.Value);
 								oCmdActualiza.CommandText = sSQLGraba;
 								this.txtIdAnticipo.Value = (int)oCmdActualiza.ExecuteScalar();
 								#endregion Guarda Anticipo

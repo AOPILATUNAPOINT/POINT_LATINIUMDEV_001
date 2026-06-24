@@ -2337,7 +2337,7 @@ namespace Latinium
 								MessageBoxButtons.OK,
 								MessageBoxIcon.Stop);
 
-							e.Cancel = true; 
+							e.Cancel = true;
 							return;
 						}
 					}
@@ -2346,26 +2346,19 @@ namespace Latinium
 				if (e.Cell.Row.Cells["idFormaPago"].Value != DBNull.Value)
 				{
 					int idActual = Convert.ToInt32(e.Cell.Row.Cells["idFormaPago"].Value);
+					int idDetFormaPago = 0;
+					if (e.Cell.Row.Cells["idDetFormaPago"].Value != DBNull.Value && e.Cell.Row.Cells["idDetFormaPago"].Value != null)
+						idDetFormaPago = Convert.ToInt32(e.Cell.Row.Cells["idDetFormaPago"].Value);
 
-					if (idActual == 39)
+					string sMensajeValida = Funcion.sEscalarSQL(cdsSeteoF,
+						string.Format("EXEC ValidaCambioFormaPago {0}, {1}, {2}, {3}", idDetFormaPago, idActual, nuevoValor, IdOrigen));
+
+					if (sMensajeValida.Length > 0)
 					{
-						MessageBox.Show("No se puede modificar el Cobro Anticipado.",
-							"Point Technology",
-							MessageBoxButtons.OK,
-							MessageBoxIcon.Stop);
-
+						MessageBox.Show(sMensajeValida, "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						e.Cancel = true;
 						return;
 					}
-				}
-				if (nuevoValor == 6 ||
-					nuevoValor == 8 ||
-					nuevoValor == 10 ||
-					nuevoValor == 12 ||
-					nuevoValor == 37)
-				{
-					e.Cancel = true;
-					return;
 				}
 			}
 		}
