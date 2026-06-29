@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Data.SqlClient;
 using C1.Data;
 using System.Drawing;
@@ -23,7 +23,7 @@ using Latinium.Models.Pinpad.Configuracion;
 namespace Latinium
 {
 	/// <summary>
-	/// Descripci�n breve de Form1.
+	/// Descripción breve de Form1.
 	/// </summary>
 	public class MenuLatinium : DevExpress.XtraEditors.XtraForm
 	{
@@ -52,7 +52,7 @@ namespace Latinium
 		private DevExpress.XtraBars.BarButtonItem MnuHerr_Sal_Ini;
 		private DevExpress.XtraBars.BarButtonItem MnuHerr_Camb_Ctes;
 		private DevExpress.XtraBars.BarButtonItem MnuHerr_Copi_Arch;
-		private DevExpress.XtraBars.BarButtonItem MnuHerr_Auditor�a;
+		private DevExpress.XtraBars.BarButtonItem MnuHerr_Auditoría;
 		private DevExpress.XtraBars.BarButtonItem MnuCont_Ind_Financieros;
 		private DevExpress.XtraBars.BarButtonItem MnuFactLot_Ctas_Cob;
 		private DevExpress.XtraBars.BarButtonItem MnuFactLot_Ctas_Pag;
@@ -1052,7 +1052,6 @@ namespace Latinium
 		private System.Windows.Forms.Timer tControlRequerimientos;
 		private DevExpress.XtraBars.BarButtonItem subMnuIngresotarjVIP;
 		private DevExpress.XtraBars.BarButtonItem mnuCPCarteraFideicomisoGeneracion;
-		private DevExpress.XtraBars.BarButtonItem mnuCPVentaCarteraFideicomiso;
 		private DevExpress.XtraBars.BarButtonItem barButtonItem161;
 		private DevExpress.XtraBars.BarButtonItem mnuPresupuestoConfiguracion;
 		private DevExpress.XtraBars.BarSubItem mnuPresupuestoConfiguraciones;
@@ -1168,7 +1167,10 @@ namespace Latinium
 		private DevExpress.XtraBars.BarButtonItem barButtonItem223;
 		private DevExpress.XtraBars.BarButtonItem barButtonItem224;
 		private DevExpress.XtraBars.BarButtonItem barButtonItem225;
+		private DevExpress.XtraBars.BarButtonItem barButtonItem226;
 		private DevExpress.XtraBars.BarButtonItem mnuContLotAsiComprob;
+		private DevExpress.XtraBars.BarButtonItem mnuPruebaCierreDescuento;
+		private DevExpress.XtraBars.BarButtonItem mnuPruebaCierreConfig;
 		#endregion mnulat
 
 		private void mnuFacRepSri(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1196,7 +1198,7 @@ namespace Latinium
 		}
 
 		/// <summary>
-		/// Limpiar los recursos que se est�n utilizando.
+		/// Limpiar los recursos que se estén utilizando.
 		/// </summary>
 		protected override void Dispose( bool disposing )
 		{
@@ -1212,8 +1214,8 @@ namespace Latinium
 
 		#region Windows Form Designer generated code
 		/// <summary>
-		/// M�todo necesario para admitir el Dise�ador, no se puede modificar
-		/// el contenido del m�todo con el editor de c�digo.
+		/// Método necesario para admitir el Diseñador, no se puede modificar
+		/// el contenido del método con el editor de código.
 		/// </summary>
 		private void InitializeComponent()
 		{
@@ -1327,7 +1329,7 @@ namespace Latinium
 			this.MnuHerr_Camb_Contr = new DevExpress.XtraBars.BarButtonItem();
 			this.MnuHerr_Sal_Ini = new DevExpress.XtraBars.BarButtonItem();
 			this.MnuHerr_Camb_Ctes = new DevExpress.XtraBars.BarButtonItem();
-			this.MnuHerr_Auditor�a = new DevExpress.XtraBars.BarButtonItem();
+			this.MnuHerr_Auditoría = new DevExpress.XtraBars.BarButtonItem();
 			this.MnuHerr_Act_Saldo = new DevExpress.XtraBars.BarButtonItem();
 			this.MnuEdicSeguridad = new DevExpress.XtraBars.BarSubItem();
 			this.MnuEdicSegMenu = new DevExpress.XtraBars.BarButtonItem();
@@ -1680,7 +1682,6 @@ namespace Latinium
 			this.mnuCPCarteraFideicomisoPagos = new DevExpress.XtraBars.BarButtonItem();
 			this.barButtonItem148 = new DevExpress.XtraBars.BarButtonItem();
 			this.mnuCPCarteraFideicomisoGeneracion = new DevExpress.XtraBars.BarButtonItem();
-			this.mnuCPVentaCarteraFideicomiso = new DevExpress.XtraBars.BarButtonItem();
 			this.barButtonItem196 = new DevExpress.XtraBars.BarButtonItem();
 			this.mnuCPCobranzasCERTIFICADO = new DevExpress.XtraBars.BarButtonItem();
 			this.mnuCPCobranzasCarteraAIP = new DevExpress.XtraBars.BarButtonItem();
@@ -2164,6 +2165,7 @@ namespace Latinium
 			this.barButtonItem222 = new DevExpress.XtraBars.BarButtonItem();
 			this.barButtonItem223 = new DevExpress.XtraBars.BarButtonItem();
 			this.barButtonItem224 = new DevExpress.XtraBars.BarButtonItem();
+			this.barButtonItem225 = new DevExpress.XtraBars.BarButtonItem();
 			this.bar2 = new DevExpress.XtraBars.Bar();
 			this.barNuevo = new DevExpress.XtraBars.BarButtonItem();
 			this.barAbrir = new DevExpress.XtraBars.BarButtonItem();
@@ -2367,7 +2369,9 @@ namespace Latinium
 			this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.tControlRequerimientos = new System.Windows.Forms.Timer(this.components);
-			this.barButtonItem225 = new DevExpress.XtraBars.BarButtonItem();
+			this.barButtonItem226 = new DevExpress.XtraBars.BarButtonItem();
+			this.mnuPruebaCierreDescuento = new DevExpress.XtraBars.BarButtonItem();
+			this.mnuPruebaCierreConfig = new DevExpress.XtraBars.BarButtonItem();
 			((System.ComponentModel.ISupportInitialize)(this.lblTiempos)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
@@ -2466,7 +2470,7 @@ namespace Latinium
 																																				 this.MnuHerr_Sal_Ini,
 																																				 this.MnuHerr_Camb_Ctes,
 																																				 this.MnuHerr_Copi_Arch,
-																																				 this.MnuHerr_Auditor�a,
+																																				 this.MnuHerr_Auditoría,
 																																				 this.MnuHerr_Act_Saldo,
 																																				 this.MnuEdicSeguridad,
 																																				 this.MnuEdicSegMenu,
@@ -3446,7 +3450,6 @@ namespace Latinium
 																																				 this.barButtonItem160,
 																																				 this.subMnuIngresotarjVIP,
 																																				 this.mnuCPCarteraFideicomisoGeneracion,
-																																				 this.mnuCPVentaCarteraFideicomiso,
 																																				 this.barButtonItem161,
 																																				 this.mnuPresupuestoConfiguracion,
 																																				 this.mnuPresupuestoConfiguraciones,
@@ -3555,9 +3558,12 @@ namespace Latinium
 																																				 this.barButtonItem222,
 																																				 this.barButtonItem223,
 																																				 this.barButtonItem224,
-																																				 this.barButtonItem225});
+																																				 this.barButtonItem225,
+																																				 this.barButtonItem226,
+				 this.mnuPruebaCierreDescuento,
+				 this.mnuPruebaCierreConfig});
 			this.lblTiempos.MainMenu = this.bar1;
-			this.lblTiempos.MaxItemId = 1375;
+			this.lblTiempos.MaxItemId = 1378;
 			this.lblTiempos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
 																																																				this.repositoryItemTextEdit1,
 																																																				this.repositoryItemComboBox1,
@@ -3605,7 +3611,10 @@ namespace Latinium
 																																											new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem222),
 																																											new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem223),
 																																											new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem224),
-																																											new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem225)});
+																																											new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem225),
+																																											new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem226),
+																																											new DevExpress.XtraBars.LinkPersistInfo(this.mnuPruebaCierreDescuento),
+																																											new DevExpress.XtraBars.LinkPersistInfo(this.mnuPruebaCierreConfig)});
 			this.bar1.OptionsBar.MultiLine = true;
 			this.bar1.OptionsBar.UseWholeRow = true;
 			this.bar1.Text = "Menu";
@@ -3898,7 +3907,7 @@ namespace Latinium
 			// 
 			// MnuArchPropFact
 			// 
-			this.MnuArchPropFact.Caption = "Facturaci�n";
+			this.MnuArchPropFact.Caption = "Facturación";
 			this.MnuArchPropFact.CategoryGuid = new System.Guid("d5bcd0b6-2b08-41d2-8022-e8963b4c4759");
 			this.MnuArchPropFact.Id = 35;
 			this.MnuArchPropFact.Name = "MnuArchPropFact";
@@ -3906,7 +3915,7 @@ namespace Latinium
 			// 
 			// MnuArchPropNumE
 			// 
-			this.MnuArchPropNumE.Caption = "Numeraci�n Estaci�n";
+			this.MnuArchPropNumE.Caption = "Numeración Estación";
 			this.MnuArchPropNumE.CategoryGuid = new System.Guid("d5bcd0b6-2b08-41d2-8022-e8963b4c4759");
 			this.MnuArchPropNumE.Id = 297;
 			this.MnuArchPropNumE.Name = "MnuArchPropNumE";
@@ -3923,7 +3932,7 @@ namespace Latinium
 			// 
 			// mnuArchPropProd
 			// 
-			this.mnuArchPropProd.Caption = "Producci�n";
+			this.mnuArchPropProd.Caption = "Producción";
 			this.mnuArchPropProd.CategoryGuid = new System.Guid("d5bcd0b6-2b08-41d2-8022-e8963b4c4759");
 			this.mnuArchPropProd.Id = 219;
 			this.mnuArchPropProd.Name = "mnuArchPropProd";
@@ -3948,7 +3957,7 @@ namespace Latinium
 			// 
 			// mnuArchPropConfig
 			// 
-			this.mnuArchPropConfig.Caption = "Configuraci�n";
+			this.mnuArchPropConfig.Caption = "Configuración";
 			this.mnuArchPropConfig.CategoryGuid = new System.Guid("d5bcd0b6-2b08-41d2-8022-e8963b4c4759");
 			this.mnuArchPropConfig.Id = 393;
 			this.mnuArchPropConfig.Name = "mnuArchPropConfig";
@@ -3956,7 +3965,7 @@ namespace Latinium
 			// 
 			// MnuArchConfImp
 			// 
-			this.MnuArchConfImp.Caption = "Configurar Impresi�n";
+			this.MnuArchConfImp.Caption = "Configurar Impresión";
 			this.MnuArchConfImp.CategoryGuid = new System.Guid("d5bcd0b6-2b08-41d2-8022-e8963b4c4759");
 			this.MnuArchConfImp.Id = 38;
 			this.MnuArchConfImp.ImageIndex = 6;
@@ -4019,7 +4028,7 @@ namespace Latinium
 			// 
 			// MnuEdic
 			// 
-			this.MnuEdic.Caption = "&Edici�n";
+			this.MnuEdic.Caption = "&Edición";
 			this.MnuEdic.CategoryGuid = new System.Guid("d9189416-8661-46d9-99d3-d809add0384f");
 			this.MnuEdic.Id = 1;
 			this.MnuEdic.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -4117,14 +4126,14 @@ namespace Latinium
 			// 
 			// mnuBodegaTRM
 			// 
-			this.mnuBodegaTRM.Caption = "Turnos de Recepci�n de Mercaderia";
+			this.mnuBodegaTRM.Caption = "Turnos de Recepción de Mercaderia";
 			this.mnuBodegaTRM.Id = 856;
 			this.mnuBodegaTRM.Name = "mnuBodegaTRM";
 			this.mnuBodegaTRM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuBodegaTRM_ItemClick);
 			// 
 			// MnuFactSerie
 			// 
-			this.MnuFactSerie.Caption = "Entrega y recepci�n de mercader�a";
+			this.MnuFactSerie.Caption = "Entrega y recepción de mercadería";
 			this.MnuFactSerie.Id = 455;
 			this.MnuFactSerie.Name = "MnuFactSerie";
 			this.MnuFactSerie.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuFactSerie_ItemClick);
@@ -4139,7 +4148,7 @@ namespace Latinium
 			// 
 			// mnuBodegaKardex
 			// 
-			this.mnuBodegaKardex.Caption = "k�rdex";
+			this.mnuBodegaKardex.Caption = "kárdex";
 			this.mnuBodegaKardex.Id = 540;
 			this.mnuBodegaKardex.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.K));
 			this.mnuBodegaKardex.Name = "mnuBodegaKardex";
@@ -4227,7 +4236,7 @@ namespace Latinium
 			// 
 			// mnuFactGuiaRemision
 			// 
-			this.mnuFactGuiaRemision.Caption = "Guia de Remisi�n";
+			this.mnuFactGuiaRemision.Caption = "Guia de Remisión";
 			this.mnuFactGuiaRemision.Id = 511;
 			this.mnuFactGuiaRemision.Name = "mnuFactGuiaRemision";
 			this.mnuFactGuiaRemision.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -4235,7 +4244,7 @@ namespace Latinium
 			// 
 			// mnuBodegaGRC
 			// 
-			this.mnuBodegaGRC.Caption = "Guia de Remisi�n de Carpa";
+			this.mnuBodegaGRC.Caption = "Guia de Remisión de Carpa";
 			this.mnuBodegaGRC.Id = 664;
 			this.mnuBodegaGRC.Name = "mnuBodegaGRC";
 			this.mnuBodegaGRC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuBodegaGRC_ItemClick);
@@ -4404,7 +4413,7 @@ namespace Latinium
 			// 
 			// mnuBodegaAS
 			// 
-			this.mnuBodegaAS.Caption = "Administraci�n de Suministros";
+			this.mnuBodegaAS.Caption = "Administración de Suministros";
 			this.mnuBodegaAS.Id = 1021;
 			this.mnuBodegaAS.Name = "mnuBodegaAS";
 			this.mnuBodegaAS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuBodegaAS_ItemClick_1);
@@ -4478,7 +4487,7 @@ namespace Latinium
 																																													new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.MnuHerr_Camb_Contr, DevExpress.XtraBars.BarItemPaintStyle.Caption),
 																																													new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.MnuHerr_Sal_Ini, DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu),
 																																													new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.MnuHerr_Camb_Ctes, DevExpress.XtraBars.BarItemPaintStyle.Caption),
-																																													new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.MnuHerr_Auditor�a, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu),
+																																													new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.MnuHerr_Auditoría, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu),
 																																													new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.MnuHerr_Act_Saldo, DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu),
 																																													new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.MnuEdicSeguridad, DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu),
 																																													new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.mnuFactRepComp, "", false, true, false, 0, null, DevExpress.XtraBars.BarItemPaintStyle.Caption),
@@ -4519,7 +4528,7 @@ namespace Latinium
 			// 
 			// MnuHerr_Camb_Contr
 			// 
-			this.MnuHerr_Camb_Contr.Caption = "Cambiar contrase�a";
+			this.MnuHerr_Camb_Contr.Caption = "Cambiar contraseña";
 			this.MnuHerr_Camb_Contr.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
 			this.MnuHerr_Camb_Contr.Id = 65;
 			this.MnuHerr_Camb_Contr.Name = "MnuHerr_Camb_Contr";
@@ -4541,13 +4550,13 @@ namespace Latinium
 			this.MnuHerr_Camb_Ctes.Name = "MnuHerr_Camb_Ctes";
 			this.MnuHerr_Camb_Ctes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuHerr_Camb_Ctes_ItemClick);
 			// 
-			// MnuHerr_Auditor�a
+			// MnuHerr_Auditoría
 			// 
-			this.MnuHerr_Auditor�a.Caption = "Auditor�a";
-			this.MnuHerr_Auditor�a.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
-			this.MnuHerr_Auditor�a.Id = 77;
-			this.MnuHerr_Auditor�a.Name = "MnuHerr_Auditor�a";
-			this.MnuHerr_Auditor�a.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuHerr_Auditor�a_ItemClick);
+			this.MnuHerr_Auditoría.Caption = "Auditoría";
+			this.MnuHerr_Auditoría.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
+			this.MnuHerr_Auditoría.Id = 77;
+			this.MnuHerr_Auditoría.Name = "MnuHerr_Auditoría";
+			this.MnuHerr_Auditoría.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuHerr_Auditoría_ItemClick);
 			// 
 			// MnuHerr_Act_Saldo
 			// 
@@ -4581,7 +4590,7 @@ namespace Latinium
 			// 
 			// MnuEdicSegMenu
 			// 
-			this.MnuEdicSegMenu.Caption = "Men�";
+			this.MnuEdicSegMenu.Caption = "Menú";
 			this.MnuEdicSegMenu.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
 			this.MnuEdicSegMenu.Id = 54;
 			this.MnuEdicSegMenu.Name = "MnuEdicSegMenu";
@@ -4613,7 +4622,7 @@ namespace Latinium
 			// 
 			// mnuHerrSegFiltro
 			// 
-			this.mnuHerrSegFiltro.Caption = "Filtro Art�culos";
+			this.mnuHerrSegFiltro.Caption = "Filtro Artículos";
 			this.mnuHerrSegFiltro.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
 			this.mnuHerrSegFiltro.Id = 305;
 			this.mnuHerrSegFiltro.Name = "mnuHerrSegFiltro";
@@ -4631,7 +4640,7 @@ namespace Latinium
 			// 
 			// mbuHerrSegTransf
 			// 
-			this.mbuHerrSegTransf.Caption = "Cupo Transformaci�n";
+			this.mbuHerrSegTransf.Caption = "Cupo Transformación";
 			this.mbuHerrSegTransf.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
 			this.mbuHerrSegTransf.Id = 311;
 			this.mbuHerrSegTransf.Name = "mbuHerrSegTransf";
@@ -4640,7 +4649,7 @@ namespace Latinium
 			// 
 			// mnuHerrSegApReq
 			// 
-			this.mnuHerrSegApReq.Caption = "Requisici�n Orden C. ";
+			this.mnuHerrSegApReq.Caption = "Requisición Orden C. ";
 			this.mnuHerrSegApReq.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
 			this.mnuHerrSegApReq.Id = 384;
 			this.mnuHerrSegApReq.Name = "mnuHerrSegApReq";
@@ -4649,7 +4658,7 @@ namespace Latinium
 			// 
 			// mnuHerrSegReqLis
 			// 
-			this.mnuHerrSegReqLis.Caption = "Requisici�n No Aprob.";
+			this.mnuHerrSegReqLis.Caption = "Requisición No Aprob.";
 			this.mnuHerrSegReqLis.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
 			this.mnuHerrSegReqLis.Id = 397;
 			this.mnuHerrSegReqLis.Name = "mnuHerrSegReqLis";
@@ -4695,7 +4704,7 @@ namespace Latinium
 			// 
 			// mnuHerrCredito
 			// 
-			this.mnuHerrCredito.Caption = "An�lisis de Cr�dito";
+			this.mnuHerrCredito.Caption = "Análisis de Crédito";
 			this.mnuHerrCredito.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
 			this.mnuHerrCredito.Id = 392;
 			this.mnuHerrCredito.Name = "mnuHerrCredito";
@@ -4810,7 +4819,7 @@ namespace Latinium
 			// 
 			// mnuHerramientasNumeracion
 			// 
-			this.mnuHerramientasNumeracion.Caption = "Numeraci�n de los locales";
+			this.mnuHerramientasNumeracion.Caption = "Numeración de los locales";
 			this.mnuHerramientasNumeracion.Id = 552;
 			this.mnuHerramientasNumeracion.Name = "mnuHerramientasNumeracion";
 			this.mnuHerramientasNumeracion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuHerramientasNumeracion_ItemClick);
@@ -4915,14 +4924,14 @@ namespace Latinium
 			// 
 			// mnuSolNC
 			// 
-			this.mnuSolNC.Caption = "Solicitud De Notas De Cr�dito";
+			this.mnuSolNC.Caption = "Solicitud De Notas De Crédito";
 			this.mnuSolNC.Id = 992;
 			this.mnuSolNC.Name = "mnuSolNC";
 			this.mnuSolNC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuSolNC_ItemClick);
 			// 
 			// mnuHerrDocuCrediPoint
 			// 
-			this.mnuHerrDocuCrediPoint.Caption = "Documentaci�n CredPoint";
+			this.mnuHerrDocuCrediPoint.Caption = "Documentación CredPoint";
 			this.mnuHerrDocuCrediPoint.Id = 1006;
 			this.mnuHerrDocuCrediPoint.Name = "mnuHerrDocuCrediPoint";
 			this.mnuHerrDocuCrediPoint.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuHerrDocuCrediPoint_ItemClick);
@@ -4953,14 +4962,14 @@ namespace Latinium
 			// 
 			// mnuHerramientasSM
 			// 
-			this.mnuHerramientasSM.Caption = "Aprobaci�n De Suministros";
+			this.mnuHerramientasSM.Caption = "Aprobación De Suministros";
 			this.mnuHerramientasSM.Id = 1013;
 			this.mnuHerramientasSM.Name = "mnuHerramientasSM";
 			this.mnuHerramientasSM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuHerramientasSM_ItemClick);
 			// 
 			// mnuHerrAdminSeguros
 			// 
-			this.mnuHerrAdminSeguros.Caption = "Administraci�n de Seguros";
+			this.mnuHerrAdminSeguros.Caption = "Administración de Seguros";
 			this.mnuHerrAdminSeguros.Id = 1015;
 			this.mnuHerrAdminSeguros.Name = "mnuHerrAdminSeguros";
 			this.mnuHerrAdminSeguros.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuHerrAdminSeguros_ItemClick);
@@ -4981,7 +4990,7 @@ namespace Latinium
 			// 
 			// mnuHerrAprobacionGasV
 			// 
-			this.mnuHerrAprobacionGasV.Caption = "Aprobaci�n Gastos De Viaje";
+			this.mnuHerrAprobacionGasV.Caption = "Aprobación Gastos De Viaje";
 			this.mnuHerrAprobacionGasV.Id = 1019;
 			this.mnuHerrAprobacionGasV.Name = "mnuHerrAprobacionGasV";
 			this.mnuHerrAprobacionGasV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuHerrAprobacionGasV_ItemClick);
@@ -5035,7 +5044,7 @@ namespace Latinium
 			// 
 			// SudMnuDocContestacion
 			// 
-			this.SudMnuDocContestacion.Caption = "Contestaci�n";
+			this.SudMnuDocContestacion.Caption = "Contestación";
 			this.SudMnuDocContestacion.Id = 1220;
 			this.SudMnuDocContestacion.Name = "SudMnuDocContestacion";
 			this.SudMnuDocContestacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SudMnuDocContestacion_ItemClick);
@@ -5107,7 +5116,7 @@ namespace Latinium
 			// 
 			// MnuContAsigCtas
 			// 
-			this.MnuContAsigCtas.Caption = "Asignaci�n de Cuentas";
+			this.MnuContAsigCtas.Caption = "Asignación de Cuentas";
 			this.MnuContAsigCtas.CategoryGuid = new System.Guid("a520686f-b7d6-4ade-a6e1-d177f34cfea3");
 			this.MnuContAsigCtas.Id = 100;
 			this.MnuContAsigCtas.Name = "MnuContAsigCtas";
@@ -5125,7 +5134,7 @@ namespace Latinium
 			// 
 			// mnuReporteriaContAM
 			// 
-			this.mnuReporteriaContAM.Caption = "Autorizaci�n Asientos";
+			this.mnuReporteriaContAM.Caption = "Autorización Asientos";
 			this.mnuReporteriaContAM.Id = 1009;
 			this.mnuReporteriaContAM.Name = "mnuReporteriaContAM";
 			this.mnuReporteriaContAM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuReporteriaContAM_ItemClick);
@@ -5154,21 +5163,21 @@ namespace Latinium
 			// 
 			// mnuContTCC
 			// 
-			this.mnuContTCC.Caption = "Tarjetas De Cr�dito Corporativas";
+			this.mnuContTCC.Caption = "Tarjetas De Crédito Corporativas";
 			this.mnuContTCC.Id = 581;
 			this.mnuContTCC.Name = "mnuContTCC";
 			this.mnuContTCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuContTCC_ItemClick);
 			// 
 			// mnuContConsumosTC
 			// 
-			this.mnuContConsumosTC.Caption = "Consumos con Tarjetas de Cr�dito";
+			this.mnuContConsumosTC.Caption = "Consumos con Tarjetas de Crédito";
 			this.mnuContConsumosTC.Id = 577;
 			this.mnuContConsumosTC.Name = "mnuContConsumosTC";
 			this.mnuContConsumosTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuContConsumosTC_ItemClick);
 			// 
 			// mnuContLCTC
 			// 
-			this.mnuContLCTC.Caption = "Lista De Consumos con Tarjeta de Cr�dito";
+			this.mnuContLCTC.Caption = "Lista De Consumos con Tarjeta de Crédito";
 			this.mnuContLCTC.Id = 579;
 			this.mnuContLCTC.Name = "mnuContLCTC";
 			this.mnuContLCTC.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -5233,14 +5242,14 @@ namespace Latinium
 			// 
 			// mnuContPrestamos
 			// 
-			this.mnuContPrestamos.Caption = "Registro de Pr�stamos";
+			this.mnuContPrestamos.Caption = "Registro de Préstamos";
 			this.mnuContPrestamos.Id = 571;
 			this.mnuContPrestamos.Name = "mnuContPrestamos";
 			this.mnuContPrestamos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuContPrestamos_ItemClick);
 			// 
 			// MnuContEstadoCta
 			// 
-			this.MnuContEstadoCta.Caption = "Conciliaci�n Bancaria";
+			this.MnuContEstadoCta.Caption = "Conciliación Bancaria";
 			this.MnuContEstadoCta.CategoryGuid = new System.Guid("a520686f-b7d6-4ade-a6e1-d177f34cfea3");
 			this.MnuContEstadoCta.Id = 93;
 			this.MnuContEstadoCta.ImageIndex = 37;
@@ -5250,7 +5259,7 @@ namespace Latinium
 			// 
 			// mnuContBancosCBA
 			// 
-			this.mnuContBancosCBA.Caption = "Conciliaci�n Bancaria Automatica";
+			this.mnuContBancosCBA.Caption = "Conciliación Bancaria Automatica";
 			this.mnuContBancosCBA.Id = 613;
 			this.mnuContBancosCBA.Name = "mnuContBancosCBA";
 			this.mnuContBancosCBA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuContBancosCBA_ItemClick);
@@ -5278,14 +5287,14 @@ namespace Latinium
 			// 
 			// barButtonItem121
 			// 
-			this.barButtonItem121.Caption = "Conciliaci�n Diaria";
+			this.barButtonItem121.Caption = "Conciliación Diaria";
 			this.barButtonItem121.Id = 1135;
 			this.barButtonItem121.Name = "barButtonItem121";
 			this.barButtonItem121.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem121_ItemClick);
 			// 
 			// barButtonItem159
 			// 
-			this.barButtonItem159.Caption = "L�nea cr�dito";
+			this.barButtonItem159.Caption = "Línea crédito";
 			this.barButtonItem159.Id = 1257;
 			this.barButtonItem159.Name = "barButtonItem159";
 			this.barButtonItem159.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem159_ItemClick);
@@ -5319,7 +5328,7 @@ namespace Latinium
 			// 
 			// mnuContTransConciliacion
 			// 
-			this.mnuContTransConciliacion.Caption = "Conciliaci�n Tributaria";
+			this.mnuContTransConciliacion.Caption = "Conciliación Tributaria";
 			this.mnuContTransConciliacion.Id = 433;
 			this.mnuContTransConciliacion.Name = "mnuContTransConciliacion";
 			this.mnuContTransConciliacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btConciliacion_ItemClick);
@@ -5340,7 +5349,7 @@ namespace Latinium
 			// 
 			// MnuFactAutPagos
 			// 
-			this.MnuFactAutPagos.Caption = "Autorizaci�n de Pagos";
+			this.MnuFactAutPagos.Caption = "Autorización de Pagos";
 			this.MnuFactAutPagos.Id = 505;
 			this.MnuFactAutPagos.Name = "MnuFactAutPagos";
 			this.MnuFactAutPagos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuFactAutPagos_ItemClick);
@@ -5363,7 +5372,7 @@ namespace Latinium
 			// 
 			// MnuContCierPeriodo
 			// 
-			this.MnuContCierPeriodo.Caption = "Cierre de Per�odo";
+			this.MnuContCierPeriodo.Caption = "Cierre de Período";
 			this.MnuContCierPeriodo.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
 			this.MnuContCierPeriodo.Id = 99;
 			this.MnuContCierPeriodo.Name = "MnuContCierPeriodo";
@@ -5453,7 +5462,7 @@ namespace Latinium
 			// 
 			// mnuContRepFacElec
 			// 
-			this.mnuContRepFacElec.Caption = "Facturaci�n Electronica";
+			this.mnuContRepFacElec.Caption = "Facturación Electronica";
 			this.mnuContRepFacElec.Id = 622;
 			this.mnuContRepFacElec.Name = "mnuContRepFacElec";
 			this.mnuContRepFacElec.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -5461,7 +5470,7 @@ namespace Latinium
 			// 
 			// mnuContRepEstadoCB
 			// 
-			this.mnuContRepEstadoCB.Caption = "Estado Conciliaci�n Bancaria ";
+			this.mnuContRepEstadoCB.Caption = "Estado Conciliación Bancaria ";
 			this.mnuContRepEstadoCB.Id = 874;
 			this.mnuContRepEstadoCB.Name = "mnuContRepEstadoCB";
 			this.mnuContRepEstadoCB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuContRepEstadoCB_ItemClick);
@@ -5489,21 +5498,21 @@ namespace Latinium
 			// 
 			// barButtonItem157
 			// 
-			this.barButtonItem157.Caption = "Configuraci�n Estados Financieros";
+			this.barButtonItem157.Caption = "Configuración Estados Financieros";
 			this.barButtonItem157.Id = 1250;
 			this.barButtonItem157.Name = "barButtonItem157";
 			this.barButtonItem157.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem157_ItemClick);
 			// 
 			// mnuContRepConciBancaria
 			// 
-			this.mnuContRepConciBancaria.Caption = "Conciliaci�n Bancaria";
+			this.mnuContRepConciBancaria.Caption = "Conciliación Bancaria";
 			this.mnuContRepConciBancaria.Id = 1285;
 			this.mnuContRepConciBancaria.Name = "mnuContRepConciBancaria";
 			this.mnuContRepConciBancaria.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuContRepConciBancaria_ItemClick);
 			// 
 			// MnuCont_Ind_Financieros
 			// 
-			this.MnuCont_Ind_Financieros.Caption = "�ndices Financieros";
+			this.MnuCont_Ind_Financieros.Caption = "Índices Financieros";
 			this.MnuCont_Ind_Financieros.CategoryGuid = new System.Guid("a520686f-b7d6-4ade-a6e1-d177f34cfea3");
 			this.MnuCont_Ind_Financieros.Id = 102;
 			this.MnuCont_Ind_Financieros.Name = "MnuCont_Ind_Financieros";
@@ -5548,21 +5557,21 @@ namespace Latinium
 			// 
 			// mnuContabilidadFlujoPMP
 			// 
-			this.mnuContabilidadFlujoPMP.Caption = "Configuraci�n";
+			this.mnuContabilidadFlujoPMP.Caption = "Configuración";
 			this.mnuContabilidadFlujoPMP.Id = 808;
 			this.mnuContabilidadFlujoPMP.Name = "mnuContabilidadFlujoPMP";
 			this.mnuContabilidadFlujoPMP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuContabilidadFlujoPMP_ItemClick);
 			// 
 			// mnuContabilidadFPPP
 			// 
-			this.mnuContabilidadFPPP.Caption = "Provisi�n";
+			this.mnuContabilidadFPPP.Caption = "Provisión";
 			this.mnuContabilidadFPPP.Id = 845;
 			this.mnuContabilidadFPPP.Name = "mnuContabilidadFPPP";
 			this.mnuContabilidadFPPP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuContabilidadFPPP_ItemClick);
 			// 
 			// mnuContFPPP
 			// 
-			this.mnuContFPPP.Caption = "Autorizaci�n de Pago A Proveedores";
+			this.mnuContFPPP.Caption = "Autorización de Pago A Proveedores";
 			this.mnuContFPPP.Id = 809;
 			this.mnuContFPPP.Name = "mnuContFPPP";
 			this.mnuContFPPP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem53_ItemClick_1);
@@ -5756,7 +5765,7 @@ namespace Latinium
 			// 
 			// mnuRolComPIA
 			// 
-			this.mnuRolComPIA.Caption = "Presupuesto Inicio de A�o ";
+			this.mnuRolComPIA.Caption = "Presupuesto Inicio de Año ";
 			this.mnuRolComPIA.Id = 777;
 			this.mnuRolComPIA.Name = "mnuRolComPIA";
 			this.mnuRolComPIA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRolComPIA_ItemClick);
@@ -5809,14 +5818,14 @@ namespace Latinium
 			// 
 			// mnuRolesCom_AV
 			// 
-			this.mnuRolesCom_AV.Caption = "Asignaci�n Mensual de Vendedores";
+			this.mnuRolesCom_AV.Caption = "Asignación Mensual de Vendedores";
 			this.mnuRolesCom_AV.Id = 679;
 			this.mnuRolesCom_AV.Name = "mnuRolesCom_AV";
 			this.mnuRolesCom_AV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRolesCom_AV_ItemClick);
 			// 
 			// mnuRolesComAJV
 			// 
-			this.mnuRolesComAJV.Caption = "Asignaci�n Mensual de Jefes y Supervisores De Ventas";
+			this.mnuRolesComAJV.Caption = "Asignación Mensual de Jefes y Supervisores De Ventas";
 			this.mnuRolesComAJV.Id = 704;
 			this.mnuRolesComAJV.Name = "mnuRolesComAJV";
 			this.mnuRolesComAJV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRolesComAJV_ItemClick);
@@ -5844,7 +5853,7 @@ namespace Latinium
 			// 
 			// mnuRolesCom_EPV
 			// 
-			this.mnuRolesCom_EPV.Caption = "Evaluaci�n Personal De Ventas";
+			this.mnuRolesCom_EPV.Caption = "Evaluación Personal De Ventas";
 			this.mnuRolesCom_EPV.Id = 775;
 			this.mnuRolesCom_EPV.Name = "mnuRolesCom_EPV";
 			this.mnuRolesCom_EPV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRolesCom_EPV_ItemClick);
@@ -5888,14 +5897,14 @@ namespace Latinium
 			// 
 			// mnuRolConfInt
 			// 
-			this.mnuRolConfInt.Caption = "Configuraci�n Intangible";
+			this.mnuRolConfInt.Caption = "Configuración Intangible";
 			this.mnuRolConfInt.Id = 1132;
 			this.mnuRolConfInt.Name = "mnuRolConfInt";
 			this.mnuRolConfInt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRolConfInt_ItemClick);
 			// 
 			// barButtonItem210
 			// 
-			this.barButtonItem210.Caption = "Configuraci�n Intangibles 2.0";
+			this.barButtonItem210.Caption = "Configuración Intangibles 2.0";
 			this.barButtonItem210.Id = 2174;
 			this.barButtonItem210.Name = "barButtonItem210";
 			this.barButtonItem210.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem210_ItemClick);
@@ -6100,7 +6109,7 @@ namespace Latinium
 			// 
 			// mnuRolUtilidad
 			// 
-			this.mnuRolUtilidad.Caption = "Repartici�n de Utilidades";
+			this.mnuRolUtilidad.Caption = "Repartición de Utilidades";
 			this.mnuRolUtilidad.CategoryGuid = new System.Guid("dab6fe3e-8b7a-4748-9620-cf654702690b");
 			this.mnuRolUtilidad.Id = 296;
 			this.mnuRolUtilidad.Name = "mnuRolUtilidad";
@@ -6124,7 +6133,7 @@ namespace Latinium
 			// 
 			// mnuTarea_Agr
 			// 
-			this.mnuTarea_Agr.Caption = "Tareas Agr�colas";
+			this.mnuTarea_Agr.Caption = "Tareas Agrícolas";
 			this.mnuTarea_Agr.CategoryGuid = new System.Guid("4889142b-ad08-4f8e-ba2d-15b0fc1cb0e9");
 			this.mnuTarea_Agr.Id = 308;
 			this.mnuTarea_Agr.Name = "mnuTarea_Agr";
@@ -6132,7 +6141,7 @@ namespace Latinium
 			// 
 			// mnuRolesDistribucion
 			// 
-			this.mnuRolesDistribucion.Caption = "Distribuci�n Centros Costos";
+			this.mnuRolesDistribucion.Caption = "Distribución Centros Costos";
 			this.mnuRolesDistribucion.Id = 406;
 			this.mnuRolesDistribucion.Name = "mnuRolesDistribucion";
 			this.mnuRolesDistribucion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRolesDistribucion_ItemClick);
@@ -6146,7 +6155,7 @@ namespace Latinium
 			// 
 			// mnuRolesAdicionalFormulas
 			// 
-			this.mnuRolesAdicionalFormulas.Caption = "Adicionales F�rmulas";
+			this.mnuRolesAdicionalFormulas.Caption = "Adicionales Fórmulas";
 			this.mnuRolesAdicionalFormulas.Id = 425;
 			this.mnuRolesAdicionalFormulas.Name = "mnuRolesAdicionalFormulas";
 			this.mnuRolesAdicionalFormulas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRolesAdicionalFormulas_ItemClick);
@@ -6259,14 +6268,14 @@ namespace Latinium
 			// 
 			// barButtonItem217
 			// 
-			this.barButtonItem217.Caption = "Aprobaci�n Ordenes De Compra";
+			this.barButtonItem217.Caption = "Aprobación Ordenes De Compra";
 			this.barButtonItem217.Id = 1365;
 			this.barButtonItem217.Name = "barButtonItem217";
 			this.barButtonItem217.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem217_ItemClick);
 			// 
 			// mnuCompraAODC
 			// 
-			this.mnuCompraAODC.Caption = "Aprobaci�n Ordenes De compra Madre";
+			this.mnuCompraAODC.Caption = "Aprobación Ordenes De compra Madre";
 			this.mnuCompraAODC.Id = 968;
 			this.mnuCompraAODC.Name = "mnuCompraAODC";
 			this.mnuCompraAODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCompraAODC_ItemClick);
@@ -6283,7 +6292,7 @@ namespace Latinium
 			// 
 			// MnuFactDevCompras
 			// 
-			this.MnuFactDevCompras.Caption = "Notas de Cr�dito";
+			this.MnuFactDevCompras.Caption = "Notas de Crédito";
 			this.MnuFactDevCompras.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactDevCompras.Id = 110;
 			this.MnuFactDevCompras.Name = "MnuFactDevCompras";
@@ -6291,7 +6300,7 @@ namespace Latinium
 			// 
 			// MnuFactNotaCC
 			// 
-			this.MnuFactNotaCC.Caption = "Nota de D�bito Compra";
+			this.MnuFactNotaCC.Caption = "Nota de Débito Compra";
 			this.MnuFactNotaCC.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactNotaCC.Id = 257;
 			this.MnuFactNotaCC.Name = "MnuFactNotaCC";
@@ -6299,7 +6308,7 @@ namespace Latinium
 			// 
 			// MnuFactLotimp
 			// 
-			this.MnuFactLotimp.Caption = "Liquidaci�n de Importaciones";
+			this.MnuFactLotimp.Caption = "Liquidación de Importaciones";
 			this.MnuFactLotimp.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactLotimp.Id = 242;
 			this.MnuFactLotimp.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I));
@@ -6315,7 +6324,7 @@ namespace Latinium
 			// 
 			// mnuFactVentasConsignacion
 			// 
-			this.mnuFactVentasConsignacion.Caption = "Venta de art�culos en consignaci�n";
+			this.mnuFactVentasConsignacion.Caption = "Venta de artículos en consignación";
 			this.mnuFactVentasConsignacion.Id = 519;
 			this.mnuFactVentasConsignacion.Name = "mnuFactVentasConsignacion";
 			this.mnuFactVentasConsignacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuFactVentasConsignacion_ItemClick);
@@ -6364,7 +6373,7 @@ namespace Latinium
 			// 
 			// MnuFactArtic
 			// 
-			this.MnuFactArtic.Caption = "Art�culos   ";
+			this.MnuFactArtic.Caption = "Artículos   ";
 			this.MnuFactArtic.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactArtic.Id = 125;
 			this.MnuFactArtic.ImageIndex = 26;
@@ -6408,7 +6417,7 @@ namespace Latinium
 			// 
 			// barSubItem17
 			// 
-			this.barSubItem17.Caption = "Actualizaci�n de Precios";
+			this.barSubItem17.Caption = "Actualización de Precios";
 			this.barSubItem17.Id = 1242;
 			this.barSubItem17.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
 																																															new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem151),
@@ -6417,21 +6426,21 @@ namespace Latinium
 			// 
 			// barButtonItem151
 			// 
-			this.barButtonItem151.Caption = "Actualizaci�n de Precios";
+			this.barButtonItem151.Caption = "Actualización de Precios";
 			this.barButtonItem151.Id = 1243;
 			this.barButtonItem151.Name = "barButtonItem151";
 			this.barButtonItem151.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem151_ItemClick);
 			// 
 			// barButtonItem152
 			// 
-			this.barButtonItem152.Caption = "Actualizaci�n de Precios de Remate";
+			this.barButtonItem152.Caption = "Actualización de Precios de Remate";
 			this.barButtonItem152.Id = 1244;
 			this.barButtonItem152.Name = "barButtonItem152";
 			this.barButtonItem152.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem152_ItemClick);
 			// 
 			// mnuFactActPrecio
 			// 
-			this.mnuFactActPrecio.Caption = "Actualizaci�n de Precios";
+			this.mnuFactActPrecio.Caption = "Actualización de Precios";
 			this.mnuFactActPrecio.Id = 512;
 			this.mnuFactActPrecio.Name = "mnuFactActPrecio";
 			this.mnuFactActPrecio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuFactActPrecio_ItemClick);
@@ -6452,7 +6461,7 @@ namespace Latinium
 			// 
 			// mnuComprasLiquidaGastos
 			// 
-			this.mnuComprasLiquidaGastos.Caption = "Liquidaci�n de gastos";
+			this.mnuComprasLiquidaGastos.Caption = "Liquidación de gastos";
 			this.mnuComprasLiquidaGastos.Id = 541;
 			this.mnuComprasLiquidaGastos.Name = "mnuComprasLiquidaGastos";
 			this.mnuComprasLiquidaGastos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuComprasLiquidaGastos_ItemClick);
@@ -6527,21 +6536,21 @@ namespace Latinium
 			// 
 			// mnuComprasCI
 			// 
-			this.mnuComprasCI.Caption = "Configuraci�n Intangibles";
+			this.mnuComprasCI.Caption = "Configuración Intangibles";
 			this.mnuComprasCI.Id = 1010;
 			this.mnuComprasCI.Name = "mnuComprasCI";
 			this.mnuComprasCI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuComprasCI_ItemClick);
 			// 
 			// barButtonItem139
 			// 
-			this.barButtonItem139.Caption = "Validaci�n Compras";
+			this.barButtonItem139.Caption = "Validación Compras";
 			this.barButtonItem139.Id = 1215;
 			this.barButtonItem139.Name = "barButtonItem139";
 			this.barButtonItem139.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem139_ItemClick);
 			// 
 			// barButtonItem162
 			// 
-			this.barButtonItem162.Caption = "Configuraci�n SPIFF Inventario";
+			this.barButtonItem162.Caption = "Configuración SPIFF Inventario";
 			this.barButtonItem162.Id = 1280;
 			this.barButtonItem162.Name = "barButtonItem162";
 			this.barButtonItem162.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem162_ItemClick);
@@ -6670,21 +6679,21 @@ namespace Latinium
 			// 
 			// mnuVentasCotizacion
 			// 
-			this.mnuVentasCotizacion.Caption = "Cotizaci�n";
+			this.mnuVentasCotizacion.Caption = "Cotización";
 			this.mnuVentasCotizacion.Id = 538;
 			this.mnuVentasCotizacion.Name = "mnuVentasCotizacion";
 			this.mnuVentasCotizacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasCotizacion_ItemClick);
 			// 
 			// MnuFactConsignacion
 			// 
-			this.MnuFactConsignacion.Caption = "Consignaci�n";
+			this.MnuFactConsignacion.Caption = "Consignación";
 			this.MnuFactConsignacion.Id = 503;
 			this.MnuFactConsignacion.Name = "MnuFactConsignacion";
 			this.MnuFactConsignacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuFactConsignacion_ItemClick);
 			// 
 			// mnuVentaLiqCons
 			// 
-			this.mnuVentaLiqCons.Caption = "Liquidaci�n de Consignaci�n";
+			this.mnuVentaLiqCons.Caption = "Liquidación de Consignación";
 			this.mnuVentaLiqCons.Id = 536;
 			this.mnuVentaLiqCons.Name = "mnuVentaLiqCons";
 			this.mnuVentaLiqCons.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentaLiqCons_ItemClick);
@@ -6698,7 +6707,7 @@ namespace Latinium
 			// 
 			// MnuFactDevVentas
 			// 
-			this.MnuFactDevVentas.Caption = "Notas de Cr�dito";
+			this.MnuFactDevVentas.Caption = "Notas de Crédito";
 			this.MnuFactDevVentas.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactDevVentas.Id = 109;
 			this.MnuFactDevVentas.Name = "MnuFactDevVentas";
@@ -6706,7 +6715,7 @@ namespace Latinium
 			// 
 			// MnuFactNotaCV
 			// 
-			this.MnuFactNotaCV.Caption = "Notas de D�bito";
+			this.MnuFactNotaCV.Caption = "Notas de Débito";
 			this.MnuFactNotaCV.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactNotaCV.Id = 256;
 			this.MnuFactNotaCV.Name = "MnuFactNotaCV";
@@ -6722,14 +6731,14 @@ namespace Latinium
 			// 
 			// mnuVentasDA
 			// 
-			this.mnuVentasDA.Caption = "Devoluci�n Anticipos";
+			this.mnuVentasDA.Caption = "Devolución Anticipos";
 			this.mnuVentasDA.Id = 573;
 			this.mnuVentasDA.Name = "mnuVentasDA";
 			this.mnuVentasDA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasDA_ItemClick);
 			// 
 			// mnuVentasCNOS
 			// 
-			this.mnuVentasCNOS.Caption = "Consulta Numeros de Operaci�n Solidario";
+			this.mnuVentasCNOS.Caption = "Consulta Numeros de Operación Solidario";
 			this.mnuVentasCNOS.Id = 862;
 			this.mnuVentasCNOS.Name = "mnuVentasCNOS";
 			this.mnuVentasCNOS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasCNOS_ItemClick);
@@ -6743,7 +6752,7 @@ namespace Latinium
 			// 
 			// mnuVentaAutDistribuidor
 			// 
-			this.mnuVentaAutDistribuidor.Caption = "Autorizaci�n Distribuidor";
+			this.mnuVentaAutDistribuidor.Caption = "Autorización Distribuidor";
 			this.mnuVentaAutDistribuidor.Id = 537;
 			this.mnuVentaAutDistribuidor.Name = "mnuVentaAutDistribuidor";
 			this.mnuVentaAutDistribuidor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentaAutDistribuidor_ItemClick);
@@ -6814,21 +6823,21 @@ namespace Latinium
 			// 
 			// mnuVentasPlanifVentas
 			// 
-			this.mnuVentasPlanifVentas.Caption = "Planificaci�n Mensual de Ventas";
+			this.mnuVentasPlanifVentas.Caption = "Planificación Mensual de Ventas";
 			this.mnuVentasPlanifVentas.Id = 698;
 			this.mnuVentasPlanifVentas.Name = "mnuVentasPlanifVentas";
 			this.mnuVentasPlanifVentas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasPlanifVentas_ItemClick);
 			// 
 			// mnuVentasPlanifJefeVentas
 			// 
-			this.mnuVentasPlanifJefeVentas.Caption = "Planificaci�n Mensual Jefes De Ventas";
+			this.mnuVentasPlanifJefeVentas.Caption = "Planificación Mensual Jefes De Ventas";
 			this.mnuVentasPlanifJefeVentas.Id = 767;
 			this.mnuVentasPlanifJefeVentas.Name = "mnuVentasPlanifJefeVentas";
 			this.mnuVentasPlanifJefeVentas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasPlanifJefeVentas_ItemClick);
 			// 
 			// mnuVentasPC
 			// 
-			this.mnuVentasPC.Caption = "Planificaci�n Semanal de Carpa";
+			this.mnuVentasPC.Caption = "Planificación Semanal de Carpa";
 			this.mnuVentasPC.Id = 692;
 			this.mnuVentasPC.Name = "mnuVentasPC";
 			this.mnuVentasPC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasPC_ItemClick);
@@ -6842,35 +6851,35 @@ namespace Latinium
 			// 
 			// mnuVentasImpresionDePrecios
 			// 
-			this.mnuVentasImpresionDePrecios.Caption = "Impresi�n de Precios";
+			this.mnuVentasImpresionDePrecios.Caption = "Impresión de Precios";
 			this.mnuVentasImpresionDePrecios.Id = 584;
 			this.mnuVentasImpresionDePrecios.Name = "mnuVentasImpresionDePrecios";
 			this.mnuVentasImpresionDePrecios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasImpresionDePrecios_ItemClick);
 			// 
 			// mnuVentasIPP
 			// 
-			this.mnuVentasIPP.Caption = "Impresi�n de Precios Promociones";
+			this.mnuVentasIPP.Caption = "Impresión de Precios Promociones";
 			this.mnuVentasIPP.Id = 612;
 			this.mnuVentasIPP.Name = "mnuVentasIPP";
 			this.mnuVentasIPP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasIPP_ItemClick);
 			// 
 			// mnuVentasIPR
 			// 
-			this.mnuVentasIPR.Caption = "Impresi�n de Precios De Remate";
+			this.mnuVentasIPR.Caption = "Impresión de Precios De Remate";
 			this.mnuVentasIPR.Id = 798;
 			this.mnuVentasIPR.Name = "mnuVentasIPR";
 			this.mnuVentasIPR.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasIPR_ItemClick);
 			// 
 			// mnuVentasARP
 			// 
-			this.mnuVentasARP.Caption = "Actas de Recepci�n de Productos";
+			this.mnuVentasARP.Caption = "Actas de Recepción de Productos";
 			this.mnuVentasARP.Id = 673;
 			this.mnuVentasARP.Name = "mnuVentasARP";
 			this.mnuVentasARP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasARP_ItemClick);
 			// 
 			// mnuVentasRP
 			// 
-			this.mnuVentasRP.Caption = "Recepci�n de Productos";
+			this.mnuVentasRP.Caption = "Recepción de Productos";
 			this.mnuVentasRP.Id = 840;
 			this.mnuVentasRP.Name = "mnuVentasRP";
 			this.mnuVentasRP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasRP_ItemClick);
@@ -6908,7 +6917,7 @@ namespace Latinium
 			// 
 			// mnuVentasReporteCompara
 			// 
-			this.mnuVentasReporteCompara.Caption = "Comparaci�n De Ventas Easy Max Latium";
+			this.mnuVentasReporteCompara.Caption = "Comparación De Ventas Easy Max Latium";
 			this.mnuVentasReporteCompara.Id = 559;
 			this.mnuVentasReporteCompara.Name = "mnuVentasReporteCompara";
 			this.mnuVentasReporteCompara.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -6951,21 +6960,21 @@ namespace Latinium
 			// 
 			// mnuVentasReportesAIM
 			// 
-			this.mnuVentasReportesAIM.Caption = "Analisis Informaci�n Mensual";
+			this.mnuVentasReportesAIM.Caption = "Analisis Información Mensual";
 			this.mnuVentasReportesAIM.Id = 648;
 			this.mnuVentasReportesAIM.Name = "mnuVentasReportesAIM";
 			this.mnuVentasReportesAIM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasReportesAIM_ItemClick);
 			// 
 			// mnuVentasReportesRF
 			// 
-			this.mnuVentasReportesRF.Caption = "Revisi�n de Facturas";
+			this.mnuVentasReportesRF.Caption = "Revisión de Facturas";
 			this.mnuVentasReportesRF.Id = 649;
 			this.mnuVentasReportesRF.Name = "mnuVentasReportesRF";
 			this.mnuVentasReportesRF.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasReportesRF_ItemClick);
 			// 
 			// mnuVentasReportesVPD
 			// 
-			this.mnuVentasReportesVPD.Caption = "Ventas Por D�a";
+			this.mnuVentasReportesVPD.Caption = "Ventas Por Día";
 			this.mnuVentasReportesVPD.Id = 825;
 			this.mnuVentasReportesVPD.Name = "mnuVentasReportesVPD";
 			this.mnuVentasReportesVPD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasReportesVPD_ItemClick);
@@ -7014,7 +7023,7 @@ namespace Latinium
 			// 
 			// mnuVentasReportesTC
 			// 
-			this.mnuVentasReportesTC.Caption = "Ventas Tarjetas de Cr�dito";
+			this.mnuVentasReportesTC.Caption = "Ventas Tarjetas de Crédito";
 			this.mnuVentasReportesTC.Id = 748;
 			this.mnuVentasReportesTC.Name = "mnuVentasReportesTC";
 			this.mnuVentasReportesTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasReportesTC_ItemClick);
@@ -7049,7 +7058,7 @@ namespace Latinium
 			// 
 			// mnuVentasReportesVPA
 			// 
-			this.mnuVentasReportesVPA.Caption = "Vendedor Por A�o";
+			this.mnuVentasReportesVPA.Caption = "Vendedor Por Año";
 			this.mnuVentasReportesVPA.Id = 839;
 			this.mnuVentasReportesVPA.Name = "mnuVentasReportesVPA";
 			this.mnuVentasReportesVPA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuVentasReportesVPA_ItemClick);
@@ -7068,14 +7077,14 @@ namespace Latinium
 			// 
 			// MnuFacComConfiguracion
 			// 
-			this.MnuFacComConfiguracion.Caption = "Configuraci�n";
+			this.MnuFacComConfiguracion.Caption = "Configuración";
 			this.MnuFacComConfiguracion.Id = 496;
 			this.MnuFacComConfiguracion.Name = "MnuFacComConfiguracion";
 			this.MnuFacComConfiguracion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuFacComConfiguracion_ItemClick);
 			// 
 			// MnuFactComCalificacion
 			// 
-			this.MnuFactComCalificacion.Caption = "Calificaci�n";
+			this.MnuFactComCalificacion.Caption = "Calificación";
 			this.MnuFactComCalificacion.Id = 497;
 			this.MnuFactComCalificacion.Name = "MnuFactComCalificacion";
 			this.MnuFactComCalificacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuFactComCalificacion_ItemClick);
@@ -7117,7 +7126,7 @@ namespace Latinium
 			// 
 			// MnuCredito
 			// 
-			this.MnuCredito.Caption = "Cr�&diPOINT";
+			this.MnuCredito.Caption = "Cré&diPOINT";
 			this.MnuCredito.Id = 470;
 			this.MnuCredito.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
 																																														new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.MnuCreCobranza, DevExpress.XtraBars.BarItemPaintStyle.Caption),
@@ -7180,7 +7189,7 @@ namespace Latinium
 			// 
 			// mnuCPHRC
 			// 
-			this.mnuCPHRC.Caption = "Historial Revisi�n de C�dulas";
+			this.mnuCPHRC.Caption = "Historial Revisión de Cédulas";
 			this.mnuCPHRC.Id = 681;
 			this.mnuCPHRC.Name = "mnuCPHRC";
 			this.mnuCPHRC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPHRC_ItemClick);
@@ -7194,7 +7203,7 @@ namespace Latinium
 			// 
 			// mnuCPRRC
 			// 
-			this.mnuCPRRC.Caption = "Resumen de Revisi�n de C�dulas";
+			this.mnuCPRRC.Caption = "Resumen de Revisión de Cédulas";
 			this.mnuCPRRC.Id = 683;
 			this.mnuCPRRC.Name = "mnuCPRRC";
 			this.mnuCPRRC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPRRC_ItemClick);
@@ -7208,14 +7217,14 @@ namespace Latinium
 			// 
 			// mnuCPRevision
 			// 
-			this.mnuCPRevision.Caption = "Revisi�n De Cedulas";
+			this.mnuCPRevision.Caption = "Revisión De Cedulas";
 			this.mnuCPRevision.Id = 883;
 			this.mnuCPRevision.Name = "mnuCPRevision";
 			this.mnuCPRevision.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPRevision_ItemClick);
 			// 
 			// MnuCreditoSolRapida
 			// 
-			this.MnuCreditoSolRapida.Caption = "Solicitud R�pida";
+			this.MnuCreditoSolRapida.Caption = "Solicitud Rápida";
 			this.MnuCreditoSolRapida.Id = 471;
 			this.MnuCreditoSolRapida.Name = "MnuCreditoSolRapida";
 			this.MnuCreditoSolRapida.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -7275,7 +7284,7 @@ namespace Latinium
 			// 
 			// mnuContRepAnt
 			// 
-			this.mnuContRepAnt.Caption = "Reposici�n Cartera Solidario";
+			this.mnuContRepAnt.Caption = "Reposición Cartera Solidario";
 			this.mnuContRepAnt.Id = 548;
 			this.mnuContRepAnt.Name = "mnuContRepAnt";
 			this.mnuContRepAnt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuContRepAnt_ItemClick);
@@ -7289,7 +7298,7 @@ namespace Latinium
 			// 
 			// mnuContCCxCCP
 			// 
-			this.mnuContCCxCCP.Caption = "Liquidaci�n Cartera Solidaio";
+			this.mnuContCCxCCP.Caption = "Liquidación Cartera Solidaio";
 			this.mnuContCCxCCP.Id = 553;
 			this.mnuContCCxCCP.Name = "mnuContCCxCCP";
 			this.mnuContCCxCCP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuContCCxCCP_ItemClick);
@@ -7317,7 +7326,7 @@ namespace Latinium
 			// 
 			// mnuCpLbp
 			// 
-			this.mnuCpLbp.Caption = "Liquidaci�n";
+			this.mnuCpLbp.Caption = "Liquidación";
 			this.mnuCpLbp.Id = 647;
 			this.mnuCpLbp.Name = "mnuCpLbp";
 			this.mnuCpLbp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCpLbp_ItemClick);
@@ -7369,7 +7378,7 @@ namespace Latinium
 			// 
 			// mnuCPCarteraAustroGenera
 			// 
-			this.mnuCPCarteraAustroGenera.Caption = "Generaci�n";
+			this.mnuCPCarteraAustroGenera.Caption = "Generación";
 			this.mnuCPCarteraAustroGenera.Id = 1114;
 			this.mnuCPCarteraAustroGenera.Name = "mnuCPCarteraAustroGenera";
 			this.mnuCPCarteraAustroGenera.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPCarteraAustroGenera_ItemClick);
@@ -7383,7 +7392,7 @@ namespace Latinium
 			// 
 			// barButtonItem129
 			// 
-			this.barButtonItem129.Caption = "Liquidaci�n";
+			this.barButtonItem129.Caption = "Liquidación";
 			this.barButtonItem129.Id = 1161;
 			this.barButtonItem129.Name = "barButtonItem129";
 			this.barButtonItem129.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem129_ItemClick);
@@ -7401,7 +7410,7 @@ namespace Latinium
 			// 
 			// barButtonItem178
 			// 
-			this.barButtonItem178.Caption = "Generaci�n";
+			this.barButtonItem178.Caption = "Generación";
 			this.barButtonItem178.Id = 1316;
 			this.barButtonItem178.Name = "barButtonItem178";
 			this.barButtonItem178.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem178_ItemClick);
@@ -7434,8 +7443,7 @@ namespace Latinium
 			this.barSubItem15.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
 																																															new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.None, false, this.mnuCPCarteraFideicomisoPagos, false),
 																																															new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem148),
-																																															new DevExpress.XtraBars.LinkPersistInfo(this.mnuCPCarteraFideicomisoGeneracion),
-																																															new DevExpress.XtraBars.LinkPersistInfo(this.mnuCPVentaCarteraFideicomiso)});
+																																															new DevExpress.XtraBars.LinkPersistInfo(this.mnuCPCarteraFideicomisoGeneracion)});
 			this.barSubItem15.Name = "barSubItem15";
 			// 
 			// mnuCPCarteraFideicomisoPagos
@@ -7454,17 +7462,10 @@ namespace Latinium
 			// 
 			// mnuCPCarteraFideicomisoGeneracion
 			// 
-			this.mnuCPCarteraFideicomisoGeneracion.Caption = "Generaci�n";
+			this.mnuCPCarteraFideicomisoGeneracion.Caption = "Generación";
 			this.mnuCPCarteraFideicomisoGeneracion.Id = 1264;
 			this.mnuCPCarteraFideicomisoGeneracion.Name = "mnuCPCarteraFideicomisoGeneracion";
 			this.mnuCPCarteraFideicomisoGeneracion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPCarteraFideicomisoGeneracion_ItemClick);
-			//
-			// mnuCPVentaCarteraFideicomiso
-			//
-			this.mnuCPVentaCarteraFideicomiso.Caption = "Venta de Cartera";
-			this.mnuCPVentaCarteraFideicomiso.Id = 1350;
-			this.mnuCPVentaCarteraFideicomiso.Name = "mnuCPVentaCarteraFideicomiso";
-			this.mnuCPVentaCarteraFideicomiso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPVentaCarteraFideicomiso_ItemClick);
 			// 
 			// barButtonItem196
 			// 
@@ -7503,7 +7504,7 @@ namespace Latinium
 			// 
 			// mnuCPReporteLiQCbo
 			// 
-			this.mnuCPReporteLiQCbo.Caption = "Liquidaci�n";
+			this.mnuCPReporteLiQCbo.Caption = "Liquidación";
 			this.mnuCPReporteLiQCbo.Id = 1111;
 			this.mnuCPReporteLiQCbo.Name = "mnuCPReporteLiQCbo";
 			this.mnuCPReporteLiQCbo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPReporteLiQCbo_ItemClick);
@@ -7517,7 +7518,7 @@ namespace Latinium
 			// 
 			// mnuCrediPointVerTerreno
 			// 
-			this.mnuCrediPointVerTerreno.Caption = "Verificaci�n Terreno";
+			this.mnuCrediPointVerTerreno.Caption = "Verificación Terreno";
 			this.mnuCrediPointVerTerreno.Id = 476;
 			this.mnuCrediPointVerTerreno.Name = "mnuCrediPointVerTerreno";
 			this.mnuCrediPointVerTerreno.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -7578,14 +7579,14 @@ namespace Latinium
 			// 
 			// MnuCreditoCuota
 			// 
-			this.MnuCreditoCuota.Caption = "Par�metros de Cr�dito";
+			this.MnuCreditoCuota.Caption = "Parámetros de Crédito";
 			this.MnuCreditoCuota.Id = 489;
 			this.MnuCreditoCuota.Name = "MnuCreditoCuota";
 			this.MnuCreditoCuota.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuCreditoCuota_ItemClick);
 			// 
 			// MnuCreGastoCobran
 			// 
-			this.MnuCreGastoCobran.Caption = "Gesti�n de Cobranza";
+			this.MnuCreGastoCobran.Caption = "Gestión de Cobranza";
 			this.MnuCreGastoCobran.Id = 490;
 			this.MnuCreGastoCobran.Name = "MnuCreGastoCobran";
 			this.MnuCreGastoCobran.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -7683,7 +7684,7 @@ namespace Latinium
 			// 
 			// mnuCPReportesGDCM
 			// 
-			this.mnuCPReportesGDCM.Caption = "Gesti�n de Cobranza Mensual";
+			this.mnuCPReportesGDCM.Caption = "Gestión de Cobranza Mensual";
 			this.mnuCPReportesGDCM.Id = 733;
 			this.mnuCPReportesGDCM.Name = "mnuCPReportesGDCM";
 			this.mnuCPReportesGDCM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPReportesGDCM_ItemClick);
@@ -7697,7 +7698,7 @@ namespace Latinium
 			// 
 			// mnuCPReportesNDC
 			// 
-			this.mnuCPReportesNDC.Caption = "Notas de Cr�ditos";
+			this.mnuCPReportesNDC.Caption = "Notas de Créditos";
 			this.mnuCPReportesNDC.Id = 744;
 			this.mnuCPReportesNDC.Name = "mnuCPReportesNDC";
 			this.mnuCPReportesNDC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPReportesNDC_ItemClick);
@@ -7725,7 +7726,7 @@ namespace Latinium
 			// 
 			// mnuCrediPOINTReportesRMR
 			// 
-			this.mnuCrediPOINTReportesRMR.Caption = "Recepci�n Mercaderia de Retiro";
+			this.mnuCrediPOINTReportesRMR.Caption = "Recepción Mercaderia de Retiro";
 			this.mnuCrediPOINTReportesRMR.Id = 833;
 			this.mnuCrediPOINTReportesRMR.Name = "mnuCrediPOINTReportesRMR";
 			this.mnuCrediPOINTReportesRMR.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCrediPOINTReportesRMR_ItemClick);
@@ -7812,7 +7813,7 @@ namespace Latinium
 			// 
 			// mnuCobranzasRGC
 			// 
-			this.mnuCobranzasRGC.Caption = "Gestiones de Cr�dito";
+			this.mnuCobranzasRGC.Caption = "Gestiones de Crédito";
 			this.mnuCobranzasRGC.Id = 717;
 			this.mnuCobranzasRGC.Name = "mnuCobranzasRGC";
 			this.mnuCobranzasRGC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCobranzasRGC_ItemClick);
@@ -7833,14 +7834,14 @@ namespace Latinium
 			// 
 			// barButtonItem50
 			// 
-			this.barButtonItem50.Caption = "Comparaci�n Cobranza Pichincha";
+			this.barButtonItem50.Caption = "Comparación Cobranza Pichincha";
 			this.barButtonItem50.Id = 735;
 			this.barButtonItem50.Name = "barButtonItem50";
 			this.barButtonItem50.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem50_ItemClick);
 			// 
 			// mnuCPCobranzasCCPPC
 			// 
-			this.mnuCPCobranzasCCPPC.Caption = "Comparaci�n Cartera Pichincha Por Cuotas";
+			this.mnuCPCobranzasCCPPC.Caption = "Comparación Cartera Pichincha Por Cuotas";
 			this.mnuCPCobranzasCCPPC.Id = 838;
 			this.mnuCPCobranzasCCPPC.Name = "mnuCPCobranzasCCPPC";
 			this.mnuCPCobranzasCCPPC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPCobranzasCCPPC_ItemClick);
@@ -7921,7 +7922,7 @@ namespace Latinium
 			// 
 			// mnuCPComisionesAsigCobr
 			// 
-			this.mnuCPComisionesAsigCobr.Caption = "Asignaci�n Cobradores";
+			this.mnuCPComisionesAsigCobr.Caption = "Asignación Cobradores";
 			this.mnuCPComisionesAsigCobr.Id = 979;
 			this.mnuCPComisionesAsigCobr.Name = "mnuCPComisionesAsigCobr";
 			this.mnuCPComisionesAsigCobr.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPComisionesAsigCobr_ItemClick);
@@ -7949,7 +7950,7 @@ namespace Latinium
 			// 
 			// mnuCreditoProReal
 			// 
-			this.mnuCreditoProReal.Caption = "Reporte Cobranza Proyecci�n";
+			this.mnuCreditoProReal.Caption = "Reporte Cobranza Proyección";
 			this.mnuCreditoProReal.Id = 984;
 			this.mnuCreditoProReal.Name = "mnuCreditoProReal";
 			this.mnuCreditoProReal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCreditoProReal_ItemClick);
@@ -7963,7 +7964,7 @@ namespace Latinium
 			// 
 			// mnuCreditoComiCreaBarrio
 			// 
-			this.mnuCreditoComiCreaBarrio.Caption = "Asignaci�n de Parroquias";
+			this.mnuCreditoComiCreaBarrio.Caption = "Asignación de Parroquias";
 			this.mnuCreditoComiCreaBarrio.Id = 1086;
 			this.mnuCreditoComiCreaBarrio.Name = "mnuCreditoComiCreaBarrio";
 			this.mnuCreditoComiCreaBarrio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCreditoComiCreaBarrio_ItemClick);
@@ -8005,14 +8006,14 @@ namespace Latinium
 			// 
 			// mnuCPVEP
 			// 
-			this.mnuCPVEP.Caption = "Verificaci�n Entrega de Productos";
+			this.mnuCPVEP.Caption = "Verificación Entrega de Productos";
 			this.mnuCPVEP.Id = 672;
 			this.mnuCPVEP.Name = "mnuCPVEP";
 			this.mnuCPVEP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPVEP_ItemClick);
 			// 
 			// mnuCrediPOINTRMR
 			// 
-			this.mnuCrediPOINTRMR.Caption = "Recepci�n Mercaderia De Retiro";
+			this.mnuCrediPOINTRMR.Caption = "Recepción Mercaderia De Retiro";
 			this.mnuCrediPOINTRMR.Id = 832;
 			this.mnuCrediPOINTRMR.Name = "mnuCrediPOINTRMR";
 			this.mnuCrediPOINTRMR.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCrediPOINTRMR_ItemClick);
@@ -8032,14 +8033,14 @@ namespace Latinium
 			// 
 			// mnuCPCDRDC
 			// 
-			this.mnuCPCDRDC.Caption = "Recepci�n de Cedulas";
+			this.mnuCPCDRDC.Caption = "Recepción de Cedulas";
 			this.mnuCPCDRDC.Id = 890;
 			this.mnuCPCDRDC.Name = "mnuCPCDRDC";
 			this.mnuCPCDRDC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPCDRDC_ItemClick);
 			// 
 			// mnuCPCDRVC
 			// 
-			this.mnuCPCDRVC.Caption = "Revisi�n de Cedulas";
+			this.mnuCPCDRVC.Caption = "Revisión de Cedulas";
 			this.mnuCPCDRVC.Id = 891;
 			this.mnuCPCDRVC.Name = "mnuCPCDRVC";
 			this.mnuCPCDRVC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPCDRVC_ItemClick);
@@ -8060,7 +8061,7 @@ namespace Latinium
 			// 
 			// mnuCPCDLCPG
 			// 
-			this.mnuCPCDLCPG.Caption = "Lista Clientes Para Gesti�n";
+			this.mnuCPCDLCPG.Caption = "Lista Clientes Para Gestión";
 			this.mnuCPCDLCPG.Id = 894;
 			this.mnuCPCDLCPG.Name = "mnuCPCDLCPG";
 			this.mnuCPCDLCPG.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPCDLCPG_ItemClick);
@@ -8074,14 +8075,14 @@ namespace Latinium
 			// 
 			// mnuCPANDC
 			// 
-			this.mnuCPANDC.Caption = "Aprobaci�n Notas De Cr�dito";
+			this.mnuCPANDC.Caption = "Aprobación Notas De Crédito";
 			this.mnuCPANDC.Id = 989;
 			this.mnuCPANDC.Name = "mnuCPANDC";
 			this.mnuCPANDC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPANDC_ItemClick);
 			// 
 			// mnuCPANPD
 			// 
-			this.mnuCPANPD.Caption = "Aprobaci�n No Pago Diferimiento";
+			this.mnuCPANPD.Caption = "Aprobación No Pago Diferimiento";
 			this.mnuCPANPD.Id = 1056;
 			this.mnuCPANPD.Name = "mnuCPANPD";
 			this.mnuCPANPD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCPANPD_ItemClick);
@@ -8095,7 +8096,7 @@ namespace Latinium
 			// 
 			// MnuProduc
 			// 
-			this.MnuProduc.Caption = "&Producci�n";
+			this.MnuProduc.Caption = "&Producción";
 			this.MnuProduc.CategoryGuid = new System.Guid("4889142b-ad08-4f8e-ba2d-15b0fc1cb0e9");
 			this.MnuProduc.Id = 147;
 			this.MnuProduc.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -8130,7 +8131,7 @@ namespace Latinium
 			// 
 			// MnuProducOrdProd
 			// 
-			this.MnuProducOrdProd.Caption = "Orden de Producci�n";
+			this.MnuProducOrdProd.Caption = "Orden de Producción";
 			this.MnuProducOrdProd.CategoryGuid = new System.Guid("4889142b-ad08-4f8e-ba2d-15b0fc1cb0e9");
 			this.MnuProducOrdProd.Id = 149;
 			this.MnuProducOrdProd.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F3));
@@ -8139,7 +8140,7 @@ namespace Latinium
 			// 
 			// MnuProdEstado
 			// 
-			this.MnuProdEstado.Caption = "Estado Producci�n";
+			this.MnuProdEstado.Caption = "Estado Producción";
 			this.MnuProdEstado.Id = 513;
 			this.MnuProdEstado.Name = "MnuProdEstado";
 			this.MnuProdEstado.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuProdEstado_ItemClick);
@@ -8160,14 +8161,14 @@ namespace Latinium
 			// 
 			// mnuProduccionTPT
 			// 
-			this.mnuProduccionTPT.Caption = "Transferencia Producci�n Terminada";
+			this.mnuProduccionTPT.Caption = "Transferencia Producción Terminada";
 			this.mnuProduccionTPT.Id = 580;
 			this.mnuProduccionTPT.Name = "mnuProduccionTPT";
 			this.mnuProduccionTPT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuProduccionTPT_ItemClick);
 			// 
 			// mnuGPPD
 			// 
-			this.mnuGPPD.Caption = "Genera Transferencia de Partes Da�adas";
+			this.mnuGPPD.Caption = "Genera Transferencia de Partes Dañadas";
 			this.mnuGPPD.Id = 594;
 			this.mnuGPPD.Name = "mnuGPPD";
 			this.mnuGPPD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuGPPD_ItemClick);
@@ -8183,7 +8184,7 @@ namespace Latinium
 			// 
 			// mnuProdLiquida
 			// 
-			this.mnuProdLiquida.Caption = "Liquidaci�n �rden Producci�n";
+			this.mnuProdLiquida.Caption = "Liquidación Órden Producción";
 			this.mnuProdLiquida.CategoryGuid = new System.Guid("4889142b-ad08-4f8e-ba2d-15b0fc1cb0e9");
 			this.mnuProdLiquida.Id = 292;
 			this.mnuProdLiquida.Name = "mnuProdLiquida";
@@ -8201,7 +8202,7 @@ namespace Latinium
 			// 
 			// MnuProducActualiza
 			// 
-			this.MnuProducActualiza.Caption = "Actualizaci�n de Precios";
+			this.MnuProducActualiza.Caption = "Actualización de Precios";
 			this.MnuProducActualiza.CategoryGuid = new System.Guid("4889142b-ad08-4f8e-ba2d-15b0fc1cb0e9");
 			this.MnuProducActualiza.Id = 152;
 			this.MnuProducActualiza.Name = "MnuProducActualiza";
@@ -8225,7 +8226,7 @@ namespace Latinium
 			// 
 			// MnuProdSemana
 			// 
-			this.MnuProdSemana.Caption = "Producci�n Semanal";
+			this.MnuProdSemana.Caption = "Producción Semanal";
 			this.MnuProdSemana.CategoryGuid = new System.Guid("4889142b-ad08-4f8e-ba2d-15b0fc1cb0e9");
 			this.MnuProdSemana.Id = 209;
 			this.MnuProdSemana.Name = "MnuProdSemana";
@@ -8233,7 +8234,7 @@ namespace Latinium
 			// 
 			// btProdCosto
 			// 
-			this.btProdCosto.Caption = "Costos de Producci�n";
+			this.btProdCosto.Caption = "Costos de Producción";
 			this.btProdCosto.CategoryGuid = new System.Guid("4889142b-ad08-4f8e-ba2d-15b0fc1cb0e9");
 			this.btProdCosto.Id = 299;
 			this.btProdCosto.Name = "btProdCosto";
@@ -8241,7 +8242,7 @@ namespace Latinium
 			// 
 			// mnuProdGeneraC
 			// 
-			this.mnuProdGeneraC.Caption = "Generaci�n de Consumo";
+			this.mnuProdGeneraC.Caption = "Generación de Consumo";
 			this.mnuProdGeneraC.CategoryGuid = new System.Guid("4889142b-ad08-4f8e-ba2d-15b0fc1cb0e9");
 			this.mnuProdGeneraC.Id = 303;
 			this.mnuProdGeneraC.Name = "mnuProdGeneraC";
@@ -8249,7 +8250,7 @@ namespace Latinium
 			// 
 			// mnuProdAgro
 			// 
-			this.mnuProdAgro.Caption = "Actividades Agr�colas";
+			this.mnuProdAgro.Caption = "Actividades Agrícolas";
 			this.mnuProdAgro.CategoryGuid = new System.Guid("4889142b-ad08-4f8e-ba2d-15b0fc1cb0e9");
 			this.mnuProdAgro.Id = 307;
 			this.mnuProdAgro.Name = "mnuProdAgro";
@@ -8257,7 +8258,7 @@ namespace Latinium
 			// 
 			// mnuDT
 			// 
-			this.mnuDT.Caption = "Departamento &T�cnico";
+			this.mnuDT.Caption = "Departamento &Técnico";
 			this.mnuDT.Id = 520;
 			this.mnuDT.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
 																																											 new DevExpress.XtraBars.LinkPersistInfo(this.MnuDTSolicitud, true),
@@ -8283,7 +8284,7 @@ namespace Latinium
 			// 
 			// MnuDTSolicitud
 			// 
-			this.MnuDTSolicitud.Caption = "Ingreso Departamento T�cnico";
+			this.MnuDTSolicitud.Caption = "Ingreso Departamento Técnico";
 			this.MnuDTSolicitud.Id = 522;
 			this.MnuDTSolicitud.Name = "MnuDTSolicitud";
 			this.MnuDTSolicitud.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuDTSolicitud_ItemClick);
@@ -8297,7 +8298,7 @@ namespace Latinium
 			// 
 			// mnuDTRA
 			// 
-			this.mnuDTRA.Caption = "Recepci�n de Articulos";
+			this.mnuDTRA.Caption = "Recepción de Articulos";
 			this.mnuDTRA.Id = 801;
 			this.mnuDTRA.Name = "mnuDTRA";
 			this.mnuDTRA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuDTRA_ItemClick);
@@ -8346,14 +8347,14 @@ namespace Latinium
 			// 
 			// mnuDTIRAT
 			// 
-			this.mnuDTIRAT.Caption = "Asignaci�n de T�cnicos";
+			this.mnuDTIRAT.Caption = "Asignación de Técnicos";
 			this.mnuDTIRAT.Id = 736;
 			this.mnuDTIRAT.Name = "mnuDTIRAT";
 			this.mnuDTIRAT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem51_ItemClick);
 			// 
 			// mnuDTIRSNC
 			// 
-			this.mnuDTIRSNC.Caption = "Solicitud de Notas de Cr�dito ";
+			this.mnuDTIRSNC.Caption = "Solicitud de Notas de Crédito ";
 			this.mnuDTIRSNC.Id = 755;
 			this.mnuDTIRSNC.Name = "mnuDTIRSNC";
 			this.mnuDTIRSNC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem60_ItemClick);
@@ -8367,7 +8368,7 @@ namespace Latinium
 			// 
 			// mnuDTIRRPT
 			// 
-			this.mnuDTIRRPT.Caption = "Informes de Reparaci�n";
+			this.mnuDTIRRPT.Caption = "Informes de Reparación";
 			this.mnuDTIRRPT.Id = 738;
 			this.mnuDTIRRPT.Name = "mnuDTIRRPT";
 			this.mnuDTIRRPT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem53_ItemClick);
@@ -8398,7 +8399,7 @@ namespace Latinium
 			// 
 			// MnuDTSTA
 			// 
-			this.MnuDTSTA.Caption = "Servicio T�cnico Autorizado";
+			this.MnuDTSTA.Caption = "Servicio Técnico Autorizado";
 			this.MnuDTSTA.Id = 521;
 			this.MnuDTSTA.Name = "MnuDTSTA";
 			this.MnuDTSTA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuDTSTA_ItemClick);
@@ -8419,7 +8420,7 @@ namespace Latinium
 			// 
 			// mnuDTASSF
 			// 
-			this.mnuDTASSF.Caption = "Aprobaci�n Salida Sin Facturar";
+			this.mnuDTASSF.Caption = "Aprobación Salida Sin Facturar";
 			this.mnuDTASSF.Id = 806;
 			this.mnuDTASSF.Name = "mnuDTASSF";
 			this.mnuDTASSF.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuDTASSF_ItemClick);
@@ -8453,14 +8454,14 @@ namespace Latinium
 			// 
 			// mnuDTIRRTE
 			// 
-			this.mnuDTIRRTE.Caption = "Reportes T�cnicos";
+			this.mnuDTIRRTE.Caption = "Reportes Técnicos";
 			this.mnuDTIRRTE.Id = 760;
 			this.mnuDTIRRTE.Name = "mnuDTIRRTE";
 			this.mnuDTIRRTE.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem63_ItemClick);
 			// 
 			// mnuDTIRFDT
 			// 
-			this.mnuDTIRFDT.Caption = "Facturaci�n";
+			this.mnuDTIRFDT.Caption = "Facturación";
 			this.mnuDTIRFDT.Id = 792;
 			this.mnuDTIRFDT.Name = "mnuDTIRFDT";
 			this.mnuDTIRFDT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem73_ItemClick);
@@ -8536,7 +8537,7 @@ namespace Latinium
 			// 
 			// barButtonItem26
 			// 
-			this.barButtonItem26.Caption = "Facturaci�n";
+			this.barButtonItem26.Caption = "Facturación";
 			this.barButtonItem26.Id = 656;
 			this.barButtonItem26.Name = "barButtonItem26";
 			this.barButtonItem26.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem26_ItemClick);
@@ -8620,14 +8621,14 @@ namespace Latinium
 			// 
 			// mnuTmaHabitacion
 			// 
-			this.mnuTmaHabitacion.Caption = "Tem�ticas Habitaciones";
+			this.mnuTmaHabitacion.Caption = "Temáticas Habitaciones";
 			this.mnuTmaHabitacion.Id = 639;
 			this.mnuTmaHabitacion.Name = "mnuTmaHabitacion";
 			this.mnuTmaHabitacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem30_ItemClick);
 			// 
 			// mnuTmpEstadia
 			// 
-			this.mnuTmpEstadia.Caption = "Tiempos de Estad�a";
+			this.mnuTmpEstadia.Caption = "Tiempos de Estadía";
 			this.mnuTmpEstadia.Id = 640;
 			this.mnuTmpEstadia.Name = "mnuTmpEstadia";
 			this.mnuTmpEstadia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem31_ItemClick);
@@ -8755,7 +8756,7 @@ namespace Latinium
 			// 
 			// barButtonItem69
 			// 
-			this.barButtonItem69.Caption = "Calculo de metas mes y a�o";
+			this.barButtonItem69.Caption = "Calculo de metas mes y año";
 			this.barButtonItem69.Id = 768;
 			this.barButtonItem69.Name = "barButtonItem69";
 			this.barButtonItem69.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem69_ItemClick);
@@ -8783,7 +8784,7 @@ namespace Latinium
 			// 
 			// mnuLotteReporteEncuesta
 			// 
-			this.mnuLotteReporteEncuesta.Caption = "Tabulaci�n Encuesta";
+			this.mnuLotteReporteEncuesta.Caption = "Tabulación Encuesta";
 			this.mnuLotteReporteEncuesta.Id = 1024;
 			this.mnuLotteReporteEncuesta.Name = "mnuLotteReporteEncuesta";
 			this.mnuLotteReporteEncuesta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuLotteReporteEncuesta_ItemClick);
@@ -8977,7 +8978,7 @@ namespace Latinium
 			// 
 			// barButtonItem185
 			// 
-			this.barButtonItem185.Caption = "Impresi�n C�digo QR Encuesta";
+			this.barButtonItem185.Caption = "Impresión Código QR Encuesta";
 			this.barButtonItem185.Id = 1323;
 			this.barButtonItem185.Name = "barButtonItem185";
 			this.barButtonItem185.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem185_ItemClick);
@@ -9044,7 +9045,7 @@ namespace Latinium
 			// 
 			// MnuFact
 			// 
-			this.MnuFact.Caption = "&Facturaci�n";
+			this.MnuFact.Caption = "&Facturación";
 			this.MnuFact.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFact.Id = 104;
 			this.MnuFact.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -9062,7 +9063,7 @@ namespace Latinium
 			// 
 			// MnuFactCotizacion
 			// 
-			this.MnuFactCotizacion.Caption = "Cotizaci�n";
+			this.MnuFactCotizacion.Caption = "Cotización";
 			this.MnuFactCotizacion.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactCotizacion.Id = 108;
 			this.MnuFactCotizacion.Name = "MnuFactCotizacion";
@@ -9089,7 +9090,7 @@ namespace Latinium
 			// 
 			// MnuFactReservProveedores
 			// 
-			this.MnuFactReservProveedores.Caption = "Reservaci�n Proveedores";
+			this.MnuFactReservProveedores.Caption = "Reservación Proveedores";
 			this.MnuFactReservProveedores.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactReservProveedores.Id = 114;
 			this.MnuFactReservProveedores.Name = "MnuFactReservProveedores";
@@ -9120,7 +9121,7 @@ namespace Latinium
 			// 
 			// MnuFactResPedRequisicion
 			// 
-			this.MnuFactResPedRequisicion.Caption = "Requisici�n";
+			this.MnuFactResPedRequisicion.Caption = "Requisición";
 			this.MnuFactResPedRequisicion.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactResPedRequisicion.Id = 383;
 			this.MnuFactResPedRequisicion.Name = "MnuFactResPedRequisicion";
@@ -9128,7 +9129,7 @@ namespace Latinium
 			// 
 			// MnuFactResPedComision
 			// 
-			this.MnuFactResPedComision.Caption = "Comisi�n";
+			this.MnuFactResPedComision.Caption = "Comisión";
 			this.MnuFactResPedComision.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactResPedComision.Id = 385;
 			this.MnuFactResPedComision.Name = "MnuFactResPedComision";
@@ -9150,7 +9151,7 @@ namespace Latinium
 			// 
 			// MnuFactResConclusion
 			// 
-			this.MnuFactResConclusion.Caption = "Conclusi�n";
+			this.MnuFactResConclusion.Caption = "Conclusión";
 			this.MnuFactResConclusion.Id = 427;
 			this.MnuFactResConclusion.Name = "MnuFactResConclusion";
 			this.MnuFactResConclusion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuFactResConclusion_ItemClick);
@@ -9213,7 +9214,7 @@ namespace Latinium
 			// 
 			// MnuFactLot_Autoriza
 			// 
-			this.MnuFactLot_Autoriza.Caption = "Autorizaci�n de Pagos";
+			this.MnuFactLot_Autoriza.Caption = "Autorización de Pagos";
 			this.MnuFactLot_Autoriza.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactLot_Autoriza.Id = 289;
 			this.MnuFactLot_Autoriza.Name = "MnuFactLot_Autoriza";
@@ -9221,7 +9222,7 @@ namespace Latinium
 			// 
 			// MnuFactLot_Facturacion
 			// 
-			this.MnuFactLot_Facturacion.Caption = "Facturaci�n";
+			this.MnuFactLot_Facturacion.Caption = "Facturación";
 			this.MnuFactLot_Facturacion.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactLot_Facturacion.Id = 121;
 			this.MnuFactLot_Facturacion.Name = "MnuFactLot_Facturacion";
@@ -9229,7 +9230,7 @@ namespace Latinium
 			// 
 			// mnuFactLotesPago
 			// 
-			this.mnuFactLotesPago.Caption = "Dep�sitos";
+			this.mnuFactLotesPago.Caption = "Depósitos";
 			this.mnuFactLotesPago.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.mnuFactLotesPago.Id = 267;
 			this.mnuFactLotesPago.Name = "mnuFactLotesPago";
@@ -9237,7 +9238,7 @@ namespace Latinium
 			// 
 			// MnuFactLot_Transf_Art
 			// 
-			this.MnuFactLot_Transf_Art.Caption = "Transferencia de Art�culos";
+			this.MnuFactLot_Transf_Art.Caption = "Transferencia de Artículos";
 			this.MnuFactLot_Transf_Art.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactLot_Transf_Art.Id = 124;
 			this.MnuFactLot_Transf_Art.Name = "MnuFactLot_Transf_Art";
@@ -9245,14 +9246,14 @@ namespace Latinium
 			// 
 			// mnuFacLotTransfTrans
 			// 
-			this.mnuFacLotTransfTrans.Caption = "Transferencia Transacci�n";
+			this.mnuFacLotTransfTrans.Caption = "Transferencia Transacción";
 			this.mnuFacLotTransfTrans.Id = 410;
 			this.mnuFacLotTransfTrans.Name = "mnuFacLotTransfTrans";
 			this.mnuFacLotTransfTrans.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuFacLotTransfTrans_ItemClick);
 			// 
 			// MnuFactLoteAnalisis
 			// 
-			this.MnuFactLoteAnalisis.Caption = "An�lisis de Art�culos";
+			this.MnuFactLoteAnalisis.Caption = "Análisis de Artículos";
 			this.MnuFactLoteAnalisis.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactLoteAnalisis.Id = 249;
 			this.MnuFactLoteAnalisis.Name = "MnuFactLoteAnalisis";
@@ -9268,7 +9269,7 @@ namespace Latinium
 			// 
 			// mnuFactLotTomaF
 			// 
-			this.mnuFactLotTomaF.Caption = "Toma F�sica";
+			this.mnuFactLotTomaF.Caption = "Toma Física";
 			this.mnuFactLotTomaF.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.mnuFactLotTomaF.Id = 274;
 			this.mnuFactLotTomaF.Name = "mnuFactLotTomaF";
@@ -9284,7 +9285,7 @@ namespace Latinium
 			// 
 			// mnuFactLoteTarjeta
 			// 
-			this.mnuFactLoteTarjeta.Caption = "Tarjeta de Cr�dito";
+			this.mnuFactLoteTarjeta.Caption = "Tarjeta de Crédito";
 			this.mnuFactLoteTarjeta.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.mnuFactLoteTarjeta.Id = 283;
 			this.mnuFactLoteTarjeta.Name = "mnuFactLoteTarjeta";
@@ -9300,7 +9301,7 @@ namespace Latinium
 			// 
 			// mnuFactRepSri
 			// 
-			this.mnuFactRepSri.Caption = "Impresi�n SRI";
+			this.mnuFactRepSri.Caption = "Impresión SRI";
 			this.mnuFactRepSri.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.mnuFactRepSri.Id = 298;
 			this.mnuFactRepSri.Name = "mnuFactRepSri";
@@ -9316,7 +9317,7 @@ namespace Latinium
 			// 
 			// mnuFacLotCopiaArt
 			// 
-			this.mnuFacLotCopiaArt.Caption = "Crea Art�culo Compra";
+			this.mnuFacLotCopiaArt.Caption = "Crea Artículo Compra";
 			this.mnuFacLotCopiaArt.Id = 415;
 			this.mnuFacLotCopiaArt.Name = "mnuFacLotCopiaArt";
 			this.mnuFacLotCopiaArt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuFacLotCopiaArt_ItemClick);
@@ -9330,7 +9331,7 @@ namespace Latinium
 			// 
 			// MnuFactGrupArticulos
 			// 
-			this.MnuFactGrupArticulos.Caption = "Grupo de Art�culos";
+			this.MnuFactGrupArticulos.Caption = "Grupo de Artículos";
 			this.MnuFactGrupArticulos.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactGrupArticulos.Id = 128;
 			this.MnuFactGrupArticulos.Name = "MnuFactGrupArticulos";
@@ -9368,7 +9369,7 @@ namespace Latinium
 			// 
 			// MnuFactRepResumenes
 			// 
-			this.MnuFactRepResumenes.Caption = "Reporte Res�menes         ";
+			this.MnuFactRepResumenes.Caption = "Reporte Resúmenes         ";
 			this.MnuFactRepResumenes.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactRepResumenes.Id = 133;
 			this.MnuFactRepResumenes.ImageIndex = 24;
@@ -9388,7 +9389,7 @@ namespace Latinium
 			// 
 			// MnuFactRepArticulo
 			// 
-			this.MnuFactRepArticulo.Caption = "Reporte de Art�culos";
+			this.MnuFactRepArticulo.Caption = "Reporte de Artículos";
 			this.MnuFactRepArticulo.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
 			this.MnuFactRepArticulo.Id = 135;
 			this.MnuFactRepArticulo.ImageIndex = 25;
@@ -9421,7 +9422,7 @@ namespace Latinium
 			// 
 			// barButtonItem62
 			// 
-			this.barButtonItem62.Caption = "Contrataci�n";
+			this.barButtonItem62.Caption = "Contratación";
 			this.barButtonItem62.Id = 816;
 			this.barButtonItem62.Name = "barButtonItem62";
 			this.barButtonItem62.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem62_ItemClick_1);
@@ -9516,14 +9517,14 @@ namespace Latinium
 			// 
 			// mnuRepCPGCA
 			// 
-			this.mnuRepCPGCA.Caption = "Gesti�n de Cobranza Almacenes";
+			this.mnuRepCPGCA.Caption = "Gestión de Cobranza Almacenes";
 			this.mnuRepCPGCA.Id = 1097;
 			this.mnuRepCPGCA.Name = "mnuRepCPGCA";
 			this.mnuRepCPGCA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRepCPGCA_ItemClick);
 			// 
 			// mnuRPtCREPOINTFDG
 			// 
-			this.mnuRPtCREPOINTFDG.Caption = "Fondo De Garant�a";
+			this.mnuRPtCREPOINTFDG.Caption = "Fondo De Garantía";
 			this.mnuRPtCREPOINTFDG.Id = 998;
 			this.mnuRPtCREPOINTFDG.Name = "mnuRPtCREPOINTFDG";
 			this.mnuRPtCREPOINTFDG.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPtCREPOINTFDG_ItemClick);
@@ -9551,7 +9552,7 @@ namespace Latinium
 			// 
 			// mnuRPtCrediPointAnalisi
 			// 
-			this.mnuRPtCrediPointAnalisi.Caption = "Analisis Fondo Garant�a";
+			this.mnuRPtCrediPointAnalisi.Caption = "Analisis Fondo Garantía";
 			this.mnuRPtCrediPointAnalisi.Id = 1029;
 			this.mnuRPtCrediPointAnalisi.Name = "mnuRPtCrediPointAnalisi";
 			this.mnuRPtCrediPointAnalisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPtCrediPointAnalisi_ItemClick);
@@ -9579,7 +9580,7 @@ namespace Latinium
 			// 
 			// MnmCrediAppcbo
 			// 
-			this.MnmCrediAppcbo.Caption = "Cobros Aplicaci�n Movil";
+			this.MnmCrediAppcbo.Caption = "Cobros Aplicación Movil";
 			this.MnmCrediAppcbo.Id = 1038;
 			this.MnmCrediAppcbo.Name = "MnmCrediAppcbo";
 			this.MnmCrediAppcbo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnmCrediAppcbo_ItemClick);
@@ -9635,7 +9636,7 @@ namespace Latinium
 			// 
 			// barButtonItem125
 			// 
-			this.barButtonItem125.Caption = "Administraci�n DFI";
+			this.barButtonItem125.Caption = "Administración DFI";
 			this.barButtonItem125.Id = 1145;
 			this.barButtonItem125.Name = "barButtonItem125";
 			this.barButtonItem125.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem125_ItemClick);
@@ -9684,7 +9685,7 @@ namespace Latinium
 			// 
 			// barButtonItem123
 			// 
-			this.barButtonItem123.Caption = "Evoluci�n Colocaci�n";
+			this.barButtonItem123.Caption = "Evolución Colocación";
 			this.barButtonItem123.Id = 1138;
 			this.barButtonItem123.Name = "barButtonItem123";
 			this.barButtonItem123.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem123_ItemClick);
@@ -9756,14 +9757,14 @@ namespace Latinium
 			// 
 			// mnuRepCPAPC
 			// 
-			this.mnuRepCPAPC.Caption = "An�lisis P�rdida Cartera";
+			this.mnuRepCPAPC.Caption = "Análisis Pérdida Cartera";
 			this.mnuRepCPAPC.Id = 1272;
 			this.mnuRepCPAPC.Name = "mnuRepCPAPC";
 			this.mnuRepCPAPC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRepCPAPC_ItemClick);
 			// 
 			// mnuRepCPAPC1
 			// 
-			this.mnuRepCPAPC1.Caption = "An�lisis P�rdida Cartera 1";
+			this.mnuRepCPAPC1.Caption = "Análisis Pérdida Cartera 1";
 			this.mnuRepCPAPC1.Id = 1276;
 			this.mnuRepCPAPC1.Name = "mnuRepCPAPC1";
 			this.mnuRepCPAPC1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRepCPAPC1_ItemClick);
@@ -9870,7 +9871,7 @@ namespace Latinium
 			// 
 			// mnuRPTVentasCxCConciliacion
 			// 
-			this.mnuRPTVentasCxCConciliacion.Caption = "Conciliaci�n Cuentas Por Cobrar ";
+			this.mnuRPTVentasCxCConciliacion.Caption = "Conciliación Cuentas Por Cobrar ";
 			this.mnuRPTVentasCxCConciliacion.Id = 1028;
 			this.mnuRPTVentasCxCConciliacion.Name = "mnuRPTVentasCxCConciliacion";
 			this.mnuRPTVentasCxCConciliacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPTVentasCxCConciliacion_ItemClick);
@@ -9992,14 +9993,14 @@ namespace Latinium
 			// 
 			// mnuRPTVentasComisionesConf
 			// 
-			this.mnuRPTVentasComisionesConf.Caption = "Configuraci�n";
+			this.mnuRPTVentasComisionesConf.Caption = "Configuración";
 			this.mnuRPTVentasComisionesConf.Id = 964;
 			this.mnuRPTVentasComisionesConf.Name = "mnuRPTVentasComisionesConf";
 			this.mnuRPTVentasComisionesConf.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPTVentasComisionesConf_ItemClick);
 			// 
 			// mnuRPTVentasComisionesCali
 			// 
-			this.mnuRPTVentasComisionesCali.Caption = "Calificaci�n";
+			this.mnuRPTVentasComisionesCali.Caption = "Calificación";
 			this.mnuRPTVentasComisionesCali.Id = 965;
 			this.mnuRPTVentasComisionesCali.Name = "mnuRPTVentasComisionesCali";
 			// 
@@ -10024,14 +10025,14 @@ namespace Latinium
 			// 
 			// mnuReporBIFacturas
 			// 
-			this.mnuReporBIFacturas.Caption = "Resumen Facturas - Notas De Cr�dito";
+			this.mnuReporBIFacturas.Caption = "Resumen Facturas - Notas De Crédito";
 			this.mnuReporBIFacturas.Id = 1002;
 			this.mnuReporBIFacturas.Name = "mnuReporBIFacturas";
 			this.mnuReporBIFacturas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuReporBIFacturas_ItemClick);
 			// 
 			// barButtonItem91
 			// 
-			this.barButtonItem91.Caption = "Proyecci�n Mensual Local Por Local";
+			this.barButtonItem91.Caption = "Proyección Mensual Local Por Local";
 			this.barButtonItem91.Id = 1012;
 			this.barButtonItem91.Name = "barButtonItem91";
 			this.barButtonItem91.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem91_ItemClick);
@@ -10296,7 +10297,7 @@ namespace Latinium
 			// 
 			// barButtonItem160
 			// 
-			this.barButtonItem160.Caption = "Descripci�n Articulo Web";
+			this.barButtonItem160.Caption = "Descripción Articulo Web";
 			this.barButtonItem160.Id = 1262;
 			this.barButtonItem160.Name = "barButtonItem160";
 			this.barButtonItem160.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem160_ItemClick);
@@ -10410,14 +10411,14 @@ namespace Latinium
 			// 
 			// mnuRPtBodegaECDeR
 			// 
-			this.mnuRPtBodegaECDeR.Caption = "Acta Entrega - Recepci�n";
+			this.mnuRPtBodegaECDeR.Caption = "Acta Entrega - Recepción";
 			this.mnuRPtBodegaECDeR.Id = 1196;
 			this.mnuRPtBodegaECDeR.Name = "mnuRPtBodegaECDeR";
 			this.mnuRPtBodegaECDeR.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPtBodegaECDeR_ItemClick);
 			// 
 			// mnuRPtBodegaECDeRApro
 			// 
-			this.mnuRPtBodegaECDeRApro.Caption = "Aprobaci�n Acta Entrega - Recepci�n";
+			this.mnuRPtBodegaECDeRApro.Caption = "Aprobación Acta Entrega - Recepción";
 			this.mnuRPtBodegaECDeRApro.Id = 1197;
 			this.mnuRPtBodegaECDeRApro.Name = "mnuRPtBodegaECDeRApro";
 			this.mnuRPtBodegaECDeRApro.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPtBodegaECDeRApro_ItemClick);
@@ -10452,7 +10453,7 @@ namespace Latinium
 			// 
 			// mnuRPlanificacion
 			// 
-			this.mnuRPlanificacion.Caption = "Planificaci�n";
+			this.mnuRPlanificacion.Caption = "Planificación";
 			this.mnuRPlanificacion.Id = 1366;
 			this.mnuRPlanificacion.Name = "mnuRPlanificacion";
 			this.mnuRPlanificacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPlanificacion_ItemClick);
@@ -10531,7 +10532,7 @@ namespace Latinium
 			// 
 			// mnuRPtContabilidadEstaConB
 			// 
-			this.mnuRPtContabilidadEstaConB.Caption = "Estado Conciliaci�n Bancaria";
+			this.mnuRPtContabilidadEstaConB.Caption = "Estado Conciliación Bancaria";
 			this.mnuRPtContabilidadEstaConB.Id = 925;
 			this.mnuRPtContabilidadEstaConB.Name = "mnuRPtContabilidadEstaConB";
 			this.mnuRPtContabilidadEstaConB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPtContabilidadEstaConB_ItemClick);
@@ -10760,7 +10761,7 @@ namespace Latinium
 			// 
 			// mnuRPtPeonyServicioConfi
 			// 
-			this.mnuRPtPeonyServicioConfi.Caption = "Configuraci�n";
+			this.mnuRPtPeonyServicioConfi.Caption = "Configuración";
 			this.mnuRPtPeonyServicioConfi.Id = 1183;
 			this.mnuRPtPeonyServicioConfi.Name = "mnuRPtPeonyServicioConfi";
 			this.mnuRPtPeonyServicioConfi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPtPeonyServicioConfi_ItemClick);
@@ -10774,7 +10775,7 @@ namespace Latinium
 			// 
 			// mnuRPtPeonyServicioConfiPYG
 			// 
-			this.mnuRPtPeonyServicioConfiPYG.Caption = "Configuraci�n Presupuesto";
+			this.mnuRPtPeonyServicioConfiPYG.Caption = "Configuración Presupuesto";
 			this.mnuRPtPeonyServicioConfiPYG.Id = 1187;
 			this.mnuRPtPeonyServicioConfiPYG.Name = "mnuRPtPeonyServicioConfiPYG";
 			this.mnuRPtPeonyServicioConfiPYG.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPtPeonyServicioConfiPYG_ItemClick);
@@ -10855,7 +10856,7 @@ namespace Latinium
 			// 
 			// mnuRPtTrConfi
 			// 
-			this.mnuRPtTrConfi.Caption = "Configuraci�n";
+			this.mnuRPtTrConfi.Caption = "Configuración";
 			this.mnuRPtTrConfi.Id = 1169;
 			this.mnuRPtTrConfi.Name = "mnuRPtTrConfi";
 			this.mnuRPtTrConfi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPtTrConfi_ItemClick);
@@ -10869,7 +10870,7 @@ namespace Latinium
 			// 
 			// mnuRPtVouAuto
 			// 
-			this.mnuRPtVouAuto.Caption = "Autorizaci�n";
+			this.mnuRPtVouAuto.Caption = "Autorización";
 			this.mnuRPtVouAuto.Id = 1171;
 			this.mnuRPtVouAuto.Name = "mnuRPtVouAuto";
 			this.mnuRPtVouAuto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuRPtVouAuto_ItemClick);
@@ -11068,14 +11069,14 @@ namespace Latinium
 			// 
 			// mnuPresupuestoLideres
 			// 
-			this.mnuPresupuestoLideres.Caption = "Asignaci�n Lideres";
+			this.mnuPresupuestoLideres.Caption = "Asignación Lideres";
 			this.mnuPresupuestoLideres.Id = 1118;
 			this.mnuPresupuestoLideres.Name = "mnuPresupuestoLideres";
 			this.mnuPresupuestoLideres.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuPresupuestoLideres_ItemClick);
 			// 
 			// mnuPresupuestoConfCuentas
 			// 
-			this.mnuPresupuestoConfCuentas.Caption = "Configuraci�n de Cuentas";
+			this.mnuPresupuestoConfCuentas.Caption = "Configuración de Cuentas";
 			this.mnuPresupuestoConfCuentas.Id = 1119;
 			this.mnuPresupuestoConfCuentas.Name = "mnuPresupuestoConfCuentas";
 			this.mnuPresupuestoConfCuentas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuPresupuestoConfCuentas_ItemClick);
@@ -11145,7 +11146,7 @@ namespace Latinium
 			// 
 			// mnuPresupuestoReporteriaApronacionPresupuesto
 			// 
-			this.mnuPresupuestoReporteriaApronacionPresupuesto.Caption = "Aprobaci�n solicitud de presupuesto";
+			this.mnuPresupuestoReporteriaApronacionPresupuesto.Caption = "Aprobación solicitud de presupuesto";
 			this.mnuPresupuestoReporteriaApronacionPresupuesto.Id = 1148;
 			this.mnuPresupuestoReporteriaApronacionPresupuesto.Name = "mnuPresupuestoReporteriaApronacionPresupuesto";
 			this.mnuPresupuestoReporteriaApronacionPresupuesto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuPresupuestoReporteriaApronacionPresupuesto_ItemClick);
@@ -11173,7 +11174,7 @@ namespace Latinium
 			// 
 			// mnuPresupuestoConfiguraciones
 			// 
-			this.mnuPresupuestoConfiguraciones.Caption = "Configuraci�n";
+			this.mnuPresupuestoConfiguraciones.Caption = "Configuración";
 			this.mnuPresupuestoConfiguraciones.Id = 1267;
 			this.mnuPresupuestoConfiguraciones.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
 																																																							 new DevExpress.XtraBars.LinkPersistInfo(this.mnuPresupuestoConfiguracionesGrupo),
@@ -11182,14 +11183,14 @@ namespace Latinium
 			// 
 			// mnuPresupuestoConfiguracionesGrupo
 			// 
-			this.mnuPresupuestoConfiguracionesGrupo.Caption = "Asignaci�n de Grupos";
+			this.mnuPresupuestoConfiguracionesGrupo.Caption = "Asignación de Grupos";
 			this.mnuPresupuestoConfiguracionesGrupo.Id = 1268;
 			this.mnuPresupuestoConfiguracionesGrupo.Name = "mnuPresupuestoConfiguracionesGrupo";
 			this.mnuPresupuestoConfiguracionesGrupo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuPresupuestoConfiguracionesGrupo_ItemClick);
 			// 
 			// mnuPresupuestoConfiguracionesCuenta
 			// 
-			this.mnuPresupuestoConfiguracionesCuenta.Caption = "Asignaci�n de Cuentas";
+			this.mnuPresupuestoConfiguracionesCuenta.Caption = "Asignación de Cuentas";
 			this.mnuPresupuestoConfiguracionesCuenta.Id = 1269;
 			this.mnuPresupuestoConfiguracionesCuenta.Name = "mnuPresupuestoConfiguracionesCuenta";
 			this.mnuPresupuestoConfiguracionesCuenta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuPresupuestoConfiguracionesCuenta_ItemClick);
@@ -11260,14 +11261,14 @@ namespace Latinium
 			// 
 			// barButtonItem172
 			// 
-			this.barButtonItem172.Caption = "Configuraci�n";
+			this.barButtonItem172.Caption = "Configuración";
 			this.barButtonItem172.Id = 1301;
 			this.barButtonItem172.Name = "barButtonItem172";
 			this.barButtonItem172.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem172_ItemClick);
 			// 
 			// MnuContREstacion
 			// 
-			this.MnuContREstacion.Caption = "Estaci�n De Trabajo";
+			this.MnuContREstacion.Caption = "Estación De Trabajo";
 			this.MnuContREstacion.Id = 1361;
 			this.MnuContREstacion.Name = "MnuContREstacion";
 			this.MnuContREstacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuContREstacion_ItemClick);
@@ -11293,7 +11294,7 @@ namespace Latinium
 			// 
 			// MnuFreelanceConfGa
 			// 
-			this.MnuFreelanceConfGa.Caption = "Garant�a";
+			this.MnuFreelanceConfGa.Caption = "Garantía";
 			this.MnuFreelanceConfGa.Id = 1295;
 			this.MnuFreelanceConfGa.Name = "MnuFreelanceConfGa";
 			this.MnuFreelanceConfGa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MnuFreelanceConfGa_ItemClick);
@@ -11342,17 +11343,24 @@ namespace Latinium
 			// 
 			// barButtonItem223
 			// 
-			this.barButtonItem223.Caption = "Configuraci�n PinPad";
+			this.barButtonItem223.Caption = "Configuración PinPad";
 			this.barButtonItem223.Id = 1372;
 			this.barButtonItem223.Name = "barButtonItem223";
 			this.barButtonItem223.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem223_ItemClick);
 			// 
 			// barButtonItem224
 			// 
-			this.barButtonItem224.Caption = "Configuraci�n Family Friends";
+			this.barButtonItem224.Caption = "Configuración Family Friends";
 			this.barButtonItem224.Id = 1373;
 			this.barButtonItem224.Name = "barButtonItem224";
 			this.barButtonItem224.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem224_ItemClick);
+			// 
+			// barButtonItem225
+			// 
+			this.barButtonItem225.Caption = "Reporte Transferencias Detalle";
+			this.barButtonItem225.Id = 1374;
+			this.barButtonItem225.Name = "barButtonItem225";
+			this.barButtonItem225.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem225_ItemClick);
 			// 
 			// bar2
 			// 
@@ -11456,7 +11464,7 @@ namespace Latinium
 			// 
 			this.BarArticulo.Caption = "Articulo";
 			this.BarArticulo.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
-			this.BarArticulo.Hint = "Art�culos";
+			this.BarArticulo.Hint = "Artículos";
 			this.BarArticulo.Id = 228;
 			this.BarArticulo.ImageIndex = 26;
 			this.BarArticulo.Name = "BarArticulo";
@@ -11476,7 +11484,7 @@ namespace Latinium
 			// 
 			this.BarRepResumen.Caption = "Resumen";
 			this.BarRepResumen.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
-			this.BarRepResumen.Hint = "Res�menes de Facturaci�n";
+			this.BarRepResumen.Hint = "Resúmenes de Facturación";
 			this.BarRepResumen.Id = 230;
 			this.BarRepResumen.ImageIndex = 24;
 			this.BarRepResumen.Name = "BarRepResumen";
@@ -11498,7 +11506,7 @@ namespace Latinium
 			// 
 			this.BarRepArticulo.Caption = "Rep. Articulos";
 			this.BarRepArticulo.CategoryGuid = new System.Guid("4a0dee81-61cf-46d2-9711-1c51694350b9");
-			this.BarRepArticulo.Hint = "Reportes de Art�culos";
+			this.BarRepArticulo.Hint = "Reportes de Artículos";
 			this.BarRepArticulo.Id = 233;
 			this.BarRepArticulo.ImageIndex = 25;
 			this.BarRepArticulo.Name = "BarRepArticulo";
@@ -11579,7 +11587,7 @@ namespace Latinium
 			// 
 			// MnuHerr_Actu_Vers
 			// 
-			this.MnuHerr_Actu_Vers.Caption = "Actualizar Versi�n";
+			this.MnuHerr_Actu_Vers.Caption = "Actualizar Versión";
 			this.MnuHerr_Actu_Vers.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
 			this.MnuHerr_Actu_Vers.Id = 67;
 			this.MnuHerr_Actu_Vers.ImageIndex = 43;
@@ -11794,7 +11802,7 @@ namespace Latinium
 			// 
 			// mnuContCompara
 			// 
-			this.mnuContCompara.Caption = "Comparaci�n";
+			this.mnuContCompara.Caption = "Comparación";
 			this.mnuContCompara.CategoryGuid = new System.Guid("a520686f-b7d6-4ade-a6e1-d177f34cfea3");
 			this.mnuContCompara.Id = 244;
 			this.mnuContCompara.Name = "mnuContCompara";
@@ -11802,7 +11810,7 @@ namespace Latinium
 			// 
 			// mnuContAsientoPeriodo
 			// 
-			this.mnuContAsientoPeriodo.Caption = "Asientos por Per�odos";
+			this.mnuContAsientoPeriodo.Caption = "Asientos por Períodos";
 			this.mnuContAsientoPeriodo.CategoryGuid = new System.Guid("a520686f-b7d6-4ade-a6e1-d177f34cfea3");
 			this.mnuContAsientoPeriodo.Id = 246;
 			this.mnuContAsientoPeriodo.Name = "mnuContAsientoPeriodo";
@@ -11810,7 +11818,7 @@ namespace Latinium
 			// 
 			// mnuContLoteDepura
 			// 
-			this.mnuContLoteDepura.Caption = "Depuraci�n";
+			this.mnuContLoteDepura.Caption = "Depuración";
 			this.mnuContLoteDepura.CategoryGuid = new System.Guid("a520686f-b7d6-4ade-a6e1-d177f34cfea3");
 			this.mnuContLoteDepura.Id = 250;
 			this.mnuContLoteDepura.Name = "mnuContLoteDepura";
@@ -11865,7 +11873,7 @@ namespace Latinium
 			// 
 			// mnuHerrBusqueda
 			// 
-			this.mnuHerrBusqueda.Caption = "B�squeda";
+			this.mnuHerrBusqueda.Caption = "Búsqueda";
 			this.mnuHerrBusqueda.CategoryGuid = new System.Guid("7839a577-2a4b-4cd0-abc9-380ef100654c");
 			this.mnuHerrBusqueda.Id = 395;
 			this.mnuHerrBusqueda.Name = "mnuHerrBusqueda";
@@ -11959,13 +11967,13 @@ namespace Latinium
 			// 
 			// barButtonItem11
 			// 
-			this.barButtonItem11.Caption = "Cat�logos";
+			this.barButtonItem11.Caption = "Catálogos";
 			this.barButtonItem11.Id = 479;
 			this.barButtonItem11.Name = "barButtonItem11";
 			// 
 			// mnuCrediPointCatalogos
 			// 
-			this.mnuCrediPointCatalogos.Caption = "Cat�logos";
+			this.mnuCrediPointCatalogos.Caption = "Catálogos";
 			this.mnuCrediPointCatalogos.Id = 480;
 			this.mnuCrediPointCatalogos.Name = "mnuCrediPointCatalogos";
 			this.mnuCrediPointCatalogos.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -11990,7 +11998,7 @@ namespace Latinium
 			// 
 			// MnuContAsigArt
 			// 
-			this.MnuContAsigArt.Caption = "Asignaci�n de Cuentas de Grupo de Art�culos";
+			this.MnuContAsigArt.Caption = "Asignación de Cuentas de Grupo de Artículos";
 			this.MnuContAsigArt.Id = 506;
 			this.MnuContAsigArt.Name = "MnuContAsigArt";
 			this.MnuContAsigArt.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -11998,7 +12006,7 @@ namespace Latinium
 			// 
 			// FacGuiaRemision
 			// 
-			this.FacGuiaRemision.Caption = "Guia de Remisi�n";
+			this.FacGuiaRemision.Caption = "Guia de Remisión";
 			this.FacGuiaRemision.Id = 508;
 			this.FacGuiaRemision.Name = "FacGuiaRemision";
 			this.FacGuiaRemision.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FacGuiaRemision_ItemClick);
@@ -12018,7 +12026,7 @@ namespace Latinium
 			// 
 			// mnuCompraGestion
 			// 
-			this.mnuCompraGestion.Caption = "Gesti�n Cliente";
+			this.mnuCompraGestion.Caption = "Gestión Cliente";
 			this.mnuCompraGestion.Id = 544;
 			this.mnuCompraGestion.Name = "mnuCompraGestion";
 			this.mnuCompraGestion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuCompraGestion_ItemClick);
@@ -12388,21 +12396,21 @@ namespace Latinium
 			// 
 			// mnuRPTVentasAnInMEn
 			// 
-			this.mnuRPTVentasAnInMEn.Caption = "Analisis Informaci�n Mensual";
+			this.mnuRPTVentasAnInMEn.Caption = "Analisis Información Mensual";
 			this.mnuRPTVentasAnInMEn.Id = 946;
 			this.mnuRPTVentasAnInMEn.Name = "mnuRPTVentasAnInMEn";
 			this.mnuRPTVentasAnInMEn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			// 
 			// mnuRPTVentasRevFact
 			// 
-			this.mnuRPTVentasRevFact.Caption = "Revi�n de Facturas";
+			this.mnuRPTVentasRevFact.Caption = "Revión de Facturas";
 			this.mnuRPTVentasRevFact.Id = 947;
 			this.mnuRPTVentasRevFact.Name = "mnuRPTVentasRevFact";
 			this.mnuRPTVentasRevFact.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			// 
 			// mnuRPTVentasXDia
 			// 
-			this.mnuRPTVentasXDia.Caption = "Ventas Por D�a";
+			this.mnuRPTVentasXDia.Caption = "Ventas Por Día";
 			this.mnuRPTVentasXDia.Id = 948;
 			this.mnuRPTVentasXDia.Name = "mnuRPTVentasXDia";
 			this.mnuRPTVentasXDia.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -12548,7 +12556,7 @@ namespace Latinium
 			// 
 			// mnuRPTDGexConfi
 			// 
-			this.mnuRPTDGexConfi.Caption = "Configuraci�n";
+			this.mnuRPTDGexConfi.Caption = "Configuración";
 			this.mnuRPTDGexConfi.Id = 1129;
 			this.mnuRPTDGexConfi.Name = "mnuRPTDGexConfi";
 			// 
@@ -12633,7 +12641,7 @@ namespace Latinium
 			// 
 			// mnuPresupuestoConfiguracion
 			// 
-			this.mnuPresupuestoConfiguracion.Caption = "Configuraci�n";
+			this.mnuPresupuestoConfiguracion.Caption = "Configuración";
 			this.mnuPresupuestoConfiguracion.Id = 1266;
 			this.mnuPresupuestoConfiguracion.Name = "mnuPresupuestoConfiguracion";
 			this.mnuPresupuestoConfiguracion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuPresupuestoConfiguracion_ItemClick);
@@ -12781,15 +12789,29 @@ namespace Latinium
 			this.tControlRequerimientos.Interval = 600000;
 			this.tControlRequerimientos.Tick += new System.EventHandler(this.tControlRequerimientos_Tick);
 			// 
-			// barButtonItem225
+			// barButtonItem226
 			// 
-			this.barButtonItem225.Caption = "Reporte Transferencias Detalle";
-			this.barButtonItem225.Id = 1374;
-			this.barButtonItem225.Name = "barButtonItem225";
-			this.barButtonItem225.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem225_ItemClick);
-			// 
+			this.barButtonItem226.Caption = "Cartera Fideicomiso";
+			this.barButtonItem226.Id = 1375;
+			this.barButtonItem226.Name = "barButtonItem226";
+			this.barButtonItem226.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem226_ItemClick);
+			//
+			// mnuPruebaCierreDescuento
+			//
+			this.mnuPruebaCierreDescuento.Caption = "[PRUEBA] Cierre Descuento Especial";
+			this.mnuPruebaCierreDescuento.Id = 1376;
+			this.mnuPruebaCierreDescuento.Name = "mnuPruebaCierreDescuento";
+			this.mnuPruebaCierreDescuento.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuPruebaCierreDescuento_ItemClick);
+			//
+			// mnuPruebaCierreConfig
+			//
+			this.mnuPruebaCierreConfig.Caption = "[PRUEBA] Config Cuentas Descuento";
+			this.mnuPruebaCierreConfig.Id = 1377;
+			this.mnuPruebaCierreConfig.Name = "mnuPruebaCierreConfig";
+			this.mnuPruebaCierreConfig.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnuPruebaCierreConfig_ItemClick);
+			//
 			// MenuLatinium
-			// 
+			//
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
 			this.ClientSize = new System.Drawing.Size(879, 540);
 			this.Controls.Add(this.barDockControlLeft);
@@ -12907,9 +12929,9 @@ namespace Latinium
 		private void MnuArchPropFact_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
 			Cursor = Cursors.WaitCursor;
-			SeteoF miProp_Facturaci�n=new SeteoF();
-			miProp_Facturaci�n.MdiParent=this;
-			miProp_Facturaci�n.Show();
+			SeteoF miProp_Facturación=new SeteoF();
+			miProp_Facturación.MdiParent=this;
+			miProp_Facturación.Show();
 			Cursor = Cursors.Default;
 		}
 
@@ -13036,7 +13058,7 @@ namespace Latinium
 			this.MnuHerr_Act_Saldo.Enabled = a[31];
 			this.MnuHerr_Camb_Ctes.Enabled = a[28];
 			this.MnuHerr_Copi_Arch.Enabled = a[29];
-			this.MnuHerr_Auditor�a.Enabled = a[30];
+			this.MnuHerr_Auditoría.Enabled = a[30];
 			bAuditoria = a[30];
 			this.MnuHerr_Sal_Ini.Enabled = a[26];
 			this.MnuEdicSeguridad.Enabled=a[32];
@@ -13485,7 +13507,7 @@ namespace Latinium
 			this.MnuProdEstado.Enabled=a[146];
 			this.mnuProduccionPendientes.Enabled=a[147];
 			#endregion Produccion
-			#region Departamento T�cnico
+			#region Departamento Técnico
 			this.mnuDT.Enabled=a[10];
 			this.MnuDTSTA.Enabled=a[148];
 			this.MnuDTSolicitud.Enabled=a[149];
@@ -13520,7 +13542,7 @@ namespace Latinium
 	
 			
 		
-			#endregion Departamento T�cnico			
+			#endregion Departamento Técnico			
 			#region Lote
 			this.mnuLotte.Enabled = a[11];
 			this.mnuHabitaciones.Enabled = a[593];
@@ -13900,7 +13922,7 @@ namespace Latinium
 			if (!a[27]) this.MnuHerr_Sal_Ini.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			if (!a[28]) this.MnuHerr_Camb_Ctes.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			if (!a[29]) this.MnuHerr_Copi_Arch.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-			if (!a[30]) this.MnuHerr_Auditor�a.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+			if (!a[30]) this.MnuHerr_Auditoría.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			if (!a[31]) this.MnuHerr_Act_Saldo.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			if (!a[32]) this.MnuEdicSeguridad.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			if (!a[33])
@@ -14409,7 +14431,7 @@ namespace Latinium
 			if (!a[146]) this.MnuProdEstado.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			if (!a[147]) this.mnuProduccionPendientes.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			#endregion Produccion
-			#region Departamento T�cnico
+			#region Departamento Técnico
 			if (!a[10]) this.mnuDT.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			if (!a[148]) this.MnuDTSTA.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			if (!a[149]) this.MnuDTSolicitud.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -14450,7 +14472,7 @@ namespace Latinium
 			
 
 	
-			#endregion Departamento T�cnico				
+			#endregion Departamento Técnico				
 			#region Lotte
 			if (!a[11]) this.mnuLotte.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 			if (!a[593]) this.mnuHabitaciones.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -14794,14 +14816,14 @@ namespace Latinium
 		}
 
 		/// <summary>
-		/// Punto de entrada principal de la aplicaci�n.
+		/// Punto de entrada principal de la aplicación.
 		/// </summary>
 		[STAThread]
 		static void Main() 
 		{
 			//			try
 			//			{
-			Application.Run(new MenuLatinium());
+		Application.Run(new MenuLatinium());
 			//			}
 			//			catch(System.Exception ex)
 			//			{
@@ -15338,7 +15360,7 @@ namespace Latinium
 				}
 				#endregion Valida_Estacion_Usuario
 			}
-//			string sSQL = string.Format("Exec ValidaEstadoContrase�aAcceso '{0}', '{1}', {2}",
+//			string sSQL = string.Format("Exec ValidaEstadoContraseñaAcceso '{0}', '{1}', {2}",
 //				miInicio.txtNombre.Text.ToString(), miInicio.txtClave.Text.ToString(), MenuLatinium.IdUsuario);
 
 			string sMensaje = MenuLatinium.sMensajePasswordAcceso;
@@ -15370,7 +15392,7 @@ namespace Latinium
 			//frmRequerimientoNotificacionAlerta	frmrna = new frmRequerimientoNotificacionAlerta();
 			//frmrna.MdiParent = this;
 			//frmrna.Show();
-			//Modal requerimiento abrir notificaci�n
+			//Modal requerimiento abrir notificación
 			if (bAbreVentaGeneral)
 			{	
 				if (MenuLatinium.stIdDB == 1)
@@ -15463,19 +15485,19 @@ namespace Latinium
 
 			//string version = Funcion.sEscalarSQL(cdsSeguridad, "Select Versionamiento From Seteo", true);
 
-			#region Valida Versi�n
+			#region Valida Versión
 			if (MenuLatinium.stIdDB != 63)
 			{
 				if (strHostName != "IEXP" && strHostName!="PRUEBASSISTEMAS" && strHostName!="NUEVO")
 				{
 					if ( version != sVersionSeteo)
 					{
-						MessageBox.Show(string.Format("La Versi�n Actual de su sistema es : '{0}' \n\n La Versi�n correcta es  : '{1}' \n\n  - Por favor reiniciar el sistema e ingresar desde el Acceso directo del Escritorio. \n\n  - Espere que se cierre automaticamente la pantalla de color negro.", sVersionSeteo, version), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+						MessageBox.Show(string.Format("La Versión Actual de su sistema es : '{0}' \n\n La Versión correcta es  : '{1}' \n\n  - Por favor reiniciar el sistema e ingresar desde el Acceso directo del Escritorio. \n\n  - Espere que se cierre automaticamente la pantalla de color negro.", sVersionSeteo, version), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						Application.Exit();
 					}
 				}
 			}
-			#endregion Valida Versi�n
+			#endregion Valida Versión
 
 			#region FYFriends
 //			if (MenuLatinium.stIdDB == 1 || MenuLatinium.stIdDB == 33)
@@ -15487,7 +15509,7 @@ namespace Latinium
 //						string.Format( "No te pierdas del Family & Friends para todos!!\n" +
 //						"Recuerda que tienes cupo de:\n" +
 //						"USD " + dCupo.ToString("N2") + "\n" +
-//						"para tus compras con descuento a 6 meses v�a rol.");
+//						"para tus compras con descuento a 6 meses vía rol.");
 //
 //					MessageBox.Show(
 //						mensaje,
@@ -15567,7 +15589,7 @@ namespace Latinium
 			}
 			#endregion VersionamientoReportes
 
-			#region cumplea�os
+			#region cumpleaños
 			/*
 			if( MenuLatinium.stUsuario == "MJIMENEZ")
 			{
@@ -15581,7 +15603,7 @@ namespace Latinium
 					Funcion.EjecutaSQL(cdsSeguridad, string.Format("Exec [PaginaWebUsrsupdate] '{0}' ",  MenuLatinium.stUsuario));
 				}
 			}*/
-			#endregion cumplea�os
+			#endregion cumpleaños
 
 			MenuTicketera();
 
@@ -15642,7 +15664,7 @@ namespace Latinium
 			int getiNotificacion = frmRequerimientoNotificacionAlerta.iContadorNotificaciones;
 			bool babrirModal = false;
 
-			//Si existe alguna notificaci�n lo abre, pero valida si la ventana est� abierta tambi�n.
+			//Si existe alguna notificación lo abre, pero valida si la ventana está abierta también.
 			if(frmRequerimientoNotificacionModal.bAbiertoRequerimientoModal == false 
 				&& iNotificacion > 0 
 				&& iContadorRequerimientoModal == 0)
@@ -15677,7 +15699,7 @@ namespace Latinium
 			#region Contador de notificaciones
 			//Notificaciones en el control de requerimientos
 			RequerimientoNotificacionCount();
-			//Modal requerimiento abrir notificaci�n
+			//Modal requerimiento abrir notificación
 			RequerimientoNotificacionModalAbrir();
 			#endregion Contador de notificaciones
 		}
@@ -15745,7 +15767,7 @@ namespace Latinium
 			if (File.Exists(@"C:\Latinium\Academico.txt"))
 			{
 				bAcademica = true;
-				MessageBox.Show("Activada version academica", "Informaci�n");
+				MessageBox.Show("Activada version academica", "Información");
 			}
 			else if (!File.Exists(@"C:\Latinium\libAnexo.dll"))
 			{
@@ -15755,7 +15777,7 @@ namespace Latinium
 					int iUsuarios = Funcion.iEscalarSQL(cdsSeguridad, stExec, true);
 					if (iUsuarios < 0)
 					{
-						MessageBox.Show("Sistema Bloqueado el dia de Hoy por Limite de Usuarios superado. \nComuniquese con Infoelect para adquirir mas licencias", "Informaci�n");
+						MessageBox.Show("Sistema Bloqueado el dia de Hoy por Limite de Usuarios superado. \nComuniquese con Infoelect para adquirir mas licencias", "Información");
 						Registro miReg = new Registro();
 						miReg.ShowDialog();
 						Application.Exit();
@@ -15767,13 +15789,13 @@ namespace Latinium
 					{
 						string stErrorFecha = "";
 						if (iFecha != 100) stErrorFecha = "Existe un retrazo en los pagos de " + iFecha.ToString() +" dias.";
-						MessageBox.Show(stErrorFecha + " Activada version academica", "Informaci�n");
+						MessageBox.Show(stErrorFecha + " Activada version academica", "Información");
 						bAcademica = true;
 					}
 				}
 				catch//(System.Exception ex)
 				{
-					MessageBox.Show("Error en activacion", "Informaci�n");
+					MessageBox.Show("Error en activacion", "Información");
 				}
 			}
 			#endregion Verificacion de numero de usuarios
@@ -15799,8 +15821,8 @@ namespace Latinium
 				}
 				catch
 				{
-					#region Cambio de Contrase�a
-					//					MessageBox.Show(string.Format("Verificando posible cambio de contrase�a",
+					#region Cambio de Contraseña
+					//					MessageBox.Show(string.Format("Verificando posible cambio de contraseña",
 					//						MenuLatinium.stDirServidor, MenuLatinium.stDirFacturacion), "Informacion");
 					cdsSeguridad.Schema.Connections[0].ConnectionString = 
 						cdsSeguridad.Schema.Connections[0].ConnectionString.Replace("Bl45o6$9", "infoelect2243");
@@ -15824,7 +15846,7 @@ namespace Latinium
 						}
 						return false;
 					}
-					#endregion Cambio de Contrase�a
+					#endregion Cambio de Contraseña
 				}
 							
 				FileVersionInfo Info = FileVersionInfo.GetVersionInfo(@"C:\Latinium\Latinium.exe");				
@@ -15967,7 +15989,7 @@ namespace Latinium
 		{
 			if (!this.MnuArchNuevo.Enabled)
 			{
-				MessageBox.Show("No tiene acceso a la creaci�n de nuevas empresas",
+				MessageBox.Show("No tiene acceso a la creación de nuevas empresas",
 					"Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return;
 			}
@@ -16204,7 +16226,7 @@ namespace Latinium
 			Cursor = Cursors.Default;
 		}
 
-		private void MnuHerr_Auditor�a_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		private void MnuHerr_Auditoría_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
 			Cursor = Cursors.WaitCursor;
 			Auditoria miAuditoria = new Auditoria();
@@ -16541,7 +16563,7 @@ namespace Latinium
 
 		private void MenuLatinium_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			if (DialogResult.No == MessageBox.Show("�Desea Salir del Sistema?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+			if (DialogResult.No == MessageBox.Show("¿Desea Salir del Sistema?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
 			{
 				e.Cancel = true;
 				return;
@@ -16892,7 +16914,7 @@ namespace Latinium
 			}
 			catch(System.Exception ex)
 			{
-				MessageBox.Show(ex.Message, "Requisici�n");
+				MessageBox.Show(ex.Message, "Requisición");
 			}
 		}
 
@@ -17731,7 +17753,7 @@ namespace Latinium
 		private void mnuVentaLiqCons_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
 			Cursor = Cursors.WaitCursor;
-			frmLiquidaci�nConsignacion miLiquidacion = new frmLiquidaci�nConsignacion();
+			frmLiquidaciónConsignacion miLiquidacion = new frmLiquidaciónConsignacion();
 			miLiquidacion.MdiParent = this;
 			miLiquidacion.Show();
 			Cursor = Cursors.Default;
@@ -18071,7 +18093,7 @@ namespace Latinium
 
 		private void mnuGPPD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
-			frmSolicitaTransferenciasPartesDa�adasProduccion Transferencia = new frmSolicitaTransferenciasPartesDa�adasProduccion();
+			frmSolicitaTransferenciasPartesDañadasProduccion Transferencia = new frmSolicitaTransferenciasPartesDañadasProduccion();
 			Transferencia.MdiParent = this;
 			Transferencia.Show();
 		}
@@ -19488,7 +19510,7 @@ namespace Latinium
 
 		private void mnuVentasReportesVPA_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
-			frmReporteVendedorPorA�o VPA = new frmReporteVendedorPorA�o();
+			frmReporteVendedorPorAño VPA = new frmReporteVendedorPorAño();
 			VPA.MdiParent = this;
 			VPA.Show();
 		}
@@ -20996,7 +21018,7 @@ namespace Latinium
 					iCont++;
 				}				
 
-				MessageBox.Show(string.Format("Importaci�n Finalizada Correctamente, {0} Lineas Afectadas", iCont), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				MessageBox.Show(string.Format("Importación Finalizada Correctamente, {0} Lineas Afectadas", iCont), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 			
 				this.Cursor = Cursors.Default;
@@ -22092,10 +22114,10 @@ namespace Latinium
 
 		public static void MostrarModalProcesando()
 		{
-			// Verificar si el formulario modal ya est� abierto
+			// Verificar si el formulario modal ya está abierto
 			if (formProcesando == null || formProcesando.IsDisposed)
 			{
-				// Si no est� abierto, crear una nueva instancia y mostrarla
+				// Si no está abierto, crear una nueva instancia y mostrarla
 				formProcesando = new FormProcesando();
 				formProcesando.Show();
 			}
@@ -22103,7 +22125,7 @@ namespace Latinium
 
 		public static void OcultarModalProcesando()
 		{
-			// Cerrar el formulario modal de "procesando" si a�n est� abierto
+			// Cerrar el formulario modal de "procesando" si aún está abierto
 			if (formProcesando != null && !formProcesando.IsDisposed)
 			{
 				formProcesando.Close();
@@ -22611,7 +22633,7 @@ namespace Latinium
 		{
 			ArrayList ticketerasPermitidas = RequerimientoAccesoService.ObtenerTicketerasPermitidas(idUsuarioRequerimiento);
 
-			// Limpia �tems anteriores
+			// Limpia ítems anteriores
 			this.barSubItem18.ItemLinks.Clear();
 
 			// Verifica si hay ticketeras asignadas
@@ -22645,7 +22667,7 @@ namespace Latinium
 
 		private void barSubItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
-			MenuTicketera(); // Reutiliza la funci�n
+			MenuTicketera(); // Reutiliza la función
 		}
 
 		private void barButtonItem219_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -22703,20 +22725,20 @@ namespace Latinium
 
 		private void ControlVersionamientoSegura()
 		{
-			// Evitar que se muestre el mensaje m�ltiples veces
+			// Evitar que se muestre el mensaje múltiples veces
 			if (_mensajeMostrado)
 				return;
 
 			try
 			{
-				// Obtener versi�n del ejecutable local
+				// Obtener versión del ejecutable local
 				FileVersionInfo info = FileVersionInfo.GetVersionInfo(@"C:\Latinium\Latinium.exe");
 				string version = info.FileVersion;
 
 				// Obtener nombre del equipo
 				string strHostName = Environment.MachineName;
 
-				// Variables para conexi�n SQL (.NET 1.1 compatible)
+				// Variables para conexión SQL (.NET 1.1 compatible)
 				SqlConnection oConexion = null;
 				SqlCommand oCmdEmpvER = null;
 
@@ -22757,10 +22779,10 @@ namespace Latinium
 							_mensajeMostrado = true;
 
 							MessageBox.Show(
-								"La Versi�n Actual de su sistema es: '" + version + "'\n\n" +
-								"La Versi�n correcta es: '" + MenuLatinium.sVersionSeteo + "'\n\n" +
+								"La Versión Actual de su sistema es: '" + version + "'\n\n" +
+								"La Versión correcta es: '" + MenuLatinium.sVersionSeteo + "'\n\n" +
 								"- Por favor reiniciar el sistema e ingresar desde el Acceso directo del Escritorio.\n\n" +
-								"- Esta ventana se mostrar� como recordatorio hasta que se actualice la versi�n.",
+								"- Esta ventana se mostrará como recordatorio hasta que se actualice la versión.",
 								"Point Technology",
 								MessageBoxButtons.OK,
 								MessageBoxIcon.Warning);
@@ -22772,7 +22794,7 @@ namespace Latinium
 			}
 			catch
 			{
-				// No romper la aplicaci�n si algo falla
+				// No romper la aplicación si algo falla
 			}
 		}
 
@@ -22804,6 +22826,27 @@ namespace Latinium
 			frmReporteTransferenciaDetalle frmrtd = new frmReporteTransferenciaDetalle();
 			frmrtd.MdiParent = this;
 			frmrtd.Show();
+		}
+
+		private void barButtonItem226_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			frmFideicomisoProceso frm = new frmFideicomisoProceso();
+			frm.MdiParent = this;
+			frm.Show();
+		}
+
+		private void mnuPruebaCierreDescuento_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			frmCierreOperacionesDescuento frm = new frmCierreOperacionesDescuento();
+			frm.MdiParent = this;
+			frm.Show();
+		}
+
+		private void mnuPruebaCierreConfig_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			frmCierreDescuentoSegmentoConfig frm = new frmCierreDescuentoSegmentoConfig();
+			frm.MdiParent = this;
+			frm.Show();
 		}
 
 	}
