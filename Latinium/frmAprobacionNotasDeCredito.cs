@@ -626,7 +626,7 @@ namespace Latinium
 											(int)e.Cell.Row.Cells["idCompra"].Value, sNumeroNC, 0, (int)this.cmbMotivos.Value, Nota.txtNotas.Text.ToString());
 										int idNotaDeCredito = (int)oCmdActualiza.ExecuteScalar();
 
-										oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 1", idNotaDeCredito);;
+										oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 5", idNotaDeCredito);;
 										string sClaveAcceso = oCmdActualiza.ExecuteScalar().ToString();
 
 										string cadInvertida = Facturacion.invertirCadena(sClaveAcceso.Substring(0, 48));

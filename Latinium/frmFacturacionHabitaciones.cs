@@ -9299,7 +9299,7 @@ namespace Latinium
 									#endregion Kardex
 
 									#region Autorizacion Nota de Credito
-									oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 1", iCompraNDC);;
+									oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 5", iCompraNDC);;
 									string sClaveAccesoOR = oCmdActualiza.ExecuteScalar().ToString();
 
 									string cadInvertidaOR = invertirCadena(sClaveAccesoOR.Substring(0, 48));
@@ -9326,7 +9326,7 @@ namespace Latinium
 									iCompraDestinoNDC = (int)oCmdActualiza.ExecuteScalar();
 
 									#region Autorizacion Notas de Credito
-									oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 1", iCompraDestinoNDC);;
+									oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 5", iCompraDestinoNDC);;
 									string sClaveAccesoDE = oCmdActualiza.ExecuteScalar().ToString();
 
 									string cadInvertidaDE = invertirCadena(sClaveAccesoDE.Substring(0, 48));
@@ -9367,7 +9367,7 @@ namespace Latinium
 									#endregion Reverso Anticipos Abono Cliente
 
 									#region Autorizacion Notas de Credito
-									oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 1", iCompraOrigenNDC);;
+									oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 5", iCompraOrigenNDC);;
 									string sClaveAccesoNC = oCmdActualiza.ExecuteScalar().ToString();
 
 									string cadInvertidaNC = invertirCadena(sClaveAccesoNC.Substring(0, 48));

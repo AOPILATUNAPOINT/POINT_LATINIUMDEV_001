@@ -6144,7 +6144,7 @@ namespace Latinium
 									idCompraOrigen, sNumeroNC, idMotivo, "");
 								int idNotaDeCredito = (int)oCmdActualiza.ExecuteScalar();
 
-								oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 1", idNotaDeCredito);;
+								oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 5", idNotaDeCredito);;
 								string sClaveAccesoNC = oCmdActualiza.ExecuteScalar().ToString();
 
 								string cadInvertidaNC = Facturacion.invertirCadena(sClaveAccesoNC.Substring(0, 48));
