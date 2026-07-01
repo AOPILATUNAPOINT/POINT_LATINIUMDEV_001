@@ -11,7 +11,7 @@ using Latinium.Services;
 namespace Latinium
 {
 	/// <summary>
-	/// Descripción breve de frmSolicitudNotasDeCredito.
+	/// DescripciÃ³n breve de frmSolicitudNotasDeCredito.
 	/// </summary>
 	public class frmSolicitudNotasDeCredito : System.Windows.Forms.Form
 	{
@@ -30,24 +30,24 @@ namespace Latinium
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Button btnExcel;
 		/// <summary>
-		/// Variable del diseñador requerida.
+		/// Variable del diseÃ±ador requerida.
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 
 		public frmSolicitudNotasDeCredito()
 		{
 			//
-			// Necesario para admitir el Diseñador de Windows Forms
+			// Necesario para admitir el DiseÃ±ador de Windows Forms
 			//
 			InitializeComponent();
 
 			//
-			// TODO: agregar código de constructor después de llamar a InitializeComponent
+			// TODO: agregar cÃ³digo de constructor despuÃ©s de llamar a InitializeComponent
 			//
 		}
 
 		/// <summary>
-		/// Limpiar los recursos que se estén utilizando.
+		/// Limpiar los recursos que se estÃ©n utilizando.
 		/// </summary>
 		protected override void Dispose( bool disposing )
 		{
@@ -61,10 +61,10 @@ namespace Latinium
 			base.Dispose( disposing );
 		}
 
-		#region Código generado por el Diseñador de Windows Forms
+		#region CÃ³digo generado por el DiseÃ±ador de Windows Forms
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido del método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido del mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		private void InitializeComponent()
 		{
@@ -169,6 +169,7 @@ namespace Latinium
 			this.uGridFacturas.DisplayLayout.Appearance = appearance1;
 			ultraGridColumn1.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
 			ultraGridColumn1.Header.VisiblePosition = 0;
+			ultraGridColumn1.Hidden = true;
 			ultraGridColumn1.Width = 10;
 			ultraGridColumn2.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
 			ultraGridColumn2.Header.VisiblePosition = 2;
@@ -406,7 +407,7 @@ namespace Latinium
 			valueListItem1.DataValue = 0;
 			valueListItem1.DisplayText = "Pendiente de Solicitud";
 			valueListItem2.DataValue = 1;
-			valueListItem2.DisplayText = "Pendiente Aprobación";
+			valueListItem2.DisplayText = "Pendiente AprobaciÃ³n";
 			valueListItem3.DataValue = 2;
 			valueListItem3.DisplayText = "Aprobados";
 			valueListItem4.DataValue = 3;
@@ -478,7 +479,7 @@ namespace Latinium
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(37, 17);
 			this.label3.TabIndex = 698;
-			this.label3.Text = "Mótivo";
+			this.label3.Text = "MÃ³tivo";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// groupBox1
@@ -507,7 +508,7 @@ namespace Latinium
 			// frmSolicitudNotasDeCredito
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
-			this.ClientSize = new System.Drawing.Size(1151, 365);
+			this.ClientSize = new System.Drawing.Size(1152, 366);
 			this.Controls.Add(this.btnExcel);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.label3);
@@ -521,7 +522,7 @@ namespace Latinium
 			this.Controls.Add(this.cmbMotivos);
 			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.Name = "frmSolicitudNotasDeCredito";
-			this.Text = "Solicitud De Notas De Crédito";
+			this.Text = "Solicitud De Notas De CrÃ©dito";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSolicitudNotasDeCredito_KeyDown);
 			this.Load += new System.EventHandler(this.frmSolicitudNotasDeCredito_Load);
 			((System.ComponentModel.ISupportInitialize)(this.uGridFacturas)).EndInit();
@@ -642,7 +643,7 @@ namespace Latinium
 			int idNotaDeCredito = 0;
 
 			if (DialogResult.Yes == MessageBox.Show("Este proceso es irreversible.\n\nEsta seguro de generar una nota de credito este documento?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)) 
-			{										
+			{			
 				using (SqlConnection oConexion = new SqlConnection("Password=Bl45o6$9;Persist Security Info=True;User ID= " + MenuLatinium.stUsuario + ";Initial Catalog=" + MenuLatinium.stDirFacturacion + ";Data Source=" + MenuLatinium.stDirServidor + "; max pool size=2048"))
 				{
 					oConexion.Open();
@@ -670,11 +671,10 @@ namespace Latinium
 						oCmdActualiza.CommandText = string.Format("Exec CreaNotaDeCreditoCambioProducto {0}, '{1}', {2}, '{3}'", 
 							(int)e.Cell.Row.Cells["idCompra"].Value, sNumeroNC, (int)this.cmbMotivos.Value, "");
 						idNotaDeCredito = (int)oCmdActualiza.ExecuteScalar();
-
 						
 						if (bFiscal)
 						{
-							oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 1", idNotaDeCredito);;
+							oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 5", idNotaDeCredito);;
 							string sClaveAcceso = oCmdActualiza.ExecuteScalar().ToString();
 
 							string cadInvertida = Facturacion.invertirCadena(sClaveAcceso.Substring(0, 48));
@@ -691,14 +691,13 @@ namespace Latinium
 
 						oTransaction.Dispose();
 
-						//Registrar el regisro de nota de crédito por medio de la idCompra que va hacer 
+						//Registrar el regisro de nota de crÃ©dito por medio de la idCompra que va hacer 
 						#region FamilyFriends
 						ConsultarEstadoFamilyFriends((int)e.Cell.Row.Cells["idCompra"].Value);
-						FamilyFriendsCompra(FamilyFriendsService.EstadoFFCompraNotaCredito, (int)e.Cell.Row.Cells["idCompra"].Value, idNotaDeCredito);
+						FamilyFriendsCompraNotaCredito(FamilyFriendsService.EstadoFFCompraNotaCredito, (int)e.Cell.Row.Cells["idCompra"].Value, idNotaDeCredito);
 						#endregion FamilyFriends
- 
 
-						MessageBox.Show("Nota de Crédito generada correctamente", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						MessageBox.Show("Nota de CrÃ©dito generada correctamente", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
 					catch(Exception Exc)
 					{
@@ -720,7 +719,6 @@ namespace Latinium
 			return idNotaDeCredito;	
 		}
 
-
 		// Solo una variable para todo el estado FF
 		private FamilyFriendsEstadoModel estadoFF = new FamilyFriendsEstadoModel();
 
@@ -731,37 +729,100 @@ namespace Latinium
 				FamilyFriendsService service =
 					new FamilyFriendsService(frmRequerimiento.sconexionPoint);
 				FamilyFriendsEstadoModel temp = service.ObtenerEstadoFF(idCompra);
-				// Solo actualizar si hay registro válido
 				if (temp != null && temp.ExisteRegistro)
 				{
 					estadoFF = temp;
 				}
-				else
-				{
-					// Estado limpio por defecto
-					estadoFF = new FamilyFriendsEstadoModel();
-				}
 			}
 			catch
 			{
-				// Silencioso: no hacer nada y asegurar estado limpio
-				estadoFF = new FamilyFriendsEstadoModel();
 			}
 		}
 
 
-		private void FamilyFriendsCompra(int estado, int idCompra, int idNotaCredito)
+		private void FamilyFriendsCompraNotaCredito(int estado, int idCompra, int idNotaCredito)
 		{
-			// Si no existe estado FF previo, no hacer nada
+			string nombreClase = this.GetType().Name;
+			string nombreMetodo = "FamilyFriendsCompraNotaCredito";
+
+			// =====================================================
+			// 1) CONSULTA FINAL DE ESTADO FF (SIN EFECTOS COLATERALES)
+			// =====================================================
+			ConsultarEstadoFamilyFriends(idCompra);
+
+			// =====================================================
+			// Log de estadoFF luego de consultar BD
+			// =====================================================
+			Funcion.LogSistema(frmRequerimiento.sconexionInicio, nombreClase + ": " + nombreMetodo,
+				string.Format(
+				"EstadoFF post-consulta | EsFF: {0}, RechazoPromocion: {1}, IdWEB_FF_Invitado: {2}",
+				estadoFF.EsFF,
+				estadoFF.RechazoPromocion,
+				estadoFF.IdWEB_FF_Invitado
+				),
+				nombreMetodo,
+				Funcion.slogtipoinformacion
+				);
+
+			// =====================================================
+			// 2) SI NO EXISTE REGISTRO FF  NO PROCESAR
+			// =====================================================
+			if (!estadoFF.ExisteRegistro)
+			{
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio, nombreClase + ": " + nombreMetodo,
+					"No existe registro FF en BD, no se procesa Nota de CrÃ©dito",
+					nombreMetodo,
+					Funcion.slogtipoinformacion
+					);
+				return;
+			}
+
+			// =====================================================
+			// 3) VALIDACIONES EXISTENTES (NO SE TOCAN)
+			// =====================================================
 			if (!estadoFF.EsFF && !estadoFF.RechazoPromocion)
+			{
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio, nombreClase + ": " + nombreMetodo,
+					"No se procesa la compra: no es FF ni rechazo explÃ­cito",
+					nombreMetodo,
+					Funcion.slogtipoinformacion
+					);
 				return;
-			// SOLO nota de crédito  no guardar compra
+			}
+
 			if (estado != FamilyFriendsService.EstadoFFCompraNotaCredito)
+			{
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio, nombreClase + ": " + nombreMetodo,
+					"No se procesa la Nota de CrÃ©dito: estado diferente de EstadoFFCompraNotaCredito",
+					nombreMetodo,
+					Funcion.slogtipoinformacion
+					);
 				return;
+			}
+
+			// =====================================================
+			// 4) EJECUTAR ACTUALIZACIÃ“N (IGUAL QUE ANTES)
+			// =====================================================
 			FamilyFriendsService service =
 				new FamilyFriendsService(frmRequerimiento.sconexionPoint);
-			// SOLO actualizar nota de crédito
-			service.ActualizarNotaCreditoFF(idCompra, idNotaCredito);
+
+			Guid idResultado = service.ActualizarNotaCreditoFF(idCompra, idNotaCredito);
+
+			// =====================================================
+			// 5) LOG FINAL
+			// =====================================================
+			Funcion.LogSistema(frmRequerimiento.sconexionInicio, nombreClase + ": " + nombreMetodo,
+				string.Format(
+				"ActualizarNotaCreditoFF completado | idCompra: {0}, idNotaCredito: {1}, idWEB_FF_Compra retornado: {2}",
+				idCompra,
+				idNotaCredito,
+				idResultado
+				),
+				nombreMetodo,
+				Funcion.slogtipoinformacion
+				);
+
+			Console.WriteLine("idWEB_FF_Compra retornado: " + idResultado);
 		}
 
 
@@ -771,7 +832,7 @@ namespace Latinium
 		{			
 			if (e.Cell.Column.ToString() == "btnAutorizar")
 			{
-				int iEstado = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select EstadoSolNC From Compra Where idCompra = {0}", (int)e.Cell.Row.Cells["idCompra"].Value));
+				int iEstado = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select ISNULL(EstadoSolNC,0) From Compra Where idCompra = {0}", (int)e.Cell.Row.Cells["idCompra"].Value));
 
 				if (iEstado == 4)
 				{
@@ -779,6 +840,15 @@ namespace Latinium
 					this.Consulta();
 					return;
 				}
+
+				#region Validacion Venta de Cartera
+				int iVentaCartera = Funcion.iEscalarSQL(cdsSeteoF, string.Format("SELECT COUNT(*)FROM Compra WHERE idCompra = {0} AND idFormaPago = 9 AND ISNULL(NumeroLote,0) > 0 AND ISNULL(Confirmado,0) = 0",(int)e.Cell.Row.Cells["idCompra"].Value));
+				if (iVentaCartera > 0)
+				{
+					MessageBox.Show("LA FACTURA ESTA EN TRANSITO PARA VENTA DE CARTERA\n\nCOMUNIQUESE CON EL AREA DE CARTERA", "Point Technology",MessageBoxButtons.OK, MessageBoxIcon.Stop );
+					return;
+				}
+				#endregion Validacion Venta de Cartera
 
 				if ((int)this.cmbMotivos.Value == 30)
 				{
@@ -865,7 +935,7 @@ namespace Latinium
 									(int)e.Cell.Row.Cells["idCompra"].Value, sNumero, LA.txtNotasDT.Text.ToString(), (int)LA.cmbBodega.Value, (decimal)LA.txtValor.Value);	
 								int idCompraNC = Funcion.iEscalarSQL(cdsSeteoF, sSQLNCR);
 
-								string sClaveAcceso = Funcion.sEscalarSQL(cdsSeteoF, string.Format("Exec FE_ClaveDeAcceso {0}, 1", idCompraNC));
+								string sClaveAcceso = Funcion.sEscalarSQL(cdsSeteoF, string.Format("Exec FE_ClaveDeAcceso {0}, 5", idCompraNC));
 
 								string cadInvertida = Facturacion.invertirCadena(sClaveAcceso.Substring(0, 48));
 								string ValM11 = Facturacion.Modulo11(cadInvertida).ToString().Trim();
@@ -1215,7 +1285,12 @@ namespace Latinium
 
 		private void optEstados_ValueChanged(object sender, System.EventArgs e)
 		{
-			Consulta();
+			if (this.uGridFacturas.Rows.Count > 0)
+			{
+				bConsultas = true;
+				Consulta();
+				bConsultas = false;
+			}
 		}
 
 		private void cmbBodega_InitializeLayout(object sender, Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
@@ -1225,12 +1300,22 @@ namespace Latinium
 
 		private void cmbBodega_ValueChanged(object sender, System.EventArgs e)
 		{
-			Consulta();
+			if (this.uGridFacturas.Rows.Count > 0)
+			{
+				bConsultas = true;
+				Consulta();
+				bConsultas = false;
+			}
 		}
 
 		private void cmbMotivos_ValueChanged(object sender, System.EventArgs e)
 		{
-			Consulta();
+			if (this.uGridFacturas.Rows.Count > 0)
+			{
+				bConsultas = true;
+				Consulta();
+				bConsultas = false;
+			}
 		}
 
 		private void txtBusqueda_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
