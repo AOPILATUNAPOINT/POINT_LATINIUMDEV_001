@@ -107,17 +107,19 @@ namespace Latinium
 		private Infragistics.Win.UltraWinEditors.UltraCheckEditor chkToqueQueda;
 		private Infragistics.Win.UltraWinEditors.UltraCheckEditor chkEncuesta;
 		private Infragistics.Win.UltraWinGrid.UltraGrid uGridCuotas;
-				
+		// Segunda Visita 50%
+		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtPorcDescuentoSV;
+		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtValidezCuponDias;
+		private System.Windows.Forms.Label lblPorcDescuentoSV;
+		private System.Windows.Forms.Label lblValidezCuponDias;
+
 		public frmPromociones()
 		{
 			//
 			// Required for Windows Form Designer support
 			//
 			InitializeComponent();
-
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
+			InicializaControlesSegundaVisita();
 		}
 
 		/// <summary>
@@ -884,7 +886,7 @@ namespace Latinium
 			appearance12.TextHAlign = Infragistics.Win.HAlign.Right;
 			ultraGridColumn13.CellAppearance = appearance12;
 			ultraGridColumn13.Format = "#,##0.00";
-			ultraGridColumn13.Header.Caption = "Crédito";
+			ultraGridColumn13.Header.Caption = "CrÃ©dito";
 			ultraGridColumn13.Header.VisiblePosition = 12;
 			ultraGridColumn13.Hidden = true;
 			ultraGridColumn13.Width = 70;
@@ -907,7 +909,7 @@ namespace Latinium
 			appearance15.TextHAlign = Infragistics.Win.HAlign.Right;
 			ultraGridColumn16.CellAppearance = appearance15;
 			ultraGridColumn16.Format = "#,##0.00";
-			ultraGridColumn16.Header.Caption = "Prom Créd";
+			ultraGridColumn16.Header.Caption = "Prom CrÃ©d";
 			ultraGridColumn16.Header.VisiblePosition = 15;
 			ultraGridColumn16.Hidden = true;
 			ultraGridColumn16.Width = 70;
@@ -1013,7 +1015,7 @@ namespace Latinium
 																										 ultraGridColumn35});
 			appearance18.TextHAlign = Infragistics.Win.HAlign.Left;
 			ultraGridBand1.Header.Appearance = appearance18;
-			ultraGridBand1.Header.Caption = "Lista de Artículos Para Combos";
+			ultraGridBand1.Header.Caption = "Lista de ArtÃ­culos Para Combos";
 			ultraGridBand1.HeaderVisible = true;
 			appearance19.ForeColor = System.Drawing.Color.Black;
 			appearance19.ForeColorDisabled = System.Drawing.Color.Black;
@@ -1302,7 +1304,7 @@ namespace Latinium
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(77, 16);
 			this.label3.TabIndex = 271;
-			this.label3.Text = "Precio máximo";
+			this.label3.Text = "Precio mÃ¡ximo";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.label3.Visible = false;
 			// 
@@ -1333,7 +1335,7 @@ namespace Latinium
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(75, 16);
 			this.label2.TabIndex = 270;
-			this.label2.Text = "Precio mínimo";
+			this.label2.Text = "Precio mÃ­nimo";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.label2.Visible = false;
 			// 
@@ -1345,11 +1347,15 @@ namespace Latinium
 			this.cmbTipo.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList;
 			this.cmbTipo.Enabled = false;
 			valueListItem1.DataValue = "ValueListItem0";
-			valueListItem1.DisplayText = "PROMOCIÓN";
+			valueListItem1.DisplayText = "PROMOCIÃ“N";
 			valueListItem2.DataValue = "ValueListItem1";
 			valueListItem2.DisplayText = "TIEMPO ESTADIA";
 			this.cmbTipo.Items.Add(valueListItem1);
 			this.cmbTipo.Items.Add(valueListItem2);
+			Infragistics.Win.ValueListItem valueListItemSV = new Infragistics.Win.ValueListItem();
+			valueListItemSV.DataValue = "ValueListItemSV";
+			valueListItemSV.DisplayText = "SEGUNDA VISITA";
+			this.cmbTipo.Items.Add(valueListItemSV);
 			this.cmbTipo.Location = new System.Drawing.Point(64, 7);
 			this.cmbTipo.Name = "cmbTipo";
 			this.cmbTipo.Size = new System.Drawing.Size(144, 22);
@@ -1687,7 +1693,7 @@ namespace Latinium
 																										 ultraGridColumn55,
 																										 ultraGridColumn56,
 																										 ultraGridColumn57});
-			ultraGridBand5.Header.Caption = "MARCAS DE ARTÍCULOS";
+			ultraGridBand5.Header.Caption = "MARCAS DE ARTÃCULOS";
 			ultraGridBand5.HeaderVisible = true;
 			ultraGridBand5.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
 			appearance67.FontData.SizeInPoints = 7.25F;
@@ -1764,7 +1770,7 @@ namespace Latinium
 																										 ultraGridColumn59,
 																										 ultraGridColumn60,
 																										 ultraGridColumn61});
-			ultraGridBand6.Header.Caption = "SUBGRUPOS DE ARTÍCULOS";
+			ultraGridBand6.Header.Caption = "SUBGRUPOS DE ARTÃCULOS";
 			ultraGridBand6.HeaderVisible = true;
 			ultraGridBand6.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
 			appearance75.FontData.SizeInPoints = 7.25F;
@@ -1847,7 +1853,7 @@ namespace Latinium
 																										 ultraGridColumn64,
 																										 ultraGridColumn65,
 																										 ultraGridColumn66});
-			ultraGridBand7.Header.Caption = "GRUPOS DE ARTÍCULOS";
+			ultraGridBand7.Header.Caption = "GRUPOS DE ARTÃCULOS";
 			ultraGridBand7.HeaderVisible = true;
 			ultraGridBand7.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
 			appearance83.FontData.SizeInPoints = 7.25F;
@@ -2282,7 +2288,7 @@ namespace Latinium
 																										 ultraGridColumn73,
 																										 ultraGridColumn74,
 																										 ultraGridColumn75});
-			ultraGridBand9.Header.Caption = "MODELOS DE ARTÍCULOS";
+			ultraGridBand9.Header.Caption = "MODELOS DE ARTÃCULOS";
 			ultraGridBand9.HeaderVisible = true;
 			ultraGridBand9.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
 			appearance104.FontData.SizeInPoints = 7.25F;
@@ -2902,7 +2908,7 @@ namespace Latinium
 			ultraGridColumn107.Hidden = true;
 			ultraGridColumn108.Header.VisiblePosition = 2;
 			ultraGridColumn108.Hidden = true;
-			ultraGridColumn109.Header.Caption = "Día";
+			ultraGridColumn109.Header.Caption = "DÃ­a";
 			ultraGridColumn109.Header.VisiblePosition = 3;
 			ultraGridColumn109.Width = 106;
 			ultraGridColumn110.Header.Caption = "...";
@@ -3297,10 +3303,65 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.dtFinal)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtPuntosFinal)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtTiempo)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtPorcDescuentoSV)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtValidezCuponDias)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 		#endregion
+
+		private void InicializaControlesSegundaVisita()
+		{
+			// txtPorcDescuentoSV
+			this.txtPorcDescuentoSV = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
+			((System.ComponentModel.ISupportInitialize)(this.txtPorcDescuentoSV)).BeginInit();
+			this.txtPorcDescuentoSV.FormatString = "#,##0.00";
+			this.txtPorcDescuentoSV.Location = new System.Drawing.Point(1088, 7);
+			this.txtPorcDescuentoSV.Name = "txtPorcDescuentoSV";
+			this.txtPorcDescuentoSV.NullText = "0.00";
+			this.txtPorcDescuentoSV.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
+			this.txtPorcDescuentoSV.PromptChar = ' ';
+			this.txtPorcDescuentoSV.Size = new System.Drawing.Size(72, 20);
+			this.txtPorcDescuentoSV.TabIndex = 750;
+			this.txtPorcDescuentoSV.Visible = false;
+			((System.ComponentModel.ISupportInitialize)(this.txtPorcDescuentoSV)).EndInit();
+
+			// txtValidezCuponDias
+			this.txtValidezCuponDias = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
+			((System.ComponentModel.ISupportInitialize)(this.txtValidezCuponDias)).BeginInit();
+			this.txtValidezCuponDias.Location = new System.Drawing.Point(1088, 31);
+			this.txtValidezCuponDias.Name = "txtValidezCuponDias";
+			this.txtValidezCuponDias.NullText = "0";
+			this.txtValidezCuponDias.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Integer;
+			this.txtValidezCuponDias.PromptChar = ' ';
+			this.txtValidezCuponDias.Size = new System.Drawing.Size(72, 20);
+			this.txtValidezCuponDias.TabIndex = 751;
+			this.txtValidezCuponDias.Visible = false;
+			((System.ComponentModel.ISupportInitialize)(this.txtValidezCuponDias)).EndInit();
+
+			// lblPorcDescuentoSV
+			this.lblPorcDescuentoSV = new System.Windows.Forms.Label();
+			this.lblPorcDescuentoSV.AutoSize = true;
+			this.lblPorcDescuentoSV.Location = new System.Drawing.Point(992, 10);
+			this.lblPorcDescuentoSV.Name = "lblPorcDescuentoSV";
+			this.lblPorcDescuentoSV.Size = new System.Drawing.Size(90, 13);
+			this.lblPorcDescuentoSV.Text = "% Descuento:";
+			this.lblPorcDescuentoSV.Visible = false;
+
+			// lblValidezCuponDias
+			this.lblValidezCuponDias = new System.Windows.Forms.Label();
+			this.lblValidezCuponDias.AutoSize = true;
+			this.lblValidezCuponDias.Location = new System.Drawing.Point(992, 34);
+			this.lblValidezCuponDias.Name = "lblValidezCuponDias";
+			this.lblValidezCuponDias.Size = new System.Drawing.Size(90, 13);
+			this.lblValidezCuponDias.Text = "Validez (dÃ­as):";
+			this.lblValidezCuponDias.Visible = false;
+
+			this.Controls.Add(this.txtPorcDescuentoSV);
+			this.Controls.Add(this.txtValidezCuponDias);
+			this.Controls.Add(this.lblPorcDescuentoSV);
+			this.Controls.Add(this.lblValidezCuponDias);
+		}
 
 		CultureInfo us = new CultureInfo("en-US");
 		bool bNuevo = false;		
@@ -3402,7 +3463,7 @@ namespace Latinium
 				int iCont = 0;
 				iCont = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select Count(*) From Combo c Inner Join Articulo a On a.idArticulo = c.idArticuloCombo Where a.Codigo = '{0}'", e.Cell.Row.Cells["Codigo"].Value.ToString()));
 					
-				if (iCont > 0 && DialogResult.Yes == MessageBox.Show("Este Artículo esta Asociado a un Combo. ¿Cargar los Artículos del Combo?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+				if (iCont > 0 && DialogResult.Yes == MessageBox.Show("Este ArtÃ­culo esta Asociado a un Combo. Â¿Cargar los ArtÃ­culos del Combo?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
 				{
 					int idCombo = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select idCombo From Combo c Inner Join Articulo a On a.idArticulo = c.idArticuloCombo Where a.Codigo = '{0}'", e.Cell.Row.Cells["Codigo"].Value.ToString()));
 						
@@ -4112,16 +4173,16 @@ namespace Latinium
 
 		private void btGrabar_Click(object sender, System.EventArgs e)
 		{
-			#region Validación
+			#region ValidaciÃ³n
 			if (this.cmbTipo.Text.ToString().Length == 0)
 			{
-				MessageBox.Show("Seleccione COMBO o PROMOCIÓN.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Seleccione COMBO o PROMOCIÃ“N.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.cmbTipo.Focus();
 				return;
 			}
 			if (this.txtDescripcion.Text.ToString().Length == 0)
 			{
-				MessageBox.Show("Escriba un nombre para la promoción.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Escriba un nombre para la promociÃ³n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtDescripcion.Focus();
 				return;
 			}
@@ -4137,7 +4198,7 @@ namespace Latinium
 				int iTiempo = (int)this.txtTiempo.Value;
 				if (iTiempo == 0)
 				{
-					MessageBox.Show("No puede grabar la promoción si el tiempo de estadia es igual a 0", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("No puede grabar la promociÃ³n si el tiempo de estadia es igual a 0", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					this.txtTiempo.Focus();
 					return;
 				}
@@ -4158,7 +4219,7 @@ namespace Latinium
 			}
 
 				
-			#endregion Validación
+			#endregion ValidaciÃ³n
 
 			#region Encabezado
 			decimal dContado = 0.00m;
@@ -4210,7 +4271,7 @@ namespace Latinium
 	@HoraInicio Datetime = '20000101', @HoraFinaliza Datetime = '20000101'	22
 			 * */
 
-			string sSQL = string.Format("Exec GrabaPromociones {0}, '{1}', '{2}', '{3}', '{4}', {5}, {6}, {7}, 0, 0, {8}, '{9}', {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, 0, '{18}', '{19}', {20}, {21}, {22},{23}", 
+			string sSQL = string.Format("Exec GrabaPromociones {0}, '{1}', '{2}', '{3}', '{4}', {5}, {6}, {7}, 0, 0, {8}, '{9}', {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, 0, '{18}', '{19}', {20}, {21}, {22}, {23}, {24}, {25}",
 				(int)this.txtIdPromocion.Value, this.cmbTipo.Text.ToString(), dtInicio.ToString("yyyyMMdd HH:mm"), dtFin.ToString("yyyyMMdd HH:mm"), this.txtDescripcion.Text.ToString().Trim(), //4
 				Convert.ToDecimal(this.txtValorMinimo.Value), Convert.ToDecimal(this.txtValorMaximo.Value), //6
 				(int)this.txtPuntosInicial.Value, //7
@@ -4218,7 +4279,8 @@ namespace Latinium
 				(bool)this.chkVariable.Checked, (bool)this.chkSumaDescuentos.Checked, (bool)this.chkValor.Checked, (bool)this.chkAdicional.Checked, (bool)this.chkOpcional.Checked, (bool)this.chkCupon.Checked, //16
 				(bool)this.chkTarjetaVIP.Checked, //17
 				Convert.ToDateTime(this.dtHInicio.Value).ToString("yyyyMMdd HH:mm"), Convert.ToDateTime(this.dtFinal.Value).ToString("yyyyMMdd HH:mm"), (int)this.txtPuntosFinal.Value, (int)this.txtTiempo.Value,
-				(bool)this.chkToqueQueda.Checked,(bool)this.chkEncuesta.Checked); //20
+				(bool)this.chkToqueQueda.Checked, (bool)this.chkEncuesta.Checked, //23
+				(int)this.txtValidezCuponDias.Value, Convert.ToDecimal(this.txtPorcDescuentoSV.Value)); //24,25 â€” Segunda Visita 50%
 			Funcion.EjecutaSQL(cdsSeteoF, sSQL, true);
 			#endregion Encabezado
 
@@ -4362,7 +4424,7 @@ namespace Latinium
 					this.txtTiempo.Value = 0;
 					this.chkToqueQueda.Enabled = false;
 				}
-				else if (this.cmbTipo.Text.ToString() == "PROMOCIÓN")
+				else if (this.cmbTipo.Text.ToString() == "PROMOCIÃ“N")
 				{
 					this.txtValorMinimo.Enabled = true;
 					this.txtValorMaximo.Enabled = true;
@@ -4384,7 +4446,7 @@ namespace Latinium
 					this.txtTiempo.Value = 0;
 					this.chkToqueQueda.Enabled = false;
 				}
-				else if (this.cmbTipo.Text.ToString() == "ESPECÍFICO")
+				else if (this.cmbTipo.Text.ToString() == "ESPECÃFICO")
 				{
 					this.txtValorMinimo.Enabled = true;
 					this.txtValorMaximo.Enabled = true;
@@ -4414,13 +4476,49 @@ namespace Latinium
 					this.chkVariable.Enabled = true;
 					this.chkSumaDescuentos.Enabled = true;
 					this.chkValor.Enabled = true;
-					this.chkAdicional.Enabled = true;					
+					this.chkAdicional.Enabled = true;
 					this.chkOpcional.Enabled = true;
 					this.chkCupon.Enabled = true;
 					this.chkEncuesta.Enabled = true;
 					this.chkTarjetaVIP.Enabled = true;
 					this.txtTiempo.Enabled = true;
 					this.chkToqueQueda.Enabled = true;
+					this.txtPorcDescuentoSV.Visible = false;
+					this.txtValidezCuponDias.Visible = false;
+					this.lblPorcDescuentoSV.Visible = false;
+					this.lblValidezCuponDias.Visible = false;
+				}
+				else if (this.cmbTipo.Text.ToString() == "SEGUNDA VISITA")
+				{
+					// Solo aplica a habitaciones â€” deshabilitar controles que no corresponden
+					this.txtValorMinimo.Enabled = false;
+					this.txtValorMaximo.Enabled = false;
+					this.uGridGrupos.Enabled = false;
+					this.uGridSubgrupos.Enabled = false;
+					this.uGridMarcas.Enabled = false;
+					this.ultraGrid1.Enabled = false;
+					this.btnActualizaPrecios.Enabled = false;
+					this.chkGrupos.Enabled = false;
+					this.chkVariable.Enabled = false;
+					this.chkSumaDescuentos.Enabled = false;
+					this.chkValor.Enabled = false;
+					this.chkAdicional.Enabled = false;
+					this.chkOpcional.Enabled = false;
+					this.chkCupon.Enabled = false;
+					this.chkEncuesta.Enabled = false;
+					this.chkTarjetaVIP.Enabled = false;
+					this.txtTiempo.Enabled = false;
+					this.txtTiempo.Value = 0;
+					this.chkToqueQueda.Enabled = false;
+					// Mostrar campos exclusivos de Segunda Visita
+					this.txtPorcDescuentoSV.Visible = true;
+					this.txtPorcDescuentoSV.Enabled = true;
+					this.txtPorcDescuentoSV.Value = 50.00m;
+					this.txtValidezCuponDias.Visible = true;
+					this.txtValidezCuponDias.Enabled = true;
+					this.txtValidezCuponDias.Value = 30;
+					this.lblPorcDescuentoSV.Visible = true;
+					this.lblValidezCuponDias.Visible = true;
 				}
 			}
 		}
@@ -4751,7 +4849,10 @@ namespace Latinium
 					if (drPromocion.GetValue(18) != System.DBNull.Value)this.txtPuntosFinal.Value = drPromocion.GetInt32(18);
 					if (drPromocion.GetValue(19) != System.DBNull.Value)this.txtTiempo.Value = drPromocion.GetInt32(19);
 					if (drPromocion.GetValue(20) != System.DBNull.Value)this.chkToqueQueda.Checked = drPromocion.GetBoolean(20);
-					if (drPromocion.GetValue(20) != System.DBNull.Value)this.chkEncuesta.Checked = drPromocion.GetBoolean(21);
+					if (drPromocion.GetValue(21) != System.DBNull.Value)this.chkEncuesta.Checked = drPromocion.GetBoolean(21);
+					// Segunda Visita 50%
+					if (drPromocion.FieldCount > 22 && drPromocion.GetValue(22) != System.DBNull.Value) this.txtValidezCuponDias.Value = drPromocion.GetInt32(22);
+					if (drPromocion.FieldCount > 23 && drPromocion.GetValue(23) != System.DBNull.Value) this.txtPorcDescuentoSV.Value = drPromocion.GetDecimal(23);
 				}
 				drPromocion.Close();
 				#endregion Encabezado Campos Individuales
@@ -4901,7 +5002,7 @@ namespace Latinium
 		private void ultraGrid1_BeforeRowsDeleted(object sender, Infragistics.Win.UltraWinGrid.BeforeRowsDeletedEventArgs e)
 		{
 			if (!bModoEdicion) return;
-			if (DialogResult.No ==	MessageBox.Show("¿Esta seguro de borrar la filas seleccionadas?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) e.Cancel = true;
+			if (DialogResult.No ==	MessageBox.Show("Â¿Esta seguro de borrar la filas seleccionadas?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) e.Cancel = true;
 			else
 			{
 				for (int i=0; i<e.Rows.Length; i++)
