@@ -224,6 +224,8 @@ namespace Latinium
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn26 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idCombo");
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn27 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idArticuloGE");
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn28 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Jornadas");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn29 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Aporte");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn30 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idSubProyecto");
 			Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
@@ -253,6 +255,8 @@ namespace Latinium
 			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn20 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idCombo");
 			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn21 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idArticuloGE");
 			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn22 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Jornadas");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn23 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Aporte");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn24 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idSubProyecto");
 			Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
@@ -265,8 +269,8 @@ namespace Latinium
 			Infragistics.Win.Appearance appearance29 = new Infragistics.Win.Appearance();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(frmPrefactura));
 			Infragistics.Win.Appearance appearance30 = new Infragistics.Win.Appearance();
-			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn23 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idEntidadFinanciera");
-			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn24 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Nombre");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn25 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idEntidadFinanciera");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn26 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Nombre");
 			Infragistics.Win.Appearance appearance31 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance32 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance33 = new Infragistics.Win.Appearance();
@@ -274,9 +278,9 @@ namespace Latinium
 			Infragistics.Win.Appearance appearance35 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance36 = new Infragistics.Win.Appearance();
 			Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand4 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn29 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Bodega");
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn30 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre");
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn31 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Codigo", 0);
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn31 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Bodega");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn32 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn33 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Codigo", 0);
 			Infragistics.Win.Appearance appearance37 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance38 = new Infragistics.Win.Appearance();
 			Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton1 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
@@ -431,9 +435,9 @@ namespace Latinium
 			// 
 			this.label21.AutoSize = true;
 			this.label21.BackColor = System.Drawing.Color.Transparent;
-			this.label21.Location = new System.Drawing.Point(10, 86);
+			this.label21.Location = new System.Drawing.Point(8, 75);
 			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(45, 18);
+			this.label21.Size = new System.Drawing.Size(38, 16);
 			this.label21.TabIndex = 127;
 			this.label21.Text = "Cuotas";
 			// 
@@ -441,9 +445,9 @@ namespace Latinium
 			// 
 			this.label61.AutoSize = true;
 			this.label61.BackColor = System.Drawing.Color.Transparent;
-			this.label61.Location = new System.Drawing.Point(163, 86);
+			this.label61.Location = new System.Drawing.Point(136, 75);
 			this.label61.Name = "label61";
-			this.label61.Size = new System.Drawing.Size(51, 18);
+			this.label61.Size = new System.Drawing.Size(43, 16);
 			this.label61.TabIndex = 129;
 			this.label61.Text = "Entrada";
 			// 
@@ -454,11 +458,11 @@ namespace Latinium
 			this.txtNumCuotas.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNumCuotas.Enabled = false;
 			this.txtNumCuotas.FormatString = "";
-			this.txtNumCuotas.Location = new System.Drawing.Point(67, 82);
+			this.txtNumCuotas.Location = new System.Drawing.Point(56, 72);
 			this.txtNumCuotas.MaskInput = "nn";
 			this.txtNumCuotas.Name = "txtNumCuotas";
 			this.txtNumCuotas.PromptChar = ' ';
-			this.txtNumCuotas.Size = new System.Drawing.Size(77, 25);
+			this.txtNumCuotas.Size = new System.Drawing.Size(64, 22);
 			this.txtNumCuotas.SpinButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always;
 			this.txtNumCuotas.TabIndex = 5;
 			this.txtNumCuotas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNumCuotas_KeyDown);
@@ -476,11 +480,11 @@ namespace Latinium
 			this.txtCuotaDeEntrada.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtCuotaDeEntrada.Enabled = false;
 			this.txtCuotaDeEntrada.FormatString = "#,##0.00";
-			this.txtCuotaDeEntrada.Location = new System.Drawing.Point(230, 82);
+			this.txtCuotaDeEntrada.Location = new System.Drawing.Point(192, 72);
 			this.txtCuotaDeEntrada.Name = "txtCuotaDeEntrada";
 			this.txtCuotaDeEntrada.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtCuotaDeEntrada.PromptChar = ' ';
-			this.txtCuotaDeEntrada.Size = new System.Drawing.Size(96, 25);
+			this.txtCuotaDeEntrada.Size = new System.Drawing.Size(80, 22);
 			this.txtCuotaDeEntrada.TabIndex = 6;
 			this.txtCuotaDeEntrada.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCuotaDeEntrada_KeyDown);
 			this.txtCuotaDeEntrada.Click += new System.EventHandler(this.txtCuotaDeEntrada_Click);
@@ -492,18 +496,18 @@ namespace Latinium
 			// lblVendedor
 			// 
 			this.lblVendedor.AutoSize = true;
-			this.lblVendedor.Location = new System.Drawing.Point(826, 13);
+			this.lblVendedor.Location = new System.Drawing.Point(688, 11);
 			this.lblVendedor.Name = "lblVendedor";
-			this.lblVendedor.Size = new System.Drawing.Size(61, 18);
+			this.lblVendedor.Size = new System.Drawing.Size(52, 16);
 			this.lblVendedor.TabIndex = 157;
 			this.lblVendedor.Text = "Vendedor";
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(10, 13);
+			this.label6.Location = new System.Drawing.Point(8, 11);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(40, 18);
+			this.label6.Size = new System.Drawing.Size(34, 16);
 			this.label6.TabIndex = 153;
 			this.label6.Text = "Fecha";
 			// 
@@ -511,9 +515,9 @@ namespace Latinium
 			// 
 			this.label62.AutoSize = true;
 			this.label62.BackColor = System.Drawing.Color.Transparent;
-			this.label62.Location = new System.Drawing.Point(346, 86);
+			this.label62.Location = new System.Drawing.Point(288, 75);
 			this.label62.Name = "label62";
-			this.label62.Size = new System.Drawing.Size(79, 18);
+			this.label62.Size = new System.Drawing.Size(67, 16);
 			this.label62.TabIndex = 155;
 			this.label62.Text = "D?a de pago";
 			// 
@@ -538,9 +542,9 @@ namespace Latinium
 			this.cmbVendedor.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
 			this.cmbVendedor.Enabled = false;
 			this.cmbVendedor.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.cmbVendedor.Location = new System.Drawing.Point(902, 9);
+			this.cmbVendedor.Location = new System.Drawing.Point(752, 8);
 			this.cmbVendedor.Name = "cmbVendedor";
-			this.cmbVendedor.Size = new System.Drawing.Size(308, 26);
+			this.cmbVendedor.Size = new System.Drawing.Size(256, 22);
 			this.cmbVendedor.TabIndex = 3;
 			this.cmbVendedor.ValueMember = "idPersonal";
 			this.cmbVendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbVendedor_KeyPress);
@@ -550,10 +554,10 @@ namespace Latinium
 			// cboFechaPrimerPago
 			// 
 			this.cboFechaPrimerPago.Enabled = false;
-			this.cboFechaPrimerPago.Location = new System.Drawing.Point(432, 83);
+			this.cboFechaPrimerPago.Location = new System.Drawing.Point(360, 73);
 			this.cboFechaPrimerPago.MaxDropDownItems = 15;
 			this.cboFechaPrimerPago.Name = "cboFechaPrimerPago";
-			this.cboFechaPrimerPago.Size = new System.Drawing.Size(120, 24);
+			this.cboFechaPrimerPago.Size = new System.Drawing.Size(100, 21);
 			this.cboFechaPrimerPago.TabIndex = 7;
 			this.cboFechaPrimerPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboFechaPrimerPago_KeyPress);
 			this.cboFechaPrimerPago.Validating += new System.ComponentModel.CancelEventHandler(this.cboFechaPrimerPago_Validating);
@@ -562,28 +566,28 @@ namespace Latinium
 			// lblIdentificacion
 			// 
 			this.lblIdentificacion.AutoSize = true;
-			this.lblIdentificacion.Location = new System.Drawing.Point(10, 49);
+			this.lblIdentificacion.Location = new System.Drawing.Point(8, 43);
 			this.lblIdentificacion.Name = "lblIdentificacion";
-			this.lblIdentificacion.Size = new System.Drawing.Size(45, 18);
+			this.lblIdentificacion.Size = new System.Drawing.Size(38, 16);
 			this.lblIdentificacion.TabIndex = 163;
-			this.lblIdentificacion.Text = "Cédula";
+			this.lblIdentificacion.Text = "CÃ©dula";
 			this.lblIdentificacion.Click += new System.EventHandler(this.lblIdentificacion_Click);
 			// 
 			// lblCliente
 			// 
 			this.lblCliente.AutoSize = true;
-			this.lblCliente.Location = new System.Drawing.Point(211, 49);
+			this.lblCliente.Location = new System.Drawing.Point(176, 43);
 			this.lblCliente.Name = "lblCliente";
-			this.lblCliente.Size = new System.Drawing.Size(52, 18);
+			this.lblCliente.Size = new System.Drawing.Size(44, 16);
 			this.lblCliente.TabIndex = 161;
 			this.lblCliente.Text = "Nombre";
 			// 
 			// lblBodega
 			// 
 			this.lblBodega.AutoSize = true;
-			this.lblBodega.Location = new System.Drawing.Point(211, 13);
+			this.lblBodega.Location = new System.Drawing.Point(176, 11);
 			this.lblBodega.Name = "lblBodega";
-			this.lblBodega.Size = new System.Drawing.Size(35, 18);
+			this.lblBodega.Size = new System.Drawing.Size(30, 16);
 			this.lblBodega.TabIndex = 160;
 			this.lblBodega.Text = "Local";
 			this.lblBodega.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -594,10 +598,10 @@ namespace Latinium
 			this.txtRuc.Appearance = appearance4;
 			this.txtRuc.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtRuc.Enabled = false;
-			this.txtRuc.Location = new System.Drawing.Point(67, 46);
+			this.txtRuc.Location = new System.Drawing.Point(56, 40);
 			this.txtRuc.MaxLength = 10;
 			this.txtRuc.Name = "txtRuc";
-			this.txtRuc.Size = new System.Drawing.Size(135, 25);
+			this.txtRuc.Size = new System.Drawing.Size(112, 22);
 			this.txtRuc.TabIndex = 4;
 			this.txtRuc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRuc_KeyDown);
 			this.txtRuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRuc_KeyPress);
@@ -624,10 +628,10 @@ namespace Latinium
 			this.cmbBodega.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
 			this.cmbBodega.Enabled = false;
 			this.cmbBodega.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.cmbBodega.Location = new System.Drawing.Point(259, 9);
+			this.cmbBodega.Location = new System.Drawing.Point(216, 8);
 			this.cmbBodega.MaxDropDownItems = 30;
 			this.cmbBodega.Name = "cmbBodega";
-			this.cmbBodega.Size = new System.Drawing.Size(216, 26);
+			this.cmbBodega.Size = new System.Drawing.Size(180, 22);
 			this.cmbBodega.TabIndex = 2;
 			this.cmbBodega.ValueMember = "Bodega";
 			this.cmbBodega.Validating += new System.ComponentModel.CancelEventHandler(this.cmbBodega_Validating);
@@ -641,9 +645,9 @@ namespace Latinium
 			this.txtNombre.Appearance = appearance5;
 			this.txtNombre.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNombre.Enabled = false;
-			this.txtNombre.Location = new System.Drawing.Point(278, 46);
+			this.txtNombre.Location = new System.Drawing.Point(232, 40);
 			this.txtNombre.Name = "txtNombre";
-			this.txtNombre.Size = new System.Drawing.Size(317, 25);
+			this.txtNombre.Size = new System.Drawing.Size(264, 22);
 			this.txtNombre.TabIndex = 159;
 			// 
 			// ultraGrid2
@@ -674,11 +678,11 @@ namespace Latinium
 			ultraGridColumn11.Width = 53;
 			ultraGridColumn12.Case = Infragistics.Win.UltraWinGrid.Case.Upper;
 			ultraGridColumn12.Header.VisiblePosition = 2;
-			ultraGridColumn12.Width = 321;
+			ultraGridColumn12.Width = 260;
 			ultraGridColumn13.Case = Infragistics.Win.UltraWinGrid.Case.Upper;
 			ultraGridColumn13.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			ultraGridColumn13.Header.VisiblePosition = 3;
-			ultraGridColumn13.Width = 436;
+			ultraGridColumn13.Width = 348;
 			ultraGridColumn14.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
 			appearance7.TextHAlign = Infragistics.Win.HAlign.Right;
 			ultraGridColumn14.CellAppearance = appearance7;
@@ -687,14 +691,14 @@ namespace Latinium
 			ultraGridColumn14.MaskInput = "";
 			ultraGridColumn14.NullText = "0";
 			ultraGridColumn14.PromptChar = ' ';
-			ultraGridColumn14.Width = 81;
+			ultraGridColumn14.Width = 75;
 			appearance8.TextHAlign = Infragistics.Win.HAlign.Right;
 			ultraGridColumn15.CellAppearance = appearance8;
 			ultraGridColumn15.Format = "#,##0.00";
 			ultraGridColumn15.Header.VisiblePosition = 6;
 			ultraGridColumn15.MaskInput = "{LOC}nn,nnn,nnn.nn";
 			ultraGridColumn15.PromptChar = ' ';
-			ultraGridColumn15.Width = 93;
+			ultraGridColumn15.Width = 85;
 			appearance9.TextHAlign = Infragistics.Win.HAlign.Right;
 			ultraGridColumn16.CellAppearance = appearance9;
 			ultraGridColumn16.Format = "#,##0.00";
@@ -702,7 +706,7 @@ namespace Latinium
 			ultraGridColumn16.Header.VisiblePosition = 7;
 			ultraGridColumn16.MaskInput = "{LOC}nnnnnnn.nn";
 			ultraGridColumn16.PromptChar = ' ';
-			ultraGridColumn16.Width = 56;
+			ultraGridColumn16.Width = 60;
 			ultraGridColumn17.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			appearance10.TextHAlign = Infragistics.Win.HAlign.Right;
 			ultraGridColumn17.CellAppearance = appearance10;
@@ -719,14 +723,14 @@ namespace Latinium
 			ultraGridColumn18.Header.VisiblePosition = 9;
 			ultraGridColumn18.MaskInput = "";
 			ultraGridColumn18.PromptChar = ' ';
-			ultraGridColumn18.Width = 75;
+			ultraGridColumn18.Width = 60;
 			ultraGridColumn19.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
 			appearance12.TextHAlign = Infragistics.Win.HAlign.Right;
 			ultraGridColumn19.CellAppearance = appearance12;
 			ultraGridColumn19.Format = "#,##0.00";
 			ultraGridColumn19.Header.VisiblePosition = 11;
 			ultraGridColumn19.PromptChar = ' ';
-			ultraGridColumn19.Width = 122;
+			ultraGridColumn19.Width = 95;
 			ultraGridColumn20.Header.VisiblePosition = 12;
 			ultraGridColumn20.Hidden = true;
 			ultraGridColumn21.Header.VisiblePosition = 14;
@@ -754,6 +758,15 @@ namespace Latinium
 			ultraGridColumn28.Header.VisiblePosition = 21;
 			ultraGridColumn28.Hidden = true;
 			ultraGridColumn28.Width = 64;
+			ultraGridColumn29.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
+			ultraGridColumn29.Format = "#,##0.00";
+			ultraGridColumn29.Header.VisiblePosition = 22;
+			ultraGridColumn29.Hidden = true;
+			ultraGridColumn29.Width = 95;
+			ultraGridColumn30.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
+			ultraGridColumn30.Header.VisiblePosition = 23;
+			ultraGridColumn30.Hidden = true;
+			ultraGridColumn30.Width = 83;
 			ultraGridBand3.Columns.AddRange(new object[] {
 																										 ultraGridColumn7,
 																										 ultraGridColumn8,
@@ -776,7 +789,9 @@ namespace Latinium
 																										 ultraGridColumn25,
 																										 ultraGridColumn26,
 																										 ultraGridColumn27,
-																										 ultraGridColumn28});
+																										 ultraGridColumn28,
+																										 ultraGridColumn29,
+																										 ultraGridColumn30});
 			ultraGridBand3.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.TemplateOnBottom;
 			this.ultraGrid2.DisplayLayout.BandsSerializer.Add(ultraGridBand3);
 			appearance13.ForeColor = System.Drawing.Color.Black;
@@ -812,9 +827,9 @@ namespace Latinium
 			appearance19.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
 			this.ultraGrid2.DisplayLayout.Override.SelectedRowAppearance = appearance19;
 			this.ultraGrid2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.ultraGrid2.Location = new System.Drawing.Point(7, 155);
+			this.ultraGrid2.Location = new System.Drawing.Point(6, 136);
 			this.ultraGrid2.Name = "ultraGrid2";
-			this.ultraGrid2.Size = new System.Drawing.Size(1205, 211);
+			this.ultraGrid2.Size = new System.Drawing.Size(1004, 184);
 			this.ultraGrid2.TabIndex = 10;
 			this.ultraGrid2.Error += new Infragistics.Win.UltraWinGrid.ErrorEventHandler(this.ultraGrid1_Error);
 			this.ultraGrid2.DoubleClick += new System.EventHandler(this.ultraGrid1_DoubleClick);
@@ -893,6 +908,13 @@ namespace Latinium
 																																			0,
 																																			0,
 																																			0});
+			ultraDataColumn23.DataType = typeof(System.Decimal);
+			ultraDataColumn23.DefaultValue = new System.Decimal(new int[] {
+																																			0,
+																																			0,
+																																			0,
+																																			0});
+			ultraDataColumn24.DataType = typeof(int);
 			this.ultraDataSource2.Band.Columns.AddRange(new object[] {
 																																 ultraDataColumn1,
 																																 ultraDataColumn2,
@@ -915,7 +937,9 @@ namespace Latinium
 																																 ultraDataColumn19,
 																																 ultraDataColumn20,
 																																 ultraDataColumn21,
-																																 ultraDataColumn22});
+																																 ultraDataColumn22,
+																																 ultraDataColumn23,
+																																 ultraDataColumn24});
 			// 
 			// txtNotas
 			// 
@@ -926,10 +950,10 @@ namespace Latinium
 			this.txtNotas.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtNotas.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNotas.Enabled = false;
-			this.txtNotas.Location = new System.Drawing.Point(67, 384);
+			this.txtNotas.Location = new System.Drawing.Point(56, 336);
 			this.txtNotas.Multiline = true;
 			this.txtNotas.Name = "txtNotas";
-			this.txtNotas.Size = new System.Drawing.Size(490, 72);
+			this.txtNotas.Size = new System.Drawing.Size(408, 63);
 			this.txtNotas.TabIndex = 11;
 			this.txtNotas.Leave += new System.EventHandler(this.txtNotas_Leave);
 			this.txtNotas.ValueChanged += new System.EventHandler(this.txtNotas_ValueChanged);
@@ -942,12 +966,12 @@ namespace Latinium
 			this.txtCuotaAsignada.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtCuotaAsignada.Enabled = false;
 			this.txtCuotaAsignada.FormatString = "#,##0.00";
-			this.txtCuotaAsignada.Location = new System.Drawing.Point(720, 47);
+			this.txtCuotaAsignada.Location = new System.Drawing.Point(600, 41);
 			this.txtCuotaAsignada.Name = "txtCuotaAsignada";
 			this.txtCuotaAsignada.NullText = "0.00";
 			this.txtCuotaAsignada.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtCuotaAsignada.PromptChar = ' ';
-			this.txtCuotaAsignada.Size = new System.Drawing.Size(96, 23);
+			this.txtCuotaAsignada.Size = new System.Drawing.Size(80, 20);
 			this.txtCuotaAsignada.TabIndex = 177;
 			// 
 			// txtCuotaDisponible
@@ -958,12 +982,12 @@ namespace Latinium
 			this.txtCuotaDisponible.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtCuotaDisponible.Enabled = false;
 			this.txtCuotaDisponible.FormatString = "#,##0.00";
-			this.txtCuotaDisponible.Location = new System.Drawing.Point(941, 47);
+			this.txtCuotaDisponible.Location = new System.Drawing.Point(784, 41);
 			this.txtCuotaDisponible.Name = "txtCuotaDisponible";
 			this.txtCuotaDisponible.NullText = "0.00";
 			this.txtCuotaDisponible.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtCuotaDisponible.PromptChar = ' ';
-			this.txtCuotaDisponible.Size = new System.Drawing.Size(96, 23);
+			this.txtCuotaDisponible.Size = new System.Drawing.Size(80, 20);
 			this.txtCuotaDisponible.TabIndex = 176;
 			// 
 			// txtCuotaUsada
@@ -974,21 +998,21 @@ namespace Latinium
 			this.txtCuotaUsada.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtCuotaUsada.Enabled = false;
 			this.txtCuotaUsada.FormatString = "#,##0.00";
-			this.txtCuotaUsada.Location = new System.Drawing.Point(720, 83);
+			this.txtCuotaUsada.Location = new System.Drawing.Point(600, 73);
 			this.txtCuotaUsada.Name = "txtCuotaUsada";
 			this.txtCuotaUsada.NullText = "0.00";
 			this.txtCuotaUsada.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtCuotaUsada.PromptChar = ' ';
-			this.txtCuotaUsada.Size = new System.Drawing.Size(96, 23);
+			this.txtCuotaUsada.Size = new System.Drawing.Size(80, 20);
 			this.txtCuotaUsada.TabIndex = 175;
 			// 
 			// label63
 			// 
 			this.label63.AutoSize = true;
 			this.label63.BackColor = System.Drawing.Color.Transparent;
-			this.label63.Location = new System.Drawing.Point(826, 49);
+			this.label63.Location = new System.Drawing.Point(688, 43);
 			this.label63.Name = "label63";
-			this.label63.Size = new System.Drawing.Size(102, 18);
+			this.label63.Size = new System.Drawing.Size(87, 16);
 			this.label63.TabIndex = 174;
 			this.label63.Text = "Cuota disponible";
 			// 
@@ -996,9 +1020,9 @@ namespace Latinium
 			// 
 			this.label64.AutoSize = true;
 			this.label64.BackColor = System.Drawing.Color.Transparent;
-			this.label64.Location = new System.Drawing.Point(605, 86);
+			this.label64.Location = new System.Drawing.Point(504, 75);
 			this.label64.Name = "label64";
-			this.label64.Size = new System.Drawing.Size(78, 18);
+			this.label64.Size = new System.Drawing.Size(66, 16);
 			this.label64.TabIndex = 173;
 			this.label64.Text = "Cuota usada";
 			// 
@@ -1006,9 +1030,9 @@ namespace Latinium
 			// 
 			this.label65.AutoSize = true;
 			this.label65.BackColor = System.Drawing.Color.Transparent;
-			this.label65.Location = new System.Drawing.Point(605, 49);
+			this.label65.Location = new System.Drawing.Point(504, 43);
 			this.label65.Name = "label65";
-			this.label65.Size = new System.Drawing.Size(96, 18);
+			this.label65.Size = new System.Drawing.Size(81, 16);
 			this.label65.TabIndex = 172;
 			this.label65.Text = "Cuota asignada";
 			// 
@@ -1020,12 +1044,12 @@ namespace Latinium
 			this.txtValorCuotas.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtValorCuotas.Enabled = false;
 			this.txtValorCuotas.FormatString = "#,##0.00";
-			this.txtValorCuotas.Location = new System.Drawing.Point(941, 83);
+			this.txtValorCuotas.Location = new System.Drawing.Point(784, 73);
 			this.txtValorCuotas.Name = "txtValorCuotas";
 			this.txtValorCuotas.NullText = "0.00";
 			this.txtValorCuotas.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtValorCuotas.PromptChar = ' ';
-			this.txtValorCuotas.Size = new System.Drawing.Size(96, 23);
+			this.txtValorCuotas.Size = new System.Drawing.Size(80, 20);
 			this.txtValorCuotas.TabIndex = 170;
 			this.txtValorCuotas.ValueChanged += new System.EventHandler(this.txtValorCuotas_ValueChanged);
 			// 
@@ -1033,9 +1057,9 @@ namespace Latinium
 			// 
 			this.label23.AutoSize = true;
 			this.label23.BackColor = System.Drawing.Color.Transparent;
-			this.label23.Location = new System.Drawing.Point(826, 86);
+			this.label23.Location = new System.Drawing.Point(688, 75);
 			this.label23.Name = "label23";
-			this.label23.Size = new System.Drawing.Size(73, 18);
+			this.label23.Size = new System.Drawing.Size(62, 16);
 			this.label23.TabIndex = 168;
 			this.label23.Text = "Valor Cuota";
 			// 
@@ -1045,9 +1069,9 @@ namespace Latinium
 			this.lblEstado.AutoSize = true;
 			this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.lblEstado.ForeColor = System.Drawing.Color.Firebrick;
-			this.lblEstado.Location = new System.Drawing.Point(941, 110);
+			this.lblEstado.Location = new System.Drawing.Point(784, 96);
 			this.lblEstado.Name = "lblEstado";
-			this.lblEstado.Size = new System.Drawing.Size(0, 32);
+			this.lblEstado.Size = new System.Drawing.Size(0, 26);
 			this.lblEstado.TabIndex = 179;
 			this.lblEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -1057,9 +1081,9 @@ namespace Latinium
 			this.lblUsuario.AutoSize = true;
 			this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
 			this.lblUsuario.Font = new System.Drawing.Font("Tahoma", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-			this.lblUsuario.Location = new System.Drawing.Point(576, 375);
+			this.lblUsuario.Location = new System.Drawing.Point(480, 328);
 			this.lblUsuario.Name = "lblUsuario";
-			this.lblUsuario.Size = new System.Drawing.Size(0, 24);
+			this.lblUsuario.Size = new System.Drawing.Size(0, 20);
 			this.lblUsuario.TabIndex = 180;
 			this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -1068,9 +1092,9 @@ namespace Latinium
 			this.lblIva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblIva.AutoSize = true;
 			this.lblIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblIva.Location = new System.Drawing.Point(883, 470);
+			this.lblIva.Location = new System.Drawing.Point(736, 411);
 			this.lblIva.Name = "lblIva";
-			this.lblIva.Size = new System.Drawing.Size(28, 19);
+			this.lblIva.Size = new System.Drawing.Size(22, 16);
 			this.lblIva.TabIndex = 184;
 			this.lblIva.Text = "IVA";
 			// 
@@ -1083,11 +1107,11 @@ namespace Latinium
 			this.txtTotal.Enabled = false;
 			this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.txtTotal.FormatString = "#,##0.00";
-			this.txtTotal.Location = new System.Drawing.Point(989, 494);
+			this.txtTotal.Location = new System.Drawing.Point(824, 432);
 			this.txtTotal.Name = "txtTotal";
 			this.txtTotal.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtTotal.PromptChar = ' ';
-			this.txtTotal.Size = new System.Drawing.Size(221, 40);
+			this.txtTotal.Size = new System.Drawing.Size(184, 34);
 			this.txtTotal.TabIndex = 191;
 			// 
 			// txtIvaTotal
@@ -1098,11 +1122,11 @@ namespace Latinium
 			this.txtIvaTotal.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIvaTotal.Enabled = false;
 			this.txtIvaTotal.FormatString = "#,##0.00";
-			this.txtIvaTotal.Location = new System.Drawing.Point(1114, 466);
+			this.txtIvaTotal.Location = new System.Drawing.Point(928, 408);
 			this.txtIvaTotal.Name = "txtIvaTotal";
 			this.txtIvaTotal.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtIvaTotal.PromptChar = ' ';
-			this.txtIvaTotal.Size = new System.Drawing.Size(96, 25);
+			this.txtIvaTotal.Size = new System.Drawing.Size(80, 22);
 			this.txtIvaTotal.TabIndex = 190;
 			// 
 			// txtDescIvaTotal
@@ -1113,11 +1137,11 @@ namespace Latinium
 			this.txtDescIvaTotal.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtDescIvaTotal.Enabled = false;
 			this.txtDescIvaTotal.FormatString = "#,##0.00";
-			this.txtDescIvaTotal.Location = new System.Drawing.Point(1114, 439);
+			this.txtDescIvaTotal.Location = new System.Drawing.Point(928, 384);
 			this.txtDescIvaTotal.Name = "txtDescIvaTotal";
 			this.txtDescIvaTotal.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtDescIvaTotal.PromptChar = ' ';
-			this.txtDescIvaTotal.Size = new System.Drawing.Size(96, 25);
+			this.txtDescIvaTotal.Size = new System.Drawing.Size(80, 22);
 			this.txtDescIvaTotal.TabIndex = 188;
 			// 
 			// txtIva
@@ -1128,11 +1152,11 @@ namespace Latinium
 			this.txtIva.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIva.Enabled = false;
 			this.txtIva.FormatString = "#,##0.00";
-			this.txtIva.Location = new System.Drawing.Point(1114, 411);
+			this.txtIva.Location = new System.Drawing.Point(928, 360);
 			this.txtIva.Name = "txtIva";
 			this.txtIva.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtIva.PromptChar = ' ';
-			this.txtIva.Size = new System.Drawing.Size(96, 25);
+			this.txtIva.Size = new System.Drawing.Size(80, 22);
 			this.txtIva.TabIndex = 187;
 			// 
 			// label1
@@ -1140,9 +1164,9 @@ namespace Latinium
 			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label1.Location = new System.Drawing.Point(883, 504);
+			this.label1.Location = new System.Drawing.Point(736, 441);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(37, 19);
+			this.label1.Size = new System.Drawing.Size(29, 16);
 			this.label1.TabIndex = 192;
 			this.label1.Text = "Total";
 			// 
@@ -1152,20 +1176,20 @@ namespace Latinium
 			this.txtNumero.Appearance = appearance29;
 			this.txtNumero.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNumero.Enabled = false;
-			this.txtNumero.Location = new System.Drawing.Point(77, 119);
+			this.txtNumero.Location = new System.Drawing.Point(64, 104);
 			this.txtNumero.Name = "txtNumero";
-			this.txtNumero.Size = new System.Drawing.Size(134, 25);
+			this.txtNumero.Size = new System.Drawing.Size(112, 22);
 			this.txtNumero.TabIndex = 193;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.BackColor = System.Drawing.Color.Transparent;
-			this.label2.Location = new System.Drawing.Point(10, 122);
+			this.label2.Location = new System.Drawing.Point(8, 107);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(52, 18);
+			this.label2.Size = new System.Drawing.Size(44, 16);
 			this.label2.TabIndex = 194;
-			this.label2.Text = "Número";
+			this.label2.Text = "NÃºmero";
 			// 
 			// MnuAprobacion
 			// 
@@ -1204,9 +1228,9 @@ namespace Latinium
 			// 
 			this.gbBotones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
 				| System.Windows.Forms.AnchorStyles.Right)));
-			this.gbBotones.Location = new System.Drawing.Point(0, 539);
+			this.gbBotones.Location = new System.Drawing.Point(0, 472);
 			this.gbBotones.Name = "gbBotones";
-			this.gbBotones.Size = new System.Drawing.Size(1219, 10);
+			this.gbBotones.Size = new System.Drawing.Size(1016, 8);
 			this.gbBotones.TabIndex = 290;
 			this.gbBotones.TabStop = false;
 			// 
@@ -1216,9 +1240,9 @@ namespace Latinium
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.Firebrick;
-			this.label3.Location = new System.Drawing.Point(787, 567);
+			this.label3.Location = new System.Drawing.Point(656, 496);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(0, 21);
+			this.label3.Size = new System.Drawing.Size(0, 18);
 			this.label3.TabIndex = 285;
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -1228,9 +1252,9 @@ namespace Latinium
 			this.btnNuevo.CausesValidation = false;
 			this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
 			this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnNuevo.Location = new System.Drawing.Point(10, 558);
+			this.btnNuevo.Location = new System.Drawing.Point(8, 488);
 			this.btnNuevo.Name = "btnNuevo";
-			this.btnNuevo.Size = new System.Drawing.Size(86, 26);
+			this.btnNuevo.Size = new System.Drawing.Size(72, 23);
 			this.btnNuevo.TabIndex = 0;
 			this.btnNuevo.Text = "&Nuevo";
 			this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1242,9 +1266,9 @@ namespace Latinium
 			this.btnConsultar.CausesValidation = false;
 			this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
 			this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnConsultar.Location = new System.Drawing.Point(98, 558);
+			this.btnConsultar.Location = new System.Drawing.Point(82, 488);
 			this.btnConsultar.Name = "btnConsultar";
-			this.btnConsultar.Size = new System.Drawing.Size(94, 26);
+			this.btnConsultar.Size = new System.Drawing.Size(78, 23);
 			this.btnConsultar.TabIndex = 15;
 			this.btnConsultar.Text = "&Consultar";
 			this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1257,9 +1281,9 @@ namespace Latinium
 			this.btnEditar.Enabled = false;
 			this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
 			this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnEditar.Location = new System.Drawing.Point(194, 558);
+			this.btnEditar.Location = new System.Drawing.Point(162, 488);
 			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(92, 26);
+			this.btnEditar.Size = new System.Drawing.Size(76, 23);
 			this.btnEditar.TabIndex = 14;
 			this.btnEditar.Text = "&Editar";
 			this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1272,9 +1296,9 @@ namespace Latinium
 			this.btnImprimir.Enabled = false;
 			this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
 			this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnImprimir.Location = new System.Drawing.Point(288, 558);
+			this.btnImprimir.Location = new System.Drawing.Point(240, 488);
 			this.btnImprimir.Name = "btnImprimir";
-			this.btnImprimir.Size = new System.Drawing.Size(92, 26);
+			this.btnImprimir.Size = new System.Drawing.Size(77, 23);
 			this.btnImprimir.TabIndex = 13;
 			this.btnImprimir.Text = "&Imprimir";
 			this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1286,9 +1310,9 @@ namespace Latinium
 			this.btnGuardar.Enabled = false;
 			this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
 			this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnGuardar.Location = new System.Drawing.Point(383, 558);
+			this.btnGuardar.Location = new System.Drawing.Point(319, 488);
 			this.btnGuardar.Name = "btnGuardar";
-			this.btnGuardar.Size = new System.Drawing.Size(91, 26);
+			this.btnGuardar.Size = new System.Drawing.Size(76, 23);
 			this.btnGuardar.TabIndex = 13;
 			this.btnGuardar.Text = "&Guardar";
 			this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1301,9 +1325,9 @@ namespace Latinium
 			this.btnAnular.Enabled = false;
 			this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
 			this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAnular.Location = new System.Drawing.Point(578, 558);
+			this.btnAnular.Location = new System.Drawing.Point(482, 488);
 			this.btnAnular.Name = "btnAnular";
-			this.btnAnular.Size = new System.Drawing.Size(92, 26);
+			this.btnAnular.Size = new System.Drawing.Size(76, 23);
 			this.btnAnular.TabIndex = 17;
 			this.btnAnular.Text = "&Anular";
 			this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1316,9 +1340,9 @@ namespace Latinium
 			this.btnCancelar.Enabled = false;
 			this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
 			this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnCancelar.Location = new System.Drawing.Point(672, 558);
+			this.btnCancelar.Location = new System.Drawing.Point(560, 488);
 			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(86, 26);
+			this.btnCancelar.Size = new System.Drawing.Size(72, 23);
 			this.btnCancelar.TabIndex = 18;
 			this.btnCancelar.Text = "&Cancelar";
 			this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1330,9 +1354,8 @@ namespace Latinium
 			this.btnSalir.CausesValidation = false;
 			this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
 			this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnSalir.Location = new System.Drawing.Point(761, 558);
+			this.btnSalir.Location = new System.Drawing.Point(634, 488);
 			this.btnSalir.Name = "btnSalir";
-			this.btnSalir.Size = new System.Drawing.Size(90, 26);
 			this.btnSalir.TabIndex = 19;
 			this.btnSalir.Text = "&Salir";
 			this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1343,10 +1366,10 @@ namespace Latinium
 			this.txtNumIdProyecto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtNumIdProyecto.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNumIdProyecto.Enabled = false;
-			this.txtNumIdProyecto.Location = new System.Drawing.Point(1066, 567);
+			this.txtNumIdProyecto.Location = new System.Drawing.Point(888, 496);
 			this.txtNumIdProyecto.Name = "txtNumIdProyecto";
 			this.txtNumIdProyecto.PromptChar = ' ';
-			this.txtNumIdProyecto.Size = new System.Drawing.Size(19, 25);
+			this.txtNumIdProyecto.Size = new System.Drawing.Size(16, 22);
 			this.txtNumIdProyecto.TabIndex = 276;
 			this.txtNumIdProyecto.Visible = false;
 			// 
@@ -1355,10 +1378,10 @@ namespace Latinium
 			this.txtIdComprobante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtIdComprobante.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIdComprobante.Enabled = false;
-			this.txtIdComprobante.Location = new System.Drawing.Point(1162, 567);
+			this.txtIdComprobante.Location = new System.Drawing.Point(968, 496);
 			this.txtIdComprobante.Name = "txtIdComprobante";
 			this.txtIdComprobante.PromptChar = ' ';
-			this.txtIdComprobante.Size = new System.Drawing.Size(19, 25);
+			this.txtIdComprobante.Size = new System.Drawing.Size(16, 22);
 			this.txtIdComprobante.TabIndex = 275;
 			this.txtIdComprobante.Visible = false;
 			// 
@@ -1367,10 +1390,10 @@ namespace Latinium
 			this.txtNumEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtNumEstado.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNumEstado.Enabled = false;
-			this.txtNumEstado.Location = new System.Drawing.Point(1142, 567);
+			this.txtNumEstado.Location = new System.Drawing.Point(952, 496);
 			this.txtNumEstado.Name = "txtNumEstado";
 			this.txtNumEstado.PromptChar = ' ';
-			this.txtNumEstado.Size = new System.Drawing.Size(20, 25);
+			this.txtNumEstado.Size = new System.Drawing.Size(16, 22);
 			this.txtNumEstado.TabIndex = 274;
 			this.txtNumEstado.Visible = false;
 			// 
@@ -1379,10 +1402,10 @@ namespace Latinium
 			this.txtIdTipoFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtIdTipoFactura.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIdTipoFactura.Enabled = false;
-			this.txtIdTipoFactura.Location = new System.Drawing.Point(1123, 567);
+			this.txtIdTipoFactura.Location = new System.Drawing.Point(936, 496);
 			this.txtIdTipoFactura.Name = "txtIdTipoFactura";
 			this.txtIdTipoFactura.PromptChar = ' ';
-			this.txtIdTipoFactura.Size = new System.Drawing.Size(19, 25);
+			this.txtIdTipoFactura.Size = new System.Drawing.Size(16, 22);
 			this.txtIdTipoFactura.TabIndex = 273;
 			this.txtIdTipoFactura.Visible = false;
 			// 
@@ -1391,10 +1414,10 @@ namespace Latinium
 			this.txtIdSucursal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtIdSucursal.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIdSucursal.Enabled = false;
-			this.txtIdSucursal.Location = new System.Drawing.Point(1085, 567);
+			this.txtIdSucursal.Location = new System.Drawing.Point(904, 496);
 			this.txtIdSucursal.Name = "txtIdSucursal";
 			this.txtIdSucursal.PromptChar = ' ';
-			this.txtIdSucursal.Size = new System.Drawing.Size(19, 25);
+			this.txtIdSucursal.Size = new System.Drawing.Size(16, 22);
 			this.txtIdSucursal.TabIndex = 271;
 			this.txtIdSucursal.Visible = false;
 			// 
@@ -1403,10 +1426,10 @@ namespace Latinium
 			this.txtNumContadoCredito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtNumContadoCredito.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNumContadoCredito.Enabled = false;
-			this.txtNumContadoCredito.Location = new System.Drawing.Point(1046, 567);
+			this.txtNumContadoCredito.Location = new System.Drawing.Point(872, 496);
 			this.txtNumContadoCredito.Name = "txtNumContadoCredito";
 			this.txtNumContadoCredito.PromptChar = ' ';
-			this.txtNumContadoCredito.Size = new System.Drawing.Size(20, 25);
+			this.txtNumContadoCredito.Size = new System.Drawing.Size(16, 22);
 			this.txtNumContadoCredito.TabIndex = 268;
 			this.txtNumContadoCredito.Visible = false;
 			// 
@@ -1415,10 +1438,10 @@ namespace Latinium
 			this.txtNumIdCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtNumIdCompra.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNumIdCompra.Enabled = false;
-			this.txtNumIdCompra.Location = new System.Drawing.Point(1008, 567);
+			this.txtNumIdCompra.Location = new System.Drawing.Point(840, 496);
 			this.txtNumIdCompra.Name = "txtNumIdCompra";
 			this.txtNumIdCompra.PromptChar = ' ';
-			this.txtNumIdCompra.Size = new System.Drawing.Size(19, 25);
+			this.txtNumIdCompra.Size = new System.Drawing.Size(16, 22);
 			this.txtNumIdCompra.TabIndex = 266;
 			this.txtNumIdCompra.Visible = false;
 			// 
@@ -1427,10 +1450,10 @@ namespace Latinium
 			this.txtNumIdCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtNumIdCliente.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNumIdCliente.Enabled = false;
-			this.txtNumIdCliente.Location = new System.Drawing.Point(1027, 567);
+			this.txtNumIdCliente.Location = new System.Drawing.Point(856, 496);
 			this.txtNumIdCliente.Name = "txtNumIdCliente";
 			this.txtNumIdCliente.PromptChar = ' ';
-			this.txtNumIdCliente.Size = new System.Drawing.Size(19, 25);
+			this.txtNumIdCliente.Size = new System.Drawing.Size(16, 22);
 			this.txtNumIdCliente.TabIndex = 265;
 			this.txtNumIdCliente.Visible = false;
 			// 
@@ -1439,10 +1462,10 @@ namespace Latinium
 			this.txtIdFormaPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtIdFormaPago.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIdFormaPago.Enabled = false;
-			this.txtIdFormaPago.Location = new System.Drawing.Point(1181, 567);
+			this.txtIdFormaPago.Location = new System.Drawing.Point(984, 496);
 			this.txtIdFormaPago.Name = "txtIdFormaPago";
 			this.txtIdFormaPago.PromptChar = ' ';
-			this.txtIdFormaPago.Size = new System.Drawing.Size(19, 25);
+			this.txtIdFormaPago.Size = new System.Drawing.Size(16, 22);
 			this.txtIdFormaPago.TabIndex = 291;
 			this.txtIdFormaPago.Visible = false;
 			// 
@@ -1451,10 +1474,10 @@ namespace Latinium
 			this.txtidTipoRuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtidTipoRuc.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtidTipoRuc.Enabled = false;
-			this.txtidTipoRuc.Location = new System.Drawing.Point(1200, 567);
+			this.txtidTipoRuc.Location = new System.Drawing.Point(1000, 496);
 			this.txtidTipoRuc.Name = "txtidTipoRuc";
 			this.txtidTipoRuc.PromptChar = ' ';
-			this.txtidTipoRuc.Size = new System.Drawing.Size(19, 25);
+			this.txtidTipoRuc.Size = new System.Drawing.Size(16, 22);
 			this.txtidTipoRuc.TabIndex = 292;
 			this.txtidTipoRuc.Visible = false;
 			// 
@@ -1464,18 +1487,18 @@ namespace Latinium
 			this.txtComprobante.Appearance = appearance30;
 			this.txtComprobante.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtComprobante.Enabled = false;
-			this.txtComprobante.Location = new System.Drawing.Point(346, 119);
+			this.txtComprobante.Location = new System.Drawing.Point(288, 104);
 			this.txtComprobante.Name = "txtComprobante";
-			this.txtComprobante.Size = new System.Drawing.Size(134, 25);
+			this.txtComprobante.Size = new System.Drawing.Size(112, 22);
 			this.txtComprobante.TabIndex = 294;
 			// 
 			// lblComprobante
 			// 
 			this.lblComprobante.AutoSize = true;
 			this.lblComprobante.BackColor = System.Drawing.Color.Transparent;
-			this.lblComprobante.Location = new System.Drawing.Point(240, 122);
+			this.lblComprobante.Location = new System.Drawing.Point(200, 107);
 			this.lblComprobante.Name = "lblComprobante";
-			this.lblComprobante.Size = new System.Drawing.Size(84, 18);
+			this.lblComprobante.Size = new System.Drawing.Size(71, 16);
 			this.lblComprobante.TabIndex = 293;
 			this.lblComprobante.Text = "Comprobante";
 			// 
@@ -1485,11 +1508,11 @@ namespace Latinium
 			this.txtTotalCuotas.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtTotalCuotas.Enabled = false;
 			this.txtTotalCuotas.FormatString = "#,##0.00";
-			this.txtTotalCuotas.Location = new System.Drawing.Point(989, 567);
+			this.txtTotalCuotas.Location = new System.Drawing.Point(824, 496);
 			this.txtTotalCuotas.Name = "txtTotalCuotas";
 			this.txtTotalCuotas.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtTotalCuotas.PromptChar = ' ';
-			this.txtTotalCuotas.Size = new System.Drawing.Size(19, 25);
+			this.txtTotalCuotas.Size = new System.Drawing.Size(16, 22);
 			this.txtTotalCuotas.TabIndex = 295;
 			this.txtTotalCuotas.Visible = false;
 			// 
@@ -1498,9 +1521,9 @@ namespace Latinium
 			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.label4.AutoSize = true;
 			this.label4.BackColor = System.Drawing.Color.Transparent;
-			this.label4.Location = new System.Drawing.Point(10, 410);
+			this.label4.Location = new System.Drawing.Point(8, 359);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(39, 18);
+			this.label4.Size = new System.Drawing.Size(33, 16);
 			this.label4.TabIndex = 296;
 			this.label4.Text = "Notas";
 			// 
@@ -1511,11 +1534,11 @@ namespace Latinium
 			this.btnAprobacion.Enabled = false;
 			this.btnAprobacion.Image = ((System.Drawing.Image)(resources.GetObject("btnAprobacion.Image")));
 			this.btnAprobacion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAprobacion.Location = new System.Drawing.Point(476, 558);
+			this.btnAprobacion.Location = new System.Drawing.Point(397, 488);
 			this.btnAprobacion.Name = "btnAprobacion";
-			this.btnAprobacion.Size = new System.Drawing.Size(100, 26);
+			this.btnAprobacion.Size = new System.Drawing.Size(83, 23);
 			this.btnAprobacion.TabIndex = 16;
-			this.btnAprobacion.Text = "&Aprobación";
+			this.btnAprobacion.Text = "&AprobaciÃ³n";
 			this.btnAprobacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnAprobacion.Click += new System.EventHandler(this.btnAprobacion_Click);
 			// 
@@ -1525,20 +1548,20 @@ namespace Latinium
 			this.txtInteres.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtInteres.Enabled = false;
 			this.txtInteres.FormatString = "#,##0.00";
-			this.txtInteres.Location = new System.Drawing.Point(970, 567);
+			this.txtInteres.Location = new System.Drawing.Point(808, 496);
 			this.txtInteres.Name = "txtInteres";
 			this.txtInteres.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtInteres.PromptChar = ' ';
-			this.txtInteres.Size = new System.Drawing.Size(19, 25);
+			this.txtInteres.Size = new System.Drawing.Size(16, 22);
 			this.txtInteres.TabIndex = 298;
 			this.txtInteres.Visible = false;
 			// 
 			// ultraDataSource1
 			// 
-			ultraDataColumn23.DataType = typeof(int);
+			ultraDataColumn25.DataType = typeof(int);
 			this.ultraDataSource1.Band.Columns.AddRange(new object[] {
-																																 ultraDataColumn23,
-																																 ultraDataColumn24});
+																																 ultraDataColumn25,
+																																 ultraDataColumn26});
 			// 
 			// txtidEntidadFinanciera
 			// 
@@ -1546,10 +1569,10 @@ namespace Latinium
 			this.txtidEntidadFinanciera.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtidEntidadFinanciera.Enabled = false;
 			this.txtidEntidadFinanciera.FormatString = "#,##0.00";
-			this.txtidEntidadFinanciera.Location = new System.Drawing.Point(950, 567);
+			this.txtidEntidadFinanciera.Location = new System.Drawing.Point(792, 496);
 			this.txtidEntidadFinanciera.Name = "txtidEntidadFinanciera";
 			this.txtidEntidadFinanciera.PromptChar = ' ';
-			this.txtidEntidadFinanciera.Size = new System.Drawing.Size(20, 25);
+			this.txtidEntidadFinanciera.Size = new System.Drawing.Size(16, 22);
 			this.txtidEntidadFinanciera.TabIndex = 300;
 			this.txtidEntidadFinanciera.Visible = false;
 			// 
@@ -1558,9 +1581,9 @@ namespace Latinium
 			this.btnClaveDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnClaveDescuento.CausesValidation = false;
 			this.btnClaveDescuento.Enabled = false;
-			this.btnClaveDescuento.Location = new System.Drawing.Point(854, 558);
+			this.btnClaveDescuento.Location = new System.Drawing.Point(712, 488);
 			this.btnClaveDescuento.Name = "btnClaveDescuento";
-			this.btnClaveDescuento.Size = new System.Drawing.Size(29, 25);
+			this.btnClaveDescuento.Size = new System.Drawing.Size(24, 22);
 			this.btnClaveDescuento.TabIndex = 301;
 			this.btnClaveDescuento.Text = "D";
 			this.btnClaveDescuento.Visible = false;
@@ -1573,9 +1596,9 @@ namespace Latinium
 			this.chkVerificar.Appearance = appearance31;
 			this.chkVerificar.BackColor = System.Drawing.Color.Transparent;
 			this.chkVerificar.Enabled = false;
-			this.chkVerificar.Location = new System.Drawing.Point(576, 402);
+			this.chkVerificar.Location = new System.Drawing.Point(480, 352);
 			this.chkVerificar.Name = "chkVerificar";
-			this.chkVerificar.Size = new System.Drawing.Size(67, 25);
+			this.chkVerificar.Size = new System.Drawing.Size(56, 22);
 			this.chkVerificar.TabIndex = 302;
 			this.chkVerificar.Text = "Carpa";
 			// 
@@ -1588,10 +1611,10 @@ namespace Latinium
 			this.txtObservaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtObservaciones.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtObservaciones.Enabled = false;
-			this.txtObservaciones.Location = new System.Drawing.Point(115, 466);
+			this.txtObservaciones.Location = new System.Drawing.Point(96, 408);
 			this.txtObservaciones.Multiline = true;
 			this.txtObservaciones.Name = "txtObservaciones";
-			this.txtObservaciones.Size = new System.Drawing.Size(442, 72);
+			this.txtObservaciones.Size = new System.Drawing.Size(368, 63);
 			this.txtObservaciones.TabIndex = 12;
 			this.txtObservaciones.ValueChanged += new System.EventHandler(this.txtObservaciones_ValueChanged);
 			// 
@@ -1600,9 +1623,9 @@ namespace Latinium
 			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.label5.AutoSize = true;
 			this.label5.BackColor = System.Drawing.Color.Transparent;
-			this.label5.Location = new System.Drawing.Point(10, 493);
+			this.label5.Location = new System.Drawing.Point(8, 431);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(90, 18);
+			this.label5.Size = new System.Drawing.Size(76, 16);
 			this.label5.TabIndex = 304;
 			this.label5.Text = "Observaciones";
 			// 
@@ -1613,9 +1636,9 @@ namespace Latinium
 			this.chkAutorizar.Appearance = appearance33;
 			this.chkAutorizar.BackColor = System.Drawing.Color.Transparent;
 			this.chkAutorizar.Enabled = false;
-			this.chkAutorizar.Location = new System.Drawing.Point(643, 402);
+			this.chkAutorizar.Location = new System.Drawing.Point(536, 352);
 			this.chkAutorizar.Name = "chkAutorizar";
-			this.chkAutorizar.Size = new System.Drawing.Size(106, 25);
+			this.chkAutorizar.Size = new System.Drawing.Size(88, 22);
 			this.chkAutorizar.TabIndex = 305;
 			this.chkAutorizar.Text = "Aut. Entrada";
 			this.chkAutorizar.Visible = false;
@@ -1631,10 +1654,10 @@ namespace Latinium
 			this.txtBodegaPredef.Enabled = false;
 			this.txtBodegaPredef.Font = new System.Drawing.Font("Tahoma", 8.25F);
 			this.txtBodegaPredef.ForeColor = System.Drawing.Color.FromArgb(((System.Byte)(50)), ((System.Byte)(50)), ((System.Byte)(50)));
-			this.txtBodegaPredef.Location = new System.Drawing.Point(1104, 567);
+			this.txtBodegaPredef.Location = new System.Drawing.Point(920, 496);
 			this.txtBodegaPredef.Name = "txtBodegaPredef";
 			this.txtBodegaPredef.PromptChar = ' ';
-			this.txtBodegaPredef.Size = new System.Drawing.Size(19, 26);
+			this.txtBodegaPredef.Size = new System.Drawing.Size(16, 22);
 			this.txtBodegaPredef.TabIndex = 272;
 			this.txtBodegaPredef.Visible = false;
 			// 
@@ -1643,9 +1666,9 @@ namespace Latinium
 			this.lblIva0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblIva0.AutoSize = true;
 			this.lblIva0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblIva0.Location = new System.Drawing.Point(989, 387);
+			this.lblIva0.Location = new System.Drawing.Point(824, 339);
 			this.lblIva0.Name = "lblIva0";
-			this.lblIva0.Size = new System.Drawing.Size(40, 19);
+			this.lblIva0.Size = new System.Drawing.Size(32, 16);
 			this.lblIva0.TabIndex = 441;
 			this.lblIva0.Text = "IVA 0";
 			this.lblIva0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1655,9 +1678,9 @@ namespace Latinium
 			this.label55.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.label55.AutoSize = true;
 			this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label55.Location = new System.Drawing.Point(1114, 387);
+			this.label55.Location = new System.Drawing.Point(928, 339);
 			this.label55.Name = "label55";
-			this.label55.Size = new System.Drawing.Size(28, 19);
+			this.label55.Size = new System.Drawing.Size(22, 16);
 			this.label55.TabIndex = 442;
 			this.label55.Text = "IVA";
 			this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1667,9 +1690,9 @@ namespace Latinium
 			this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label8.Location = new System.Drawing.Point(883, 415);
+			this.label8.Location = new System.Drawing.Point(736, 363);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(57, 19);
+			this.label8.Size = new System.Drawing.Size(46, 16);
 			this.label8.TabIndex = 438;
 			this.label8.Text = "Subtotal";
 			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1679,9 +1702,9 @@ namespace Latinium
 			this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label9.Location = new System.Drawing.Point(883, 442);
+			this.label9.Location = new System.Drawing.Point(736, 387);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(73, 19);
+			this.label9.Size = new System.Drawing.Size(58, 16);
 			this.label9.TabIndex = 437;
 			this.label9.Text = "Descuento";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1694,11 +1717,11 @@ namespace Latinium
 			this.txtDescIva0Total.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtDescIva0Total.Enabled = false;
 			this.txtDescIva0Total.FormatString = "#,##0.00";
-			this.txtDescIva0Total.Location = new System.Drawing.Point(989, 439);
+			this.txtDescIva0Total.Location = new System.Drawing.Point(824, 384);
 			this.txtDescIva0Total.Name = "txtDescIva0Total";
 			this.txtDescIva0Total.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtDescIva0Total.PromptChar = ' ';
-			this.txtDescIva0Total.Size = new System.Drawing.Size(96, 25);
+			this.txtDescIva0Total.Size = new System.Drawing.Size(80, 22);
 			this.txtDescIva0Total.TabIndex = 440;
 			// 
 			// txtIva0
@@ -1709,19 +1732,19 @@ namespace Latinium
 			this.txtIva0.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtIva0.Enabled = false;
 			this.txtIva0.FormatString = "#,##0.00";
-			this.txtIva0.Location = new System.Drawing.Point(989, 411);
+			this.txtIva0.Location = new System.Drawing.Point(824, 360);
 			this.txtIva0.Name = "txtIva0";
 			this.txtIva0.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtIva0.PromptChar = ' ';
-			this.txtIva0.Size = new System.Drawing.Size(96, 25);
+			this.txtIva0.Size = new System.Drawing.Size(80, 22);
 			this.txtIva0.TabIndex = 439;
 			// 
 			// label15
 			// 
 			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(490, 13);
+			this.label15.Location = new System.Drawing.Point(408, 11);
 			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(49, 18);
+			this.label15.Size = new System.Drawing.Size(41, 16);
 			this.label15.TabIndex = 444;
 			this.label15.Text = "Bodega";
 			this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1731,24 +1754,24 @@ namespace Latinium
 			this.cmbBodega1.CausesValidation = false;
 			this.cmbBodega1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.cmbBodega1.Cursor = System.Windows.Forms.Cursors.Default;
-			ultraGridColumn29.Header.VisiblePosition = 2;
-			ultraGridColumn30.Header.VisiblePosition = 1;
-			ultraGridColumn30.Width = 180;
-			ultraGridColumn31.Header.VisiblePosition = 0;
+			ultraGridColumn31.Header.VisiblePosition = 2;
+			ultraGridColumn32.Header.VisiblePosition = 1;
+			ultraGridColumn32.Width = 180;
+			ultraGridColumn33.Header.VisiblePosition = 0;
 			ultraGridBand4.Columns.AddRange(new object[] {
-																										 ultraGridColumn29,
-																										 ultraGridColumn30,
-																										 ultraGridColumn31});
+																										 ultraGridColumn31,
+																										 ultraGridColumn32,
+																										 ultraGridColumn33});
 			this.cmbBodega1.DisplayLayout.BandsSerializer.Add(ultraGridBand4);
 			this.cmbBodega1.DisplayMember = "Nombre";
 			this.cmbBodega1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.cmbBodega1.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
 			this.cmbBodega1.Enabled = false;
 			this.cmbBodega1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.cmbBodega1.Location = new System.Drawing.Point(557, 9);
+			this.cmbBodega1.Location = new System.Drawing.Point(464, 8);
 			this.cmbBodega1.MaxDropDownItems = 30;
 			this.cmbBodega1.Name = "cmbBodega1";
-			this.cmbBodega1.Size = new System.Drawing.Size(216, 26);
+			this.cmbBodega1.Size = new System.Drawing.Size(180, 22);
 			this.cmbBodega1.TabIndex = 443;
 			this.cmbBodega1.ValueMember = "Bodega";
 			this.cmbBodega1.Validating += new System.ComponentModel.CancelEventHandler(this.cmbBodega1_Validating);
@@ -1760,9 +1783,9 @@ namespace Latinium
 			// 
 			this.btnValidarMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnValidarMail.Enabled = false;
-			this.btnValidarMail.Location = new System.Drawing.Point(1046, 46);
+			this.btnValidarMail.Location = new System.Drawing.Point(872, 40);
 			this.btnValidarMail.Name = "btnValidarMail";
-			this.btnValidarMail.Size = new System.Drawing.Size(164, 25);
+			this.btnValidarMail.Size = new System.Drawing.Size(136, 22);
 			this.btnValidarMail.TabIndex = 445;
 			this.btnValidarMail.Text = "Validar Mail Promocional";
 			this.btnValidarMail.Click += new System.EventHandler(this.btnValidarMail_Click);
@@ -1777,12 +1800,12 @@ namespace Latinium
 			this.txtProteccionDD.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtProteccionDD.Enabled = false;
 			this.txtProteccionDD.FormatString = "#,##0.00";
-			this.txtProteccionDD.Location = new System.Drawing.Point(1046, 73);
+			this.txtProteccionDD.Location = new System.Drawing.Point(872, 64);
 			this.txtProteccionDD.Name = "txtProteccionDD";
 			this.txtProteccionDD.NullText = "0.00";
 			this.txtProteccionDD.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtProteccionDD.PromptChar = ' ';
-			this.txtProteccionDD.Size = new System.Drawing.Size(10, 37);
+			this.txtProteccionDD.Size = new System.Drawing.Size(8, 30);
 			this.txtProteccionDD.TabIndex = 447;
 			this.txtProteccionDD.Visible = false;
 			// 
@@ -1792,9 +1815,9 @@ namespace Latinium
 			this.lblClienteReiterativo.AutoSize = true;
 			this.lblClienteReiterativo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.lblClienteReiterativo.ForeColor = System.Drawing.Color.Firebrick;
-			this.lblClienteReiterativo.Location = new System.Drawing.Point(499, 119);
+			this.lblClienteReiterativo.Location = new System.Drawing.Point(416, 104);
 			this.lblClienteReiterativo.Name = "lblClienteReiterativo";
-			this.lblClienteReiterativo.Size = new System.Drawing.Size(0, 26);
+			this.lblClienteReiterativo.Size = new System.Drawing.Size(0, 21);
 			this.lblClienteReiterativo.TabIndex = 448;
 			this.lblClienteReiterativo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -1807,10 +1830,10 @@ namespace Latinium
 			this.dtFecha.DateButtons.Add(dateButton1);
 			this.dtFecha.Enabled = false;
 			this.dtFecha.Format = "dd/MM/yyyy";
-			this.dtFecha.Location = new System.Drawing.Point(67, 9);
+			this.dtFecha.Location = new System.Drawing.Point(56, 8);
 			this.dtFecha.Name = "dtFecha";
 			this.dtFecha.NonAutoSizeHeight = 23;
-			this.dtFecha.Size = new System.Drawing.Size(135, 24);
+			this.dtFecha.Size = new System.Drawing.Size(112, 21);
 			this.dtFecha.SpinButtonsVisible = true;
 			this.dtFecha.TabIndex = 449;
 			this.dtFecha.Value = ((object)(resources.GetObject("dtFecha.Value")));
@@ -1827,9 +1850,9 @@ namespace Latinium
 			this.lblClienteEntidad.AutoSize = true;
 			this.lblClienteEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.lblClienteEntidad.ForeColor = System.Drawing.Color.Firebrick;
-			this.lblClienteEntidad.Location = new System.Drawing.Point(749, 503);
+			this.lblClienteEntidad.Location = new System.Drawing.Point(624, 440);
 			this.lblClienteEntidad.Name = "lblClienteEntidad";
-			this.lblClienteEntidad.Size = new System.Drawing.Size(0, 26);
+			this.lblClienteEntidad.Size = new System.Drawing.Size(0, 22);
 			this.lblClienteEntidad.TabIndex = 179;
 			this.lblClienteEntidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.lblClienteEntidad.Visible = false;
@@ -1841,9 +1864,9 @@ namespace Latinium
 			this.chkAnclar.Appearance = appearance39;
 			this.chkAnclar.BackColor = System.Drawing.Color.Transparent;
 			this.chkAnclar.Enabled = false;
-			this.chkAnclar.Location = new System.Drawing.Point(576, 439);
+			this.chkAnclar.Location = new System.Drawing.Point(480, 384);
 			this.chkAnclar.Name = "chkAnclar";
-			this.chkAnclar.Size = new System.Drawing.Size(106, 25);
+			this.chkAnclar.Size = new System.Drawing.Size(88, 22);
 			this.chkAnclar.TabIndex = 450;
 			this.chkAnclar.Text = "Colateral";
 			this.chkAnclar.Visible = false;
@@ -1855,10 +1878,10 @@ namespace Latinium
 			this.txtSerieNuovo.Appearance = appearance40;
 			this.txtSerieNuovo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtSerieNuovo.Enabled = false;
-			this.txtSerieNuovo.Location = new System.Drawing.Point(576, 503);
+			this.txtSerieNuovo.Location = new System.Drawing.Point(480, 440);
 			this.txtSerieNuovo.MaxLength = 10;
 			this.txtSerieNuovo.Name = "txtSerieNuovo";
-			this.txtSerieNuovo.Size = new System.Drawing.Size(125, 25);
+			this.txtSerieNuovo.Size = new System.Drawing.Size(104, 22);
 			this.txtSerieNuovo.TabIndex = 451;
 			this.txtSerieNuovo.Visible = false;
 			this.txtSerieNuovo.Validated += new System.EventHandler(this.txtSerieNuovo_Validated);
@@ -1867,9 +1890,9 @@ namespace Latinium
 			// 
 			this.label7.AutoSize = true;
 			this.label7.BackColor = System.Drawing.Color.Transparent;
-			this.label7.Location = new System.Drawing.Point(576, 475);
+			this.label7.Location = new System.Drawing.Point(480, 416);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(87, 18);
+			this.label7.Size = new System.Drawing.Size(74, 16);
 			this.label7.TabIndex = 452;
 			this.label7.Text = "Codigo Nuovo";
 			this.label7.Visible = false;
@@ -1880,9 +1903,9 @@ namespace Latinium
 			this.lblColateral.AutoSize = true;
 			this.lblColateral.BackColor = System.Drawing.Color.Transparent;
 			this.lblColateral.Font = new System.Drawing.Font("Tahoma", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-			this.lblColateral.Location = new System.Drawing.Point(653, 375);
+			this.lblColateral.Location = new System.Drawing.Point(544, 328);
 			this.lblColateral.Name = "lblColateral";
-			this.lblColateral.Size = new System.Drawing.Size(0, 18);
+			this.lblColateral.Size = new System.Drawing.Size(0, 15);
 			this.lblColateral.TabIndex = 453;
 			this.lblColateral.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -1892,10 +1915,10 @@ namespace Latinium
 			this.txtSerieNuovo2.Appearance = appearance41;
 			this.txtSerieNuovo2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtSerieNuovo2.Enabled = false;
-			this.txtSerieNuovo2.Location = new System.Drawing.Point(710, 503);
+			this.txtSerieNuovo2.Location = new System.Drawing.Point(592, 440);
 			this.txtSerieNuovo2.MaxLength = 10;
 			this.txtSerieNuovo2.Name = "txtSerieNuovo2";
-			this.txtSerieNuovo2.Size = new System.Drawing.Size(125, 25);
+			this.txtSerieNuovo2.Size = new System.Drawing.Size(104, 22);
 			this.txtSerieNuovo2.TabIndex = 454;
 			this.txtSerieNuovo2.Visible = false;
 			this.txtSerieNuovo2.Validated += new System.EventHandler(this.txtSerieNuovo2_Validated);
@@ -1904,9 +1927,9 @@ namespace Latinium
 			// 
 			this.label10.AutoSize = true;
 			this.label10.BackColor = System.Drawing.Color.Transparent;
-			this.label10.Location = new System.Drawing.Point(710, 475);
+			this.label10.Location = new System.Drawing.Point(592, 416);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(99, 18);
+			this.label10.Size = new System.Drawing.Size(83, 16);
 			this.label10.TabIndex = 455;
 			this.label10.Text = "Codigo Nuovo 2";
 			this.label10.Visible = false;
@@ -1930,9 +1953,9 @@ namespace Latinium
 			this.chkFreelance.Appearance = appearance42;
 			this.chkFreelance.BackColor = System.Drawing.Color.Transparent;
 			this.chkFreelance.Enabled = false;
-			this.chkFreelance.Location = new System.Drawing.Point(682, 439);
+			this.chkFreelance.Location = new System.Drawing.Point(568, 384);
 			this.chkFreelance.Name = "chkFreelance";
-			this.chkFreelance.Size = new System.Drawing.Size(105, 25);
+			this.chkFreelance.Size = new System.Drawing.Size(88, 22);
 			this.chkFreelance.TabIndex = 456;
 			this.chkFreelance.Text = "Freelance";
 			this.chkFreelance.Visible = false;
@@ -1943,9 +1966,9 @@ namespace Latinium
 			this.btnCrediPoint.CausesValidation = false;
 			this.btnCrediPoint.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnCrediPoint.ImageIndex = 67;
-			this.btnCrediPoint.Location = new System.Drawing.Point(893, 558);
+			this.btnCrediPoint.Location = new System.Drawing.Point(744, 488);
 			this.btnCrediPoint.Name = "btnCrediPoint";
-			this.btnCrediPoint.Size = new System.Drawing.Size(96, 26);
+			this.btnCrediPoint.Size = new System.Drawing.Size(80, 23);
 			this.btnCrediPoint.TabIndex = 457;
 			this.btnCrediPoint.Text = "Credi-POINT";
 			this.btnCrediPoint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1959,17 +1982,17 @@ namespace Latinium
 			this.lblRecurrente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.lblRecurrente.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
 			this.lblRecurrente.ForeColor = System.Drawing.Color.Firebrick;
-			this.lblRecurrente.Location = new System.Drawing.Point(1040, 80);
+			this.lblRecurrente.Location = new System.Drawing.Point(867, 70);
 			this.lblRecurrente.Name = "lblRecurrente";
-			this.lblRecurrente.Size = new System.Drawing.Size(0, 23);
+			this.lblRecurrente.Size = new System.Drawing.Size(0, 20);
 			this.lblRecurrente.TabIndex = 714;
 			this.lblRecurrente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// frmPrefactura
 			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(6, 16);
+			this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
 			this.CausesValidation = false;
-			this.ClientSize = new System.Drawing.Size(1218, 592);
+			this.ClientSize = new System.Drawing.Size(1014, 518);
 			this.Controls.Add(this.lblRecurrente);
 			this.Controls.Add(this.btnCrediPoint);
 			this.Controls.Add(this.chkFreelance);
@@ -2176,6 +2199,7 @@ namespace Latinium
 		bool bEmpleado = false;
 		decimal dCuotaEntrada = 0.00m;
 		bool bGuarda = false;
+    decimal PorcentajeEntrada = 0.00m;
 		#endregion Variables Globales
 
 		#region DataSets
@@ -2895,7 +2919,7 @@ namespace Latinium
 //					//						{
 //					/* si es vip y no existe una promocion toma el valor d ela tabla*/
 //
-//					this.lblClienteReiterativo.Text = string.Format("CLIENTE VIP TIENE UN DESCUENTO DEL {0} %", dDsctoReiterativo);
+//					this.lblClienteReiterativo.Text = string.Format("CLIENTE VIP TIENE UN DESCUENTO DEL {0} %", );
 //					dDsctoReiterativoVIP = dDsctoReiterativo;
 //					//dDsctoReiterativo = 0;
 //					//						}
@@ -2985,7 +3009,7 @@ namespace Latinium
 			}
 		}
 
-		// Request que recuerda la última cédula y forma de pago confirmadas
+		// Request que recuerda la Ãºltima cÃ©dula y forma de pago confirmadas
 		private FamilyFriendsRequestModel reqFF = new FamilyFriendsRequestModel();
 		// Solo una variable para todo el estado FF
 		private FamilyFriendsEstadoModel estadoFF = new FamilyFriendsEstadoModel();
@@ -3000,7 +3024,7 @@ namespace Latinium
 			reqFF.RucCliente = this.txtRuc.Text;
 			reqFF.Owner = this;
 
-			// Ejecuta la verificación
+			// Ejecuta la verificaciÃ³n
 			FamilyFriendsVerificacionModel r = service.VerificarFF(reqFF);
 
 			// Guardar en el modelo
@@ -3023,7 +3047,7 @@ namespace Latinium
 
 				if (estadoFF.RechazoPromocion)
 				{
-					this.lblRecurrente.Text = "PROMOCIÓN FF RECHAZADA";
+					this.lblRecurrente.Text = "PROMOCIÃ“N FF RECHAZADA";
 				}
 				else
 				{
@@ -3102,6 +3126,7 @@ namespace Latinium
 						iColateral = dr.GetInt32(11);
 						iNoColateral = dr.GetInt32(12);
 						iEstadoSol = dr.GetInt32(13);
+						PorcentajeEntrada = dr.GetDecimal(14);
 					}
 					dr.Close();
 			
@@ -3506,6 +3531,9 @@ namespace Latinium
 							//							}
 							#endregion Guarda la tabla de amortizaci?n de la factura
 
+							
+							oTransaction.Commit();	
+
 							int idBonoEntradaTipo = 0;
 
 							//Creo que debo cargar la tabla de Bono entrada tipo e ir realizando un for por cada bono y si se encuentra en vigencia
@@ -3541,7 +3569,10 @@ namespace Latinium
 									#endregion Bono Entrada 25
 								}
 							}
-							oTransaction.Commit();						
+					
+							#region FamilyFriends
+							FamilyFriendsCompraPrefactura(FamilyFriendsService.EstadoFFCompraTemporal, idCompraDest);
+							#endregion FamilyFriends
 						}
 						catch (Exception ex)
 						{
@@ -3647,7 +3678,12 @@ namespace Latinium
 						{
 							DataRow row = rowView.Row;
 							idBonoEntradaTipo = Convert.ToInt32(row["idBonoEntradaTipo"]);
-							//Bono entrada 25 activar
+							// Si el bono quedÃ³ Estado=1 vinculado (no se inactivÃ³ antes de rechazo),
+							// limpiar idPrefactura para que vuelva a aparecer disponible
+							Funcion.EjecutaSQL(cdsSeteoF, String.Format(
+								"Update BonoEntrada Set idPrefactura = 0 Where idPrefactura = {0} And Estado = 1 And idBonoEntradaTipo = {1}",
+								(int)this.txtNumIdCompra.Value, idBonoEntradaTipo));
+							// Si el bono sÃ­ llegÃ³ a Estado=0 (fue inactivado), reactivar via SP
 							BonoEntradaInactivar(cdsSeteoF,(int)this.txtNumIdCompra.Value, idBonoEntradaTipo, 1);
 							BonoEntradaInactivarRelacion(cdsSeteoF,(int)this.txtNumIdCompra.Value, idBonoEntradaTipo, 1);
 						}
@@ -3923,6 +3959,7 @@ namespace Latinium
 			iNoColateral = 0;
 			iEstadoSol=0;
 			iAgregaColateral = 0;
+			PorcentajeEntrada = 0;
 			#endregion Variables
 
 			#region FamilyFriends
@@ -3991,8 +4028,22 @@ namespace Latinium
 							Funcion.EjecutaSQL(cdsSeteoF, string.Format("Exec [ActualizARechazoPrefactura] '{0}', {1}", (string)this.txtSerieNuovo2.Text, (int)this.txtNumIdCompra.Value));
 						}
 						
-						//Bono entrada 25 activar
-						BonoEntradaInactivar(cdsSeteoF,(int)this.txtNumIdCompra.Value, frmCobranzas.idBonoEntradaTipo25, 1);
+						//Bono entrada â€” reactivar para todos los tipos configurados
+						DataView dvBonoTiposAnul = Funcion.dvProcedimiento(cdsSeteoF, "Exec BonoEntradaTipoCon");
+						if (dvBonoTiposAnul != null)
+						{
+							foreach (DataRowView rowViewAnul in dvBonoTiposAnul)
+							{
+								int idBETipoAnul = Convert.ToInt32(rowViewAnul.Row["idBonoEntradaTipo"]);
+								// Limpiar idPrefactura si bono quedÃ³ Estado=1 vinculado (no fue inactivado)
+								Funcion.EjecutaSQL(cdsSeteoF, String.Format(
+									"Update BonoEntrada Set idPrefactura = 0 Where idPrefactura = {0} And Estado = 1 And idBonoEntradaTipo = {1}",
+									(int)this.txtNumIdCompra.Value, idBETipoAnul));
+								// Reactivar si bono llegÃ³ a Estado=0
+								BonoEntradaInactivar(cdsSeteoF,(int)this.txtNumIdCompra.Value, idBETipoAnul, 1);
+								BonoEntradaInactivarRelacion(cdsSeteoF,(int)this.txtNumIdCompra.Value, idBETipoAnul, 1);
+							}
+						}
 
 						this.Consulta((int)this.txtNumIdCompra.Value);
 					}
@@ -4169,6 +4220,7 @@ namespace Latinium
 					{
 						this.lblClienteEntidad.Text = "Point Movil";
 					}
+					PorcentajeEntrada = drPreFactura.GetDecimal(46);
 				
 					#endregion Maestro 
 				}
@@ -4216,12 +4268,40 @@ namespace Latinium
 				if (DialogResult.OK == Busqueda.ShowDialog())
 				{
 					this.Consulta((int)Busqueda.grdFacturas.ActiveRow.Cells["idCompra"].Value);
-					SettearFamilyFriends();
-					#region FamilyFriends
-					VerificarFamilyFriends();
-					#endregion FamilyFriends
 
+					#region FamilyFriends
+					ConsultarEstadoFamilyFriends((int)Busqueda.grdFacturas.ActiveRow.Cells["idCompra"].Value);
+					#endregion FamilyFriends
 				}
+			}
+		}
+
+		private void ConsultarEstadoFamilyFriends(int idCompra)
+		{
+			try
+			{
+				FamilyFriendsService service = new FamilyFriendsService(frmRequerimiento.sconexionPoint);
+
+				// Obtener temporal para validar SIN tocar lo actual
+				FamilyFriendsEstadoModel temp = service.ObtenerEstadoFF(idCompra);
+
+				// Solo actualizar si SÃ hay registro vÃ¡lido
+				if (temp.EsFF || temp.RechazoPromocion)
+				{
+					estadoFF = temp; // Actualiza el modelo principal
+					idTipoPrecio = estadoFF.IdTipoPrecio;
+					this.lblRecurrente.Text = estadoFF.MensajeEstadoFF;
+				}
+				else
+				{
+					// NO tocar estadoFF ni idTipoPrecio
+					this.lblRecurrente.Text = "";
+				}
+			}
+			catch
+			{
+				// No cambiar nada si hubo error
+				this.lblRecurrente.Text = "";
 			}
 		}
 
@@ -4668,6 +4748,21 @@ namespace Latinium
 				if (!Validacion.vbCampoDecimalVacio(this.txtCuotaDeEntrada, "El Valor minimo es ", dEntradaCuota, Dmaximo)) return; 
 			}
 			#endregion Valida porcentaje entrada
+
+			#region Valida porcentaje entrada con variable global
+			if (PorcentajeEntrada > 0)
+			{
+				decimal total = (decimal)this.txtTotal.Value;
+				decimal valorMinimoEntrada = Math.Round(total * PorcentajeEntrada / 100, 2);
+				decimal valorUsuario = Convert.ToDecimal(this.txtCuotaDeEntrada.Value);
+				if (valorUsuario < valorMinimoEntrada)
+				{
+					decimal diferencia = valorMinimoEntrada - valorUsuario;
+					MessageBox.Show("El monto mÃ­nimo de entrada requerido es: $" + valorMinimoEntrada.ToString("N2") + " (" + PorcentajeEntrada.ToString("N2") + "% del total $" + total.ToString("N2") + ")\nFaltan: $" + diferencia.ToString("N2") + " para cumplir el mÃ­nimo.", "ValidaciÃ³n de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					return;
+				}
+			}
+			#endregion Valida porcentaje entrada con variable global
 			
 			#region Valida Cantidad Celulares 
 			if (Funcion.iEscalarSQL(cdsSeteoF, string.Format("Exec Cre_ValidaClienteRecurrente '{0}'", this.txtRuc.Text.ToString())) == 0)
@@ -4752,6 +4847,9 @@ namespace Latinium
 			int cantidadIPhones = 0;
 			// Bandera para iPhone 15 (IPHO00002, idArticulo = 13563)
 			bool tieneIPhone15ProMax = false;
+			// Bandera para iPhone 14 (IPHO00005, idArticulo = 14019)
+			bool tieneIPhone14 = false;
+			bool tieneHonorMagic = false;
 
 			foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.ultraGrid2.Rows.All)
 			{
@@ -4763,6 +4861,11 @@ namespace Latinium
 					int esIPhone = Funcion.iEscalarSQL(cdsSeteoF, 
 						string.Format("SELECT COUNT(*) FROM Articulo WHERE idGrupoArticulo = 8 AND idSubGrupo in (401,402) AND idArticulo = {0}", idArticulo));
 		
+					if (idArticulo == 14067) // HONOR MAGIC 8
+					{
+						tieneHonorMagic = true;
+					}
+
 					if (esIPhone > 0)
 					{
 						tieneIPhone = true;
@@ -4772,10 +4875,14 @@ namespace Latinium
 						{
 							cantidadIPhones += Convert.ToInt32(dr.Cells["Cantidad"].Value);
 						}
-						// Detectar específicamente el iPhone 15 (IPHO00002)
-						if (idArticulo == 13563)
+						// Detectar especÃ­ficamente el iPhone 15 (IPHO00002)
+						if (idArticulo == 13563 || idArticulo == 13897)
 						{
 							tieneIPhone15ProMax = true;
+						}
+						if (idArticulo == 14019)
+						{
+							tieneIPhone14 = true;
 						}
 					}
 				}
@@ -4808,6 +4915,46 @@ namespace Latinium
 				}
 			}
 			#endregion Celulares 12 meses
+
+			#region Validaciones Honor Magic
+//			if (tieneHonorMagic)
+//			{
+//				// ValidaciÃ³n 1: NÃºmero de cuotas entre 3 y 15
+//				int numCuotasMagic = (int)this.txtNumCuotas.Value;
+//				int maxCuotasMagic = 15;
+//
+//				if (numCuotasMagic < 3 || numCuotasMagic > maxCuotasMagic)
+//				{
+//					string mensajeCuotasMagic = "El nÃºmero de cuotas debe estar entre 3 y 15 para ventas con Honor Magic.";
+//
+//					MessageBox.Show(mensajeCuotasMagic, "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+//					this.txtNumCuotas.Focus();
+//					return;
+//				}
+//
+//					
+//				if (numCuotasMagic > 12 && numCuotasMagic <= 15)
+//				{
+//					// Validar que la cuota de entrada sea al menos el 10% del total del credito 
+//					decimal entradaMagic = 0;
+//					if (this.txtCuotaDeEntrada.Value != null && this.txtCuotaDeEntrada.Value != System.DBNull.Value)
+//					{
+//						entradaMagic = Convert.ToDecimal(this.txtCuotaDeEntrada.Value);
+//					}
+//		
+//					decimal minimoEntradaMagic = Math.Round(Convert.ToDecimal(this.txtTotal.Value) * 0.10m, 2);
+//		
+//					if (entradaMagic < minimoEntradaMagic)
+//					{
+//						MessageBox.Show(string.Format("Para este telÃ©fono, la cuota de entrada debe ser al menos el 10% del valor total del credito.\n\nMÃ­nimo requerido (10%): ${0:N2}", 
+//							minimoEntradaMagic), 
+//							"Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+//						this.txtCuotaDeEntrada.Focus();
+//						return;
+//					}
+//				}
+//			}
+			#endregion Validaciones Honor Magic
 
 			#region Comentario
 			//			if (bEmpleado)
@@ -4903,7 +5050,7 @@ namespace Latinium
 														decimal dValorSeguro = Funcion.decEscalarSQL(cdsSeteoF, sSQL);
 
 														bActualiza = false;
-														FuncionesInventario.FacturacionCargaSeguroDesgravamen(this.ultraGrid2, dValorSeguro, dPorcIva,  10191, false, cdsSeteoF);		
+														FuncionesInventario.FacturacionCargaSeguroDesgravamen(this.ultraGrid2, dValorSeguro, dPorcIva,  10191, false, false, cdsSeteoF);		
 														bActualiza = true;
 
 														cmdTotal();
@@ -4915,44 +5062,95 @@ namespace Latinium
 
 			#region POINT RESPALDO
 			if (Funcion.bEscalarSQL(cdsSeteoF, "Select PointRespaldo From SeteoF", true))
-			{					
-				int iContPointResp = 0;
-				foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.ultraGrid2.Rows.All)
-					if ((int)dr.Cells["idArticulo"].Value == 12876) iContPointResp++;
+			{
+				// 1) Buscar si ya existe la fila del Point Respaldo (idArticulo = 12876)
+				Infragistics.Win.UltraWinGrid.UltraGridRow rowPointResp = null;
 
-				decimal dMonto = Convert.ToDecimal(this.txtTotal.Value) - Convert.ToDecimal(this.txtCuotaDeEntrada.Value);
+				foreach (Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.ultraGrid2.Rows.All)
+				{
+					if (dr.Cells["idArticulo"].Value != DBNull.Value &&
+						Convert.ToInt32(dr.Cells["idArticulo"].Value) == 12876)
+					{
+						rowPointResp = dr;
+						break;
+					}
+				}
 
+				// 2) Valores de este form
 				decimal valorCuota = Convert.ToDecimal(this.txtValorCuotas.Value);
 				int numeroCuotas = Convert.ToInt32(this.txtNumCuotas.Value);
 
-				string sSQL = string.Format(
-					"EXEC Cre_CalcularPrecioPointRespaldo {0}, {1}", 
-					valorCuota,
-					numeroCuotas
-					);
+				// (si no lo usas, puedes quitarlo)
+				decimal dMonto = Convert.ToDecimal(this.txtTotal.Value) - Convert.ToDecimal(this.txtCuotaDeEntrada.Value);
 
-				decimal totalRespaldo = Funcion.decEscalarSQL(cdsSeteoF, sSQL);
+				// 3) Consultar opcionalidad
+				string sSQLOpc = string.Format("Exec Cre_OpcionalidadPointRespaldo {0}", valorCuota);
+				bool esOpcional = Funcion.bEscalarSQL(cdsSeteoF, sSQLOpc, true);
 
-				if (iContPointResp == 0)
-				{								
-					bActualiza = false;
-					FuncionesInventario.FacturacionCargaSeguroDesgravamen(this.ultraGrid2, totalRespaldo, dPorcIva, 12876, false, cdsSeteoF);		
-					bActualiza = true;
+				bool debeCargar = true; // por defecto SIEMPRE carga
+
+				if (esOpcional)
+				{
+					DialogResult resp = MessageBox.Show(
+						"Â¿Desea cargar el Point Respaldo?",
+						"Point Respaldo",
+						MessageBoxButtons.YesNo,
+						MessageBoxIcon.Question
+						);
+
+					if (resp == DialogResult.No)
+					{
+						debeCargar = false;
+					}
+				}
+
+				if (!debeCargar)
+				{
+					// Si el usuario dijo NO (solo aplica cuando esOpcional == true)
+					if (rowPointResp != null)
+					{
+						rowPointResp.Delete(false);
+					}
 
 					cmdTotal();
 				}
 				else
 				{
-					foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.ultraGrid2.Rows.All)
-						if ((int)dr.Cells["idArticulo"].Value == 12876) 
-							dr.Cells["Precio"].Value = totalRespaldo;
+					// 4) Debe cargar: calcular totalRespaldo y agregar/actualizar
+					string sSQL = string.Format(
+						"EXEC Cre_CalcularPrecioPointRespaldo {0}, {1}",
+						valorCuota,
+						numeroCuotas
+						);
+
+					decimal totalRespaldo = Funcion.decEscalarSQL(cdsSeteoF, sSQL);
+
+					if (rowPointResp == null)
+					{
+						bActualiza = false;
+						FuncionesInventario.FacturacionCargaSeguroDesgravamen(
+							this.ultraGrid2,
+							totalRespaldo,
+							dPorcIva,
+							12876,
+							false,   // mantengo tu valor actual
+							esOpcional,
+							cdsSeteoF
+							);
+						bActualiza = true;
+					}
+					else
+					{
+						rowPointResp.Cells["Precio"].Value = totalRespaldo;
+					}
 
 					cmdTotal();
 				}
-			}			
+			}
 			#endregion POINT RESPALDO
 						
 			cmdTotal();
+
 			
 			#region Validaciones IPhone
 			
@@ -4961,7 +5159,7 @@ namespace Latinium
 			{
 				decimal cuotaEntrada = 0;
 
-				// Validación 0: Bancarizado C
+				// ValidaciÃ³n 0: Bancarizado C
 				int idTipoCliente = Funcion.iEscalarSQL(cdsSeteoF, 
 					string.Format("SELECT ISNULL(idTipoCliente, 0) FROM Cre_SolicitudWeb WHERE Estado = 1 AND Cedula = '{0}'", this.txtRuc.Text.ToString().Trim()));
 	
@@ -5001,7 +5199,7 @@ namespace Latinium
 		
 					if (cuotaEntrada < minimoEntrada)
 					{
-						MessageBox.Show(string.Format("Para clientes Bancarizado C, la cuota de entrada debe ser al menos el 15% del valor del iPhone.\n\nValor iPhone: ${0:N2}\nMínimo requerido (15%): ${1:N2}\nCuota de entrada actual: ${2:N2}", 
+						MessageBox.Show(string.Format("Para clientes Bancarizado C, la cuota de entrada debe ser al menos el 15% del valor del iPhone.\n\nValor iPhone: ${0:N2}\nMÃ­nimo requerido (15%): ${1:N2}\nCuota de entrada actual: ${2:N2}", 
 							valorIPhone, minimoEntrada, cuotaEntrada), 
 							"Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						this.txtCuotaDeEntrada.Focus();
@@ -5010,7 +5208,7 @@ namespace Latinium
 				}
 
 				
-				// Validación de entrada mínima 35 USD para TODAS las ventas con iPhone
+				// ValidaciÃ³n de entrada mÃ­nima 35 USD para TODAS las ventas con iPhone
 				// determinar si es cliente recurrente (9, 10, 11)
 				bool esClienteRecurrente = (idTipoCliente == 9 || idTipoCliente == 10 || idTipoCliente == 11);
 
@@ -5020,7 +5218,7 @@ namespace Latinium
 					if (this.txtCuotaDeEntrada.Value == null || this.txtCuotaDeEntrada.Value == System.DBNull.Value)
 					{
 						MessageBox.Show(
-							"Para ventas con iPhone se requiere una cuota de entrada mínima de $35.00.",
+							"Para ventas con iPhone se requiere una cuota de entrada mÃ­nima de $35.00.",
 							"Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						this.txtCuotaDeEntrada.Focus();
 						return;
@@ -5031,22 +5229,22 @@ namespace Latinium
 					if (cuotaEntrada < 35m)
 					{
 						MessageBox.Show(
-							string.Format("Para ventas con iPhone se requiere una cuota de entrada mínima de $35.00.\nCuota de entrada actual: ${0:N2}", cuotaEntrada),
+							string.Format("Para ventas con iPhone se requiere una cuota de entrada mÃ­nima de $35.00.\nCuota de entrada actual: ${0:N2}", cuotaEntrada),
 							"Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 						this.txtCuotaDeEntrada.Focus();
 						return;
 					}
 				}
 
-				// Validación 1: Número de cuotas entre 3 y 15
+				// ValidaciÃ³n 1: NÃºmero de cuotas entre 3 y 15
 				int numCuotas = (int)this.txtNumCuotas.Value;
 				int maxCuotas = tieneIPhone15ProMax ? 18 : 15;
 
 				if (numCuotas < 3 || numCuotas > maxCuotas)
 				{
 					string mensajeCuotas = tieneIPhone15ProMax
-						? "El número de cuotas debe estar entre 3 y 18 para ventas con iPhone 15 Pro Max."
-						: "El número de cuotas debe estar entre 3 y 15 para ventas con iPhone.";
+						? "El nÃºmero de cuotas debe estar entre 3 y 18 para ventas con iPhone 15 Pro Max."
+						: "El nÃºmero de cuotas debe estar entre 3 y 15 para ventas con iPhone.";
 
 					MessageBox.Show(mensajeCuotas, "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.txtNumCuotas.Focus();
@@ -5054,14 +5252,14 @@ namespace Latinium
 				}
 
 	
-				// Validación 2: Solo puede haber cantidad 1 de iPhone
+				// ValidaciÃ³n 2: Solo puede haber cantidad 1 de iPhone
 				if (cantidadIPhones != 1)
 				{
 					MessageBox.Show("Solo se permite la venta de 1 iPhone por prefactura.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
 	
-					// Validación 3: Los demás productos deben pertenecer a grupos 1, 28 o 63 (asistencias/seguros)
+					// ValidaciÃ³n 3: Los demÃ¡s productos deben pertenecer a grupos 1, 28 o 63 (asistencias/seguros)
 				decimal totalAccesorios = 0;
 				
 				foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.ultraGrid2.Rows.All)
@@ -5089,7 +5287,7 @@ namespace Latinium
 								if (esAccesorioValido == 0)
 								{
 									string nombreArticulo = dr.Cells["Codigo"].Value != System.DBNull.Value ? dr.Cells["Codigo"].Value.ToString() : "Desconocido";
-									MessageBox.Show(string.Format("El producto '{0}' no es un accesorio válido para ventas con iPhone.\nSolo se permiten accesorios de los grupos 1 y 28, o asistencias/seguros.", nombreArticulo), 
+									MessageBox.Show(string.Format("El producto '{0}' no es un accesorio vÃ¡lido para ventas con iPhone.\nSolo se permiten accesorios de los grupos 1 y 28, o asistencias/seguros.", nombreArticulo), 
 										"Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 									return;
 								}
@@ -5106,15 +5304,15 @@ namespace Latinium
 				}
 	
 	
-				// Validación 4: La suma de accesorios no debe superar los $100
+				// ValidaciÃ³n 4: La suma de accesorios no debe superar los $100
 				if (totalAccesorios > 100)
 				{
-					MessageBox.Show(string.Format("La suma de los accesorios (${0:N2}) supera el límite permitido de $100.00 para ventas con iPhone.", totalAccesorios), 
+					MessageBox.Show(string.Format("La suma de los accesorios (${0:N2}) supera el lÃ­mite permitido de $100.00 para ventas con iPhone.", totalAccesorios), 
 						"Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
 	
-				// Validación 5: Total - Cuota de Entrada debe ser $1600 o menos
+				// ValidaciÃ³n 5: Total - Cuota de Entrada debe ser $1600 o menos
 				decimal total = 0;
 	
 				// Validar y obtener el Total
@@ -5131,7 +5329,23 @@ namespace Latinium
 	
 				decimal diferencia = total - cuotaEntrada;
 	
-				if (diferencia > 1600)
+				if (diferencia > 2200 && tieneIPhone15ProMax)
+				{
+					MessageBox.Show(string.Format("La diferencia entre el Total (${0:N2}) y la Cuota de Entrada (${1:N2}) es de ${2:N2}.\nEsta diferencia no puede superar los $2,200.00 para ventas con iPhone.", 
+						total, cuotaEntrada, diferencia), 
+						"Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					this.txtTotal.Focus();
+					return;
+				}
+				else if (diferencia > 1790 && tieneIPhone14)
+				{
+					MessageBox.Show(string.Format("La diferencia entre el Total (${0:N2}) y la Cuota de Entrada (${1:N2}) es de ${2:N2}.\nEsta diferencia no puede superar los $1,790.00 para ventas con iPhone.", 
+						total, cuotaEntrada, diferencia), 
+						"Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					this.txtTotal.Focus();
+					return;
+				}
+				else if (diferencia > 1600 && !tieneIPhone15ProMax && !tieneIPhone14)
 				{
 					MessageBox.Show(string.Format("La diferencia entre el Total (${0:N2}) y la Cuota de Entrada (${1:N2}) es de ${2:N2}.\nEsta diferencia no puede superar los $1,600.00 para ventas con iPhone.", 
 						total, cuotaEntrada, diferencia), 
@@ -5397,6 +5611,7 @@ namespace Latinium
 				bNuevo, true, idBloqueaTransacciones, this.ultraGrid2,
 				false, 0, this.ultraGrid2, bDescuentoActivo);					
 			#endregion Grabar
+
       string NumSol ="";
 			if ((int)this.txtNumIdCompra.Value == 0) return;
 			/// freelance3
@@ -5406,7 +5621,9 @@ namespace Latinium
 				int idCre_SolicitudWeb = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Exec [RetornaidSolciitud] {0},'{1}'", (int) this.cmbBodega.Value, this.txtRuc.Text));
 				 NumSol = Funcion.sEscalarSQL(cdsSeteoF, string.Format("select numero from Compra where idCompra =  {0} ", (int)this.txtNumIdCompra.Value));
 				
-				Funcion.EjecutaSQL(cdsSeteoF, string.Format("Update Compra Set idCre_SolicitudWeb = {1} Where idCompra = {0}", (int)this.txtNumIdCompra.Value, idCre_SolicitudWeb));
+				int idTipoClienteCredito = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Exec [RetornatipoClienteWeb] {0},'{1}'", (int) this.cmbBodega.Value, this.txtRuc.Text));
+			
+				Funcion.EjecutaSQL(cdsSeteoF, string.Format("Update Compra Set idCre_SolicitudWeb = {1}, idTipoClienteCredito = {2} Where idCompra = {0}", (int)this.txtNumIdCompra.Value, idCre_SolicitudWeb, idTipoClienteCredito));
 
 				if(idCre_SolicitudWeb > 0 && bNuevo)
 					Funcion.EjecutaSQL(cdsSeteoF, string.Format("Exec [InsertTiempoSolicitudesWeb] {0}, {1}, {2}, '{3}', '{4}'", 15, idCre_SolicitudWeb,1, MenuLatinium.stUsuario, NumSol));
@@ -5430,10 +5647,6 @@ namespace Latinium
 				string squery = String.Format("Update BonoEntrada Set idPrefactura = {0} Where idBonoEntrada = {1}", (int)this.txtNumIdCompra.Value, iBonoEntradaSel);
 				Funcion.EjecutaSQL(cdsSeteoF, squery); 
 			}
-
-			#region FamilyFriends
-			FamilyFriendsCompra(FamilyFriendsService.EstadoFFCompraTemporal);
-			#endregion FamilyFriends
 
 			idBonoEntradaTipo = 0;
 			//Creo que debo cargar la tabla de Bono entrada tipo e ir realizando un for por cada bono y si se encuentra en vigencia
@@ -5462,6 +5675,10 @@ namespace Latinium
 				}
 			}
 			#endregion Bono entrada
+
+			#region FamilyFriends
+			FamilyFriendsCompraPrefactura(FamilyFriendsService.EstadoFFCompraTemporal, (int)this.txtNumIdCompra.Value);
+			#endregion FamilyFriends
 
 			#region comentado
 
@@ -5589,37 +5806,103 @@ namespace Latinium
 			ReporteEncuestasOrigenAct();
 		}
 
-		private void FamilyFriendsCompra(int Estado)
+		private void FamilyFriendsCompraPrefactura(int Estado, int idCompra)
 		{
-			// Solo insertar si aceptó FF o rechazó explícitamente
-			if (!estadoFF.EsFF && !estadoFF.RechazoPromocion)
-				return;
+			string nombreClase = this.GetType().Name;
+			string nombreMetodo = "FamilyFriendsCompra_Prefactura";
 
-			FamilyFriendsService service = 
+			bool debeGuardar = true;
+			bool estadoNeutro = (!estadoFF.EsFF && !estadoFF.RechazoPromocion);
+
+			// =====================================================
+			// 0) VALIDACIÃ“N PREVIA (ESTADO DE PANTALLA)
+			// =====================================================
+			if (estadoNeutro)
+			{
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio,
+					nombreClase + ": " + nombreMetodo,
+					"Estado neutro FF en pantalla, se reconsulta BD",
+					nombreMetodo,
+					Funcion.slogtipoinformacion
+					);
+
+				// Re-consulta a BD para confirmar estado real
+				ConsultarEstadoFamilyFriends(idCompra);
+
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio,
+					nombreClase + ": " + nombreMetodo,
+					string.Format(
+					"Post reconsulta FF | EsFF: {0}, RechazoPromocion: {1}, IdWEB_FF_Invitado: {2}",
+					estadoFF.EsFF,
+					estadoFF.RechazoPromocion,
+					estadoFF.IdWEB_FF_Invitado
+					),
+					nombreMetodo,
+					Funcion.slogtipoinformacion
+					);
+
+				// Recalcular estado tras reconsulta
+				estadoNeutro = (!estadoFF.EsFF && !estadoFF.RechazoPromocion);
+			}
+
+			// =====================================================
+			// 1) VALIDACIONES DEFINITIVAS
+			// =====================================================
+			if (estadoNeutro)
+			{
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio,
+					nombreClase + ": " + nombreMetodo,
+					"Estado neutro FF confirmado, no se guarda Prefactura",
+					nombreMetodo,
+					Funcion.slogtipoinformacion
+					);
+
+				debeGuardar = false;
+			}
+
+			// =====================================================
+			// 2) DECISIÃ“N FINAL
+			// =====================================================
+			if (!debeGuardar)
+			{
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio,
+					nombreClase + ": " + nombreMetodo,
+					"Fin proceso FF Prefactura sin guardar",
+					nombreMetodo,
+					Funcion.slogtipoinformacion
+					);
+				return;
+			}
+
+			// =====================================================
+			// 3) PREPARAR MODELO
+			// =====================================================
+			FamilyFriendsService service =
 				new FamilyFriendsService(frmRequerimiento.sconexionPoint);
 
 			FamilyFriendsCompraModel model = new FamilyFriendsCompraModel();
-			model.IdCompra = (int)this.txtNumIdCompra.Value;
+			model.IdCompra = idCompra;
 			model.IdWEB_FF_Invitado = estadoFF.IdWEB_FF_Invitado;
-
-			// Determinar el estado correcto
-			if (estadoFF.RechazoPromocion)
-			{
-				model.Estado = FamilyFriendsService.EstadoFFCompraNoAcepta; // rechazo
-			}
-			else
-			{
-				model.Estado = Estado; // aceptar el estado que viene (temporal, contabilizado, etc.)
-			}
-
 			model.IdTipoPrecio = idTipoPrecio;
-			model.IdFormaPago = 9;
-			model.IdCliente = estadoFF.IdCliente;
+			model.IdFormaPago = 9; // Prefactura siempre forma de pago 9
+			model.IdCliente = (int)this.txtNumIdCliente.Value;
 
+			model.Estado = estadoFF.RechazoPromocion
+				? FamilyFriendsService.EstadoFFCompraNoAcepta
+				: Estado;
+
+			// =====================================================
+			// 4) GUARDAR
+			// =====================================================
 			Guid id = service.GuardarCompra(model);
-			Console.WriteLine("idWEB_FF_Compra retornado: " + id.ToString());
-		}
 
+			Funcion.LogSistema(frmRequerimiento.sconexionInicio,
+				nombreClase + ": " + nombreMetodo,
+				"GuardarCompra_Prefactura OK | idWEB_FF_Compra: " + id,
+				nombreMetodo,
+				Funcion.slogtipoinformacion
+				);
+		}
 
 		#region Encuesta origen cliente
 		//Actualizaci?n encuesta cliente
@@ -5986,6 +6269,8 @@ namespace Latinium
 										this.ultraGrid2.ActiveRow.Cells["EstadoSerial"].Value = false;
 										this.ultraGrid2.ActiveRow.Cells["Posicion"].Value = this.ultraGrid2.Rows.Count;	
 										this.ultraGrid2.ActiveRow.Cells["Jornadas"].Value = 0.00m;
+										this.ultraGrid2.ActiveRow.Cells["Aporte"].Value = 0.00m;
+										this.ultraGrid2.ActiveRow.Cells["idSubProyecto"].Value = 0;
 
 										drA.Close();	
 										#endregion Asignacion Varibles				

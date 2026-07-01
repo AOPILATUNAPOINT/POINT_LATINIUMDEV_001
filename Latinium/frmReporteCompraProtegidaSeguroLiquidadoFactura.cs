@@ -1090,7 +1090,7 @@ namespace Latinium
 			this.label20.Name = "label20";
 			this.label20.Size = new System.Drawing.Size(57, 16);
 			this.label20.TabIndex = 1022;
-			this.label20.Text = "* Número:";
+			this.label20.Text = "* NÃºmero:";
 			this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// dtFechaDeposito
@@ -1140,7 +1140,7 @@ namespace Latinium
 			this.cmbCuentas.Cursor = System.Windows.Forms.Cursors.Default;
 			ultraGridColumn11.Header.VisiblePosition = 0;
 			ultraGridColumn11.Hidden = true;
-			ultraGridColumn12.Header.Caption = "Descripción";
+			ultraGridColumn12.Header.Caption = "DescripciÃ³n";
 			ultraGridColumn12.Header.VisiblePosition = 1;
 			ultraGridColumn12.Width = 438;
 			ultraGridBand2.Columns.AddRange(new object[] {
@@ -1386,7 +1386,7 @@ namespace Latinium
 			this.btnRetener.Name = "btnRetener";
 			this.btnRetener.Size = new System.Drawing.Size(104, 23);
 			this.btnRetener.TabIndex = 21;
-			this.btnRetener.Text = "&Crear Retención";
+			this.btnRetener.Text = "&Crear RetenciÃ³n";
 			this.btnRetener.Click += new System.EventHandler(this.btnRetener_Click);
 			// 
 			// btnCancelarRetencion
@@ -1396,7 +1396,7 @@ namespace Latinium
 			this.btnCancelarRetencion.Name = "btnCancelarRetencion";
 			this.btnCancelarRetencion.Size = new System.Drawing.Size(104, 23);
 			this.btnCancelarRetencion.TabIndex = 22;
-			this.btnCancelarRetencion.Text = "&Borrar Retención";
+			this.btnCancelarRetencion.Text = "&Borrar RetenciÃ³n";
 			this.btnCancelarRetencion.Click += new System.EventHandler(this.btnCancelarRetencion_Click);
 			// 
 			// label59
@@ -1408,7 +1408,7 @@ namespace Latinium
 			this.label59.Name = "label59";
 			this.label59.Size = new System.Drawing.Size(44, 16);
 			this.label59.TabIndex = 139;
-			this.label59.Text = "Número";
+			this.label59.Text = "NÃºmero";
 			// 
 			// label58
 			// 
@@ -1419,7 +1419,7 @@ namespace Latinium
 			this.label58.Name = "label58";
 			this.label58.Size = new System.Drawing.Size(65, 16);
 			this.label58.TabIndex = 138;
-			this.label58.Text = "Autorización";
+			this.label58.Text = "AutorizaciÃ³n";
 			// 
 			// label51
 			// 
@@ -1537,7 +1537,7 @@ namespace Latinium
 			this.label31.Name = "label31";
 			this.label31.Size = new System.Drawing.Size(65, 16);
 			this.label31.TabIndex = 95;
-			this.label31.Text = "Autorización";
+			this.label31.Text = "AutorizaciÃ³n";
 			// 
 			// pgEntrega
 			// 
@@ -1710,7 +1710,7 @@ namespace Latinium
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(75, 16);
 			this.label13.TabIndex = 414;
-			this.label13.Text = "Dirección IWY";
+			this.label13.Text = "DirecciÃ³n IWY";
 			// 
 			// label12
 			// 
@@ -1748,7 +1748,7 @@ namespace Latinium
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(84, 16);
 			this.label11.TabIndex = 411;
-			this.label11.Text = "Numero de guía";
+			this.label11.Text = "Numero de guÃ­a";
 			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtNumGuia
@@ -1885,7 +1885,7 @@ namespace Latinium
 			this.label66.Name = "label66";
 			this.label66.Size = new System.Drawing.Size(50, 16);
 			this.label66.TabIndex = 126;
-			this.label66.Text = "Dirección";
+			this.label66.Text = "DirecciÃ³n";
 			// 
 			// chkEntregado
 			// 
@@ -2027,7 +2027,7 @@ namespace Latinium
 			this.lblIdentificacion.Name = "lblIdentificacion";
 			this.lblIdentificacion.Size = new System.Drawing.Size(71, 16);
 			this.lblIdentificacion.TabIndex = 161;
-			this.lblIdentificacion.Text = "Identificación";
+			this.lblIdentificacion.Text = "IdentificaciÃ³n";
 			this.lblIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lblCliente
@@ -2037,7 +2037,7 @@ namespace Latinium
 			this.lblCliente.Name = "lblCliente";
 			this.lblCliente.Size = new System.Drawing.Size(86, 16);
 			this.lblCliente.TabIndex = 160;
-			this.lblCliente.Text = "N. Identificación";
+			this.lblCliente.Text = "N. IdentificaciÃ³n";
 			this.lblCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// cmbTipoRuc
@@ -2404,7 +2404,7 @@ namespace Latinium
 			this.lblNumero.Name = "lblNumero";
 			this.lblNumero.Size = new System.Drawing.Size(44, 16);
 			this.lblNumero.TabIndex = 190;
-			this.lblNumero.Text = "Número";
+			this.lblNumero.Text = "NÃºmero";
 			this.lblNumero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtNumero
@@ -2621,7 +2621,7 @@ namespace Latinium
 			ultraTab1.Text = "Seriales";
 			ultraTab2.Key = "5";
 			ultraTab2.TabPage = this.ultraTabPageControl3;
-			ultraTab2.Text = "Registro depósito";
+			ultraTab2.Text = "Registro depÃ³sito";
 			ultraTab3.TabPage = this.ultraTabPageControl10;
 			ultraTab3.Text = "Retenciones";
 			ultraTab4.TabPage = this.ultraTabPageControl2;
@@ -3467,7 +3467,7 @@ namespace Latinium
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(95, 16);
 			this.label14.TabIndex = 417;
-			this.label14.Text = "N. Identificación 1";
+			this.label14.Text = "N. IdentificaciÃ³n 1";
 			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtClienteNombre
@@ -3713,7 +3713,7 @@ namespace Latinium
 			this.Controls.Add(this.txtClienteNombre);
 			this.KeyPreview = true;
 			this.Name = "frmReporteCompraProtegidaSeguroLiquidadoFactura";
-			this.Text = "Facturación seguro liquidado";
+			this.Text = "FacturaciÃ³n seguro liquidado";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmReporteCompraProtegidaSeguroLiquidadoFactura_KeyDown);
 			this.Closing += new System.ComponentModel.CancelEventHandler(this.frmReporteCompraProtegidaSeguroLiquidadoFactura_Closing);
 			this.Load += new System.EventHandler(this.frmReporteCompraProtegidaSeguroLiquidadoFactura_Load);
@@ -4132,7 +4132,7 @@ namespace Latinium
 			this.cmbBodega1.Enabled = false;
 			this.txtSerial.Enabled = true;
 			this.grdSerial.Enabled = true;
-			//Depósito
+			//DepÃ³sito
 			//Consultar DepositoDeducible
 			string squery = String.Format("Exec CompraModel '{0}',{1}", "DepositoDeducible", idCompra);
 			DepositoDeducible = Funcion.bEjecutaSQL(cdsSeteoF, squery);
@@ -4143,20 +4143,20 @@ namespace Latinium
 				this.txtNotasDeposito.Enabled = true;
 			}
 			#endregion Campos
-			//Asignación Bodega 1 - Bodega Reclamos seguros
+			//AsignaciÃ³n Bodega 1 - Bodega Reclamos seguros
 			this.cmbBodega1.Value = 151;
 			//Vendedor actualizar
-			//Indicar que al guardar no valide el número pues aun noestá generado
+			//Indicar que al guardar no valide el nÃºmero pues aun noestÃ¡ generado
 			bNumeracionAutomatica = true;
-			//Cálculo e sumas
+			//CÃ¡lculo e sumas
 			//cmdTotal();
-			//Consulta de último costo
+			//Consulta de Ãºltimo costo
 			idTipoPrecio = 9999;
-			//Inicialización formulario
+			//InicializaciÃ³n formulario
 			FuncionesProcedimientos.RetornaFechaServidor(this.dtFechaDeposito, cdsSeteoF, false);
 			this.dtFechaDeposito.CalendarInfo.MinDate = Convert.ToDateTime(this.dtFechaDeposito.Value).AddDays(-1);			
 			this.cmbCuentas.DataSource = Funcion.dvProcedimiento(cdsSeteoF, "Select c.idCuenta, Descripcion From Cuenta c Inner Join CuentaCorriente cc On cc.idCuenta = c.idCuenta Union Select idCuenta, Descripcion From Cuenta Where idCuenta = 171 Order By Descripcion");
-			//idSubGrupo para validación
+			//idSubGrupo para validaciÃ³n
 
 			squery = String.Format("Exec CompraModel '{0}',{1}", "idArticuloOriginal", idCompra);
 			int idArticuloOriginal = Funcion.iEscalarSQL(cdsSeteoF, squery, false);
@@ -4613,7 +4613,7 @@ namespace Latinium
 					+ Math.Round(Convert.ToDecimal(this.txtIvaTotal.Value), 2);
 			}
 
-			// Si se necesita otra función adicional
+			// Si se necesita otra funciÃ³n adicional
 			if ((int)this.cmbFormaPago.Value == 3)
 				this.txtProteccionDD.Value = FuncionesInventario.FacturacionValorDYD(this.ultraGrid1, (int)this.cmbFormaPago.Value, 0);
 
@@ -4975,7 +4975,7 @@ namespace Latinium
 					if(getidSubGrupo != idSubGrupo)
 					{
 						e.Cell.Value = "";
-						MessageBox.Show("El Artículo añadido, no pertenece al grupo del producto original.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+						MessageBox.Show("El ArtÃ­culo aÃ±adido, no pertenece al grupo del producto original.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					}
 					else
 					{
@@ -4999,7 +4999,7 @@ namespace Latinium
 								// Calcular el subtotal sin redondear
 								decimal SubtotalFactura = TotalFactura / ValorIvaVigente;
 
-								// Redondear el subtotal a 2 decimales usando el método personalizado
+								// Redondear el subtotal a 2 decimales usando el mÃ©todo personalizado
 								decimal SubtotalRedondeado = RedondearConAjuste(SubtotalFactura, 2);
 
 								// Calcular el IVA basado en el subtotal redondeado
@@ -5027,7 +5027,7 @@ namespace Latinium
 								Console.WriteLine("IVA Calculado Ajustado: " + IvaCalculado);
 								Console.WriteLine("Total Calculado: " + TotalCalculado);
 
-								// Validación
+								// ValidaciÃ³n
 								decimal TotalDesdeRedondeado = RedondearConAjuste(SubtotalRedondeado * ValorIvaVigente, 2);
 
 								Console.WriteLine("Total Factura Original: " + TotalFactura);
@@ -5230,10 +5230,10 @@ namespace Latinium
 			}
 		}
 
-		// Función para redondear con ajuste personalizado
+		// FunciÃ³n para redondear con ajuste personalizado
 		public static decimal RedondearConAjuste(decimal valor, int decimales)
 		{
-			// Multiplicamos por el factor de 10 elevado al número de decimales deseados
+			// Multiplicamos por el factor de 10 elevado al nÃºmero de decimales deseados
 			decimal factor = (decimal)Math.Pow(10, decimales);
 			decimal valorMultiplicado = valor * factor;
 
@@ -5696,7 +5696,7 @@ namespace Latinium
 		{
 			if (bNuevo)
 			{
-				using (frmMensajeNumeración Msje = new frmMensajeNumeración (this.txtNumero.Text.ToString(), bAnulado, iGarantias, false))
+				using (frmMensajeNumeraciÃ³n Msje = new frmMensajeNumeraciÃ³n (this.txtNumero.Text.ToString(), bAnulado, iGarantias, false))
 				{
 					if (DialogResult.OK == Msje.ShowDialog())
 					{
@@ -5914,7 +5914,7 @@ namespace Latinium
 								{
 									if (dr.Cells["SerieL"].Value == DBNull.Value || dr.Cells["SerieL"].Value.ToString() == "")
 									{
-										MessageBox.Show(string.Format("Escriba la serial del artículo '{0}'.", dr.Cells["Articulo"].Value.ToString().Trim()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+										MessageBox.Show(string.Format("Escriba la serial del artÃ­culo '{0}'.", dr.Cells["Articulo"].Value.ToString().Trim()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 										this.ultraGrid1.ActiveRow = dr;
 										this.ultraGrid1.ActiveRow.Selected = true;
 										return;
@@ -5954,14 +5954,14 @@ namespace Latinium
 
 									if (VerifCantArticulo < Cant)
 									{
-										MessageBox.Show("Ha registrado " + VerifCantArticulo + " de " + Cant + " series del artículo " + Art.Trim() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+										MessageBox.Show("Ha registrado " + VerifCantArticulo + " de " + Cant + " series del artÃ­culo " + Art.Trim() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 										this.ultraGrid1.ActiveRow = dr;
 										this.ultraGrid1.ActiveRow.Selected = true;
 										return;
 									}
 									else if (VerifCantArticulo > Cant)
 									{
-										MessageBox.Show("Ha registrado " + VerifCantArticulo + " de " + Cant + " series del artículo " + Art.Trim() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+										MessageBox.Show("Ha registrado " + VerifCantArticulo + " de " + Cant + " series del artÃ­culo " + Art.Trim() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 										this.ultraGrid1.ActiveRow = dr;
 										this.ultraGrid1.ActiveRow.Selected = true;
 										return;
@@ -5971,7 +5971,7 @@ namespace Latinium
 									{
 										if ((int) dr1.Cells["Estado"].Value == 8 && dr1.Cells["Observaciones"].Value.ToString().Trim().Length == 0)
 										{
-											MessageBox.Show("Ingrese una observación para la serial " + dr1.Cells["Serial"].Value.ToString() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+											MessageBox.Show("Ingrese una observaciÃ³n para la serial " + dr1.Cells["Serial"].Value.ToString() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 											this.grdSerial.ActiveRow = dr1;
 											this.grdSerial.ActiveRow.Selected = true;
 											return;
@@ -6003,7 +6003,7 @@ namespace Latinium
 						{
 							sVSerial = Funcion.sEscalarSQL(cdsSeteoF, string.Format("Exec [ValidaSerialesConteoMensaje] {0}", (int) dr.Cells["idSerial"].Value));
 
-							MessageBox.Show("" + sVSerial + "\n\n  No existe por favor comunicarse con el área de \n\n Auditoria Ext: 2011/2010 ", "Point Technology");
+							MessageBox.Show("" + sVSerial + "\n\n  No existe por favor comunicarse con el Ã¡rea de \n\n Auditoria Ext: 2011/2010 ", "Point Technology");
 							return;
 						}
 					}
@@ -6077,7 +6077,7 @@ namespace Latinium
 			{					
 				if (Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select Count(*) From Retenciones Where ClienteProveedor = 0 And idCompra = {0} And Estado <> 2", (int)this.txtNumIdCompra.Value)) > 0)
 				{
-					if (DialogResult.Yes == MessageBox.Show("Ha Eliminado la Retención de esta Factura ¿Esta Seguro de Guardar sin Retención?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 
+					if (DialogResult.Yes == MessageBox.Show("Ha Eliminado la RetenciÃ³n de esta Factura Â¿Esta Seguro de Guardar sin RetenciÃ³n?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 
 					{
 						string sSQLAnulaRetencion = string.Format("Exec AnulaRetencionDesdeFactura {0}", (int)this.txtNumIdCompra.Value);
 						Funcion.EjecutaSQL(cdsSeteoF, sSQLAnulaRetencion);
@@ -6088,7 +6088,7 @@ namespace Latinium
 			#endregion Valida Retenciones
 
 			#region Seguro liquidado
-			//Validación si solo se tiene registrado un solo articulo
+			//ValidaciÃ³n si solo se tiene registrado un solo articulo
 			if(SeguroLiquidado)
 			{
 				int iContador = 0;
@@ -6105,12 +6105,12 @@ namespace Latinium
 				}
 			}
 
-			//Validación del registro del depósito del cliente.
+			//ValidaciÃ³n del registro del depÃ³sito del cliente.
 			if(SeguroLiquidado && DepositoDeducible)
 			{
 				if (this.txtCheque.Text.ToString().Length == 0)
 				{
-					MessageBox.Show("Registro depósito: ingrese el número de depósito.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);					
+					MessageBox.Show("Registro depÃ³sito: ingrese el nÃºmero de depÃ³sito.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);					
 					this.utcTransaccion.Tabs[1].Selected = true;
 					this.txtCheque.Focus();
 					return;
@@ -6123,7 +6123,7 @@ namespace Latinium
 				}
 				if (Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select COUNT(*) From AsientoDetalle ad Inner Join Asiento a On a.idAsiento = ad.idAsiento Where a.Cheque = '{0}' And ad.idCuenta In ({1}) And a.idTipoAsiento = 2", this.txtCheque.Text.ToString(), (int)this.cmbCuentas.Value)) > 0)
 				{
-					MessageBox.Show(string.Format("Registro depósito: Número de cheque ya está registrado en la cuenta '{0}'", this.cmbCuentas.Text.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show(string.Format("Registro depÃ³sito: NÃºmero de cheque ya estÃ¡ registrado en la cuenta '{0}'", this.cmbCuentas.Text.ToString()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.utcTransaccion.Tabs[1].Selected = true;
 					this.txtCheque.Focus();				
 					return;
@@ -6135,7 +6135,7 @@ namespace Latinium
 					return;
 				}
 
-				//Actualizar el valor del depósito del cliente o deducible, a la tabla de forma de pago
+				//Actualizar el valor del depÃ³sito del cliente o deducible, a la tabla de forma de pago
 				GuardarDepositoSeguroLiquidado((int)this.txtNumIdCompra.Value, (int)this.cmbCuentas.Value, this.txtCheque.Text, this.txtCheque.Text, 
 					this.txtNotasDeposito.Text, idDetCompra, true, frmReporteCompraProtegida.iCompraFormaPagoDepositoTransferencia);
 			}
@@ -6661,7 +6661,7 @@ namespace Latinium
 								this.ultraGrid1.DataSource = oDTDetalle;						
 								#endregion Graba Factura
 						
-								#region Guarda la tabla de amortización de la factura
+								#region Guarda la tabla de amortizaciÃ³n de la factura
 								if (bCrediPoint)
 								{
 									if (bNuevo && (int) this.cmbFormaPago.Value == 9)
@@ -6678,7 +6678,7 @@ namespace Latinium
 
 									}
 								}
-								#endregion Guarda la tabla de amortización de la factura
+								#endregion Guarda la tabla de amortizaciÃ³n de la factura
 
 								if (bNuevo)
 								{
@@ -7183,7 +7183,7 @@ namespace Latinium
 
 								Facturacion.ActualizaEstadoCuponWeb(idCuponWeb, 2, (int)this.txtNumIdCompra.Value, cdsSeteoF);
 
-								#region Impresión
+								#region ImpresiÃ³n
 								ImpresionDirecta(iGarantiasExtendidas);
 								if ((int)this.cmbFormaPago.Value == 9) 
 								{
@@ -7202,14 +7202,14 @@ namespace Latinium
 
 										Reporte miRep = new Reporte("ContratoCompraVentaCelular.rpt", "");
 										miRep.MdiParent = this.MdiParent;
-										miRep.Titulo("Recepción Mercaderia de Retiro");
+										miRep.Titulo("RecepciÃ³n Mercaderia de Retiro");
 										miRep.crVista.ParameterFieldInfo = paramFields;
 										miRep.Show();	
 									}
 									#endregion Imprime Celulares 
 
 								}
-								#endregion Impresión
+								#endregion ImpresiÃ³n
 							
 								#region Controles
 								if ((int)this.txtNumEstado.Value == 11)	this.lblEstado.Text = "MANUAL";
@@ -7541,7 +7541,7 @@ namespace Latinium
 							this.ultraGrid1.DataSource = oDTDetalle;							
 							#endregion Graba Factura
 
-							#region Guarda la tabla de amortización de la factura
+							#region Guarda la tabla de amortizaciÃ³n de la factura
 							if (bCrediPoint)
 							{
 								if (bNuevo && (int) this.cmbFormaPago.Value == 9)
@@ -7558,7 +7558,7 @@ namespace Latinium
 
 								}
 							}
-							#endregion Guarda la tabla de amortización de la factura
+							#endregion Guarda la tabla de amortizaciÃ³n de la factura
 							
 							#region Clave S.R.I.
 							if (bNuevo)
@@ -8089,7 +8089,7 @@ namespace Latinium
 
 							oConexion.Close();
 					
-							#region Impresión
+							#region ImpresiÃ³n
 							ImpresionDirecta(0);//iGarantiasExtendidas
 						
 							if ((int)this.cmbFormaPago.Value == 9) 
@@ -8109,13 +8109,13 @@ namespace Latinium
 
 									Reporte miRep = new Reporte("ContratoCompraVentaCelular.rpt", "");
 									miRep.MdiParent = this.MdiParent;
-									miRep.Titulo("Recepción Mercaderia de Retiro");
+									miRep.Titulo("RecepciÃ³n Mercaderia de Retiro");
 									miRep.crVista.ParameterFieldInfo = paramFields;
 									miRep.Show();	
 								}
 								#endregion Imprime Celulares 
 							}
-							#endregion Impresión
+							#endregion ImpresiÃ³n
 
 							Facturacion.ActualizaEstadoCuponWeb(idCuponWeb, 2, (int)this.txtNumIdCompra.Value, cdsSeteoF);
 							
@@ -8203,7 +8203,7 @@ namespace Latinium
 			#endregion Grabar
 
 			#region Seguro liquidado
-			//Se envía a cerrar la factura
+			//Se envÃ­a a cerrar la factura
 			if(SeguroLiquidado)
 			{
 				this.DialogResult = DialogResult.OK;
@@ -8257,7 +8257,7 @@ namespace Latinium
 			if (Funcion.ValidaPeriodo((DateTime)this.dtFecha.Value, cdsSeteoF, "Venta")) 
 			{				
 				DateTime dtFecha = (DateTime)this.dtFecha.Value;
-				MessageBox.Show(string.Format("No Puede Editar esta Factura, El Período '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);												
+				MessageBox.Show(string.Format("No Puede Editar esta Factura, El PerÃ­odo '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);												
 				return;
 			}
 			
@@ -8270,7 +8270,7 @@ namespace Latinium
 			
 			if ((miAcceso.EditarSoloDia && Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select ISNULL(Estado, 0) From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value), true) != 6) && dtFechaFac.ToShortDateString() != dtFechaHoy.ToShortDateString())
 			{
-				MessageBox.Show("Solo puede editar Facturas de fecha " + dtFechaHoy.ToString("dd/MMM/yyyy"), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);					
+				MessageBox.Show("Solo puede editar Facturas de fecha " + dtFechaHoy.ToString("dd/MMM/yyyy"), "InformaciÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Information);					
 				return;
 			}
 
@@ -8338,7 +8338,7 @@ namespace Latinium
 			this.txtNotas.Enabled = true;						
 			this.chkEntregado.Enabled = true;											
 			this.txtSerial.Enabled = true;
-			//Incremento por Angélica 
+			//Incremento por AngÃ©lica 
 			this.txtresponsablecurier.Enabled = true;
 			this.txtNumGuia.Enabled = true;
 			this.txtValorEntrega.Enabled = true;
@@ -8513,7 +8513,7 @@ namespace Latinium
 			{
 					this.btnCancelar_Click(sender, e);
 					this.Consultar(idCompraV);
-					#region Seguro liquidado (Botón Nuevo)
+					#region Seguro liquidado (BotÃ³n Nuevo)
 					FuncionesProcedimientos.RetornaFechaServidor(this.dtFecha, cdsSeteoF, false);
 					this.txtComprobante.Text = Funcion.sEscalarSQL(cdsSeteoF, string.Format("Select comprobante from compra where idcompra = {0}", idCompra));
 					this.txtidOrigen.Value = idCompra;
@@ -8541,12 +8541,12 @@ namespace Latinium
 					this.cmbVendedor.Focus();
 					bNuevo = true;
 					bEdicion = true;											
-					#endregion Seguro liquidado (Botón Nuevo)
+					#endregion Seguro liquidado (BotÃ³n Nuevo)
 
 			}
 			else
 			{
-				#region Es diferente a servicio técnico
+				#region Es diferente a servicio tÃ©cnico
 				this.btnCancelar_Click(sender, e);
 				if (!bServicioTecnico)
 				{
@@ -8696,7 +8696,7 @@ namespace Latinium
 					this.cmbFormaPago.Value = idFormaPagoST;
 					NuevoRegistro(sender, e, (int)this.cmbFormaPago.Value);	
 				}
-				#endregion Es diferente a servicio técnico
+				#endregion Es diferente a servicio tÃ©cnico
 			}
 
 			
@@ -8825,7 +8825,7 @@ namespace Latinium
 				if (stMensaje.Length > 0) 
 				{
 					e.Cancel = true;
-					MessageBox.Show(stMensaje, "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information); // "No puede crear más lineas");
+					MessageBox.Show(stMensaje, "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information); // "No puede crear mÃ¡s lineas");
 				}*/
 		}
 		
@@ -8934,7 +8934,7 @@ namespace Latinium
 
 					string Serial = this.grdSerial.ActiveRow.Cells["Serial"].Value.ToString();
 
-					if (DialogResult.Yes ==	MessageBox.Show(string.Format("¿Desea modificar la serial '{0}'?", Serial), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+					if (DialogResult.Yes ==	MessageBox.Show(string.Format("Â¿Desea modificar la serial '{0}'?", Serial), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
 					{
 						this.txtSerial.Text = Serial; 
 						ModSerial = true;
@@ -8968,11 +8968,11 @@ namespace Latinium
 			
 			if ((decimal)this.txtTotal.Value == 0.00m)
 			{
-				MessageBox.Show("No puede crear la retención en 0.00", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);				
+				MessageBox.Show("No puede crear la retenciÃ³n en 0.00", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);				
 			}
 			else if (this.txtSerieRetencion.Text.ToString() == "")
 			{
-				MessageBox.Show("Ingrese la serie para la retención.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Ingrese la serie para la retenciÃ³n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtSerieRetencion.Focus();				
 			}
 			else if (this.txtSerieRetencion.Text.ToString().Length < 6)
@@ -8982,22 +8982,22 @@ namespace Latinium
 			}
 			else if (this.txtAutorizacionRetencion.Text.ToString() == "")
 			{
-				MessageBox.Show("Ingrese el número de Autorización.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Ingrese el nÃºmero de AutorizaciÃ³n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtAutorizacionRetencion.Focus();				
 			}
 			else if (this.txtAutorizacionRetencion.Text.Length < 10 || this.txtAutorizacionRetencion.Text.Length > 37)
 			{
-				MessageBox.Show("Longitud de la Autorización debe estar entre 10 y 37 caracteres", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Longitud de la AutorizaciÃ³n debe estar entre 10 y 37 caracteres", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtAutorizacionRetencion.Focus();				
 			}
 			else if (this.txtNumeroRetencion.Text.ToString() == "")
 			{
-				MessageBox.Show("Ingrese el número de la retención.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Ingrese el nÃºmero de la retenciÃ³n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtNumeroRetencion.Focus();				
 			}
 			else if (this.dtFechaRetencion.Value == System.DBNull.Value)
 			{
-				MessageBox.Show("Ingrese la Fecha de Retención.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Ingrese la Fecha de RetenciÃ³n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtNumeroRetencion.Focus();
 			}		
 			else
@@ -9224,7 +9224,7 @@ namespace Latinium
 				
 			if (dAnticipo > 0)
 			{
-				if	(DialogResult.Yes == MessageBox.Show(string.Format("El cliente tiene un saldo a favor de {0} dólares, ¿Desea cruzarlo?", dAnticipo), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 				
+				if	(DialogResult.Yes == MessageBox.Show(string.Format("El cliente tiene un saldo a favor de {0} dÃ³lares, Â¿Desea cruzarlo?", dAnticipo), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 				
 					bUsoAnticipo = true;
 				else
 				{
@@ -9686,7 +9686,7 @@ namespace Latinium
 				string sMensaje = "ANULAR";
 				if (bAnulado) sMensaje = "ELIMINAR";
 				DateTime dtFecha = (DateTime)this.dtFecha.Value;
-				MessageBox.Show(string.Format("No Puede '{1}' esta Factura, El Período '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper(), sMensaje), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);								
+				MessageBox.Show(string.Format("No Puede '{1}' esta Factura, El PerÃ­odo '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper(), sMensaje), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);								
 				return;
 			}
 			
@@ -9695,7 +9695,7 @@ namespace Latinium
 			{					
 				if (this.txtNumero.Text.ToString().Length == 0 && !bNumeracionAutomatica)
 				{
-					MessageBox.Show("Ingrese el número de la factura", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Ingrese el nÃºmero de la factura", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.txtNumero.Focus();						
 					return;
 				}
@@ -9815,12 +9815,12 @@ namespace Latinium
 						FuncionesProcedimientos.EstadoGrids(false, this.grdSerial);
 						#endregion Controles
 
-						#region Impresión
+						#region ImpresiÃ³n
 						if (bNuevo)
 						{
-							frmMensajeNumeración miMsje = new frmMensajeNumeración (this.txtNumero.Text.ToString(), bAnulado, 2, false);
+							frmMensajeNumeraciÃ³n miMsje = new frmMensajeNumeraciÃ³n (this.txtNumero.Text.ToString(), bAnulado, 2, false);
 						}
-						#endregion Impresión									
+						#endregion ImpresiÃ³n									
 					}
 				}											
 				return;
@@ -9904,7 +9904,7 @@ namespace Latinium
 			DateTime dtFechaFac = (DateTime) this.dtFecha.Value;
 			if ((miAcceso.BAnulaSoloDelDia && Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select ISNULL(Estado, 0) From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value), true) != 6) && dtFechaFac.ToShortDateString() != dtFechaHoy.ToShortDateString())
 			{
-				MessageBox.Show("Solo puede Anular Facturas de fecha " + dtFechaHoy.ToString("dd/MMM/yyyy"), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);					
+				MessageBox.Show("Solo puede Anular Facturas de fecha " + dtFechaHoy.ToString("dd/MMM/yyyy"), "InformaciÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Information);					
 				return;
 			}
 
@@ -10003,7 +10003,7 @@ namespace Latinium
 
 				Reporte miRep = new Reporte("ContratoCompraVentaCelular.rpt", "");
 				miRep.MdiParent = this.MdiParent;
-				miRep.Titulo("Recepción Mercaderia de Retiro");
+				miRep.Titulo("RecepciÃ³n Mercaderia de Retiro");
 				miRep.crVista.ParameterFieldInfo = paramFields;
 				miRep.Show();	
 			}
@@ -10370,12 +10370,12 @@ namespace Latinium
 			}
 			else if (bAnulado) 
 			{
-				MessageBox.Show("No puede crear un asiento de una transacción Anulada");				
+				MessageBox.Show("No puede crear un asiento de una transacciÃ³n Anulada");				
 			}
 			else if (Funcion.ValidaPeriodo((DateTime)this.dtFecha.Value, cdsSeteoF, "Venta"))
 			{				
 				DateTime dtFecha = (DateTime)this.dtFecha.Value;
-				MessageBox.Show(string.Format("No Puede Crear Asiento de esta Factura, El Período '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);								
+				MessageBox.Show(string.Format("No Puede Crear Asiento de esta Factura, El PerÃ­odo '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);								
 			}			
 			else
 			{					
@@ -10399,21 +10399,21 @@ namespace Latinium
 							string sSQLAsiento = string.Format("Exec CreaAsientoDeVenta {0}", (int)this.txtNumIdCompra.Value);
 							Funcion.EjecutaSQL(cdsSeteoF, sSQLAsiento, true);
 
-							MessageBox.Show("Asiento Generado con éxito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							MessageBox.Show("Asiento Generado con Ã©xito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					
 							this.txtNumIdAsiento.Value = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select idAsiento From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value));
 							Cursor = Cursors.Default;							
 							#endregion Crea Asiento
 						}
 					}				
-					else if (DialogResult.Yes == MessageBox.Show("¿Desea crear Asiento?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 
+					else if (DialogResult.Yes == MessageBox.Show("Â¿Desea crear Asiento?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 
 					{	
 						#region Crea Asiento
 						this.Cursor = Cursors.WaitCursor;
 						string sSQLAsiento = string.Format("Exec CreaAsientoDeVenta {0}", (int)this.txtNumIdCompra.Value);
 						Funcion.EjecutaSQL(cdsSeteoF, sSQLAsiento, true);
 
-						MessageBox.Show("Asiento Generado con éxito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						MessageBox.Show("Asiento Generado con Ã©xito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					
 						this.txtNumIdAsiento.Value = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select idAsiento From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value));
 						Cursor = Cursors.Default;
@@ -10429,7 +10429,7 @@ namespace Latinium
 			{
 				if (miAcceso.CrearAsiento)
 				{
-					if ((int) this.txtNumIdAsiento.Value == 0) MessageBox.Show("No Existe un Asiento Creado de esta Transacción", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					if ((int) this.txtNumIdAsiento.Value == 0) MessageBox.Show("No Existe un Asiento Creado de esta TransacciÃ³n", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					else
 					{					
 						if (Funcion.bEscalarSQL(cdsSeteoF, string.Format("Declare @Res Bit If Exists(Select idAsiento From Asiento Where idAsiento = {0} And Borrar = 0) Set @Res = 1 Else Set @Res = 0 Select @Res", (int)this.txtNumIdAsiento.Value), true))
@@ -10734,26 +10734,26 @@ namespace Latinium
 			// Agregue la clave RSA de firma al objeto SignedXml.
 			xmlFirmado.SigningKey = Key;
  
-			// Cree un objeto Reference que describa qué se debe firmar.
+			// Cree un objeto Reference que describa quÃ© se debe firmar.
 			// Para firmar el documento completo, establezca la propiedad Uri como "".
 			Reference referencia = new Reference();
 			referencia.Uri = "";
  
 			// Agregue un objeto XmlDsigEnvelopedSignatureTransform al objeto Reference.
-			// Una transformación permite al comprobador representar los datos XML
-			// de idéntico modo que el firmante. Los datos XML se pueden representar de distintas maneras,
-			// por lo que este paso es vital para la comprobación.
+			// Una transformaciÃ³n permite al comprobador representar los datos XML
+			// de idÃ©ntico modo que el firmante. Los datos XML se pueden representar de distintas maneras,
+			// por lo que este paso es vital para la comprobaciÃ³n.
 			XmlDsigEnvelopedSignatureTransform transformacionENV = new XmlDsigEnvelopedSignatureTransform();
 			referencia.AddTransform(transformacionENV);
  
 			// Agregue el objeto Reference al objetoSignedXml.
 			xmlFirmado.AddReference(referencia);
  
-			// Llame al método ComputeSignature para calcular la firma.
+			// Llame al mÃ©todo ComputeSignature para calcular la firma.
 			xmlFirmado.ComputeSignature();
  
-			// Recupere la representación XML de la firma (un elemento <Signature>)
-			// y guárdela en un nuevo objeto XmlElement.
+			// Recupere la representaciÃ³n XML de la firma (un elemento <Signature>)
+			// y guÃ¡rdela en un nuevo objeto XmlElement.
 			XmlElement firmaDigitalXML = xmlFirmado.GetXml();
  
 			// Anexe el elemento al objeto XmlDocument.
@@ -10973,16 +10973,16 @@ namespace Latinium
 				#region Cuenta si hay articulos en el grid
 				if (this.ultraGrid1.Rows.Count == 0)
 				{
-					MessageBox.Show("Ingrese los artículos para cargar seriales.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Ingrese los artÃ­culos para cargar seriales.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					this.txtSerial.Focus();
 					return;
 				}
 				#endregion Cuenta si hay articulos en el grid
 
-				#region Valida Selección 
+				#region Valida SelecciÃ³n 
 				if (ultraGrid1.ActiveRow == null)
 				{
-					MessageBox.Show("Seleccione el Artículo", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show("Seleccione el ArtÃ­culo", "InformaciÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					this.txtSerial.Text = "";
 					this.txtSerial.Focus();
 					return;
@@ -10990,11 +10990,11 @@ namespace Latinium
 
 				if (this.ultraGrid1.ActiveRow.Cells["idArticulo"].Value == System.DBNull.Value)
 				{
-					MessageBox.Show("Seleccione el Artículo", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Seleccione el ArtÃ­culo", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					this.txtSerial.Focus();
 					return;
 				}
-				#endregion Valida Selección 
+				#endregion Valida SelecciÃ³n 
 
 				int IdArticulo = (int) this.ultraGrid1.ActiveRow.Cells["idArticulo"].Value;
 				int IPosicion = (int) this.ultraGrid1.ActiveRow.Cells["Posicion"].Value; 
@@ -11147,7 +11147,7 @@ namespace Latinium
 				}
 				else
 				{
-						MessageBox.Show("La serial no existe, Esta en otro Local o no pertenece al artículo seleccionado,\n\nComuniquese con el Administrador", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("La serial no existe, Esta en otro Local o no pertenece al artÃ­culo seleccionado,\n\nComuniquese con el Administrador", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 						this.txtSerial.Focus();
 						return;
 				}
@@ -11190,7 +11190,7 @@ namespace Latinium
 			else
 			{
 				if (e.KeyCode == Keys.Escape)
-					if (DialogResult.Yes == MessageBox.Show("Esta seguro de Cancelar la Edición", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+					if (DialogResult.Yes == MessageBox.Show("Esta seguro de Cancelar la EdiciÃ³n", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
 						this.btnCancelar_Click(sender, e);
 
 				if (e.KeyCode == Keys.F12) this.btnGuardar_Click(sender, e);
@@ -11724,7 +11724,7 @@ namespace Latinium
 
 				Reporte miRep = new Reporte("ReporteEntregaDomicilio.Rpt", "");
 				miRep.MdiParent = this.MdiParent;
-				miRep.Titulo("Recepción Mercaderia de Retiro");
+				miRep.Titulo("RecepciÃ³n Mercaderia de Retiro");
 				miRep.crVista.ParameterFieldInfo = paramFields;
 				miRep.Show();			
 			}
@@ -11886,7 +11886,7 @@ namespace Latinium
 
 				Reporte miRep = new Reporte("ContratoCompraVentaCelular.rpt", "");
 				miRep.MdiParent = this.MdiParent;
-				miRep.Titulo("Recepción Mercaderia de Retiro");
+				miRep.Titulo("RecepciÃ³n Mercaderia de Retiro");
 				miRep.crVista.ParameterFieldInfo = paramFields;
 				miRep.Show();	
 			}
@@ -12031,7 +12031,7 @@ namespace Latinium
 			
 			bool TotalizarFactura = true;
 
-			#region Totalización Factura
+			#region TotalizaciÃ³n Factura
 			if(TotalizarFactura)
 			{
 				this.txtIva.Value = 0.00m;
@@ -12040,7 +12040,7 @@ namespace Latinium
 				this.txtDescIva0Total.Value = 0.00m;
 				this.txtIvaTotal.Value = 0.00m;
 			}
-			#endregion  Totalización Factura 
+			#endregion  TotalizaciÃ³n Factura 
 
 
 			dPorcIva = Funcion.decEscalarSQL(cdsSeteoF, string.Format("Select dbo.RetornaImpuestoIVAVigente('{0}', 1)", 
@@ -12058,7 +12058,7 @@ namespace Latinium
 					dDescuentoLineal = Math.Round(((Convert.ToDecimal(dr.Cells["Cantidad"].Value) * Convert.ToDecimal(dr.Cells["Precio"].Value)) * Convert.ToDecimal(dr.Cells["DescuentoPorc"].Value))/100, 2);
 					dr.Cells["DescuentoArt"].Value = Math.Round(dDescuentoLineal, 2);
 
-					#region Totalización Factura
+					#region TotalizaciÃ³n Factura
 					if(TotalizarFactura)
 					{
 						if (Convert.ToDecimal(dr.Cells["Impuesto"].Value) > 0)
@@ -12072,11 +12072,11 @@ namespace Latinium
 							this.txtDescIva0Total.Value = Math.Round(Convert.ToDecimal(this.txtDescIva0Total.Value) + Convert.ToDecimal( dr.Cells["DescuentoArt"].Value), 2);
 						}
 					}
-					#endregion Totalización Factura
+					#endregion TotalizaciÃ³n Factura
 
 				}
 
-				#region Totalización Factura	
+				#region TotalizaciÃ³n Factura	
 				if(TotalizarFactura)
 				{
 					this.txtIvaTotal.Value = Math.Round(((Convert.ToDecimal(this.txtIva.Value) - Convert.ToDecimal(this.txtDescIvaTotal.Value)) * dPorcIva)/100.00m, 2);
@@ -12086,7 +12086,7 @@ namespace Latinium
 						- Math.Round(Convert.ToDecimal(this.txtDescIvaTotal.Value), 2)
 						+ Math.Round(Convert.ToDecimal(this.txtIvaTotal.Value), 2);
 				}
-				#endregion Totalización Factura
+				#endregion TotalizaciÃ³n Factura
 
 			} 
 			#endregion Desplazamiento de grilla

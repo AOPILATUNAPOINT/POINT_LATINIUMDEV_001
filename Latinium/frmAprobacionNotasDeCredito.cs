@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 namespace Latinium
 {
 	/// <summary>
-	/// Descripci髇 breve de frmAprobacionNotasDeCredito.
+	/// Descripci贸n breve de frmAprobacionNotasDeCredito.
 	/// </summary>
 	public class frmAprobacionNotasDeCredito : System.Windows.Forms.Form
 	{
@@ -29,24 +29,24 @@ namespace Latinium
 		private System.Windows.Forms.Label lblContador;
 		private C1.Data.C1DataSet cdsSeteoF;
 		/// <summary>
-		/// Variable del dise馻dor requerida.
+		/// Variable del dise帽ador requerida.
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 
 		public frmAprobacionNotasDeCredito()
 		{
 			//
-			// Necesario para admitir el Dise馻dor de Windows Forms
+			// Necesario para admitir el Dise帽ador de Windows Forms
 			//
 			InitializeComponent();
 
 			//
-			// TODO: agregar c骴igo de constructor despu閟 de llamar a InitializeComponent
+			// TODO: agregar c贸digo de constructor despu茅s de llamar a InitializeComponent
 			//
 		}
 
 		/// <summary>
-		/// Limpiar los recursos que se est閚 utilizando.
+		/// Limpiar los recursos que se est茅n utilizando.
 		/// </summary>
 		protected override void Dispose( bool disposing )
 		{
@@ -60,10 +60,10 @@ namespace Latinium
 			base.Dispose( disposing );
 		}
 
-		#region C骴igo generado por el Dise馻dor de Windows Forms
+		#region C贸digo generado por el Dise帽ador de Windows Forms
 		/// <summary>
-		/// M閠odo necesario para admitir el Dise馻dor. No se puede modificar
-		/// el contenido del m閠odo con el editor de c骴igo.
+		/// M茅todo necesario para admitir el Dise帽ador. No se puede modificar
+		/// el contenido del m茅todo con el editor de c贸digo.
 		/// </summary>
 		private void InitializeComponent()
 		{
@@ -380,7 +380,7 @@ namespace Latinium
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(38, 16);
 			this.label18.TabIndex = 693;
-			this.label18.Text = "M髏ivo";
+			this.label18.Text = "M贸tivo";
 			this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// cmbMotivos
@@ -525,7 +525,7 @@ namespace Latinium
 			this.Controls.Add(this.dtHasta);
 			this.Controls.Add(this.uGridDTIngreso);
 			this.Name = "frmAprobacionNotasDeCredito";
-			this.Text = "Aprobaci髇 Notas De Cr閐ito";
+			this.Text = "Aprobaci贸n Notas De Cr茅dito";
 			this.Load += new System.EventHandler(this.frmAprobacionNotasDeCredito_Load);
 			((System.ComponentModel.ISupportInitialize)(this.uGridDTIngreso)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).EndInit();

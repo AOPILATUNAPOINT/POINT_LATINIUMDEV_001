@@ -97,7 +97,6 @@ namespace Latinium
 		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtNumIdCliente;
 		public Infragistics.Win.UltraWinEditors.UltraNumericEditor txtNumIdCompra;
 		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtNumidOrigen;
-		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtNumContadoCredito;
 		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtNumidOrigen1;
 		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtNumidFPNC;
 		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtNumEstado;
@@ -277,6 +276,14 @@ namespace Latinium
 		private Infragistics.Win.UltraWinEditors.UltraCheckEditor chkEntregaLocal;
 		private System.Windows.Forms.Button btnEntrega;
 		private System.Windows.Forms.Label lblRecurrente;
+		private System.Windows.Forms.Label label17;
+		private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtNumContadoCredito;
+		private Infragistics.Win.UltraWinDataSource.UltraDataSource ultraDataSource6;
+		private Infragistics.Win.UltraWinGrid.UltraCombo cmbNumContadoCredito;
+		private System.Windows.Forms.Label label18;
+		private Infragistics.Win.UltraWinDataSource.UltraDataSource ultraDataSource7;
+		private Infragistics.Win.UltraWinGrid.UltraCombo cmbFechaPrimerPago;
+		private System.Windows.Forms.Label lblYupana;
 		private int idPersonalGlobal = 0;
 
 
@@ -391,8 +398,9 @@ namespace Latinium
 		string NFactuiraP;
 		bool BPagados;
 		string SCedulaVendedor;
-		decimal DMonto ;
-		public frmVenta(string sRuc, string sNumeroFactura, bool bPagados,string sCedulaVendedor,decimal dMonto )
+		decimal DMonto;
+		int IdPagados;
+		public frmVenta(string sRuc, string sNumeroFactura, bool bPagados,string sCedulaVendedor,decimal dMonto,int idPagados )
 		{
 			//
 			// Required for Windows Form Designer support
@@ -403,6 +411,7 @@ namespace Latinium
 			BPagados = bPagados;
 			SCedulaVendedor= sCedulaVendedor;
 			DMonto = dMonto;
+			IdPagados = idPagados;
 			//
 			// TODO: Add any constructor code after InitializeComponent call
 			//
@@ -587,6 +596,8 @@ namespace Latinium
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn49 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idCombo");
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn50 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idArticuloGE");
 			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn51 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Jornadas");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn52 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Aporte");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn53 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idSubProyecto");
 			Infragistics.Win.Appearance appearance51 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance52 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance53 = new Infragistics.Win.Appearance();
@@ -615,6 +626,8 @@ namespace Latinium
 			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn44 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idCombo");
 			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn45 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idArticuloGE");
 			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn46 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Jornadas");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn47 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Aporte");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn48 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idSubProyecto");
 			Infragistics.Win.Appearance appearance57 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance58 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance59 = new Infragistics.Win.Appearance();
@@ -630,26 +643,36 @@ namespace Latinium
 			Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Infragistics.Win.UltraWinTabControl.UltraTab();
 			Infragistics.Win.Appearance appearance65 = new Infragistics.Win.Appearance();
 			Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand8 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn52 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idFormaPago");
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn53 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("FormaPago");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn54 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idFormaPago");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn55 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("FormaPago");
 			Infragistics.Win.Appearance appearance66 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance67 = new Infragistics.Win.Appearance();
 			Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand9 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn54 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Bodega");
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn55 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre");
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn56 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Codigo", 0);
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn56 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Bodega");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn57 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn58 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Codigo", 0);
 			Infragistics.Win.Appearance appearance68 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance69 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance70 = new Infragistics.Win.Appearance();
 			Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton7 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
 			Infragistics.Win.Appearance appearance71 = new Infragistics.Win.Appearance();
 			Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand10 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn57 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Bodega");
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn58 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre");
-			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn59 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Codigo", 0);
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn59 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Bodega");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn60 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn61 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Codigo", 0);
 			Infragistics.Win.Appearance appearance72 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance73 = new Infragistics.Win.Appearance();
 			Infragistics.Win.Appearance appearance74 = new Infragistics.Win.Appearance();
+			Infragistics.Win.Appearance appearance75 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn49 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("idNumcuotas");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn50 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("NumeroCuotas");
+			Infragistics.Win.Appearance appearance76 = new Infragistics.Win.Appearance();
+			Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand11 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn62 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("idNumcuotas");
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn63 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("NumeroCuotas");
+			Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn51 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Fecha");
+			Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand12 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+			Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn64 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Fecha");
 			this.ultraTabPageControl9 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
 			this.label72 = new System.Windows.Forms.Label();
 			this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
@@ -746,7 +769,6 @@ namespace Latinium
 			this.txtNumIdCliente = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.txtNumIdCompra = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.txtNumidOrigen = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
-			this.txtNumContadoCredito = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.txtNumidOrigen1 = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.txtNumidFPNC = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
 			this.txtIdSucursal = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
@@ -820,6 +842,14 @@ namespace Latinium
 			this.chkFreelance = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
 			this.btnSubir = new System.Windows.Forms.Button();
 			this.lblRecurrente = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
+			this.txtNumContadoCredito = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
+			this.ultraDataSource6 = new Infragistics.Win.UltraWinDataSource.UltraDataSource();
+			this.cmbNumContadoCredito = new Infragistics.Win.UltraWinGrid.UltraCombo();
+			this.label18 = new System.Windows.Forms.Label();
+			this.ultraDataSource7 = new Infragistics.Win.UltraWinDataSource.UltraDataSource();
+			this.cmbFechaPrimerPago = new Infragistics.Win.UltraWinGrid.UltraCombo();
+			this.lblYupana = new System.Windows.Forms.Label();
 			this.ultraTabPageControl9.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.grdSerial)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource4)).BeginInit();
@@ -873,7 +903,6 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.txtNumIdCliente)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumIdCompra)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumidOrigen)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtNumContadoCredito)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumidOrigen1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumidFPNC)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtIdSucursal)).BeginInit();
@@ -899,6 +928,11 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.txtRuc1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumIdCliente1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtProteccionDD)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtNumContadoCredito)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.cmbNumContadoCredito)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.cmbFechaPrimerPago)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// ultraTabPageControl9
@@ -1280,7 +1314,7 @@ namespace Latinium
 			this.btnRetener.Name = "btnRetener";
 			this.btnRetener.Size = new System.Drawing.Size(104, 23);
 			this.btnRetener.TabIndex = 21;
-			this.btnRetener.Text = "&Crear RetenciÛn";
+			this.btnRetener.Text = "&Crear Retenci√≥n";
 			this.btnRetener.Click += new System.EventHandler(this.btnRetener_Click);
 			// 
 			// btnCancelarRetencion
@@ -1290,7 +1324,7 @@ namespace Latinium
 			this.btnCancelarRetencion.Name = "btnCancelarRetencion";
 			this.btnCancelarRetencion.Size = new System.Drawing.Size(104, 23);
 			this.btnCancelarRetencion.TabIndex = 22;
-			this.btnCancelarRetencion.Text = "&Borrar RetenciÛn";
+			this.btnCancelarRetencion.Text = "&Borrar Retenci√≥n";
 			this.btnCancelarRetencion.Click += new System.EventHandler(this.btnCancelarRetencion_Click);
 			// 
 			// label59
@@ -1302,7 +1336,7 @@ namespace Latinium
 			this.label59.Name = "label59";
 			this.label59.Size = new System.Drawing.Size(44, 16);
 			this.label59.TabIndex = 139;
-			this.label59.Text = "N˙mero";
+			this.label59.Text = "N√∫mero";
 			// 
 			// label58
 			// 
@@ -1313,7 +1347,7 @@ namespace Latinium
 			this.label58.Name = "label58";
 			this.label58.Size = new System.Drawing.Size(65, 16);
 			this.label58.TabIndex = 138;
-			this.label58.Text = "AutorizaciÛn";
+			this.label58.Text = "Autorizaci√≥n";
 			// 
 			// label51
 			// 
@@ -1431,7 +1465,7 @@ namespace Latinium
 			this.label31.Name = "label31";
 			this.label31.Size = new System.Drawing.Size(65, 16);
 			this.label31.TabIndex = 95;
-			this.label31.Text = "AutorizaciÛn";
+			this.label31.Text = "Autorizaci√≥n";
 			// 
 			// pgEntrega
 			// 
@@ -1480,7 +1514,7 @@ namespace Latinium
 			this.btnEntrega.Name = "btnEntrega";
 			this.btnEntrega.Size = new System.Drawing.Size(77, 23);
 			this.btnEntrega.TabIndex = 428;
-			this.btnEntrega.Text = "UbicaciÛn";
+			this.btnEntrega.Text = "Ubicaci√≥n";
 			this.btnEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnEntrega.Visible = false;
 			this.btnEntrega.Click += new System.EventHandler(this.btnEntrega_Click);
@@ -1638,7 +1672,7 @@ namespace Latinium
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(75, 16);
 			this.label13.TabIndex = 414;
-			this.label13.Text = "DirecciÛn IWY";
+			this.label13.Text = "Direcci√≥n IWY";
 			// 
 			// label12
 			// 
@@ -1676,7 +1710,7 @@ namespace Latinium
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(84, 16);
 			this.label11.TabIndex = 411;
-			this.label11.Text = "Numero de guÌa";
+			this.label11.Text = "Numero de gu√≠a";
 			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtNumGuia
@@ -1813,7 +1847,7 @@ namespace Latinium
 			this.label66.Name = "label66";
 			this.label66.Size = new System.Drawing.Size(50, 16);
 			this.label66.TabIndex = 126;
-			this.label66.Text = "DirecciÛn";
+			this.label66.Text = "Direcci√≥n";
 			// 
 			// chkEntregado
 			// 
@@ -1956,7 +1990,7 @@ namespace Latinium
 			this.lblIdentificacion.Name = "lblIdentificacion";
 			this.lblIdentificacion.Size = new System.Drawing.Size(71, 16);
 			this.lblIdentificacion.TabIndex = 161;
-			this.lblIdentificacion.Text = "IdentificaciÛn";
+			this.lblIdentificacion.Text = "Identificaci√≥n";
 			this.lblIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lblCliente
@@ -1966,7 +2000,7 @@ namespace Latinium
 			this.lblCliente.Name = "lblCliente";
 			this.lblCliente.Size = new System.Drawing.Size(86, 16);
 			this.lblCliente.TabIndex = 160;
-			this.lblCliente.Text = "N. IdentificaciÛn";
+			this.lblCliente.Text = "N. Identificaci√≥n";
 			this.lblCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// cmbTipoRuc
@@ -2024,9 +2058,9 @@ namespace Latinium
 			this.txtNombre.Appearance = appearance42;
 			this.txtNombre.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtNombre.Enabled = false;
-			this.txtNombre.Location = new System.Drawing.Point(552, 32);
+			this.txtNombre.Location = new System.Drawing.Point(560, 32);
 			this.txtNombre.Name = "txtNombre";
-			this.txtNombre.Size = new System.Drawing.Size(264, 22);
+			this.txtNombre.Size = new System.Drawing.Size(256, 22);
 			this.txtNombre.TabIndex = 7;
 			this.txtNombre.ValueChanged += new System.EventHandler(this.txtNombre_ValueChanged);
 			// 
@@ -2049,12 +2083,13 @@ namespace Latinium
 			this.txtCuotaDeEntrada.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtCuotaDeEntrada.Enabled = false;
 			this.txtCuotaDeEntrada.FormatString = "#,##0.00";
-			this.txtCuotaDeEntrada.Location = new System.Drawing.Point(552, 80);
+			this.txtCuotaDeEntrada.Location = new System.Drawing.Point(560, 80);
 			this.txtCuotaDeEntrada.Name = "txtCuotaDeEntrada";
 			this.txtCuotaDeEntrada.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Double;
 			this.txtCuotaDeEntrada.PromptChar = ' ';
-			this.txtCuotaDeEntrada.Size = new System.Drawing.Size(88, 22);
+			this.txtCuotaDeEntrada.Size = new System.Drawing.Size(80, 22);
 			this.txtCuotaDeEntrada.TabIndex = 11;
+			this.txtCuotaDeEntrada.ValidationError += new Infragistics.Win.UltraWinEditors.UltraNumericEditorBase.ValidationErrorEventHandler(this.txtCuotaDeEntrada_ValidationError);
 			// 
 			// label6
 			// 
@@ -2090,7 +2125,7 @@ namespace Latinium
 			ultraGridColumn34.Hidden = true;
 			ultraGridColumn35.Case = Infragistics.Win.UltraWinGrid.Case.Upper;
 			ultraGridColumn35.Header.VisiblePosition = 3;
-			ultraGridColumn35.Width = 242;
+			ultraGridColumn35.Width = 249;
 			ultraGridColumn36.Case = Infragistics.Win.UltraWinGrid.Case.Upper;
 			ultraGridColumn36.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			ultraGridColumn36.Header.VisiblePosition = 4;
@@ -2101,7 +2136,7 @@ namespace Latinium
 			ultraGridColumn37.Format = "";
 			ultraGridColumn37.Header.VisiblePosition = 5;
 			ultraGridColumn37.PromptChar = ' ';
-			ultraGridColumn37.Width = 81;
+			ultraGridColumn37.Width = 79;
 			appearance46.TextHAlign = Infragistics.Win.HAlign.Right;
 			ultraGridColumn38.CellAppearance = appearance46;
 			ultraGridColumn38.Format = "#,##0.00";
@@ -2115,7 +2150,7 @@ namespace Latinium
 			ultraGridColumn39.Header.Caption = "IVA";
 			ultraGridColumn39.Header.VisiblePosition = 7;
 			ultraGridColumn39.PromptChar = ' ';
-			ultraGridColumn39.Width = 62;
+			ultraGridColumn39.Width = 60;
 			ultraGridColumn40.CellActivation = Infragistics.Win.UltraWinGrid.Activation.ActivateOnly;
 			appearance48.TextHAlign = Infragistics.Win.HAlign.Right;
 			ultraGridColumn40.CellAppearance = appearance48;
@@ -2130,7 +2165,7 @@ namespace Latinium
 			ultraGridColumn41.Header.Caption = "% Desc.";
 			ultraGridColumn41.Header.VisiblePosition = 9;
 			ultraGridColumn41.PromptChar = ' ';
-			ultraGridColumn41.Width = 70;
+			ultraGridColumn41.Width = 68;
 			ultraGridColumn42.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
 			appearance50.TextHAlign = Infragistics.Win.HAlign.Right;
 			ultraGridColumn42.CellAppearance = appearance50;
@@ -2138,7 +2173,7 @@ namespace Latinium
 			ultraGridColumn42.Header.Caption = "Subtotal";
 			ultraGridColumn42.Header.VisiblePosition = 10;
 			ultraGridColumn42.PromptChar = ' ';
-			ultraGridColumn42.Width = 121;
+			ultraGridColumn42.Width = 120;
 			ultraGridColumn43.Header.VisiblePosition = 14;
 			ultraGridColumn43.Hidden = true;
 			ultraGridColumn44.Header.VisiblePosition = 12;
@@ -2160,6 +2195,13 @@ namespace Latinium
 			ultraGridColumn50.Hidden = true;
 			ultraGridColumn51.Header.VisiblePosition = 21;
 			ultraGridColumn51.Hidden = true;
+			ultraGridColumn52.Format = "#,##0.00";
+			ultraGridColumn52.Header.VisiblePosition = 22;
+			ultraGridColumn52.Hidden = true;
+			ultraGridColumn52.Width = 94;
+			ultraGridColumn53.Header.VisiblePosition = 23;
+			ultraGridColumn53.Hidden = true;
+			ultraGridColumn53.Width = 93;
 			ultraGridBand7.Columns.AddRange(new object[] {
 																										 ultraGridColumn30,
 																										 ultraGridColumn31,
@@ -2182,7 +2224,9 @@ namespace Latinium
 																										 ultraGridColumn48,
 																										 ultraGridColumn49,
 																										 ultraGridColumn50,
-																										 ultraGridColumn51});
+																										 ultraGridColumn51,
+																										 ultraGridColumn52,
+																										 ultraGridColumn53});
 			ultraGridBand7.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.Edit;
 			this.ultraGrid1.DisplayLayout.BandsSerializer.Add(ultraGridBand7);
 			appearance51.ForeColor = System.Drawing.Color.Black;
@@ -2299,6 +2343,13 @@ namespace Latinium
 																																			0,
 																																			0,
 																																			0});
+			ultraDataColumn47.DataType = typeof(System.Decimal);
+			ultraDataColumn47.DefaultValue = new System.Decimal(new int[] {
+																																			0,
+																																			0,
+																																			0,
+																																			0});
+			ultraDataColumn48.DataType = typeof(int);
 			this.ultraDataSource2.Band.Columns.AddRange(new object[] {
 																																 ultraDataColumn25,
 																																 ultraDataColumn26,
@@ -2321,7 +2372,9 @@ namespace Latinium
 																																 ultraDataColumn43,
 																																 ultraDataColumn44,
 																																 ultraDataColumn45,
-																																 ultraDataColumn46});
+																																 ultraDataColumn46,
+																																 ultraDataColumn47,
+																																 ultraDataColumn48});
 			this.ultraDataSource2.CellDataRequested += new Infragistics.Win.UltraWinDataSource.CellDataRequestedEventHandler(this.ultraDataSource2_CellDataRequested);
 			// 
 			// lblNumero
@@ -2332,7 +2385,7 @@ namespace Latinium
 			this.lblNumero.Name = "lblNumero";
 			this.lblNumero.Size = new System.Drawing.Size(44, 16);
 			this.lblNumero.TabIndex = 190;
-			this.lblNumero.Text = "N˙mero";
+			this.lblNumero.Text = "N√∫mero";
 			this.lblNumero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtNumero
@@ -2576,13 +2629,13 @@ namespace Latinium
 			this.cmbFormaPago.Appearance = appearance65;
 			this.cmbFormaPago.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.cmbFormaPago.Cursor = System.Windows.Forms.Cursors.Default;
-			ultraGridColumn52.Header.VisiblePosition = 0;
-			ultraGridColumn52.Hidden = true;
-			ultraGridColumn53.Header.VisiblePosition = 1;
-			ultraGridColumn53.Width = 152;
+			ultraGridColumn54.Header.VisiblePosition = 0;
+			ultraGridColumn54.Hidden = true;
+			ultraGridColumn55.Header.VisiblePosition = 1;
+			ultraGridColumn55.Width = 152;
 			ultraGridBand8.Columns.AddRange(new object[] {
-																										 ultraGridColumn52,
-																										 ultraGridColumn53});
+																										 ultraGridColumn54,
+																										 ultraGridColumn55});
 			this.cmbFormaPago.DisplayLayout.BandsSerializer.Add(ultraGridBand8);
 			this.cmbFormaPago.DisplayMember = "FormaPago";
 			this.cmbFormaPago.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
@@ -2676,18 +2729,6 @@ namespace Latinium
 			this.txtNumidOrigen.Size = new System.Drawing.Size(16, 22);
 			this.txtNumidOrigen.TabIndex = 230;
 			this.txtNumidOrigen.Visible = false;
-			// 
-			// txtNumContadoCredito
-			// 
-			this.txtNumContadoCredito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtNumContadoCredito.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
-			this.txtNumContadoCredito.Enabled = false;
-			this.txtNumContadoCredito.Location = new System.Drawing.Point(968, 488);
-			this.txtNumContadoCredito.Name = "txtNumContadoCredito";
-			this.txtNumContadoCredito.PromptChar = ' ';
-			this.txtNumContadoCredito.Size = new System.Drawing.Size(16, 22);
-			this.txtNumContadoCredito.TabIndex = 231;
-			this.txtNumContadoCredito.Visible = false;
 			// 
 			// txtNumidOrigen1
 			// 
@@ -2803,14 +2844,14 @@ namespace Latinium
 			this.cmbBodega.CausesValidation = false;
 			this.cmbBodega.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.cmbBodega.Cursor = System.Windows.Forms.Cursors.Default;
-			ultraGridColumn54.Header.VisiblePosition = 2;
-			ultraGridColumn55.Header.VisiblePosition = 1;
-			ultraGridColumn55.Width = 180;
-			ultraGridColumn56.Header.VisiblePosition = 0;
+			ultraGridColumn56.Header.VisiblePosition = 2;
+			ultraGridColumn57.Header.VisiblePosition = 1;
+			ultraGridColumn57.Width = 180;
+			ultraGridColumn58.Header.VisiblePosition = 0;
 			ultraGridBand9.Columns.AddRange(new object[] {
-																										 ultraGridColumn54,
-																										 ultraGridColumn55,
-																										 ultraGridColumn56});
+																										 ultraGridColumn56,
+																										 ultraGridColumn57,
+																										 ultraGridColumn58});
 			this.cmbBodega.DisplayLayout.BandsSerializer.Add(ultraGridBand9);
 			this.cmbBodega.DisplayMember = "Nombre";
 			this.cmbBodega.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
@@ -2825,6 +2866,7 @@ namespace Latinium
 			this.cmbBodega.ValueMember = "Bodega";
 			this.cmbBodega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbBodega_KeyPress);
 			this.cmbBodega.Validating += new System.ComponentModel.CancelEventHandler(this.cmbBodega_Validating);
+			this.cmbBodega.AfterCloseUp += new System.EventHandler(this.cmbBodega_AfterCloseUp);
 			this.cmbBodega.ValueChanged += new System.EventHandler(this.cmbBodega_ValueChanged);
 			this.cmbBodega.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.cmbBodega_InitializeLayout);
 			// 
@@ -3402,12 +3444,13 @@ namespace Latinium
 			// label14
 			// 
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(256, 59);
+			this.label14.Location = new System.Drawing.Point(664, 88);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(95, 16);
 			this.label14.TabIndex = 417;
-			this.label14.Text = "N. IdentificaciÛn 1";
+			this.label14.Text = "N. Identificaci√≥n 1";
 			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.label14.Visible = false;
 			// 
 			// txtClienteNombre
 			// 
@@ -3415,10 +3458,11 @@ namespace Latinium
 			this.txtClienteNombre.Appearance = appearance71;
 			this.txtClienteNombre.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtClienteNombre.Enabled = false;
-			this.txtClienteNombre.Location = new System.Drawing.Point(552, 56);
+			this.txtClienteNombre.Location = new System.Drawing.Point(792, 56);
 			this.txtClienteNombre.Name = "txtClienteNombre";
-			this.txtClienteNombre.Size = new System.Drawing.Size(264, 22);
+			this.txtClienteNombre.Size = new System.Drawing.Size(24, 22);
 			this.txtClienteNombre.TabIndex = 416;
+			this.txtClienteNombre.Visible = false;
 			this.txtClienteNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClienteNombre_KeyDown);
 			this.txtClienteNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtClienteNombre_Validating);
 			this.txtClienteNombre.Validated += new System.EventHandler(this.txtClienteNombre_Validated);
@@ -3439,14 +3483,14 @@ namespace Latinium
 			this.cmbBodega1.CausesValidation = false;
 			this.cmbBodega1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.cmbBodega1.Cursor = System.Windows.Forms.Cursors.Default;
-			ultraGridColumn57.Header.VisiblePosition = 2;
-			ultraGridColumn58.Header.VisiblePosition = 1;
-			ultraGridColumn58.Width = 180;
-			ultraGridColumn59.Header.VisiblePosition = 0;
+			ultraGridColumn59.Header.VisiblePosition = 2;
+			ultraGridColumn60.Header.VisiblePosition = 1;
+			ultraGridColumn60.Width = 180;
+			ultraGridColumn61.Header.VisiblePosition = 0;
 			ultraGridBand10.Columns.AddRange(new object[] {
-																											ultraGridColumn57,
-																											ultraGridColumn58,
-																											ultraGridColumn59});
+																											ultraGridColumn59,
+																											ultraGridColumn60,
+																											ultraGridColumn61});
 			this.cmbBodega1.DisplayLayout.BandsSerializer.Add(ultraGridBand10);
 			this.cmbBodega1.DisplayMember = "Nombre";
 			this.cmbBodega1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
@@ -3468,6 +3512,7 @@ namespace Latinium
 			this.btnCliente2.Size = new System.Drawing.Size(24, 22);
 			this.btnCliente2.TabIndex = 425;
 			this.btnCliente2.Text = "...";
+			this.btnCliente2.Visible = false;
 			this.btnCliente2.Click += new System.EventHandler(this.btnCliente2_Click);
 			// 
 			// txtRuc1
@@ -3477,10 +3522,11 @@ namespace Latinium
 			this.txtRuc1.Appearance = appearance72;
 			this.txtRuc1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
 			this.txtRuc1.Enabled = false;
-			this.txtRuc1.Location = new System.Drawing.Point(352, 56);
+			this.txtRuc1.Location = new System.Drawing.Point(776, 80);
 			this.txtRuc1.Name = "txtRuc1";
-			this.txtRuc1.Size = new System.Drawing.Size(128, 22);
+			this.txtRuc1.Size = new System.Drawing.Size(16, 22);
 			this.txtRuc1.TabIndex = 426;
+			this.txtRuc1.Visible = false;
 			this.txtRuc1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRuc1_KeyDown);
 			this.txtRuc1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRuc1_KeyPress);
 			this.txtRuc1.Validating += new System.ComponentModel.CancelEventHandler(this.txtRuc1_Validating);
@@ -3503,12 +3549,13 @@ namespace Latinium
 			// label16
 			// 
 			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(496, 59);
+			this.label16.Location = new System.Drawing.Point(736, 59);
 			this.label16.Name = "label16";
 			this.label16.Size = new System.Drawing.Size(48, 16);
 			this.label16.TabIndex = 428;
 			this.label16.Text = "Cliente 1";
 			this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.label16.Visible = false;
 			// 
 			// btnValidarMail
 			// 
@@ -3586,11 +3633,134 @@ namespace Latinium
 			this.lblRecurrente.TabIndex = 713;
 			this.lblRecurrente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// label17
+			// 
+			this.label17.AutoSize = true;
+			this.label17.BackColor = System.Drawing.Color.Transparent;
+			this.label17.Location = new System.Drawing.Point(256, 56);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(38, 16);
+			this.label17.TabIndex = 714;
+			this.label17.Text = "Cuotas";
+			this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// txtNumContadoCredito
+			// 
+			this.txtNumContadoCredito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			appearance75.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(247)), ((System.Byte)(245)), ((System.Byte)(241)));
+			appearance75.ForeColor = System.Drawing.Color.Black;
+			this.txtNumContadoCredito.Appearance = appearance75;
+			this.txtNumContadoCredito.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(247)), ((System.Byte)(245)), ((System.Byte)(241)));
+			this.txtNumContadoCredito.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
+			this.txtNumContadoCredito.Enabled = false;
+			this.txtNumContadoCredito.Font = new System.Drawing.Font("Tahoma", 8.25F);
+			this.txtNumContadoCredito.ForeColor = System.Drawing.Color.Black;
+			this.txtNumContadoCredito.Location = new System.Drawing.Point(936, 472);
+			this.txtNumContadoCredito.Name = "txtNumContadoCredito";
+			this.txtNumContadoCredito.PromptChar = ' ';
+			this.txtNumContadoCredito.Size = new System.Drawing.Size(16, 22);
+			this.txtNumContadoCredito.TabIndex = 231;
+			this.txtNumContadoCredito.Visible = false;
+			// 
+			// ultraDataSource6
+			// 
+			ultraDataColumn49.DataType = typeof(int);
+			ultraDataColumn50.DataType = typeof(int);
+			this.ultraDataSource6.Band.Columns.AddRange(new object[] {
+																																 ultraDataColumn49,
+																																 ultraDataColumn50});
+			// 
+			// cmbNumContadoCredito
+			// 
+			appearance76.FontData.Name = "Tahoma";
+			appearance76.ForeColorDisabled = System.Drawing.Color.Black;
+			this.cmbNumContadoCredito.Appearance = appearance76;
+			this.cmbNumContadoCredito.CausesValidation = false;
+			this.cmbNumContadoCredito.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.cmbNumContadoCredito.Cursor = System.Windows.Forms.Cursors.Default;
+			this.cmbNumContadoCredito.DataSource = this.ultraDataSource6;
+			ultraGridColumn62.Header.VisiblePosition = 0;
+			ultraGridColumn62.Hidden = true;
+			ultraGridColumn63.Header.Caption = "Cuotas";
+			ultraGridColumn63.Header.VisiblePosition = 1;
+			ultraGridBand11.Columns.AddRange(new object[] {
+																											ultraGridColumn62,
+																											ultraGridColumn63});
+			this.cmbNumContadoCredito.DisplayLayout.BandsSerializer.Add(ultraGridBand11);
+			this.cmbNumContadoCredito.DisplayMember = "NumeroCuotas";
+			this.cmbNumContadoCredito.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
+			this.cmbNumContadoCredito.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
+			this.cmbNumContadoCredito.Enabled = false;
+			this.cmbNumContadoCredito.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.cmbNumContadoCredito.Location = new System.Drawing.Point(352, 56);
+			this.cmbNumContadoCredito.Name = "cmbNumContadoCredito";
+			this.cmbNumContadoCredito.Size = new System.Drawing.Size(128, 22);
+			this.cmbNumContadoCredito.TabIndex = 717;
+			this.cmbNumContadoCredito.ValueMember = "idNumcuotas";
+			this.cmbNumContadoCredito.ValueChanged += new System.EventHandler(this.cmbNumContadoCredito_ValueChanged);
+			// 
+			// label18
+			// 
+			this.label18.AutoSize = true;
+			this.label18.Location = new System.Drawing.Point(496, 56);
+			this.label18.Name = "label18";
+			this.label18.Size = new System.Drawing.Size(64, 16);
+			this.label18.TabIndex = 719;
+			this.label18.Text = "D√≠a de pago";
+			this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// ultraDataSource7
+			// 
+			ultraDataColumn51.DataType = typeof(System.DateTime);
+			this.ultraDataSource7.Band.Columns.AddRange(new object[] {
+																																 ultraDataColumn51});
+			// 
+			// cmbFechaPrimerPago
+			// 
+			this.cmbFechaPrimerPago.CausesValidation = false;
+			this.cmbFechaPrimerPago.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.cmbFechaPrimerPago.Cursor = System.Windows.Forms.Cursors.Default;
+			this.cmbFechaPrimerPago.DataSource = this.ultraDataSource7;
+			ultraGridColumn64.Header.VisiblePosition = 0;
+			ultraGridColumn64.Width = 100;
+			ultraGridBand12.Columns.AddRange(new object[] {
+																											ultraGridColumn64});
+			this.cmbFechaPrimerPago.DisplayLayout.BandsSerializer.Add(ultraGridBand12);
+			this.cmbFechaPrimerPago.DisplayMember = "Fecha";
+			this.cmbFechaPrimerPago.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2003;
+			this.cmbFechaPrimerPago.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList;
+			this.cmbFechaPrimerPago.Enabled = false;
+			this.cmbFechaPrimerPago.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.cmbFechaPrimerPago.Location = new System.Drawing.Point(560, 56);
+			this.cmbFechaPrimerPago.MaxDropDownItems = 30;
+			this.cmbFechaPrimerPago.Name = "cmbFechaPrimerPago";
+			this.cmbFechaPrimerPago.Size = new System.Drawing.Size(168, 22);
+			this.cmbFechaPrimerPago.TabIndex = 721;
+			this.cmbFechaPrimerPago.ValueMember = "Fecha";
+			this.cmbFechaPrimerPago.ValueChanged += new System.EventHandler(this.cmbFechaPrimerPago_ValueChanged);
+			// 
+			// lblYupana
+			// 
+			this.lblYupana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblYupana.AutoSize = true;
+			this.lblYupana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.lblYupana.ForeColor = System.Drawing.Color.Firebrick;
+			this.lblYupana.Location = new System.Drawing.Point(760, 280);
+			this.lblYupana.Name = "lblYupana";
+			this.lblYupana.Size = new System.Drawing.Size(0, 17);
+			this.lblYupana.TabIndex = 722;
+			this.lblYupana.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// frmVenta
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 14);
 			this.CausesValidation = false;
 			this.ClientSize = new System.Drawing.Size(1022, 532);
+			this.Controls.Add(this.lblYupana);
+			this.Controls.Add(this.cmbFechaPrimerPago);
+			this.Controls.Add(this.label18);
+			this.Controls.Add(this.cmbNumContadoCredito);
+			this.Controls.Add(this.label17);
 			this.Controls.Add(this.lblRecurrente);
 			this.Controls.Add(this.btnSubir);
 			this.Controls.Add(this.chkFreelance);
@@ -3739,7 +3909,6 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.txtNumIdCliente)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumIdCompra)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumidOrigen)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtNumContadoCredito)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumidOrigen1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumidFPNC)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtIdSucursal)).EndInit();
@@ -3765,6 +3934,11 @@ namespace Latinium
 			((System.ComponentModel.ISupportInitialize)(this.txtRuc1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNumIdCliente1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtProteccionDD)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtNumContadoCredito)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.cmbNumContadoCredito)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.ultraDataSource7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.cmbFechaPrimerPago)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -3977,6 +4151,8 @@ namespace Latinium
 			bExigeVendedor = Funcion.bEscalarSQL(cdsSeteoF, "SELECT ExigeVendedor FROM SeteoF", true);
 
 			this.cmbFormaPago.DataSource = Funcion.dvProcedimiento(cdsSeteoF, "Exec CompraFormaPagoCarga 1, 0");
+			this.cmbNumContadoCredito.DataSource = Funcion.dvProcedimiento(cdsSeteoF, "Exec Listas 101, 0");
+			this.cmbFechaPrimerPago.DataSource = Funcion.dvProcedimiento(cdsSeteoF, "Exec Cre_SolicitudYupanaDiaPago 35, 0");
 			this.cmbCourier.DataSource = Funcion.dvProcedimiento(cdsSeteoF, "Select idCliente, Ruc, Nombre From Cliente Where Proveedor = 1 And Courier = 1 Order By Nombre");
 
 			HabilitaTab(false);
@@ -4133,7 +4309,7 @@ namespace Latinium
 
 				if (bNuevo && (int)this.cmbFormaPago.Value != 4)
 				{
-					this.txtRuc.Enabled = true;
+					this.txtRuc.Enabled = ((int)this.cmbFormaPago.Value != 35);
 					this.txtNumIdCliente.Value = 0;
 					this.txtRuc.Value = "";
 					this.txtNombre.Value = "";
@@ -4319,6 +4495,7 @@ namespace Latinium
 			FuncionesProcedimientos.FormatoGrid(e, "Precio", 2);
 			FuncionesProcedimientos.FormatoGrid(e, "Impuesto", 2);						
 			FuncionesProcedimientos.FormatoGrid(e, "DescuentoPorc", 3);
+			FuncionesProcedimientos.FormatoGrid(e, "Aporte", 2);
 		}
 
 		private void ultraGrid1_InitializeRow(object sender, Infragistics.Win.UltraWinGrid.InitializeRowEventArgs e)
@@ -4938,7 +5115,6 @@ namespace Latinium
 					
 					if (MenuLatinium.stIdDB == 1)
 					{
-
 						string squeryCompraUsuarioPuedeValidarDescuento = string.Format("Exec CompraUsuarioPuedeValidarDescuento {0}", MenuLatinium.IdUsuario);
 						bool bCompraUsuarioPuedeValidarDescuento = Funcion.bEjecucion(frmRequerimiento.sconexionPoint, squeryCompraUsuarioPuedeValidarDescuento, false);
 
@@ -4956,7 +5132,7 @@ namespace Latinium
 									if ((int)this.cmbFormaPago.Value == 3 && (int)this.txtidPlan.Value != 3) idTPDscto = 3;
 									if ((int)this.cmbFormaPago.Value == 3 && (int)this.txtidPlan.Value == 3) idTPDscto = 92;
 
-									string sSQL = string.Format("Exec FAC_ValidaDescuentoMaximo {0}, {1}", (int)e.Cell.Row.Cells["idArticulo"].Value, idTPDscto);
+									string sSQL = string.Format("Exec FAC_ValidaDescuentoMargen {0}, {1}, {2}", (int)e.Cell.Row.Cells["idArticulo"].Value, idTPDscto,MenuLatinium.IdUsuario);
 									dClavePorcDscto = Funcion.decEscalarSQL(cdsSeteoF, sSQL);
 								}
 							}
@@ -5059,6 +5235,9 @@ namespace Latinium
 			this.cmbBodega1.Value = System.DBNull.Value;
 			this.cmbVendedor.Value = System.DBNull.Value;
 			this.cmbTipoRuc.Value = System.DBNull.Value;
+			this.cmbNumContadoCredito.Value = System.DBNull.Value;
+			this.cmbFechaPrimerPago.Value = System.DBNull.Value;
+			
 			this.btnEntrega.Visible = false;
 			this.btnEntrega.Enabled = false;
 
@@ -5108,14 +5287,15 @@ namespace Latinium
 			this.txtValorEntrega.Value = 0.00m;
 			this.txtNumTransaccion.Text = "";
 			this.txtDireccionEntrega.Text = "";
+			this.lblYupana.Text = "";
 			this.dtFechaEntregaCuriermbo1.Value = System.DBNull.Value;
 			this.cmbCourier.Enabled = true;
-      this.chkEntregaLocal.Checked = false;
-      this.chkEntregaLocal.Enabled = false;
+			this.chkEntregaLocal.Checked = false;
+			this.chkEntregaLocal.Enabled = false;
 			this.chkFreelance.Checked = false;
 			this.chkFreelance.Visible = false;
 			this.chkEntregaLocal.Enabled = false;
-      this.btnEntrega.Visible = false;
+			this.btnEntrega.Visible = false;
 			this.btnEntrega.Enabled = false;
 
 			dCuotaAsignada = 0.00m;
@@ -5130,6 +5310,9 @@ namespace Latinium
 			this.cmbBodega1.Enabled = false;
 			this.cmbVendedor.Enabled = false;
 			this.cmbTipoRuc.Enabled = false;
+			this.cmbNumContadoCredito.Enabled = false;
+			this.cmbFechaPrimerPago.Enabled = false;
+
 
 			this.txtNumero.Enabled = false;
 			this.txtRuc.Enabled = false;
@@ -5275,6 +5458,7 @@ namespace Latinium
 			sOtrosEncuesta = "";
 			CodigoEntrega ="";
 			SettearFamilyFriends();
+			idCre_SolicitudWeb = 0;
 			#endregion Variables
 
 			this.dtFecha.CalendarInfo.MinDate = Funcion.dtEscalarSQL(cdsSeteoF, "Select CONVERT(Date, FechaInicio) From SeteoF");
@@ -5419,7 +5603,7 @@ namespace Latinium
 		{
 			int idCompra = (int)this.txtNumIdCompra.Value;
 
-			// Crear par·metros para el reporte
+			// Crear par√°metros para el reporte
 			ParameterFields paramFields = new ParameterFields();
 			ParameterField paramFieldIdCompra = new ParameterField ();
 			ParameterDiscreteValue discreteValIdCompra = new ParameterDiscreteValue ();
@@ -5440,7 +5624,7 @@ namespace Latinium
 		{
 			int idCompra = (int)this.txtNumIdCompra.Value;
 
-			// Crear par·metros para el reporte
+			// Crear par√°metros para el reporte
 			ParameterFields paramFields = new ParameterFields();
 			ParameterField paramFieldIdCompra = new ParameterField ();
 			ParameterDiscreteValue discreteValIdCompra = new ParameterDiscreteValue ();
@@ -5493,7 +5677,7 @@ namespace Latinium
 		{
 			if (bNuevo)
 			{
-				using (frmMensajeNumeraciÛn Msje = new frmMensajeNumeraciÛn (this.txtNumero.Text.ToString(), bAnulado, iGarantias, false))
+				using (frmMensajeNumeraci√≥n Msje = new frmMensajeNumeraci√≥n (this.txtNumero.Text.ToString(), bAnulado, iGarantias, false))
 				{
 					if (DialogResult.OK == Msje.ShowDialog())
 					{
@@ -5581,7 +5765,7 @@ namespace Latinium
 			/*
 			if (  (bool) this.chkEntregaLocal.Checked == false || (bool) this.chkEntregado.Checked == false )
 			{
-				MessageBox.Show("Debe seleccionar si la entrega ser· en domicilio o en local.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				MessageBox.Show("Debe seleccionar si la entrega ser√° en domicilio o en local.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 				return;
 			}
 
@@ -5589,7 +5773,7 @@ namespace Latinium
 			{
 				if( CodigoEntrega.Length == 0 )
 				{
-					MessageBox.Show("Seleccione la ubicaciÛn de entrega antes de continuar.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Seleccione la ubicaci√≥n de entrega antes de continuar.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
 
@@ -5598,7 +5782,7 @@ namespace Latinium
 
 				if( CountGPS = 0)
 				{
-					MessageBox.Show("Seleccione la ubicaciÛn de entrega antes de continuar.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Seleccione la ubicaci√≥n de entrega antes de continuar.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
 				if( CountGPS > 1)
@@ -5607,7 +5791,7 @@ namespace Latinium
 					return;
 				}
 			}*/
-	    #endregion entregaDomiciliogps
+			#endregion entregaDomiciliogps
 			if (!Validacion.EntregaDomicilio(this.chkEntregado, this.cmbDirecciones, this.dtFechaEntrega, this.dtpHoraEntrega, (int)this.optTipoVenta.EditValue)) return;
 
 			if (!Validacion.Curier(this.chkEntregado, this.cmbCourier, this.dtFechaEntregaCuriermbo1,this.txtNumGuia,(int)this.optTipoVenta.EditValue)) return;
@@ -5637,14 +5821,14 @@ namespace Latinium
 			//					if (Funcion.iEscalarSQL(cdsSeteoF, string.Format("SELECT COUNT(*) FROM Bodega WHERE {0} NOT IN (29, 31, 85, 38, 16, 96, 15, 84, 13)", 
 			//						(int)this.cmbBodega.Value)) > 0)
 			//					{
-			//						MessageBox.Show("No tiene autorizaciÛn para facturar sin intereses con pagos en tarjeta de crÈdito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+			//						MessageBox.Show("No tiene autorizaci√≥n para facturar sin intereses con pagos en tarjeta de cr√©dito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 			//						return;
 			//					}
 			//
 			//					if (Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select COUNT(*) From Banco Where {0} NOT IN (6, 7)", 
 			//						(int)this.txtidBanco.Value)) > 0)
 			//					{
-			//						MessageBox.Show("El banco seleccionado no tiene autorizaciÛn para facturar sin intereses con pagos en tarjeta de crÈdito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+			//						MessageBox.Show("El banco seleccionado no tiene autorizaci√≥n para facturar sin intereses con pagos en tarjeta de cr√©dito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 			//						return;
 			//					}
 			//				
@@ -5678,25 +5862,25 @@ namespace Latinium
 			//
 			//					if (iContProducto == 0)
 			//					{
-			//						MessageBox.Show("Los productos cargados no estan autorizados a facturar sin intereses con pagos en tarjeta de crÈdito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+			//						MessageBox.Show("Los productos cargados no estan autorizados a facturar sin intereses con pagos en tarjeta de cr√©dito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 			//						return;
 			//					}
 			//
 			//					if (iContDescuento > 0)
 			//					{
-			//						MessageBox.Show("No estan autorizados descuentos para facturar sin intereses con pagos en tarjeta de crÈdito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+			//						MessageBox.Show("No estan autorizados descuentos para facturar sin intereses con pagos en tarjeta de cr√©dito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 			//						return;
 			//					}
 			//
 			//					if (iContPromociones > 0)
 			//					{
-			//						MessageBox.Show("No esta autorizado a facturar combos ni promociones adicionales sin intereses con pagos en tarjeta de crÈdito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+			//						MessageBox.Show("No esta autorizado a facturar combos ni promociones adicionales sin intereses con pagos en tarjeta de cr√©dito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 			//						return;
 			//					}
 			//
 			//					if (iContOtros > 0)
 			//					{
-			//						MessageBox.Show("Los productos ingresados no estan autorizados a facturar sin intereses con pagos en tarjeta de crÈdito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+			//						MessageBox.Show("Los productos ingresados no estan autorizados a facturar sin intereses con pagos en tarjeta de cr√©dito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 			//						return;
 			//					}												
 			//				}
@@ -5704,31 +5888,31 @@ namespace Latinium
 			#endregion Valida Promocion sin intereses
 
 			#region Valida Promocion QS Bloqueada
-//			bool bValidaPromObligatorio = false;
-//			int iCont2 = 0;
-//			int iCont1 = 0;
-//
-//			if ((int)this.cmbBodega.Value == 29)
-//			{
-//				foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in ultraGrid1.Rows.All)
-//				{
-//					string sSQLQS = string.Format("Select COUNT(*) From ArticuloSubGrupo s Inner Join Articulo a On a.idSubGrupo = s.idSubGrupo Where a.idSubGrupo In (66, 131, 189, 203, 205, 220) And a.idArticulo = {0}", 
-//						(int)dr.Cells["idArticulo"].Value);
-//					if (Funcion.iEscalarSQL(cdsSeteoF, sSQLQS) > 0) iCont1++;	
-//				}
-//
-//				if (iCont1 == 0)
-//				{
-//					foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in ultraGrid1.Rows.All)
-//					{
-//						string sSQLQS = string.Format("Select COUNT(*) From ArticuloSubGrupo s Inner Join Articulo a On a.idSubGrupo = s.idSubGrupo Where a.idSubGrupo In (146, 105) And a.idArticulo = {0}", 
-//							(int)dr.Cells["idArticulo"].Value);
-//						if (Funcion.iEscalarSQL(cdsSeteoF, sSQLQS) > 0) iCont2++;	
-//					}
-//				}
-//
-//				if (iCont2 > 0) bValidaPromObligatorio = true;
-//			}
+			//			bool bValidaPromObligatorio = false;
+			//			int iCont2 = 0;
+			//			int iCont1 = 0;
+			//
+			//			if ((int)this.cmbBodega.Value == 29)
+			//			{
+			//				foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in ultraGrid1.Rows.All)
+			//				{
+			//					string sSQLQS = string.Format("Select COUNT(*) From ArticuloSubGrupo s Inner Join Articulo a On a.idSubGrupo = s.idSubGrupo Where a.idSubGrupo In (66, 131, 189, 203, 205, 220) And a.idArticulo = {0}", 
+			//						(int)dr.Cells["idArticulo"].Value);
+			//					if (Funcion.iEscalarSQL(cdsSeteoF, sSQLQS) > 0) iCont1++;	
+			//				}
+			//
+			//				if (iCont1 == 0)
+			//				{
+			//					foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in ultraGrid1.Rows.All)
+			//					{
+			//						string sSQLQS = string.Format("Select COUNT(*) From ArticuloSubGrupo s Inner Join Articulo a On a.idSubGrupo = s.idSubGrupo Where a.idSubGrupo In (146, 105) And a.idArticulo = {0}", 
+			//							(int)dr.Cells["idArticulo"].Value);
+			//						if (Funcion.iEscalarSQL(cdsSeteoF, sSQLQS) > 0) iCont2++;	
+			//					}
+			//				}
+			//
+			//				if (iCont2 > 0) bValidaPromObligatorio = true;
+			//			}
 			#endregion Valida Promocion QS Bloqueada
 
 			#region Valida Promocion Producto Obligatorio 
@@ -5790,7 +5974,7 @@ namespace Latinium
 								{
 									if (dr.Cells["SerieL"].Value == DBNull.Value || dr.Cells["SerieL"].Value.ToString() == "")
 									{
-										MessageBox.Show(string.Format("Escriba la serial del artÌculo '{0}'.", dr.Cells["Articulo"].Value.ToString().Trim()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+										MessageBox.Show(string.Format("Escriba la serial del art√≠culo '{0}'.", dr.Cells["Articulo"].Value.ToString().Trim()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 										this.ultraGrid1.ActiveRow = dr;
 										this.ultraGrid1.ActiveRow.Selected = true;
 										return;
@@ -5830,14 +6014,14 @@ namespace Latinium
 
 									if (VerifCantArticulo < Cant)
 									{
-										MessageBox.Show("Ha registrado " + VerifCantArticulo + " de " + Cant + " series del artÌculo " + Art.Trim() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+										MessageBox.Show("Ha registrado " + VerifCantArticulo + " de " + Cant + " series del art√≠culo " + Art.Trim() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 										this.ultraGrid1.ActiveRow = dr;
 										this.ultraGrid1.ActiveRow.Selected = true;
 										return;
 									}
 									else if (VerifCantArticulo > Cant)
 									{
-										MessageBox.Show("Ha registrado " + VerifCantArticulo + " de " + Cant + " series del artÌculo " + Art.Trim() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+										MessageBox.Show("Ha registrado " + VerifCantArticulo + " de " + Cant + " series del art√≠culo " + Art.Trim() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 										this.ultraGrid1.ActiveRow = dr;
 										this.ultraGrid1.ActiveRow.Selected = true;
 										return;
@@ -5847,7 +6031,7 @@ namespace Latinium
 									{
 										if ((int) dr1.Cells["Estado"].Value == 8 && dr1.Cells["Observaciones"].Value.ToString().Trim().Length == 0)
 										{
-											MessageBox.Show("Ingrese una observaciÛn para la serial " + dr1.Cells["Serial"].Value.ToString() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+											MessageBox.Show("Ingrese una observaci√≥n para la serial " + dr1.Cells["Serial"].Value.ToString() + ".", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 											this.grdSerial.ActiveRow = dr1;
 											this.grdSerial.ActiveRow.Selected = true;
 											return;
@@ -5879,7 +6063,7 @@ namespace Latinium
 						{
 							sVSerial = Funcion.sEscalarSQL(cdsSeteoF, string.Format("Exec [ValidaSerialesConteoMensaje] {0}", (int) dr.Cells["idSerial"].Value));
 
-							MessageBox.Show("" + sVSerial + "\n\n  No existe por favor comunicarse con el ·rea de \n\n Auditoria Ext: 2011/2010 ", "Point Technology");
+							MessageBox.Show("" + sVSerial + "\n\n  No existe por favor comunicarse con el √°rea de \n\n Auditoria Ext: 2011/2010 ", "Point Technology");
 							return;
 						}
 					}
@@ -5946,7 +6130,7 @@ namespace Latinium
 			{					
 				if (Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select Count(*) From Retenciones Where ClienteProveedor = 0 And idCompra = {0} And Estado <> 2", (int)this.txtNumIdCompra.Value)) > 0)
 				{
-					if (DialogResult.Yes == MessageBox.Show("Ha Eliminado la RetenciÛn de esta Factura øEsta Seguro de Guardar sin RetenciÛn?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 
+					if (DialogResult.Yes == MessageBox.Show("Ha Eliminado la Retenci√≥n de esta Factura ¬øEsta Seguro de Guardar sin Retenci√≥n?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 
 					{
 						string sSQLAnulaRetencion = string.Format("Exec AnulaRetencionDesdeFactura {0}", (int)this.txtNumIdCompra.Value);
 						Funcion.EjecutaSQL(cdsSeteoF, sSQLAnulaRetencion);
@@ -6475,12 +6659,12 @@ namespace Latinium
 							int iPosicion = 0;
 							if (dr.Cells["Posicion"].Value != System.DBNull.Value) iPosicion = (int)dr.Cells["Posicion"].Value;
 
-							string sSQLDetalle = string.Format("Exec GuardaDetalleFactura {0}, {1}, {2}, {3}, {4}, '{5}', '{6}', {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}",
+							string sSQLDetalle = string.Format("Exec GuardaDetalleFactura {0}, {1}, {2}, {3}, {4}, '{5}', '{6}', {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}",
 								(int)dr.Cells["idDetCompra"].Value, (int)dr.Cells["idOrigen"].Value, (int)this.txtNumIdCompra.Value,
 								(int)dr.Cells["idArticulo"].Value, (int)dr.Cells["idUnidad"].Value, dr.Cells["Codigo"].Value.ToString(), dr.Cells["Articulo"].Value,
 								(int)dr.Cells["Cantidad"].Value, (decimal)dr.Cells["Precio"].Value, (decimal)dr.Cells["Impuesto"].Value, (decimal)dr.Cells["DescuentoArt"].Value, (decimal)dr.Cells["DescuentoPorc"].Value, (decimal)dr.Cells["Subtotal"].Value,
 								(bool)dr.Cells["EstadoSerial"].Value, (int)dr.Cells["Tipo"].Value, (bool)dr.Cells["Entregado"].Value, (int)dr.Cells["Posicion"].Value, (bool)dr.Cells["Principal"].Value, 
-								(bool)dr.Cells["Bloqueado"].Value, (int)dr.Cells["idCombo"].Value, (int)dr.Cells["idArticuloGE"].Value, (decimal)dr.Cells["Jornadas"].Value);
+								(bool)dr.Cells["Bloqueado"].Value, (int)dr.Cells["idCombo"].Value, (int)dr.Cells["idArticuloGE"].Value, (decimal)dr.Cells["Jornadas"].Value, (decimal)dr.Cells["Aporte"].Value, (int)dr.Cells["idSubProyecto"].Value);
 							oCmdActualiza.CommandText = sSQLDetalle;
 							oCmdActualiza.ExecuteNonQuery();
 						}
@@ -6500,24 +6684,23 @@ namespace Latinium
 						this.ultraGrid1.DataSource = oDTDetalle;						
 						#endregion Graba Factura
 						
-						#region Guarda la tabla de amortizaciÛn de la factura
+						#region Guarda la tabla de amortizaci√≥n de la factura
 						if (bCrediPoint)
 						{
-							if (bNuevo && (int) this.cmbFormaPago.Value == 9)
+							if (bNuevo && ((int) this.cmbFormaPago.Value == 9 || (int) this.cmbFormaPago.Value == 35))
 							{
 							
-
 								decimal dValor = Convert.ToDecimal(this.txtTotal.Value) - Convert.ToDecimal(this.txtCuotaDeEntrada.Value);
 							
 								DateTime dtFechaT = (DateTime)this.dtFecha.Value;
-								string sSQLTA = string.Format("Exec GuardaTablaDeAmortizacion {0}, {1}, '{2}', '{3}', {4}", 
-									dValor, NumCuotas, dtFechaT.ToString("yyyyMMdd"), dtFechPrimPago.ToString("yyyyMMdd"), (int)this.txtNumIdCompra.Value);						
+								string sSQLTA = string.Format("Exec GuardaTablaDeAmortizacion {0}, {1}, '{2}', '{3}', {4}, {5} , {6}", 
+									dValor, NumCuotas, dtFechaT.ToString("yyyyMMdd"), dtFechPrimPago.ToString("yyyyMMdd"), (int)this.txtNumIdCompra.Value, (int) this.cmbFormaPago.Value, idCre_SolicitudWeb);						
 								oCmdActualiza.CommandText = sSQLTA;
 								oCmdActualiza.ExecuteNonQuery();
 
 							}
 						}
-						#endregion Guarda la tabla de amortizaciÛn de la factura
+						#endregion Guarda la tabla de amortizaci√≥n de la factura
 
 						#region Freelance
 						
@@ -7071,15 +7254,17 @@ namespace Latinium
 
 						oConexion.Close();
 
+						#region FamilyFriends Credito
+						FamilyFriendsCompraVenta(FamilyFriendsService.EstadoFFCompraContabilizada);
+						#endregion FamilyFriends Credito
+
+
 						Cursor = Cursors.Default;							
 
 						Facturacion.ActualizaEstadoCuponWeb(idCuponWeb, 2, (int)this.txtNumIdCompra.Value, cdsSeteoF);
 
-						#region FamilyFriends
-						FamilyFriendsCompra(FamilyFriendsService.EstadoFFCompraContabilizada);
-						#endregion FamilyFriends
 
-						#region ImpresiÛn
+						#region Impresi√≥n
 						if(!bRebates) ImpresionDirecta(iGarantiasExtendidas);
 
 						if(tienePointRespaldo)
@@ -7108,13 +7293,13 @@ namespace Latinium
 
 								Reporte miRep = new Reporte("ContratoCompraVentaCelular.rpt", "");
 								miRep.MdiParent = this.MdiParent;
-								miRep.Titulo("RecepciÛn Mercaderia de Retiro");
+								miRep.Titulo("Recepci√≥n Mercaderia de Retiro");
 								miRep.crVista.ParameterFieldInfo = paramFields;
 								miRep.Show();	
 							}
 							#endregion Imprime Celulares 
 						}
-						#endregion ImpresiÛn
+						#endregion Impresi√≥n
 							
 						#region Controles
 						if ((int)this.txtNumEstado.Value == 11)	this.lblEstado.Text = "MANUAL";
@@ -7125,6 +7310,9 @@ namespace Latinium
 						this.cmbBodega1.Enabled = false;
 						this.cmbVendedor.Enabled = false;
 						this.cmbTipoRuc.Enabled = false;
+
+						this.cmbFechaPrimerPago.Enabled = false;
+						this.cmbNumContadoCredito.Enabled = false;
 
 						this.txtNumero.Enabled = false;
 						this.txtRuc.Enabled = false;
@@ -7396,12 +7584,12 @@ namespace Latinium
 							#region Detalle
 							foreach(Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.ultraGrid1.Rows.All)
 							{	
-								string sSQLDetalle = string.Format("Exec GuardaDetalleFactura {0}, {1}, {2}, {3}, {4}, '{5}', '{6}', {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}",
+								string sSQLDetalle = string.Format("Exec GuardaDetalleFactura {0}, {1}, {2}, {3}, {4}, '{5}', '{6}', {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}",
 									(int)dr.Cells["idDetCompra"].Value, (int)dr.Cells["idOrigen"].Value, (int)this.txtNumIdCompra.Value,
 									(int)dr.Cells["idArticulo"].Value, (int)dr.Cells["idUnidad"].Value, dr.Cells["Codigo"].Value.ToString(), dr.Cells["Articulo"].Value,
 									(int)dr.Cells["Cantidad"].Value, (decimal)dr.Cells["Precio"].Value, (decimal)dr.Cells["Impuesto"].Value, (decimal)dr.Cells["DescuentoArt"].Value, (decimal)dr.Cells["DescuentoPorc"].Value, (decimal)dr.Cells["Subtotal"].Value,
 									(bool)dr.Cells["EstadoSerial"].Value, (int)dr.Cells["Tipo"].Value, (bool)dr.Cells["Entregado"].Value, (int)dr.Cells["Posicion"].Value, (bool)dr.Cells["Principal"].Value, 
-									(bool)dr.Cells["Bloqueado"].Value, (int)dr.Cells["idCombo"].Value, (int)dr.Cells["idArticuloGE"].Value, (decimal)dr.Cells["Jornadas"].Value);
+									(bool)dr.Cells["Bloqueado"].Value, (int)dr.Cells["idCombo"].Value, (int)dr.Cells["idArticuloGE"].Value, (decimal)dr.Cells["Jornadas"].Value, (decimal)dr.Cells["Aporte"].Value, (int)dr.Cells["idSubProyecto"].Value);
 								oCmdActualiza.CommandText = sSQLDetalle;
 								oCmdActualiza.ExecuteNonQuery();
 							}
@@ -7427,7 +7615,7 @@ namespace Latinium
 							}											
 							#endregion Graba Google
 
-							#region Guarda la tabla de amortizaciÛn de la factura
+							#region Guarda la tabla de amortizaci√≥n de la factura
 							if (bCrediPoint)
 							{
 								if (bNuevo && (int) this.cmbFormaPago.Value == 9)
@@ -7441,7 +7629,7 @@ namespace Latinium
 									oCmdActualiza.ExecuteNonQuery();
 								}
 							}
-							#endregion Guarda la tabla de amortizaciÛn de la factura
+							#endregion Guarda la tabla de amortizaci√≥n de la factura
 							
 							#region Clave S.R.I.
 							if (bNuevo)
@@ -7964,6 +8152,13 @@ namespace Latinium
 								oCmdActualiza.CommandText = sSQLLM;
 								oCmdActualiza.ExecuteNonQuery();
 							}
+							if (BPagados == true)
+							{
+								string sSQP2 = string.Format("Exec ActualizaDatosPagados {0}, {1}", 
+									IdPagados, (int)this.txtNumIdCompra.Value);
+								oCmdActualiza.CommandText = sSQP2;
+								oCmdActualiza.ExecuteNonQuery();	
+							}
 
 							#region Nota De Credito
 							if (idCompraOrigen > 0)
@@ -8005,8 +8200,12 @@ namespace Latinium
 							oTransaction.Commit();
 
 							oConexion.Close();
+
+							#region FamilyFriends Efectivo Tarjeta
+							FamilyFriendsCompraVenta(FamilyFriendsService.EstadoFFCompraContabilizada);
+							#endregion FamilyFriends Efectivo Tarjeta
 					
-							#region ImpresiÛn
+							#region Impresi√≥n
 							ImpresionDirecta(0);//iGarantiasExtendidas
 
 							if(tieneAsistenciaSaludDental)
@@ -8031,13 +8230,13 @@ namespace Latinium
 
 									Reporte miRep = new Reporte("ContratoCompraVentaCelular.rpt", "");
 									miRep.MdiParent = this.MdiParent;
-									miRep.Titulo("RecepciÛn Mercaderia de Retiro");
+									miRep.Titulo("Recepci√≥n Mercaderia de Retiro");
 									miRep.crVista.ParameterFieldInfo = paramFields;
 									miRep.Show();	
 								}
 								#endregion Imprime Celulares 
 							}
-							#endregion ImpresiÛn
+							#endregion Impresi√≥n
 
 							Facturacion.ActualizaEstadoCuponWeb(idCuponWeb, 2, (int)this.txtNumIdCompra.Value, cdsSeteoF);
 							
@@ -8149,103 +8348,107 @@ namespace Latinium
 			}
 			#endregion Efectivo - Tarjeta
 			#endregion Grabar
-
 		}
 
-		private void FamilyFriendsCompra(int Estado)
+		private void FamilyFriendsCompraVenta(int Estado)
 		{
 			string nombreClase = this.GetType().Name;
-			string nombreMetodo = "FamilyFriendsCompra";
+			string nombreMetodo = "FamilyFriendsCompra_Venta";
 
-			// ============================
-			// Log de estadoFF antes de procesar
-			// ============================
-			Funcion.LogSistema(frmRequerimiento.sconexionInicio, nombreClase + ": " + nombreMetodo,
-				string.Format(
-				"EstadoFF antes de procesar | EsFF: {0}, RechazoPromocion: {1}, IdWEB_FF_Invitado: {2}",
-				estadoFF.EsFF,
-				estadoFF.RechazoPromocion,
-				estadoFF.IdWEB_FF_Invitado
-				),
-				nombreMetodo,
-				Funcion.slogtipoinformacion
-				);
+			int idCompra = (int)this.txtNumIdCompra.Value;
+			bool debeGuardar = true;
 
-			// Solo insertar si aceptÛ FF o rechazÛ explÌcitamente
-			if (!estadoFF.EsFF && !estadoFF.RechazoPromocion)
+			bool estadoNeutro = (!estadoFF.EsFF && !estadoFF.RechazoPromocion);
+
+			// =====================================================
+			// 0) VALIDACI√ìN PREVIA (ESTADO DE PANTALLA)
+			// =====================================================
+			if (estadoNeutro)
 			{
-				Funcion.LogSistema(frmRequerimiento.sconexionInicio, nombreClase + ": " + nombreMetodo,
-					"No se procesa la compra: no es FF ni rechazo explÌcito",
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio,
+					nombreClase + ": " + nombreMetodo,
+					"Estado neutro FF en pantalla, se reconsulta BD",
+					nombreMetodo,
+					Funcion.slogtipoinformacion
+					);
+
+				// Re-consulta a BD para confirmar estado real
+				ConsultarEstadoFamilyFriends(idCompra);
+
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio,
+					nombreClase + ": " + nombreMetodo,
+					string.Format(
+					"Post reconsulta FF | EsFF: {0}, RechazoPromocion: {1}, IdWEB_FF_Invitado: {2}",
+					estadoFF.EsFF,
+					estadoFF.RechazoPromocion,
+					estadoFF.IdWEB_FF_Invitado
+					),
+					nombreMetodo,
+					Funcion.slogtipoinformacion
+					);
+
+				// recalcular estado neutro tras reconsulta
+				estadoNeutro = (!estadoFF.EsFF && !estadoFF.RechazoPromocion);
+			}
+
+			// =====================================================
+			// 1) VALIDACIONES DEFINITIVAS
+			// =====================================================
+			if (estadoNeutro)
+			{
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio,
+					nombreClase + ": " + nombreMetodo,
+					"Estado neutro FF confirmado, no se guarda",
+					nombreMetodo,
+					Funcion.slogtipoinformacion
+					);
+
+				debeGuardar = false;
+			}
+
+			// =====================================================
+			// 2) DECISI√ìN FINAL
+			// =====================================================
+			if (!debeGuardar)
+			{
+				Funcion.LogSistema(frmRequerimiento.sconexionInicio,
+					nombreClase + ": " + nombreMetodo,
+					"Fin proceso FF sin guardar",
 					nombreMetodo,
 					Funcion.slogtipoinformacion
 					);
 				return;
 			}
 
-			// ============================
-			// Preparar modelo
-			// ============================
-			FamilyFriendsService service = new FamilyFriendsService(frmRequerimiento.sconexionPoint);
+			// =====================================================
+			// 3) PREPARAR MODELO
+			// =====================================================
+			FamilyFriendsService service =
+				new FamilyFriendsService(frmRequerimiento.sconexionPoint);
 
 			FamilyFriendsCompraModel model = new FamilyFriendsCompraModel();
-			model.IdCompra = (int)this.txtNumIdCompra.Value;
+			model.IdCompra = idCompra;
 			model.IdWEB_FF_Invitado = estadoFF.IdWEB_FF_Invitado;
-
-			// Determinar el estado correcto
-			if (estadoFF.RechazoPromocion)
-			{
-				model.Estado = FamilyFriendsService.EstadoFFCompraNoAcepta; // rechazo
-			}
-			else
-			{
-				model.Estado = Estado; // aceptar el estado que viene (temporal, contabilizado, etc.)
-			}
-
 			model.IdTipoPrecio = idTipoPrecio;
 			model.IdFormaPago = (int)this.cmbFormaPago.Value;
 			model.IdCliente = (int)this.txtNumIdCliente.Value;
 
-			// ============================
-			// Log completo antes de guardar
-			// ============================
-			Funcion.LogSistema(frmRequerimiento.sconexionInicio, nombreClase + ": " + nombreMetodo,
-				string.Format(
-				"Preparando GuardarCompra | Modelo completo: " +
-				"IdCompra: {0}, IdWEB_FF_Invitado: {1}, Estado: {2}, IdTipoPrecio: {3}, " +
-				"IdFormaPago: {4}, IdCliente: {5}, " +
-				"Valores UI: txtNumIdCompra: {6}, cmbFormaPago: {7}, txtNumIdCliente: {8}",
-				model.IdCompra,
-				model.IdWEB_FF_Invitado,
-				model.Estado,
-				model.IdTipoPrecio,
-				model.IdFormaPago,
-				model.IdCliente,
-				this.txtNumIdCompra.Value,
-				this.cmbFormaPago.Value,
-				this.txtNumIdCliente.Value
-				),
-				nombreMetodo,
-				Funcion.slogtipoinformacion
-				);
+			model.Estado = estadoFF.RechazoPromocion
+				? FamilyFriendsService.EstadoFFCompraNoAcepta
+				: Estado;
 
-			// ============================
-			// Guardar en DB
-			// ============================
+			// =====================================================
+			// 4) GUARDAR
+			// =====================================================
 			Guid id = service.GuardarCompra(model);
 
-			// ============================
-			// Log del resultado
-			// ============================
-			Funcion.LogSistema(frmRequerimiento.sconexionInicio, nombreClase + ": " + nombreMetodo,
-				"GuardarCompra completado | idWEB_FF_Compra retornado: " + id.ToString(),
+			Funcion.LogSistema(frmRequerimiento.sconexionInicio,
+				nombreClase + ": " + nombreMetodo,
+				"GuardarCompra_Venta OK | idWEB_FF_Compra: " + id,
 				nombreMetodo,
 				Funcion.slogtipoinformacion
 				);
-
-			// Consola opcional
-			Console.WriteLine("idWEB_FF_Compra retornado: " + id.ToString());
 		}
-
 
 		private void btnEditar_Click(object sender, System.EventArgs e)
 		{				
@@ -8290,6 +8493,8 @@ namespace Latinium
 				return;
 			}
 
+			if (Funcion.ValidaBloqueo((int)this.txtNumIdCompra.Value, 1, cdsSeteoF)) return;
+
 			if (Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select idFE_EstadoComprobante From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value), true) == 2)
 			{
 				MessageBox.Show("No puede Editar la Factura esta autorizada por el S.R.I.", "Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -8311,20 +8516,18 @@ namespace Latinium
 			if (Funcion.ValidaPeriodo((DateTime)this.dtFecha.Value, cdsSeteoF, "Venta")) 
 			{				
 				DateTime dtFecha = (DateTime)this.dtFecha.Value;
-				MessageBox.Show(string.Format("No Puede Editar esta Factura, El PerÌodo '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);												
+				MessageBox.Show(string.Format("No Puede Editar esta Factura, El Per√≠odo '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);												
 				return;
 			}
-			
+      			
 			if (!FuncionesInventario.ValidaBodegaInventarios(this.ultraGrid1, (int)this.cmbBodega.Value, (DateTime)this.dtFecha.Value, cdsSeteoF)) return;
-
-			if (Funcion.ValidaBloqueo((int)this.txtNumIdCompra.Value, 1, cdsSeteoF)) return;
 
 			DateTime dtFechaHoy = Funcion.dtEscalarSQL(cdsSeteoF, "Select GetDate()");
 			DateTime dtFechaFac = (DateTime) this.dtFecha.Value;
 			
 			if ((miAcceso.EditarSoloDia && Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select ISNULL(Estado, 0) From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value), true) != 6) && dtFechaFac.ToShortDateString() != dtFechaHoy.ToShortDateString())
 			{
-				MessageBox.Show("Solo puede editar Facturas de fecha " + dtFechaHoy.ToString("dd/MMM/yyyy"), "InformaciÛn", MessageBoxButtons.OK, MessageBoxIcon.Information);					
+				MessageBox.Show("Solo puede editar Facturas de fecha " + dtFechaHoy.ToString("dd/MMM/yyyy"), "Informaci√≥n", MessageBoxButtons.OK, MessageBoxIcon.Information);					
 				return;
 			}
 
@@ -8391,11 +8594,11 @@ namespace Latinium
 			if (!bServicioTecnico && idTipoOrigen == 0 && bExigeVendedor) this.cmbVendedor.Enabled = true;
 			this.txtNotas.Enabled = true;						
 			this.chkEntregado.Enabled = true;	
-      if((bool) this.chkEntregado.Checked) this.btnEntrega.Enabled = true;
+			if((bool) this.chkEntregado.Checked) this.btnEntrega.Enabled = true;
 			this.chkEntregaLocal.Enabled = true;
 									
 			this.txtSerial.Enabled = true;
-			//Incremento por AngÈlica 
+			//Incremento por Ang√©lica 
 			this.txtresponsablecurier.Enabled = true;
 			this.txtNumGuia.Enabled = true;
 			this.txtValorEntrega.Enabled = true;
@@ -8419,9 +8622,9 @@ namespace Latinium
 			{
 				if (!this.bCrediPoint)
 				{
-					this.cmbTipoRuc.Enabled = true;
-					this.txtRuc.Enabled = true;
-					this.btnCliente.Enabled = true;
+					this.cmbTipoRuc.Enabled = ((int)this.cmbFormaPago.Value != 35);
+					this.txtRuc.Enabled = ((int)this.cmbFormaPago.Value != 35);
+					this.btnCliente.Enabled = ((int)this.cmbFormaPago.Value != 35);
 				}
 			}
 
@@ -8517,8 +8720,9 @@ namespace Latinium
 			if (idFormaPago != 4 && !bServicioTecnico)
 			{
 				this.cmbTipoRuc.Value = 5;	
-				this.cmbTipoRuc.Enabled = true;
-				this.txtRuc.Enabled = true;
+				this.cmbTipoRuc.Enabled = (idFormaPago != 35);
+				this.txtRuc.Enabled = (idFormaPago != 35);
+				this.btnCliente.Enabled = (idFormaPago != 35);
 			}
 
 			if (bServicioTecnico)
@@ -8752,6 +8956,7 @@ namespace Latinium
 		bool bFormaPagoPromocional = false;
 		DateTime dtFecVencCupon = DateTime.Today;
 		string sNumero = "";
+		int idCre_SolicitudWeb = 0;
 
 		private void cmbBodega_ValueChanged(object sender, System.EventArgs e)
 		{			
@@ -8859,6 +9064,32 @@ namespace Latinium
 					}
 				}
 				#endregion S.R.I. si es registro nuevo				
+				#region Integraci√≥n Yupana (Forma de Pago 35)
+				/*if (bNuevo && this.cmbFormaPago.Value != null && this.cmbFormaPago.Value != DBNull.Value && (int)this.cmbFormaPago.Value == 35)
+				{
+					bool bRegistroSeleccionado = false;
+					using (frmBuscaCre_SolicitudYupana frmYupana = new frmBuscaCre_SolicitudYupana((int)this.cmbBodega.Value))
+					{
+						if (frmYupana.ShowDialog() == DialogResult.OK && frmYupana.ultraGrid1.ActiveRow != null)
+						{
+							if (frmYupana.ultraGrid1.ActiveRow.Cells["Cedula"].Value != null && frmYupana.ultraGrid1.ActiveRow.Cells["Cedula"].Value != DBNull.Value)
+							{
+								this.cmbTipoRuc.Value = 5;
+								this.txtRuc.Text = frmYupana.ultraGrid1.ActiveRow.Cells["Cedula"].Value.ToString();
+								this.txtRuc_Validated(this.txtRuc, System.EventArgs.Empty);
+								this.cmbNumContadoCredito.Enabled = true;
+								bRegistroSeleccionado = true;
+							}
+						}
+					}
+
+					if (!bRegistroSeleccionado)
+					{
+						MessageBox.Show("En la bodega seleccionada no existe registro de solicitud Yupana", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						this.cmbBodega.Value = System.DBNull.Value;
+					}
+				}*/
+				#endregion
 			}
 		}
 
@@ -8877,7 +9108,7 @@ namespace Latinium
 				if (stMensaje.Length > 0) 
 				{
 					e.Cancel = true;
-					MessageBox.Show(stMensaje, "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information); // "No puede crear m·s lineas");
+					MessageBox.Show(stMensaje, "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information); // "No puede crear m√°s lineas");
 				}*/
 		}
 		
@@ -8994,7 +9225,7 @@ namespace Latinium
 
 					string Serial = this.grdSerial.ActiveRow.Cells["Serial"].Value.ToString();
 
-					if (DialogResult.Yes ==	MessageBox.Show(string.Format("øDesea modificar la serial '{0}'?", Serial), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+					if (DialogResult.Yes ==	MessageBox.Show(string.Format("¬øDesea modificar la serial '{0}'?", Serial), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
 					{
 						this.txtSerial.Text = Serial; 
 						ModSerial = true;
@@ -9028,11 +9259,11 @@ namespace Latinium
 			
 			if ((decimal)this.txtTotal.Value == 0.00m)
 			{
-				MessageBox.Show("No puede crear la retenciÛn en 0.00", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);				
+				MessageBox.Show("No puede crear la retenci√≥n en 0.00", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);				
 			}
 			else if (this.txtSerieRetencion.Text.ToString() == "")
 			{
-				MessageBox.Show("Ingrese la serie para la retenciÛn.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Ingrese la serie para la retenci√≥n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtSerieRetencion.Focus();				
 			}
 			else if (this.txtSerieRetencion.Text.ToString().Length < 6)
@@ -9042,22 +9273,22 @@ namespace Latinium
 			}
 			else if (this.txtAutorizacionRetencion.Text.ToString() == "")
 			{
-				MessageBox.Show("Ingrese el n˙mero de AutorizaciÛn.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Ingrese el n√∫mero de Autorizaci√≥n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtAutorizacionRetencion.Focus();				
 			}
 			else if (this.txtAutorizacionRetencion.Text.Length < 10 || this.txtAutorizacionRetencion.Text.Length > 37)
 			{
-				MessageBox.Show("Longitud de la AutorizaciÛn debe estar entre 10 y 37 caracteres", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Longitud de la Autorizaci√≥n debe estar entre 10 y 37 caracteres", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtAutorizacionRetencion.Focus();				
 			}
 			else if (this.txtNumeroRetencion.Text.ToString() == "")
 			{
-				MessageBox.Show("Ingrese el n˙mero de la retenciÛn.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Ingrese el n√∫mero de la retenci√≥n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtNumeroRetencion.Focus();				
 			}
 			else if (this.dtFechaRetencion.Value == System.DBNull.Value)
 			{
-				MessageBox.Show("Ingrese la Fecha de RetenciÛn.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Ingrese la Fecha de Retenci√≥n.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				this.txtNumeroRetencion.Focus();
 			}		
 			else
@@ -9284,7 +9515,7 @@ namespace Latinium
 				
 			if (dAnticipo > 0)
 			{
-				if	(DialogResult.Yes == MessageBox.Show(string.Format("El cliente tiene un saldo a favor de {0} dÛlares, øDesea cruzarlo?", dAnticipo), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 				
+				if	(DialogResult.Yes == MessageBox.Show(string.Format("El cliente tiene un saldo a favor de {0} d√≥lares, ¬øDesea cruzarlo?", dAnticipo), "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 				
 					bUsoAnticipo = true;
 				else
 				{
@@ -9367,7 +9598,7 @@ namespace Latinium
 		}
 		
 
-		// Request que recuerda la ˙ltima cÈdula y forma de pago confirmadas
+		// Request que recuerda la √∫ltima c√©dula y forma de pago confirmadas
 		private FamilyFriendsRequestModel reqFF = new FamilyFriendsRequestModel();
 		// Solo una variable para todo el estado FF
 		private FamilyFriendsEstadoModel estadoFF = new FamilyFriendsEstadoModel();
@@ -9382,7 +9613,7 @@ namespace Latinium
 			reqFF.RucCliente = this.txtRuc.Text;
 			reqFF.Owner = this;
 
-			// Ejecuta la verificaciÛn
+			// Ejecuta la verificaci√≥n
 			FamilyFriendsVerificacionModel r = service.VerificarFF(reqFF);
 
 			// Guardar en el modelo
@@ -9405,7 +9636,7 @@ namespace Latinium
 
 				if (estadoFF.RechazoPromocion)
 				{
-					this.lblRecurrente.Text = "PROMOCI”N FF RECHAZADA";
+					this.lblRecurrente.Text = "PROMOCI√ìN FF RECHAZADA";
 				}
 				else
 				{
@@ -9590,18 +9821,18 @@ namespace Latinium
           
 					this.chkEntregaLocal.Checked = dr.GetBoolean(70);
 					CodigoEntrega = dr.GetString(71);
-
-
-
+					idCre_SolicitudWeb  = dr.GetInt32(72);
 				}
 				dr.Close();
 
 				this.txtBaseImponible.Value = (decimal)this.txtIva.Value - (decimal)this.txtDescIvaTotal.Value;
 
 				this.cmbBodega.Value = iBodega;
+				this.cmbFechaPrimerPago.Value = dtFechPrimPago;
+				this.cmbNumContadoCredito.Value = NumCuotas;
 
 				this.cmbDirecciones.DataSource = FuncionesProcedimientos.ListaDireccionesClientes((int)this.txtNumIdCliente.Value, cdsSeteoF);
-
+        if((int) this.cmbFormaPago.Value == 35 && idCre_SolicitudWeb > 0 ) this.lblYupana.Text ="YUPANA";
 				if ((int)this.txtNumEstado.Value == 6 && (int)this.cmbFormaPago.Value == 4) 
 				{
 					BUsoNotaDeCredito = true;
@@ -9646,28 +9877,28 @@ namespace Latinium
 				#endregion Retenciones
 
 				#region Pago con nota de credito
-//				if ((int)this.cmbFormaPago.Value == 4)
-//				{						
-//					BUsoNotaDeCredito = true;
-//					
-//					string sSQLNC = string.Format("Select (Select idFormaPago From Compra where idCompra = c.idOrigen), SaldoAnticipo, Numero From Compra c Where idCompra = {0}", (int)this.txtNumidOrigen.Value);
-//					SqlDataReader drNC = Funcion.rEscalarSQL(cdsSeteoF, sSQLNC, true);
-//					drNC.Read();
-//					if (drNC.HasRows)
-//					{
-//						this.txtNumidFPNC.Value = drNC.GetInt32(0);
-//						dSaldoNotaDeCredito = drNC.GetDecimal(1);						
-//						this.txtComprobante.Text = drNC.GetString(2);
-//					}
-//					drNC.Close();					
-//					
-//					idTipoPrecio = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Exec RetornaTipoDePrecioVenta {0}, {1}", (int)this.txtNumidFPNC.Value, (int)this.cmbBodega.Value));					
-//
-//					idCompraOrigen = (int)this.txtNumidOrigen.Value;
-//
-//					string sSQLBloqueo = string.Format("Exec RegistraBloqueoTransacciones 0, 1, {0}, 1", (int)this.txtNumidOrigen.Value);
-//					idBloqueaTransacciones1 = Funcion.iEscalarSQL(cdsSeteoF, sSQLBloqueo, true);
-//				}					
+				//				if ((int)this.cmbFormaPago.Value == 4)
+				//				{						
+				//					BUsoNotaDeCredito = true;
+				//					
+				//					string sSQLNC = string.Format("Select (Select idFormaPago From Compra where idCompra = c.idOrigen), SaldoAnticipo, Numero From Compra c Where idCompra = {0}", (int)this.txtNumidOrigen.Value);
+				//					SqlDataReader drNC = Funcion.rEscalarSQL(cdsSeteoF, sSQLNC, true);
+				//					drNC.Read();
+				//					if (drNC.HasRows)
+				//					{
+				//						this.txtNumidFPNC.Value = drNC.GetInt32(0);
+				//						dSaldoNotaDeCredito = drNC.GetDecimal(1);						
+				//						this.txtComprobante.Text = drNC.GetString(2);
+				//					}
+				//					drNC.Close();					
+				//					
+				//					idTipoPrecio = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Exec RetornaTipoDePrecioVenta {0}, {1}", (int)this.txtNumidFPNC.Value, (int)this.cmbBodega.Value));					
+				//
+				//					idCompraOrigen = (int)this.txtNumidOrigen.Value;
+				//
+				//					string sSQLBloqueo = string.Format("Exec RegistraBloqueoTransacciones 0, 1, {0}, 1", (int)this.txtNumidOrigen.Value);
+				//					idBloqueaTransacciones1 = Funcion.iEscalarSQL(cdsSeteoF, sSQLBloqueo, true);
+				//				}					
 				#endregion Pago con nota de credito
 
 				this.cmbBodega1.DataSource = Funcion.dvProcedimiento(cdsSeteoF, string.Format("Exec ListaBodegasPorLocal {0}, 0", (int)this.cmbBodega.Value));
@@ -9730,7 +9961,7 @@ namespace Latinium
 							int iContPR = 0;
 							int iContASD = 0;
 
-							#region ValidaciÛn Error PayJoy
+							#region Validaci√≥n Error PayJoy
 							bool bErrorPayJoy = false;
 							int idArticuloError = 0;
 							int idFormaPagoCrerditoPayJoy = 0;
@@ -9763,11 +9994,11 @@ namespace Latinium
 							{
 								string sms = ex.Message;
 							}
-							#endregion ValidaciÛn Error PayJoy
+							#endregion Validaci√≥n Error PayJoy
 
 							foreach(Infragistics.Win.UltraWinGrid.UltraGridRow drGE in ultraGrid1.Rows.All)
 							{
-								#region ValidaciÛn Error PayJoy
+								#region Validaci√≥n Error PayJoy
 								if(Estado)
 								{
 									try
@@ -9785,7 +10016,7 @@ namespace Latinium
 										return;
 									}
 								}
-								#endregion ValidaciÛn Error PayJoy
+								#endregion Validaci√≥n Error PayJoy
 
 								if ((int)drGE.Cells["Tipo"].Value == 5) iContGE++;
 								if ((int)drGE.Cells["idArticulo"].Value == 8683) iContDYD++;
@@ -9821,10 +10052,10 @@ namespace Latinium
 							}
 							
 							if (iContPR > 0)
-							 {
-								 this.btnImprimir.Enabled = true;
-								 this.mnuImprimirPR.Enabled = true;
-							 }
+							{
+								this.btnImprimir.Enabled = true;
+								this.mnuImprimirPR.Enabled = true;
+							}
 
 							if (iContASD > 0)
 							{
@@ -9954,8 +10185,8 @@ namespace Latinium
 				// Obtener temporal para validar SIN tocar lo actual
 				FamilyFriendsEstadoModel temp = service.ObtenerEstadoFF(idCompra);
 
-				// Solo actualizar si SÕ hay registro v·lido
-				if (temp != null && temp.ExisteRegistro)
+				// Solo actualizar si S√ç hay registro v√°lido
+				if (temp.EsFF || temp.RechazoPromocion)
 				{
 					estadoFF = temp; // Actualiza el modelo principal
 					idTipoPrecio = estadoFF.IdTipoPrecio;
@@ -9987,7 +10218,7 @@ namespace Latinium
 				string sMensaje = "ANULAR";
 				if (bAnulado) sMensaje = "ELIMINAR";
 				DateTime dtFecha = (DateTime)this.dtFecha.Value;
-				MessageBox.Show(string.Format("No Puede '{1}' esta Factura, El PerÌodo '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper(), sMensaje), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);								
+				MessageBox.Show(string.Format("No Puede '{1}' esta Factura, El Per√≠odo '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper(), sMensaje), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);								
 				return;
 			}
 			
@@ -9996,7 +10227,7 @@ namespace Latinium
 			{					
 				if (this.txtNumero.Text.ToString().Length == 0 && !bNumeracionAutomatica)
 				{
-					MessageBox.Show("Ingrese el n˙mero de la factura", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Ingrese el n√∫mero de la factura", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					this.txtNumero.Focus();						
 					return;
 				}
@@ -10116,12 +10347,12 @@ namespace Latinium
 						FuncionesProcedimientos.EstadoGrids(false, this.grdSerial);
 						#endregion Controles
 
-						#region ImpresiÛn
+						#region Impresi√≥n
 						if (bNuevo)
 						{
-							frmMensajeNumeraciÛn miMsje = new frmMensajeNumeraciÛn (this.txtNumero.Text.ToString(), bAnulado, 2, false);
+							frmMensajeNumeraci√≥n miMsje = new frmMensajeNumeraci√≥n (this.txtNumero.Text.ToString(), bAnulado, 2, false);
 						}
-						#endregion ImpresiÛn									
+						#endregion Impresi√≥n									
 					}
 				}											
 				return;
@@ -10210,7 +10441,7 @@ namespace Latinium
 			DateTime dtFechaFac = (DateTime) this.dtFecha.Value;
 			if ((miAcceso.BAnulaSoloDelDia && Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select ISNULL(Estado, 0) From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value), true) != 6) && dtFechaFac.ToShortDateString() != dtFechaHoy.ToShortDateString())
 			{
-				MessageBox.Show("Solo puede Anular Facturas de fecha " + dtFechaHoy.ToString("dd/MMM/yyyy"), "InformaciÛn", MessageBoxButtons.OK, MessageBoxIcon.Information);					
+				MessageBox.Show("Solo puede Anular Facturas de fecha " + dtFechaHoy.ToString("dd/MMM/yyyy"), "Informaci√≥n", MessageBoxButtons.OK, MessageBoxIcon.Information);					
 				return;
 			}
 
@@ -10333,7 +10564,7 @@ namespace Latinium
 
 				Reporte miRep = new Reporte("ContratoCompraVentaCelular.rpt", "");
 				miRep.MdiParent = this.MdiParent;
-				miRep.Titulo("RecepciÛn Mercaderia de Retiro");
+				miRep.Titulo("Recepci√≥n Mercaderia de Retiro");
 				miRep.crVista.ParameterFieldInfo = paramFields;
 				miRep.Show();	
 			}
@@ -10552,7 +10783,7 @@ namespace Latinium
 			{
 				if( CodigoEntrega.Length == 0 )
 				{
-					MessageBox.Show("Seleccione la ubicaciÛn de entrega antes de continuar.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					MessageBox.Show("Seleccione la ubicaci√≥n de entrega antes de continuar.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					return;
 				}
 			}
@@ -10633,7 +10864,7 @@ namespace Latinium
 				Facturacion.ActualizaEstadoCuponWeb(idCuponWeb, 2, (int)this.txtNumIdCompra.Value, cdsSeteoF);
 
 				#region FamilyFriends
-				FamilyFriendsCompra(FamilyFriendsService.EstadoFFCompraTemporal);
+				FamilyFriendsCompraVenta(FamilyFriendsService.EstadoFFCompraTemporal);
 				#endregion FamilyFriends
 
 				//Actualizar encuesta cuando se es temporal
@@ -10680,6 +10911,8 @@ namespace Latinium
 				this.txtRuc.Enabled = false;
 				this.txtRuc1.Enabled = false;
 				this.dtFecha.Enabled = false;
+				this.cmbFechaPrimerPago.Enabled = false;
+				this.cmbNumContadoCredito.Enabled = false;
 
 				if (miAcceso.Nuevo) this.btnNuevo.Enabled = true;
 				if (miAcceso.Buscar) this.btnConsultar.Enabled = true;
@@ -10728,12 +10961,12 @@ namespace Latinium
 			}
 			else if (bAnulado) 
 			{
-				MessageBox.Show("No puede crear un asiento de una transacciÛn Anulada");				
+				MessageBox.Show("No puede crear un asiento de una transacci√≥n Anulada");				
 			}
 			else if (Funcion.ValidaPeriodo((DateTime)this.dtFecha.Value, cdsSeteoF, "Venta"))
 			{				
 				DateTime dtFecha = (DateTime)this.dtFecha.Value;
-				MessageBox.Show(string.Format("No Puede Crear Asiento de esta Factura, El PerÌodo '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);								
+				MessageBox.Show(string.Format("No Puede Crear Asiento de esta Factura, El Per√≠odo '{0}' esta Cerrado, \n\n Consulte al Administrador", dtFecha.ToString("MMMM").ToUpper()), "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);								
 			}			
 			else
 			{					
@@ -10757,21 +10990,21 @@ namespace Latinium
 							string sSQLAsiento = string.Format("Exec CreaAsientoDeVenta {0}", (int)this.txtNumIdCompra.Value);
 							Funcion.EjecutaSQL(cdsSeteoF, sSQLAsiento, true);
 
-							MessageBox.Show("Asiento Generado con Èxito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							MessageBox.Show("Asiento Generado con √©xito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					
 							this.txtNumIdAsiento.Value = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select idAsiento From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value));
 							Cursor = Cursors.Default;							
 							#endregion Crea Asiento
 						}
 					}				
-					else if (DialogResult.Yes == MessageBox.Show("øDesea crear Asiento?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 
+					else if (DialogResult.Yes == MessageBox.Show("¬øDesea crear Asiento?", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) 
 					{	
 						#region Crea Asiento
 						this.Cursor = Cursors.WaitCursor;
 						string sSQLAsiento = string.Format("Exec CreaAsientoDeVenta {0}", (int)this.txtNumIdCompra.Value);
 						Funcion.EjecutaSQL(cdsSeteoF, sSQLAsiento, true);
 
-						MessageBox.Show("Asiento Generado con Èxito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						MessageBox.Show("Asiento Generado con √©xito", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					
 						this.txtNumIdAsiento.Value = Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select idAsiento From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value));
 						Cursor = Cursors.Default;
@@ -10787,7 +11020,7 @@ namespace Latinium
 			{
 				if (miAcceso.CrearAsiento)
 				{
-					if ((int) this.txtNumIdAsiento.Value == 0) MessageBox.Show("No Existe un Asiento Creado de esta TransacciÛn", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+					if ((int) this.txtNumIdAsiento.Value == 0) MessageBox.Show("No Existe un Asiento Creado de esta Transacci√≥n", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					else
 					{					
 						if (Funcion.bEscalarSQL(cdsSeteoF, string.Format("Declare @Res Bit If Exists(Select idAsiento From Asiento Where idAsiento = {0} And Borrar = 0) Set @Res = 1 Else Set @Res = 0 Select @Res", (int)this.txtNumIdAsiento.Value), true))
@@ -11092,26 +11325,26 @@ namespace Latinium
 			// Agregue la clave RSA de firma al objeto SignedXml.
 			xmlFirmado.SigningKey = Key;
  
-			// Cree un objeto Reference que describa quÈ se debe firmar.
+			// Cree un objeto Reference que describa qu√© se debe firmar.
 			// Para firmar el documento completo, establezca la propiedad Uri como "".
 			Reference referencia = new Reference();
 			referencia.Uri = "";
  
 			// Agregue un objeto XmlDsigEnvelopedSignatureTransform al objeto Reference.
-			// Una transformaciÛn permite al comprobador representar los datos XML
-			// de idÈntico modo que el firmante. Los datos XML se pueden representar de distintas maneras,
-			// por lo que este paso es vital para la comprobaciÛn.
+			// Una transformaci√≥n permite al comprobador representar los datos XML
+			// de id√©ntico modo que el firmante. Los datos XML se pueden representar de distintas maneras,
+			// por lo que este paso es vital para la comprobaci√≥n.
 			XmlDsigEnvelopedSignatureTransform transformacionENV = new XmlDsigEnvelopedSignatureTransform();
 			referencia.AddTransform(transformacionENV);
  
 			// Agregue el objeto Reference al objetoSignedXml.
 			xmlFirmado.AddReference(referencia);
  
-			// Llame al mÈtodo ComputeSignature para calcular la firma.
+			// Llame al m√©todo ComputeSignature para calcular la firma.
 			xmlFirmado.ComputeSignature();
  
-			// Recupere la representaciÛn XML de la firma (un elemento <Signature>)
-			// y gu·rdela en un nuevo objeto XmlElement.
+			// Recupere la representaci√≥n XML de la firma (un elemento <Signature>)
+			// y gu√°rdela en un nuevo objeto XmlElement.
 			XmlElement firmaDigitalXML = xmlFirmado.GetXml();
  
 			// Anexe el elemento al objeto XmlDocument.
@@ -11269,7 +11502,7 @@ namespace Latinium
 				this.chkEntregaLocal.Enabled = false;
 				this.btnEntrega.Visible = true;
 				if(bEdicion || bNuevo)this.btnEntrega.Enabled = true;
-        this.chkEntregaLocal.Checked = false;
+				this.chkEntregaLocal.Checked = false;
 				#region gps
 				// Hora actual en UTC
 				DateTime ahora = DateTime.UtcNow;
@@ -11353,16 +11586,16 @@ namespace Latinium
 				#region Cuenta si hay articulos en el grid
 				if (this.ultraGrid1.Rows.Count == 0)
 				{
-					MessageBox.Show("Ingrese los artÌculos para cargar seriales.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Ingrese los art√≠culos para cargar seriales.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					this.txtSerial.Focus();
 					return;
 				}
 				#endregion Cuenta si hay articulos en el grid
 
-				#region Valida SelecciÛn 
+				#region Valida Selecci√≥n 
 				if (ultraGrid1.ActiveRow == null)
 				{
-					MessageBox.Show("Seleccione el ArtÌculo", "InformaciÛn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show("Seleccione el Art√≠culo", "Informaci√≥n", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					this.txtSerial.Text = "";
 					this.txtSerial.Focus();
 					return;
@@ -11370,11 +11603,11 @@ namespace Latinium
 
 				if (this.ultraGrid1.ActiveRow.Cells["idArticulo"].Value == System.DBNull.Value)
 				{
-					MessageBox.Show("Seleccione el ArtÌculo", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Seleccione el Art√≠culo", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					this.txtSerial.Focus();
 					return;
 				}
-				#endregion Valida SelecciÛn 
+				#endregion Valida Selecci√≥n 
 
 				int IdArticulo = (int) this.ultraGrid1.ActiveRow.Cells["idArticulo"].Value;
 				int IPosicion = (int) this.ultraGrid1.ActiveRow.Cells["Posicion"].Value; 
@@ -11538,7 +11771,7 @@ namespace Latinium
 				}
 				else
 				{
-					MessageBox.Show("La serial no existe, Esta en otro Local o no pertenece al artÌculo seleccionado,\n\nComuniquese con el Administrador", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("La serial no existe, Esta en otro Local o no pertenece al art√≠culo seleccionado,\n\nComuniquese con el Administrador", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					this.txtSerial.Focus();
 					return;
 				}
@@ -11581,7 +11814,7 @@ namespace Latinium
 			else
 			{
 				if (e.KeyCode == Keys.Escape)
-					if (DialogResult.Yes == MessageBox.Show("Esta seguro de Cancelar la EdiciÛn", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+					if (DialogResult.Yes == MessageBox.Show("Esta seguro de Cancelar la Edici√≥n", "Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
 						this.btnCancelar_Click(sender, e);
 
 				if (e.KeyCode == Keys.F12) this.btnGuardar_Click(sender, e);
@@ -12119,7 +12352,7 @@ namespace Latinium
 
 				Reporte miRep = new Reporte("ReporteEntregaDomicilio.Rpt", "");
 				miRep.MdiParent = this.MdiParent;
-				miRep.Titulo("RecepciÛn Mercaderia de Retiro");
+				miRep.Titulo("Recepci√≥n Mercaderia de Retiro");
 				miRep.crVista.ParameterFieldInfo = paramFields;
 				miRep.Show();			
 			}
@@ -12159,7 +12392,7 @@ namespace Latinium
 
 		private void mnuImprimirRIDE_Click(object sender, System.EventArgs e)
 		{
-	if (bAnulado)	
+			if (bAnulado)	
 			{
 				MessageBox.Show("El documento esta Anulado", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 				return;
@@ -12171,47 +12404,45 @@ namespace Latinium
 				return;
 			}
 
-			//	if (Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select idFe_EstadoComprobante From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value)) != 2)	
-			//	{
-			//		MessageBox.Show("El documento no ha sido autorizado por el S.R.I.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-			//		return;
-			//	}
+			//			if (Funcion.iEscalarSQL(cdsSeteoF, string.Format("Select idFe_EstadoComprobante From Compra Where idCompra = {0}", (int)this.txtNumIdCompra.Value)) != 2)	
+			//			{
+			//				MessageBox.Show("El documento no ha sido autorizado por el S.R.I.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+			//				return;
+			//			}
 
 			#region Nombre Reporte
 			string sNomReporte = "";
 			sNomReporte = sRideFactura;
 
 			#region EsMoto
-			// SOLO SI ES MOTO
-			int idCompraMoto = 0;
-
-			if(this.txtNumIdCompra.Value != DBNull.Value && this.txtNumIdCompra.Value != null)
+			if(MenuLatinium.stIdDB == 1 || MenuLatinium.stIdDB == 3)
 			{
-				idCompraMoto = Convert.ToInt32(this.txtNumIdCompra.Value);
-			}
+				// SOLO SI ES MOTO
+				int idCompraMoto = 0;
 
-			if(bEsMoto(idCompraMoto))
-			{
-				sNomReporte = "Doc_FelecMotos.rpt";
+				if(this.txtNumIdCompra.Value != DBNull.Value && this.txtNumIdCompra.Value != null)
+				{
+					idCompraMoto = Convert.ToInt32(this.txtNumIdCompra.Value);
+				}
+
+				if(bEsMoto(idCompraMoto))
+				{
+					sNomReporte = "Doc_FelecMotos.rpt";
+				}
 			}
 			#endregion
 
-			// RESPETA LOGICA ANTIGUA
-			if(MenuLatinium.stIdDB == 26) 
-				sNomReporte = "RIDEFacturaZoommatika.rpt";
-
+			if(MenuLatinium.stIdDB == 26) sNomReporte = "RIDEFacturaZoommatika.rpt";
 			#endregion Nombre Reporte
 
 			ParameterFields paramFields = new ParameterFields ();
 			ParameterField paramFieldIdDetCompra = new ParameterField ();
 			ParameterDiscreteValue discreteValIdDetCompra = new ParameterDiscreteValue ();
-
 			paramFieldIdDetCompra.ParameterFieldName = "@idCompra";
 			discreteValIdDetCompra.Value = (int)this.txtNumIdCompra.Value; 
-
-			paramFieldIdDetCompra.CurrentValues.Add(discreteValIdDetCompra);
-			paramFields.Add(paramFieldIdDetCompra);
-		
+			paramFieldIdDetCompra.CurrentValues.Add (discreteValIdDetCompra);
+			paramFields.Add (paramFieldIdDetCompra);
+				
 			Reporte Reporte = new Reporte(sNomReporte, "");
 			Reporte.MdiParent = this.MdiParent;
 			Reporte.Titulo("RIDE");
@@ -12339,7 +12570,7 @@ namespace Latinium
 
 				Reporte miRep = new Reporte("ContratoCompraVentaCelular.rpt", "");
 				miRep.MdiParent = this.MdiParent;
-				miRep.Titulo("RecepciÛn Mercaderia de Retiro");
+				miRep.Titulo("Recepci√≥n Mercaderia de Retiro");
 				miRep.crVista.ParameterFieldInfo = paramFields;
 				miRep.Show();	
 			}
@@ -12438,7 +12669,8 @@ namespace Latinium
 										this.ultraGrid1.ActiveRow.Cells["EstadoSerial"].Value = false;
 										this.ultraGrid1.ActiveRow.Cells["Posicion"].Value = this.ultraGrid1.Rows.Count;	
 										this.ultraGrid1.ActiveRow.Cells["Jornadas"].Value = 0.00m;
-
+										this.ultraGrid1.ActiveRow.Cells["Aporte"].Value = 0.00m;
+										this.ultraGrid1.ActiveRow.Cells["idSubProyecto"].Value = 0;
 										this.ultraGrid1.ActiveRow.Cells["Precio"].Value = drA.GetDecimal(3);
 										this.ultraGrid1.ActiveRow.Cells["DescuentoPorc"].Value = 70.00m;
 										this.ultraGrid1.ActiveRow.Cells["DescuentoArt"].Value = (drA.GetDecimal(3) * 70.00m)/100.00m;
@@ -12481,7 +12713,7 @@ namespace Latinium
 				}
 			}
 		}
-     private string sUrlNube = "";
+		private string sUrlNube = "";
 		private void btnSubir_Click(object sender, System.EventArgs e)
 		{
 			#region Validacion
@@ -12527,7 +12759,7 @@ namespace Latinium
 
 				if ((int)this.txtBodegaPredef.Value == 0)
 				{
-					using (SqlDataReader dr = Funcion.rEscalarSQL(cdsSeteoF, string.Format("SELECT TOP 1 C.Bodega, C.idPersonal FROM Com_AsignacionDeVendedores C INNER JOIN Nomina N ON N.idPersonal = C.idPersonal WHERE NIdentificacion = '{0}'", SCedulaVendedor), true))
+					using (SqlDataReader dr = Funcion.rEscalarSQL(cdsSeteoF, string.Format("SELECT TOP 1 C.Bodega, C.idPersonal FROM Com_AsignacionDeVendedores C INNER JOIN Nomina N ON N.idPersonal = C.idPersonal WHERE NIdentificacion = '{0}' order by Hasta desc", SCedulaVendedor), true))
 					{
 						if (dr.Read())
 						{
@@ -12575,7 +12807,7 @@ namespace Latinium
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Error en el proceso autom·tico: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Error en el proceso autom√°tico: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
@@ -12694,7 +12926,7 @@ namespace Latinium
 			}
 			else
 			{
-			this.chkEntregado.Enabled = true;
+				this.chkEntregado.Enabled = true;
 			}
 		}
 
@@ -12708,7 +12940,7 @@ namespace Latinium
 			// Obtiene el valor seleccionado de la bodega
 			int bodegaGps = (int)this.cmbBodega.Value;
 
-			// Obtiene la cÈdula del textbox
+			// Obtiene la c√©dula del textbox
 			string cedulaGps = (string)this.txtRuc.Text;
 
 			// URL base del servidor
@@ -12717,13 +12949,84 @@ namespace Latinium
 			// Variable que debes tener definida antes (por ejemplo, string CodigoEntrega = "123456";)
 			string linkUrl = sUrlNube + bodegaGps + "/" + cedulaGps + "/geolocalizacion/" + CodigoEntrega;
 
-			// Valida que la URL no estÈ vacÌa antes de abrirla
+			// Valida que la URL no est√© vac√≠a antes de abrirla
 			if (sUrlNube.Length > 10)
 			{
 				System.Diagnostics.Process.Start("chrome.exe", linkUrl);
 			}
 		}
 
+		private void txtCuotaDeEntrada_ValidationError(object sender, Infragistics.Win.UltraWinEditors.ValidationErrorEventArgs e)
+		{
+		
+		}
+
+
+		private void cmbNumContadoCredito_ValueChanged(object sender, System.EventArgs e)
+		{
+			if (bEdicion)
+			{
+				if ((int)this.cmbFormaPago.Value == 35)
+				{				
+					NumCuotas = 0;
+
+					if (this.cmbNumContadoCredito.ActiveRow != null)						
+						NumCuotas = (int) this.cmbNumContadoCredito.Value;					
+				}
+			}
+		}
+
+		private void cmbBodega_AfterCloseUp(object sender, System.EventArgs e)
+		{
+			if (this.cmbBodega.ActiveRow != null && bNuevo)
+			{	
+				#region Integraci√≥n Yupana (Forma de Pago 35)
+				if (bNuevo && this.cmbFormaPago.Value != null && this.cmbFormaPago.Value != DBNull.Value && (int)this.cmbFormaPago.Value == 35)
+				{
+					bool bRegistroSeleccionado = false;
+					using (frmBuscaCre_SolicitudYupana frmYupana = new frmBuscaCre_SolicitudYupana((int)this.cmbBodega.Value))
+					{
+						if (frmYupana.ShowDialog() == DialogResult.OK && frmYupana.ultraGrid1.ActiveRow != null)
+						{
+							if (frmYupana.ultraGrid1.ActiveRow.Cells["Cedula"].Value != null && frmYupana.ultraGrid1.ActiveRow.Cells["Cedula"].Value != DBNull.Value)
+							{
+								this.cmbTipoRuc.Value =  Convert.ToInt32( frmYupana.ultraGrid1.ActiveRow.Cells["idTipoRuc"].Value);
+								this.txtRuc.Text = frmYupana.ultraGrid1.ActiveRow.Cells["Cedula"].Value.ToString();
+								this.txtRuc_Validated(this.txtRuc, System.EventArgs.Empty);
+								idCre_SolicitudWeb = Convert.ToInt32( frmYupana.ultraGrid1.ActiveRow.Cells["idCre_SolicitudWeb"].Value);
+								this.cmbNumContadoCredito.Enabled = true;
+								this.cmbFechaPrimerPago.Enabled = true;
+								this.txtComprobante.Text = Convert.ToString( frmYupana.ultraGrid1.ActiveRow.Cells["NumeroSolicitud"].Value);
+								this.lblYupana.Text ="YUPANA";
+								this.cmbVendedor.Value = Convert.ToInt32( frmYupana.ultraGrid1.ActiveRow.Cells["idVendedor"].Value);
+                 bCrediPoint = true;
+								bRegistroSeleccionado = true;
+							}
+						}
+					}
+
+					if (!bRegistroSeleccionado)
+					{
+						MessageBox.Show("En la bodega seleccionada no existe registro de solicitud Yupana", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						this.cmbBodega.Value = System.DBNull.Value;
+					}
+				}
+				#endregion
+			}
+		}
+
+
+		private void cmbFechaPrimerPago_ValueChanged(object sender, EventArgs e)
+		{
+			if (this.cmbFechaPrimerPago.ActiveRow != null && bNuevo &&
+				this.cmbFechaPrimerPago.Value != null &&
+				this.cmbFechaPrimerPago.Value != DBNull.Value)
+			{
+				dtFechPrimPago = Convert.ToDateTime(this.cmbFechaPrimerPago.Value);
+			}
+			
+
+		}
 	}
 }
 
