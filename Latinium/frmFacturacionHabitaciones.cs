@@ -128,6 +128,7 @@ namespace Latinium
 		private System.Windows.Forms.Button BtnReImprimirComanda;
 		private Infragistics.Win.UltraWinGrid.UltraGrid uGridDetalle;
 		private System.Windows.Forms.Button btnReturnPass;
+		private System.Windows.Forms.Button btnSegundaVisita;
 		private System.Windows.Forms.Label lblSaldoFactura;
 
 		Infragistics.Win.UltraWinGrid.UltraGrid UGridFP;
@@ -2296,8 +2297,22 @@ namespace Latinium
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			this.ClientSize = new System.Drawing.Size(1255, 565);
+			// btnSegundaVisita
+			this.btnSegundaVisita = new System.Windows.Forms.Button();
+			this.btnSegundaVisita.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(0)), ((System.Byte)(102)), ((System.Byte)(51)));
+			this.btnSegundaVisita.Enabled = false;
+			this.btnSegundaVisita.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.btnSegundaVisita.ForeColor = System.Drawing.Color.White;
+			this.btnSegundaVisita.Location = new System.Drawing.Point(648, 8);
+			this.btnSegundaVisita.Name = "btnSegundaVisita";
+			this.btnSegundaVisita.Size = new System.Drawing.Size(208, 56);
+			this.btnSegundaVisita.TabIndex = 742;
+			this.btnSegundaVisita.Text = "SEGUNDA\nVISITA 50%";
+			this.btnSegundaVisita.Click += new System.EventHandler(this.btnSegundaVisita_Click);
+
 			this.Controls.Add(this.lblSaldoFactura);
 			this.Controls.Add(this.btnReturnPass);
+			this.Controls.Add(this.btnSegundaVisita);
 			this.Controls.Add(this.BtnReImprimirComanda);
 			this.Controls.Add(this.chkVideo);
 			this.Controls.Add(this.btnCanjePuntos);
@@ -2536,6 +2551,14 @@ namespace Latinium
 		#region Valida Anticipos Cliente
 		decimal dValorPromActiva = 0.00m;
 		bool bUsoPromActiva = false;
+		// Segunda Visita 50%
+		int idCuponSV = 0;
+		int idAnticipoSV = 0;
+		decimal dValorCuponSV = 0.00m;
+		bool bUsoPromSV = false;
+		decimal dPorcDescuentoSV = 50.00m;
+		int iValidezCuponDiasSV = 30;
+		int idPromocionSV = 0;
 
 		decimal dAnticipoCliente = 0.00m;
 		bool bUsoAnticipoCliente = false;
@@ -2850,6 +2873,7 @@ namespace Latinium
 					this.Consulta(idCompraV);
 
 					ValidaPromoReturnPass();
+					ValidaPromoSegundaVisita();
 
 					this.btnEditar_Click(sender, e);
 				}
@@ -2863,6 +2887,7 @@ namespace Latinium
 						this.Consulta(idCompraV);
 
 						ValidaPromoReturnPass();
+						ValidaPromoSegundaVisita();
 
 						this.btnEditar_Click(sender, e);
 					}
@@ -4320,6 +4345,24 @@ namespace Latinium
 				#endregion Cupon Tarjeta VIP Comentado 
 
 				this.btnReturnPass.Enabled = true;
+
+				// Verificar si la promo Segunda Visita está activa para esta bodega y fecha
+				SqlDataReader drSV = Funcion.rEscalarSQL(cdsSeteoF, string.Format(
+					"Exec ValidaConfigPromoSegundaVisita {0}, '{1}'",
+					(int)this.cmbBodega.Value, DateTime.Now.ToString("yyyyMMdd HH:mm")), true);
+				drSV.Read();
+				if (drSV.HasRows)
+				{
+					idPromocionSV        = drSV.GetInt32(0);
+					dPorcDescuentoSV     = drSV.GetDecimal(2);
+					iValidezCuponDiasSV  = drSV.GetInt32(3);
+					this.btnSegundaVisita.Enabled = true;
+				}
+				else
+				{
+					this.btnSegundaVisita.Enabled = false;
+				}
+				drSV.Close();
 
 				this.CargaArticulos(3422, true);
 			}
@@ -6184,6 +6227,56 @@ namespace Latinium
 			#endregion Anticipos
 		}
 
+		private void ValidaPromoSegundaVisita()
+		{
+			idCuponSV     = 0;
+			idAnticipoSV  = 0;
+			dValorCuponSV = 0.00m;
+			bUsoPromSV    = false;
+
+			if (idCliente == 0 || idPromocionSV == 0) return;
+
+			int idCategoria = Funcion.iEscalarSQL(cdsSeteoF,
+				string.Format("Select ISNULL(Categoria, 0) From Habitaciones Where idHabitacion = {0}", idHabitacion));
+
+			string sSQL = string.Format("Exec ValidaSaldoCuponSegundaVisita {0}, {1}, {2}, '{3}'",
+				idCliente, (int)this.cmbBodega.Value, idCategoria, DateTime.Now.ToString("yyyyMMdd HH:mm"));
+
+			SqlDataReader dReader = Funcion.rEscalarSQL(cdsSeteoF, sSQL, true);
+			dReader.Read();
+			if (dReader.HasRows)
+			{
+				idCuponSV     = dReader.GetInt32(0);
+				idAnticipoSV  = dReader.GetInt32(1);
+				dValorCuponSV = dReader.GetDecimal(2);
+			}
+			dReader.Close();
+
+			if (dValorCuponSV > 0)
+			{
+				if (DialogResult.Yes == MessageBox.Show(
+					string.Format("El cliente tiene un cupón SEGUNDA VISITA 50% por ${0:N2}. ¿Desea aplicarlo?", dValorCuponSV),
+					"Point Technology", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+				{
+					bUsoPromSV = true;
+
+					foreach (Infragistics.Win.UltraWinGrid.UltraGridRow dr in this.uGridDetalle.Rows.All)
+					{
+						if (Convert.ToInt32(dr.Cells["idArticulo"].Value) == 3422)
+						{
+							dr.Cells["DescuentoPorc"].Value = (double)dPorcDescuentoSV;
+							this.Total();
+						}
+					}
+				}
+				else
+				{
+					bUsoPromSV    = false;
+					dValorCuponSV = 0.00m;
+				}
+			}
+		}
+
 		public string invertirCadena(String cadena)
 		{
 			String cadenaInvertida = "";
@@ -6515,8 +6608,19 @@ namespace Latinium
 
 							if (idAnticipoRP > 0)
 							{
-								sSQL = string.Format("Insert Into AnticiposCompras (idCompra, idAnticipo, Valor, Estado) Values ({0}, {1}, {2}, 0) Exec ActualizaSaldoFacturas {1}, 24, 6", 
+								sSQL = string.Format("Insert Into AnticiposCompras (idCompra, idAnticipo, Valor, Estado) Values ({0}, {1}, {2}, 0) Exec ActualizaSaldoFacturas {1}, 24, 6",
 									idCompra, idAnticipoRP, dValorPromActiva);
+								oCmdActualiza.CommandText = sSQL;
+								oCmdActualiza.ExecuteNonQuery();
+							}
+
+							if (bUsoPromSV && idAnticipoSV > 0)
+							{
+								sSQL = string.Format(
+									"Insert Into AnticiposCompras (idCompra, idAnticipo, Valor, Estado) Values ({0}, {1}, {2}, 0) " +
+									"Exec ActualizaSaldoFacturas {1}, 24, 6 " +
+									"Update CuponesSegundaVisita Set Estado = 3, idCompraUso = {0}, FechaUso = GETDATE() Where idAnticipo = {1}",
+									idCompra, idAnticipoSV, dValorCuponSV);
 								oCmdActualiza.CommandText = sSQL;
 								oCmdActualiza.ExecuteNonQuery();
 							}
@@ -8818,6 +8922,7 @@ namespace Latinium
 					ValidaAnticiposClientes();
 
 					ValidaPromoReturnPass();
+					ValidaPromoSegundaVisita();
 				}
 			}
 		}
@@ -9367,7 +9472,7 @@ namespace Latinium
 									#endregion Reverso Anticipos Abono Cliente
 
 									#region Autorizacion Notas de Credito
-									oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 5", iCompraOrigenNDC);;
+									oCmdActualiza.CommandText = string.Format("Exec FE_ClaveDeAcceso {0}, 1", iCompraOrigenNDC);;
 									string sClaveAccesoNC = oCmdActualiza.ExecuteScalar().ToString();
 
 									string cadInvertidaNC = invertirCadena(sClaveAccesoNC.Substring(0, 48));
@@ -11845,6 +11950,62 @@ namespace Latinium
 				}
 			}
 		}
+		private void btnSegundaVisita_Click(object sender, System.EventArgs e)
+		{
+			if (idCliente == 0)
+			{
+				MessageBox.Show("Debe seleccionar un cliente antes de vender el cupón.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				return;
+			}
+
+			// Calcular el valor del cupón = 50% (o el % configurado) de la tarifa actual de la habitación
+			decimal dTarifaHabitacion = Funcion.decEscalarSQL(cdsSeteoF,
+				string.Format("Select PrecioNormal From Habitaciones Where idHabitacion = {0}", idHabitacion));
+
+			if (dTarifaHabitacion <= 0)
+			{
+				MessageBox.Show("No se pudo obtener la tarifa de la habitación.", "Point Technology", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+				return;
+			}
+
+			decimal dValorCupon = ROUND2(dTarifaHabitacion * dPorcDescuentoSV / 100);
+
+			string sRUC = "";
+			int idTipoRuc = 5;
+			if ((int)this.cmbTipoRuc.Value != 11)
+			{
+				sRUC = this.txtRuc.Text.ToString();
+				idTipoRuc = (int)this.cmbTipoRuc.Value;
+			}
+
+			using (frmAnticiposClientes Anticipos = new frmAnticiposClientes(true, sRUC, (int)this.cmbBodega.Value,
+				dValorCupon, 6, 0, idTipoRuc, (int)this.cmbFormaPago.Value))
+			{
+				if (DialogResult.OK == Anticipos.ShowDialog())
+				{
+					int idAnticipoNuevo = (int)Anticipos.txtIdAnticipo.Value;
+
+					int idCategoria = Funcion.iEscalarSQL(cdsSeteoF,
+						string.Format("Select ISNULL(Categoria, 0) From Habitaciones Where idHabitacion = {0}", idHabitacion));
+
+					Funcion.EjecutaSQL(cdsSeteoF, string.Format(
+						"Exec GeneraCuponSegundaVisita {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}",
+						idCompra, idCliente, idHabitacion, idCategoria,
+						(int)this.cmbBodega.Value,
+						dTarifaHabitacion.ToString(System.Globalization.CultureInfo.InvariantCulture),
+						dPorcDescuentoSV.ToString(System.Globalization.CultureInfo.InvariantCulture),
+						iValidezCuponDiasSV));
+
+					ImpresionAutomaticaAnticipos(idAnticipoNuevo, 6, cdsSeteoF);
+				}
+			}
+		}
+
+		private decimal ROUND2(decimal valor)
+		{
+			return System.Math.Round(valor, 2, System.MidpointRounding.AwayFromZero);
+		}
+
 		private void AbrirAnticipoRegistroCobro()
 		{
 			if (bAnticipoYaAbierto) return;
