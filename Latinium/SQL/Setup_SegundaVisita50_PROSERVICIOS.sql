@@ -410,6 +410,54 @@ PRINT 'PASO 9 completado'
 GO
 
 -- ============================================================
+-- ============================================================
+PRINT '============================================================'
+PRINT 'PASO 10 — ConsultaIndividualPromocionesLotesServicios'
+PRINT '          Agrega columnas 23 y 24: ValidezCuponDias y'
+PRINT '          PorcentajeDescuento al resultado del SELECT.'
+PRINT '============================================================'
+GO
+
+ALTER PROCEDURE [dbo].[ConsultaIndividualPromocionesLotesServicios]
+    @idPromocion Int
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    Select
+        c.idPromocion,                               -- 0
+        ISNULL(idArticulo, 0),                       -- 1
+        Tipo,                                        -- 2
+        FechaDesde,                                  -- 3
+        FechaHasta,                                  -- 4
+        Descripcion,                                 -- 5
+        NumIngreso,                                  -- 6
+        Estado,                                      -- 7
+        Cupon,                                       -- 8
+        Variable,                                    -- 9
+        SumaDescuento,                               -- 10
+        Adicional,                                   -- 11
+        Valor,                                       -- 12
+        Opcional,                                    -- 13
+        HoraInicia,                                  -- 14
+        HoraFinaliza,                                -- 15
+        Condicion,                                   -- 16
+        PuntosInicio,                                -- 17
+        PuntosFinal,                                 -- 18
+        ISNULL(TiempoEstadia, 0)    AS TiempoEstadia,  -- 19
+        ISNULL(ToqueQueda, 0)       AS ToqueQueda,     -- 20
+        Encuesta,                                    -- 21
+        ISNULL(Preventa, 0)         AS Preventa,       -- 22
+        ISNULL(ValidezCuponDias, 0) AS ValidezCuponDias,     -- 23 NUEVO
+        ISNULL(PorcentajeDescuento, 0) AS PorcentajeDescuento -- 24 NUEVO
+    From CompraPromocion c
+    Where c.idPromocion = @idPromocion
+END
+GO
+PRINT 'PASO 10 completado'
+GO
+
+-- ============================================================
 PRINT '============================================================'
 PRINT 'VERIFICACIÓN FINAL'
 PRINT '============================================================'
@@ -433,6 +481,8 @@ UNION ALL
 SELECT 'SP AnulaCuponSegundaVisita',          CASE WHEN OBJECT_ID('AnulaCuponSegundaVisita') IS NOT NULL THEN 'OK' ELSE 'FALTA' END
 UNION ALL
 SELECT 'SP VenceCuponesSegundaVisita',        CASE WHEN OBJECT_ID('VenceCuponesSegundaVisita') IS NOT NULL THEN 'OK' ELSE 'FALTA' END
+UNION ALL
+SELECT 'SP ConsultaIndividualPromocionesLotesServicios', CASE WHEN OBJECT_ID('ConsultaIndividualPromocionesLotesServicios') IS NOT NULL THEN 'OK' ELSE 'FALTA' END
 GO
 
 PRINT '============================================================'
